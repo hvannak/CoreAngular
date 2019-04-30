@@ -1,0 +1,81 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { ToastrModule } from 'ngx-toastr';
+
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+import { MenusComponent } from './menus/menus.component';
+import { MaterialModule } from './material.module';
+import { PaymentDetailsComponent } from "./payment-details/payment-details.component";
+import { PaymentDetailComponent } from './payment-details/payment-detail/payment-detail.component';
+import { PaymentDetailListComponent } from './payment-details/payment-detail-list/payment-detail-list.component';
+import { PaymentDetailService } from './shared/payment-detail.service';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderComponent } from './orders/order/order.component';
+import { OrderItemsComponent } from './orders/order-items/order-items.component';
+import { CustomerService } from './shared/customer.service';
+import { ItemService } from './shared/item.service';
+import { OrderService } from './shared/order.service';
+import { UserComponent } from './user/user.component';
+import { RegistrationComponent } from './user/registration/registration.component';
+import { UserService } from './shared/user.service';
+import { LoginComponent } from './user/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { RolesComponent } from './roles/roles.component';
+import { RoleComponent } from './roles/role/role.component';
+import { RoleCtlComponent } from './roles/role-ctl/role-ctl.component';
+import { RoleService } from './shared/role.service';
+import { RoleCtlService } from './shared/role-ctl.service';
+import { UserroleComponent } from './userroles/userrole/userrole.component';
+import { UserrolelistComponent } from './userroles/userrolelist/userrolelist.component';
+import { UserrolesComponent } from './userroles/userroles.component';
+import { ForbiddenComponent } from './error/forbidden/forbidden.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    PaymentDetailsComponent,
+    PaymentDetailComponent,
+    PaymentDetailListComponent,
+    OrdersComponent,
+    OrderComponent,
+    OrderItemsComponent,
+    MenusComponent,
+    UserComponent,
+    RegistrationComponent,
+    LoginComponent,
+    HomeComponent,
+    RolesComponent,
+    RoleComponent,
+    RoleCtlComponent,
+    UserroleComponent,
+    UserrolelistComponent,
+    UserrolesComponent,
+    ForbiddenComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+  ],
+  entryComponents:[OrderItemsComponent],
+  providers: [PaymentDetailService,CustomerService,ItemService,
+    OrderService,UserService,
+    RoleService,RoleCtlService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

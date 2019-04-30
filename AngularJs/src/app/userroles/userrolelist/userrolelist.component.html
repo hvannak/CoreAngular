@@ -1,0 +1,8 @@
+<table class="table table-hover">
+    <tr *ngFor="let item of userroleList">
+      <td (click)="populateForm(item)">{{item.UserName}}</td>
+      <td>
+        <i class="fa fa-trash-alt fa-lg text-danger" (click)="onUserDelete(item.UserId)"></i>
+      </td>
+    </tr>
+  </table>

@@ -1,0 +1,51 @@
+<app-menus></app-menus>
+<div class="container">
+  <div class="col-md-12">
+      <div class="jumbotron">
+          <h1 class="display-4 text-center"><i class="fas fa-toilet-paper"></i>Roles Management</h1>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+              <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+                  <div class="form-group">
+                    <input hidden class="form-control" formControlName="Id">
+                  </div>
+                  <div class="form-group required">
+                    <label>RoleName</label>
+                    <input class="form-control" formControlName="RoleName">
+                    <label class="text-danger" *ngIf="service.formModel.get('RoleName').touched && service.formModel.get('RoleName').errors?.required">This field is mandatory.</label>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-8 offset-md-2">
+                      <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">Submit</button>
+                    </div>
+                  </div>
+                </form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Access List</label>                     
+                        <table class="table table-hover">
+                          <tr *ngFor="let item of ctlList">
+                            <td>{{item.Id}}</td>
+                            <td width="5%"><i class="fas fa-minus" (click)="onDelete(item)"></i></td>
+                            <td width="5%"><i class="fas fa-plus" (click)="onAdd(item)"></i></td>
+                          </tr>
+                        </table>
+                      </div> 
+                  </div>
+                  <div class="col-md-6">
+                    <table class="table table-hover">
+                      <tr *ngFor="let item of service.rolesAdded">
+                        <td>{{item}}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+ 
+
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

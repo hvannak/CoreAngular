@@ -1,0 +1,44 @@
+<mat-toolbar>  
+  <mat-toolbar-row>
+    <span>MEDIVETGROUP</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" >
+      <button mat-menu-item routerLink="/home">
+        <mat-icon>voicemail</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item (click)="onLogout()">
+        <mat-icon>home</mat-icon>
+        <span>Logout</span>
+      </button>
+      <button mat-menu-item routerLink="/user/registration">
+        <mat-icon><i class="fas fa-user-plus"></i></mat-icon>
+        <span>Register</span>
+      </button>
+      <button mat-menu-item routerLink="/userroles">
+        <mat-icon><i class="fas fa-users-cog"></i></mat-icon>
+        <span>User Setting</span>
+      </button>
+      <button mat-menu-item routerLink="/roles">
+        <mat-icon><i class="fas fa-pencil-ruler"></i></mat-icon>
+        <span>Roles Setting</span>
+      </button>
+      <button mat-menu-item routerLink="/paymentcard">
+        <mat-icon>dialpad</mat-icon>
+        <span>Payment Card</span> 
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menupr" >
+      <mat-icon><i class="fab fa-accusoft"></i></mat-icon>
+    </button>
+    <mat-menu #menupr="matMenu" >
+      <button mat-menu-item routerLink="/orders">
+        <mat-icon><i class="fas fa-sort-amount-up"></i></mat-icon>
+        <span>Orders</span> 
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
