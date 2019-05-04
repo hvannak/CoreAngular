@@ -27,6 +27,8 @@ export class RoleComponent implements OnInit {
     let roleId = this.currentRoute.snapshot.paramMap.get('id');
     if(roleId == null){
       this.service.formModel.reset();
+      this.service.rolesAdded = [];
+      this.service.selectedCtl = [];
     }
     else{
       this.service.getRoleByID(roleId).then(res => {

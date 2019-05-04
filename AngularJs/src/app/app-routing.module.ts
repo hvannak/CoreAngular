@@ -12,12 +12,16 @@ import { RolesComponent } from './roles/roles.component';
 import { RoleComponent } from './roles/role/role.component';
 import { UserrolesComponent } from './userroles/userroles.component';
 import { ForbiddenComponent } from './error/forbidden/forbidden.component';
+import { WarehouseComponent } from './warehouse/warehouse.component';
+import { ProjectComponent } from './project/project.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
       {path:'registration',component:RegistrationComponent,canActivate:[AuthGuard]},
       {path:'login',component:LoginComponent}
   ]},
+  {path:'warehouse',component:WarehouseComponent,canActivate:[AuthGuard]},
+  {path:'project',component:ProjectComponent,canActivate:[AuthGuard]},
   {path:'error/403',component:ForbiddenComponent},
   {path:'paymentcard',component:PaymentDetailsComponent,canActivate:[AuthGuard]},
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},

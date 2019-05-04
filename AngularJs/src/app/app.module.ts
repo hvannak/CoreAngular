@@ -34,6 +34,13 @@ import { UserroleComponent } from './userroles/userrole/userrole.component';
 import { UserrolelistComponent } from './userroles/userrolelist/userrolelist.component';
 import { UserrolesComponent } from './userroles/userroles.component';
 import { ForbiddenComponent } from './error/forbidden/forbidden.component';
+import { WarehouseComponent } from './warehouse/warehouse.component';
+import { WarehouseDetailsComponent } from './warehouse/warehouse-details/warehouse-details.component';
+import { WarehouseListComponent } from './warehouse/warehouse-list/warehouse-list.component';
+import { WarehouseService } from './shared/warehouse.service';
+import { ProjectComponent } from './project/project.component';
+import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
+import { ProjectListComponent } from './project/project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +62,13 @@ import { ForbiddenComponent } from './error/forbidden/forbidden.component';
     UserroleComponent,
     UserrolelistComponent,
     UserrolesComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    WarehouseComponent,
+    WarehouseDetailsComponent,
+    WarehouseListComponent,
+    ProjectComponent,
+    ProjectDetailComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +83,7 @@ import { ForbiddenComponent } from './error/forbidden/forbidden.component';
   ],
   entryComponents:[OrderItemsComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
-    OrderService,UserService,
+    OrderService,UserService,WarehouseService,
     RoleService,RoleCtlService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

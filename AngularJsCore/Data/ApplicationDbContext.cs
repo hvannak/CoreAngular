@@ -19,6 +19,7 @@ namespace AngularJsCore.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new WarehouseAccessConfiguration());
 
             //modelBuilder.Entity<ApplicationUser>().HasData(
             //            new ApplicationUser
@@ -41,5 +42,8 @@ namespace AngularJsCore.Data
         public DbSet<Inventorys> Inventorys { get; set; }
         public DbSet<Orders> Orders { get; set; }
         public DbSet<OrderLines> OrderLines { get; set; }
+        public DbSet<Warehouse> warehouses { get; set; }
+        public DbSet<Project> projects { get; set; }
+
     }
 }

@@ -204,6 +204,63 @@ namespace AngularJsCore.Migrations
                     b.ToTable("paymentDetails");
                 });
 
+            modelBuilder.Entity("AngularJsCore.Models.Project", b =>
+                {
+                    b.Property<int>("ProjectId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("ProjectName");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Status");
+
+                    b.Property<int>("WarehouseId");
+
+                    b.HasKey("ProjectId");
+
+                    b.HasIndex("WarehouseId");
+
+                    b.ToTable("projects");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.Warehouse", b =>
+                {
+                    b.Property<int>("WarehouseId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("WarehouseName");
+
+                    b.HasKey("WarehouseId");
+
+                    b.ToTable("warehouses");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.WarehouseAccess", b =>
+                {
+                    b.Property<int>("WarehouseAccessId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("UserId");
+
+                    b.Property<int>("WarehouseId");
+
+                    b.HasKey("WarehouseAccessId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("WarehouseId");
+
+                    b.ToTable("WarehouseAccess");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -308,6 +365,26 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Customers", "Customers")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.Project", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.Warehouse", "Warehouse")
+                        .WithMany("Projects")
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.WarehouseAccess", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("WarehouseAccesses")
+                        .HasForeignKey("UserId");
+
+                    b.HasOne("AngularJsCore.Models.Warehouse", "Warehouse")
+                        .WithMany("WarehouseAccesses")
+                        .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

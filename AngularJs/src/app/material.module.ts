@@ -52,7 +52,8 @@ import {
     MatMenuModule,
     MatToolbarModule,
     MatDialogModule,
-    MatTreeModule
+    MatTreeModule,
+    MatDatepickerModule
   ],
   exports:[
     A11yModule,
