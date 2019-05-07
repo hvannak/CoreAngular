@@ -50,6 +50,10 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { InventoryDetailComponent } from './inventory/inventory-detail/inventory-detail.component';
 import { InventoryListComponent } from './inventory/inventory-list/inventory-list.component';
 import { InventoryService } from './shared/inventory.service';
+import { WarehouseaccessComponent } from './warehouseaccess/warehouseaccess.component';
+import { WarehouseacessDetailComponent } from './warehouseaccess/warehouseacess-detail/warehouseacess-detail.component';
+import { WarehouseacessListComponent } from './warehouseaccess/warehouseacess-list/warehouseacess-list.component';
+import { WarehouseaccessService } from './shared/warehouseaccess.service';
 
 @NgModule({
   declarations: [
@@ -83,7 +87,10 @@ import { InventoryService } from './shared/inventory.service';
     CategoryListComponent,
     InventoryComponent,
     InventoryDetailComponent,
-    InventoryListComponent
+    InventoryListComponent,
+    WarehouseaccessComponent,
+    WarehouseacessDetailComponent,
+    WarehouseacessListComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +105,7 @@ import { InventoryService } from './shared/inventory.service';
   ],
   entryComponents:[OrderItemsComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
-    OrderService,UserService,WarehouseService,CategoryService,InventoryService,
+    OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
     RoleService,RoleCtlService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

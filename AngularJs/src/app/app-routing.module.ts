@@ -16,6 +16,7 @@ import { WarehouseComponent } from './warehouse/warehouse.component';
 import { ProjectComponent } from './project/project.component';
 import { CategoryComponent } from './category/category.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { WarehouseaccessComponent } from './warehouseaccess/warehouseaccess.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -23,6 +24,7 @@ const routes: Routes = [
       {path:'login',component:LoginComponent}
   ]},
   {path:'warehouse',component:WarehouseComponent,canActivate:[AuthGuard]},
+  {path:'warehouseaccess',component:WarehouseaccessComponent,canActivate:[AuthGuard]},
   {path:'project',component:ProjectComponent,canActivate:[AuthGuard]},
   {path:'category',component:CategoryComponent,canActivate:[AuthGuard]},
   {path:'inventory',component:InventoryComponent,canActivate:[AuthGuard]},
