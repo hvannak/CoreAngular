@@ -17,6 +17,7 @@ namespace AngularJsCore.Models
         [Column(TypeName = "date")]
         public DateTime EndDate { get; set; }
         public int WarehouseId { get; set; }
+        public string WarehouseName { get; set; }
         public string Status { get; set; }
         public Warehouse Warehouse { get; set; }
     }

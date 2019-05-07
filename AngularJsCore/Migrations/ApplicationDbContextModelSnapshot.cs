@@ -99,6 +99,19 @@ namespace AngularJsCore.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("AngularJsCore.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CategoryName");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("categories");
+                });
+
             modelBuilder.Entity("AngularJsCore.Models.Customers", b =>
                 {
                     b.Property<int>("CustomerId")
@@ -120,6 +133,8 @@ namespace AngularJsCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CategoryId");
+
                     b.Property<string>("InventoryDesr")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
@@ -127,6 +142,8 @@ namespace AngularJsCore.Migrations
                     b.Property<decimal>("Price");
 
                     b.HasKey("InventoryId");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Inventorys");
                 });
@@ -221,6 +238,8 @@ namespace AngularJsCore.Migrations
                     b.Property<string>("Status");
 
                     b.Property<int>("WarehouseId");
+
+                    b.Property<string>("WarehouseName");
 
                     b.HasKey("ProjectId");
 
@@ -345,6 +364,14 @@ namespace AngularJsCore.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.Inventorys", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.Category", "Category")
+                        .WithMany("Inventorys")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.OrderLines", b =>

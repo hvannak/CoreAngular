@@ -41,6 +41,15 @@ import { WarehouseService } from './shared/warehouse.service';
 import { ProjectComponent } from './project/project.component';
 import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
 import { ProjectListComponent } from './project/project-list/project-list.component';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { CategoryComponent } from './category/category.component';
+import { CategoryDetailComponent } from './category/category-detail/category-detail.component';
+import { CategoryListComponent } from './category/category-list/category-list.component';
+import { CategoryService } from './shared/category.service';
+import { InventoryComponent } from './inventory/inventory.component';
+import { InventoryDetailComponent } from './inventory/inventory-detail/inventory-detail.component';
+import { InventoryListComponent } from './inventory/inventory-list/inventory-list.component';
+import { InventoryService } from './shared/inventory.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +77,13 @@ import { ProjectListComponent } from './project/project-list/project-list.compon
     WarehouseListComponent,
     ProjectComponent,
     ProjectDetailComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    CategoryComponent,
+    CategoryDetailComponent,
+    CategoryListComponent,
+    InventoryComponent,
+    InventoryDetailComponent,
+    InventoryListComponent
   ],
   imports: [
     BrowserModule,
@@ -83,12 +98,13 @@ import { ProjectListComponent } from './project/project-list/project-list.compon
   ],
   entryComponents:[OrderItemsComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
-    OrderService,UserService,WarehouseService,
+    OrderService,UserService,WarehouseService,CategoryService,InventoryService,
     RoleService,RoleCtlService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  }],
+  },
+  { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,6 +14,8 @@ import { UserrolesComponent } from './userroles/userroles.component';
 import { ForbiddenComponent } from './error/forbidden/forbidden.component';
 import { WarehouseComponent } from './warehouse/warehouse.component';
 import { ProjectComponent } from './project/project.component';
+import { CategoryComponent } from './category/category.component';
+import { InventoryComponent } from './inventory/inventory.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -22,6 +24,8 @@ const routes: Routes = [
   ]},
   {path:'warehouse',component:WarehouseComponent,canActivate:[AuthGuard]},
   {path:'project',component:ProjectComponent,canActivate:[AuthGuard]},
+  {path:'category',component:CategoryComponent,canActivate:[AuthGuard]},
+  {path:'inventory',component:InventoryComponent,canActivate:[AuthGuard]},
   {path:'error/403',component:ForbiddenComponent},
   {path:'paymentcard',component:PaymentDetailsComponent,canActivate:[AuthGuard]},
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},

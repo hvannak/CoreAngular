@@ -25,7 +25,17 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<Project> Getprojects()
         {
-            return _context.projects;
+            var result = _context.projects.Include(x => x.Warehouse).Select(x => new Project()
+            {
+                WarehouseId = x.WarehouseId,
+                WarehouseName = x.Warehouse.WarehouseName,
+                ProjectId = x.ProjectId,
+                ProjectName = x.ProjectName,
+                StartDate = x.StartDate,
+                EndDate = x.EndDate,
+                Status = x.Status
+            });
+            return result;
         }
 
         // GET: api/Projects/5

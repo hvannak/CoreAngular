@@ -16,6 +16,8 @@ namespace AngularJsCore.Models
         public string InventoryDesr { get; set; }
         [DataType("decimal(18,4)")]
         public decimal Price { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         public virtual ICollection<OrderLines> OrderLines { get; set; }
     }
 }

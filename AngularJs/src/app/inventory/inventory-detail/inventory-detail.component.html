@@ -1,0 +1,41 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="InventoryId" [value]="service.formData.InventoryId">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fas fa-tasks" [class.green-icon]="InventoryDesr.valid" [class.red-icon]="InventoryDesr.invalid"></i>
+          </div>
+        </div>
+        <input name="InventoryDesr" #InventoryDesr="ngModel" [(ngModel)]="service.formData.InventoryDesr" class="form-control" placeholder="InventoryDesr" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fas fa-tasks" [class.green-icon]="Price.valid" [class.red-icon]="Price.invalid"></i>
+          </div>
+        </div>
+        <input name="Price" #Price="ngModel" [(ngModel)]="service.formData.Price" class="form-control" placeholder="Price" required>
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-align-right" [class.green-icon]="CategoryId.valid" [class.red-icon]="CategoryId.invalid"></i>
+            </div>
+          </div>
+          <select name="CategoryId" #CategoryId="ngModel" [(ngModel)]="service.formData.CategoryId" class="form-control"
+          [class.is-invalid]="!isValid && service.formData.CategoryId==0">
+            <option value="0">-Select Category-</option>
+            <option *ngFor="let item of categoryList" value="{{item.CategoryId}}">{{item.CategoryName}}</option>
+          </select>
+        </div>
+    </div>
+        
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i>Submit</button>
+    </div>
+  </form>

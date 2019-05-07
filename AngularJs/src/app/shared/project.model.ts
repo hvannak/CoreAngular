@@ -4,6 +4,7 @@ export class Project {
     StartDate:Date;
     EndDate:Date;
     WarehouseId:number;
+    WarehouseName:string;
     Status:string;
 
 }

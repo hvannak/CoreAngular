@@ -5,6 +5,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
 import {A11yModule} from '@angular/cdk/a11y';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 
 import { 
   MatAutocompleteModule,
@@ -53,7 +54,8 @@ import {
     MatToolbarModule,
     MatDialogModule,
     MatTreeModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatMomentDateModule
   ],
   exports:[
     A11yModule,

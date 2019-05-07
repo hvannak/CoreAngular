@@ -50,6 +50,19 @@ namespace AngularJsCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "categories",
+                columns: table => new
+                {
+                    CategoryId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CategoryName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_categories", x => x.CategoryId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "customers",
                 columns: table => new
                 {
@@ -60,20 +73,6 @@ namespace AngularJsCore.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_customers", x => x.CustomerId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Inventorys",
-                columns: table => new
-                {
-                    InventoryId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    InventoryDesr = table.Column<string>(type: "nvarchar(100)", nullable: false),
-                    Price = table.Column<decimal>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Inventorys", x => x.InventoryId);
                 });
 
             migrationBuilder.CreateTable(
@@ -212,6 +211,27 @@ namespace AngularJsCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Inventorys",
+                columns: table => new
+                {
+                    InventoryId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    InventoryDesr = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    Price = table.Column<decimal>(nullable: false),
+                    CategoryId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Inventorys", x => x.InventoryId);
+                    table.ForeignKey(
+                        name: "FK_Inventorys_categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "categories",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -230,6 +250,30 @@ namespace AngularJsCore.Migrations
                         column: x => x.CustomerId,
                         principalTable: "customers",
                         principalColumn: "CustomerId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "projects",
+                columns: table => new
+                {
+                    ProjectId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ProjectName = table.Column<string>(nullable: true),
+                    StartDate = table.Column<DateTime>(type: "date", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "date", nullable: false),
+                    WarehouseId = table.Column<int>(nullable: false),
+                    WarehouseName = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_projects", x => x.ProjectId);
+                    table.ForeignKey(
+                        name: "FK_projects_warehouses_WarehouseId",
+                        column: x => x.WarehouseId,
+                        principalTable: "warehouses",
+                        principalColumn: "WarehouseId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -326,6 +370,11 @@ namespace AngularJsCore.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Inventorys_CategoryId",
+                table: "Inventorys",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_OrderLines_InventoryId",
                 table: "OrderLines",
                 column: "InventoryId");
@@ -339,6 +388,11 @@ namespace AngularJsCore.Migrations
                 name: "IX_Orders_CustomerId",
                 table: "Orders",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_projects_WarehouseId",
+                table: "projects",
+                column: "WarehouseId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WarehouseAccess_UserId",
@@ -375,6 +429,9 @@ namespace AngularJsCore.Migrations
                 name: "paymentDetails");
 
             migrationBuilder.DropTable(
+                name: "projects");
+
+            migrationBuilder.DropTable(
                 name: "WarehouseAccess");
 
             migrationBuilder.DropTable(
@@ -391,6 +448,9 @@ namespace AngularJsCore.Migrations
 
             migrationBuilder.DropTable(
                 name: "warehouses");
+
+            migrationBuilder.DropTable(
+                name: "categories");
 
             migrationBuilder.DropTable(
                 name: "customers");

@@ -44,6 +44,7 @@ namespace AngularJsCore.Data
         public DbSet<OrderLines> OrderLines { get; set; }
         public DbSet<Warehouse> warehouses { get; set; }
         public DbSet<Project> projects { get; set; }
+        public DbSet<Category> categories { get; set; }
 
     }
 }

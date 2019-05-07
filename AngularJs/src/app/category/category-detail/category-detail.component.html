@@ -1,0 +1,16 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="CategoryId" [value]="service.formData.CategoryId">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+            <i class="fas fa-align-right" [class.green-icon]="CategoryName.valid" [class.red-icon]="CategoryName.invalid"></i>
+        </div>
+      </div>
+      <input name="CategoryName" #CategoryName="ngModel" [(ngModel)]="service.formData.CategoryName" class="form-control" placeholder="CategoryName" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i>Submit</button>
+  </div>
+</form>
