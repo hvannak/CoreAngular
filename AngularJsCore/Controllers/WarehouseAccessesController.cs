@@ -32,65 +32,17 @@ namespace AngularJsCore.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetWarehouseAccess([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
+            var userWarehouseAccess = await _context.WarehouseAccess.Include(x => x.ApplicationUser).Where(x=>x.WarehouseId==id).Select(x => new
             {
-                return BadRequest(ModelState);
-            }
-
-            var warehouseAccess = await _context.WarehouseAccess.FindAsync(id);
-
-            if (warehouseAccess == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(warehouseAccess);
-        }
-
-        // PUT: api/WarehouseAccesses/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutWarehouseAccess([FromRoute] int id, [FromBody] WarehouseAccess warehouseAccess)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != warehouseAccess.WarehouseAccessId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(warehouseAccess).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!WarehouseAccessExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+                x.ApplicationUser.UserName
+            }).ToListAsync();
+            return Ok(userWarehouseAccess);
         }
 
         // POST: api/WarehouseAccesses
         [HttpPost]
         public async Task<IActionResult> PostWarehouseAccess([FromBody] WarehouseAccess warehouseAccess)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             _context.WarehouseAccess.Add(warehouseAccess);
             await _context.SaveChangesAsync();
 
@@ -98,23 +50,12 @@ namespace AngularJsCore.Controllers
         }
 
         // DELETE: api/WarehouseAccesses/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteWarehouseAccess([FromRoute] int id)
+        [HttpDelete("{id}/{warehouseId}")]
+        public async Task<IActionResult> DeleteWarehouseAccess([FromRoute] string id,int warehouseId)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var warehouseAccess = await _context.WarehouseAccess.FindAsync(id);
-            if (warehouseAccess == null)
-            {
-                return NotFound();
-            }
-
+            var warehouseAccess = await _context.WarehouseAccess.Where(x => x.UserId == id && x.WarehouseId == warehouseId).FirstOrDefaultAsync();
             _context.WarehouseAccess.Remove(warehouseAccess);
             await _context.SaveChangesAsync();
-
             return Ok(warehouseAccess);
         }
 

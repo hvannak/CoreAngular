@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class WarehouseaccessService {
+  userAdded=[];
   constructor(private fb:FormBuilder,private http:HttpClient) { }
 
   formModel = this.fb.group({
@@ -19,19 +20,20 @@ export class WarehouseaccessService {
     return this.http.get(environment.apiURL + '/WarehouseAccesses').toPromise();
   }
 
-  getWarehouseaccessByID(id:string):any{
-    return this.http.get(environment.apiURL + '/WarehouseAccesses/'+id).toPromise();
+  getWarehouseaccessByID(deviceValue){
+    return this.http.get(environment.apiURL + '/WarehouseAccesses/'+ deviceValue).toPromise()
   }
 
-  onDelete(id:number){
-    return this.http.delete(environment.apiURL + '/WarehouseAccesses/'+id).toPromise();
+  onDelete(id:number,warhouseId:number){     
+    console.log(environment.apiURL + '/WarehouseAccesses/'+ id + "/" + warhouseId);
+    return this.http.delete(environment.apiURL + '/WarehouseAccesses/'+ id + "/" + warhouseId ).toPromise();   
   }
 
-  onAdd(id:number){
+  onAdd(item){
     var body = {
       WarehouseId: this.formModel.value.WarehouseId,
-      UserId: this.formModel.value.UserId
+      UserId: item.Id
     }
-    return this.http.post(environment.apiURL + '/WarehouseAccesses', body).toPromise();
+    return this.http.post(environment.apiURL + '/WarehouseAccesses', body);
   }
 }

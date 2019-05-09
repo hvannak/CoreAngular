@@ -45,4 +45,3 @@ E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.Ra
 E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.dll
 E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.pdb
 E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.pdb
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache

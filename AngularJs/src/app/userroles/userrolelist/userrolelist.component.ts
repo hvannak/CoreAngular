@@ -40,7 +40,7 @@ export class UserrolelistComponent implements OnInit {
     if (confirm('Are you sure to delete this record?')) {
       this.service.deleteUser(id).then(res => {
         this.refressList();
-        this.toastr.warning("Deleted Successfully", "Restaurent App.");
+        this.toastr.warning("Deleted Successfully", "User Roles.");
       });
     }
   }

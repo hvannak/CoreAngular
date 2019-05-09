@@ -4,16 +4,11 @@
   </div>
   <div class="form-group required">
     <label>Warehouse</label>
-    <select class="form-control" formControlName="WarehouseId">
+    <select class="form-control" formControlName="WarehouseId" (change)="onChange($event.target.value)" >
       <option value="0">-Select Warehouse-</option>
       <option *ngFor="let item of warehouseList" value="{{item.WarehouseId}}">{{item.WarehouseName}}</option>
     </select>
     <label class="text-danger" *ngIf="service.formModel.get('WarehouseId').touched && service.formModel.get('WarehouseId').errors?.required">This field is mandatory.</label>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-8 offset-md-2">
-      <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">Submit</button>
-    </div>
   </div>
 </form>
 <div class="row">
@@ -31,10 +26,9 @@
   </div>
   <div class="col-md-6">
     <table class="table table-hover">
-      <tr *ngFor="let item of service.rolesAdded">
-        <td>{{item}}</td>
+      <tr *ngFor="let item of userwarehouseChange">
+        <td>{{item.UserName}}</td>
       </tr>
     </table>
   </div>
-</div>
   
