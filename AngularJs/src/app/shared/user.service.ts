@@ -92,6 +92,10 @@ export class UserService {
     return this.http.get(environment.apiURL + '/Access').toPromise();
   }
 
+  getUsers(){
+    return this.http.get(environment.apiURL + "/ApplicationUser").toPromise();
+  }
+
   deleteUser(id:string){
     return this.http.delete(environment.apiURL + '/Access/' + id).toPromise();
   }

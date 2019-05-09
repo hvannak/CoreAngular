@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { WarehouseaccessService } from 'src/app/shared/warehouseaccess.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-warehouseacess-list',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarehouseacessListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service:WarehouseaccessService,private router: Router,
+    private toastr:ToastrService) { }
 
   ngOnInit() {
+    
   }
 
 }

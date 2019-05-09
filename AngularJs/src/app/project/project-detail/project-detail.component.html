@@ -18,7 +18,7 @@
             </div>
           </div>
           <select name="WarehouseId" #WarehouseId="ngModel" [(ngModel)]="service.formData.WarehouseId" class="form-control"
-          [class.is-invalid]="!isValid && service.formData.WarehouseId==0">
+          [class.is-invalid]="service.formData.WarehouseId==0">
             <option value="0">-Select Warehouse-</option>
             <option *ngFor="let item of warehouseList" value="{{item.WarehouseId}}">{{item.WarehouseName}}</option>
           </select>

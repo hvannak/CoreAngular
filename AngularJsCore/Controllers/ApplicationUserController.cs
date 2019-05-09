@@ -29,6 +29,18 @@ namespace AngularJsCore.Controllers
             _appSettings = appSettings.Value;
         }
 
+        // GET: api/ApplicationUser
+        [HttpGet]
+        public System.Object Get()
+        {
+            var result = _userManager.Users.Select(x => new
+            {
+                x.Id,
+                x.UserName
+            }).ToList();
+            return result;
+        }
+
         [HttpPost]
         [Route("Register")]
         //POST: api/ApplicationUser/Register
