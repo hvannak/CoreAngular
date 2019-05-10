@@ -58,6 +58,10 @@ import { UomComponent } from './uom/uom.component';
 import { UomDetailComponent } from './uom/uom-detail/uom-detail.component';
 import { UomListComponent } from './uom/uom-list/uom-list.component';
 import { UomService } from './shared/uom.service';
+import { ReceiptService } from './shared/receipt.service';
+import { ReceiptComponent } from './receipt/receipt.component';
+import { ReceiptHeaderComponent } from './receipt/receipt-header/receipt-header.component';
+import { ReceiptLineComponent } from './receipt/receipt-line/receipt-line.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +101,10 @@ import { UomService } from './shared/uom.service';
     WarehouseacessListComponent,
     UomComponent,
     UomDetailComponent,
-    UomListComponent
+    UomListComponent,
+    ReceiptComponent,
+    ReceiptHeaderComponent,
+    ReceiptLineComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +120,7 @@ import { UomService } from './shared/uom.service';
   entryComponents:[OrderItemsComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
-    UomService,RoleService,RoleCtlService,{
+    UomService,RoleService,RoleCtlService,ReceiptService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

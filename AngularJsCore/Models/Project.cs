@@ -20,5 +20,6 @@ namespace AngularJsCore.Models
         public string WarehouseName { get; set; }
         public string Status { get; set; }
         public Warehouse Warehouse { get; set; }
+        public virtual ICollection<ReceiptLine> ReceiptLines { get; set; }
     }
 }
