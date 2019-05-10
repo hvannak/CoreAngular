@@ -3,4 +3,5 @@ export class Inventory {
     InventoryDesr:string;
     Price:number;
     CategoryId:number;
+    UomId:number;
 }

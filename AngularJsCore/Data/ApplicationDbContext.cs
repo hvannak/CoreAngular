@@ -45,6 +45,7 @@ namespace AngularJsCore.Data
         public DbSet<Warehouse> warehouses { get; set; }
         public DbSet<Project> projects { get; set; }
         public DbSet<Category> categories { get; set; }
+        public DbSet<UnitOfMeasure> unitOfMeasures { get; set; }
         public DbSet<AngularJsCore.Models.WarehouseAccess> WarehouseAccess { get; set; }
 
     }

@@ -14,7 +14,7 @@
       <div class="input-group">
         <div class="input-group-prepend">
           <div class="input-group-text bg-white">
-              <i class="fas fas fa-tasks" [class.green-icon]="Price.valid" [class.red-icon]="Price.invalid"></i>
+              <i class="fas fa-dollar-sign" [class.green-icon]="Price.valid" [class.red-icon]="Price.invalid"></i>
           </div>
         </div>
         <input name="Price" #Price="ngModel" [(ngModel)]="service.formData.Price" class="form-control" placeholder="Price" required>
@@ -31,6 +31,20 @@
           [class.is-invalid]="service.formData.CategoryId==0">
             <option value="0">-Select Category-</option>
             <option *ngFor="let item of categoryList" value="{{item.CategoryId}}">{{item.CategoryName}}</option>
+          </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-align-right" [class.green-icon]="UomId.valid" [class.red-icon]="UomId.invalid"></i>
+            </div>
+          </div>
+          <select name="UomId" #UomId="ngModel" [(ngModel)]="service.formData.UomId" class="form-control"
+          [class.is-invalid]="service.formData.UomId==0">
+            <option value="0">-Select Uom-</option>
+            <option *ngFor="let item of uomList" value="{{item.UomId}}">{{item.UOM}}</option>
           </select>
         </div>
     </div>

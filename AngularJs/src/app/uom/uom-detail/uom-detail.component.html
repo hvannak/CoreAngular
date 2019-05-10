@@ -1,0 +1,16 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="UomId" [value]="service.formData.UomId">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fa-shopping-bag" [class.green-icon]="UOM.valid" [class.red-icon]="UOM.invalid"></i>
+          </div>
+        </div>
+        <input name="UOM" #UOM="ngModel" [(ngModel)]="service.formData.UOM" class="form-control" placeholder="UOM" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i>Submit</button>
+    </div>
+  </form>

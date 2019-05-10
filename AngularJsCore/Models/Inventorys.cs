@@ -17,7 +17,9 @@ namespace AngularJsCore.Models
         [DataType("decimal(18,4)")]
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
+        public int UomId { get; set; }
         public Category Category { get; set; }
+        public UnitOfMeasure UnitOfMeasure { get; set; }
         public virtual ICollection<OrderLines> OrderLines { get; set; }
     }
 }

@@ -17,6 +17,7 @@ import { ProjectComponent } from './project/project.component';
 import { CategoryComponent } from './category/category.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { WarehouseaccessComponent } from './warehouseaccess/warehouseaccess.component';
+import { UomComponent } from './uom/uom.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:'project',component:ProjectComponent,canActivate:[AuthGuard]},
   {path:'category',component:CategoryComponent,canActivate:[AuthGuard]},
   {path:'inventory',component:InventoryComponent,canActivate:[AuthGuard]},
+  {path:'uom',component:UomComponent,canActivate:[AuthGuard]},
   {path:'error/403',component:ForbiddenComponent},
   {path:'paymentcard',component:PaymentDetailsComponent,canActivate:[AuthGuard]},
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},

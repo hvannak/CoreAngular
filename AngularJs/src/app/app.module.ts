@@ -54,6 +54,10 @@ import { WarehouseaccessComponent } from './warehouseaccess/warehouseaccess.comp
 import { WarehouseacessDetailComponent } from './warehouseaccess/warehouseacess-detail/warehouseacess-detail.component';
 import { WarehouseacessListComponent } from './warehouseaccess/warehouseacess-list/warehouseacess-list.component';
 import { WarehouseaccessService } from './shared/warehouseaccess.service';
+import { UomComponent } from './uom/uom.component';
+import { UomDetailComponent } from './uom/uom-detail/uom-detail.component';
+import { UomListComponent } from './uom/uom-list/uom-list.component';
+import { UomService } from './shared/uom.service';
 
 @NgModule({
   declarations: [
@@ -90,7 +94,10 @@ import { WarehouseaccessService } from './shared/warehouseaccess.service';
     InventoryListComponent,
     WarehouseaccessComponent,
     WarehouseacessDetailComponent,
-    WarehouseacessListComponent
+    WarehouseacessListComponent,
+    UomComponent,
+    UomDetailComponent,
+    UomListComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +113,7 @@ import { WarehouseaccessService } from './shared/warehouseaccess.service';
   entryComponents:[OrderItemsComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
-    RoleService,RoleCtlService,{
+    UomService,RoleService,RoleCtlService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

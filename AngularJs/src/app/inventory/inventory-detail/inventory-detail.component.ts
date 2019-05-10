@@ -3,6 +3,8 @@ import { InventoryService } from 'src/app/shared/inventory.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { CategoryService } from 'src/app/shared/category.service';
+import { UomService } from 'src/app/shared/uom.service';
+import { Uom } from 'src/app/shared/uom';
 
 @Component({
   selector: 'app-inventory-detail',
@@ -12,12 +14,14 @@ import { CategoryService } from 'src/app/shared/category.service';
 export class InventoryDetailComponent implements OnInit {
 
   categoryList;
+  uomList:Uom[];
   constructor(public service:InventoryService,private categoryService:CategoryService,
-    private toastr:ToastrService) { }
+    private toastr:ToastrService,private uomService:UomService) { }
 
   ngOnInit() {
     this.resetForm();
     this.getCategory();
+    this.getUom();
   }
 
   resetForm(form?:NgForm){
@@ -27,11 +31,16 @@ export class InventoryDetailComponent implements OnInit {
       InventoryId:0,
       InventoryDesr:'',
       Price:0,
-      CategoryId:0
+      CategoryId:0,
+      UomId:0
     }
   }
   getCategory(){
     this.categoryService.getCategory().then(res => this.categoryList = res);
+  }
+
+  getUom(){
+    this.uomService.getUom().then(res => this.uomList = res as Uom[]);
   }
 
   onSubmit(form:NgForm){
