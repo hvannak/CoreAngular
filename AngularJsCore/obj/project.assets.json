@@ -12546,11 +12546,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Mr. VANNAK\\CoreAngular\\AngularJsCore\\AngularJsCore.csproj",
+      "projectUniqueName": "C:\\Users\\Vannak Heng\\Documents\\GitHub\\CoreAngular\\AngularJsCore\\AngularJsCore.csproj",
       "projectName": "AngularJsCore",
-      "projectPath": "E:\\Mr. VANNAK\\CoreAngular\\AngularJsCore\\AngularJsCore.csproj",
+      "projectPath": "C:\\Users\\Vannak Heng\\Documents\\GitHub\\CoreAngular\\AngularJsCore\\AngularJsCore.csproj",
       "packagesPath": "C:\\Users\\Vannak Heng\\.nuget\\packages\\",
-      "outputPath": "E:\\Mr. VANNAK\\CoreAngular\\AngularJsCore\\obj\\",
+      "outputPath": "C:\\Users\\Vannak Heng\\Documents\\GitHub\\CoreAngular\\AngularJsCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

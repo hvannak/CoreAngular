@@ -46,3 +46,17 @@ E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.dl
 E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.pdb
 E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.pdb
 E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.deps.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.runtimeconfig.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.runtimeconfig.dev.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.dll
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.pdb
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csproj.CoreCompileInputs.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cs
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfoInputs.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfo.cs
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorTargetAssemblyInfo.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.dll
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.pdb
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache

@@ -62,6 +62,7 @@ import { ReceiptService } from './shared/receipt.service';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { ReceiptHeaderComponent } from './receipt/receipt-header/receipt-header.component';
 import { ReceiptLineComponent } from './receipt/receipt-line/receipt-line.component';
+import { InsitestatusService } from './shared/insitestatus.service';
 
 @NgModule({
   declarations: [
@@ -117,10 +118,10 @@ import { ReceiptLineComponent } from './receipt/receipt-line/receipt-line.compon
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  entryComponents:[OrderItemsComponent],
+  entryComponents:[OrderItemsComponent,ReceiptLineComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
-    UomService,RoleService,RoleCtlService,ReceiptService,{
+    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

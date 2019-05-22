@@ -1,3 +1,56 @@
-<p>
-  receipt-line works!
-</p>
+<h4 class="dispaly-4">Receipt Line Details</h4>
+<hr>
+<div class="container">
+  <div class="col-md-12">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-12">
+              <form [formGroup]="service.formReceiptLine" autocomplete="off" (submit)="onSubmit()">
+                <input hidden class="form-control" formControlName="ReceiptLineId">
+                <input hidden class="form-control" formControlName="ReceiptId">
+                <div class="form-group">
+                    <label>Project</label>
+                    <select class="form-control" formControlName="ProjectId"   (change)="onChangeProject($event)">
+                      <option value="0" >-Select Project-</option>
+                      <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Warehouse</label>
+                    <select class="form-control" formControlName="WarehouseId" (change)="onChangeWarehouse($event)">
+                      <option value="0">-Select Warehouse-</option>
+                      <option *ngFor="let item of warehouseList" value="{{item.WarehouseId}}">{{item.WarehouseName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Inventory</label>
+                    <select class="form-control" formControlName="InventoryId" (change)="onChangeInventory($event)">
+                      <option value="0">-Select Inventory-</option>
+                      <option *ngFor="let item of inventoryList" value="{{item.InventoryId}}">{{item.InventoryDesr}}</option>
+                    </select>
+                </div>
+                <div class="form-group required">
+                  <label>Qty</label>
+                  <input class="form-control" formControlName="Qty" (change)="updatePrice($event.target.value,1)">
+                  <label class="text-danger" *ngIf="service.formReceiptLine.get('Qty').touched && service.formReceiptLine.get('Qty').errors?.required">This field is mandatory.</label>
+                </div>
+                <div class="form-group required">
+                  <label>Unit Cost</label>
+                  <input class="form-control" formControlName="UnitCost" (change)="updatePrice($event.target.value,2)">
+                  <label class="text-danger" *ngIf="service.formReceiptLine.get('UnitCost').touched && service.formReceiptLine.get('UnitCost').errors?.required">This field is mandatory.</label>
+                </div>
+                <div class="form-group required">
+                    <label>Ext.Cost</label>
+                    <input class="form-control" formControlName="ExtCost" readonly>
+                    <label class="text-danger" *ngIf="service.formReceiptLine.get('ExtCost').touched && service.formReceiptLine.get('ExtCost').errors?.required">This field is mandatory.</label>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Submit</button>
+                  <button type="button" class="btn btn-outline-dark ml-1" [mat-dialog-close]><i class="fa fa-close"></i> Close</button>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

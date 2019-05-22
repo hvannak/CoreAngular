@@ -101,7 +101,7 @@ export class OrderComponent implements OnInit {
     if (this.validateForm()) {
       this.service.postOrders().subscribe(res => {
         this.resetForm();
-        this.toastr.success('Submitted Successfully', 'Restaurent App.');
+        this.toastr.success('Submitted Successfully', 'Order Register.');
         this.router.navigate(['/orders']);
       })
     }
@@ -111,7 +111,7 @@ export class OrderComponent implements OnInit {
     if (this.validateForm()) {
       this.service.putOrders().subscribe(res => {
         this.resetForm();
-        this.toastr.success('Submitted Successfully', 'Restaurent App.');
+        this.toastr.success('Submitted Successfully', 'Order Register.');
         this.router.navigate(['/orders']);
       })
     }

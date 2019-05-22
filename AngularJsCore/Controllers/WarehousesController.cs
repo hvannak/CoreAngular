@@ -47,6 +47,19 @@ namespace AngularJsCore.Controllers
             return Ok(warehouse);
         }
 
+        // GET: api/Warehouses/5
+        [HttpGet("ProjectId/{id}")]
+        public async Task<IActionResult> GetWarehouseByProjectId(int id)
+        {
+            var project = await _context.projects.Include(x => x.Warehouse).Where(x => x.ProjectId == id).Select(x=>new
+            {
+                x.Warehouse.WarehouseId,
+                x.Warehouse.WarehouseName
+            }).ToListAsync();
+            return Ok(project);
+        }
+
+
         // PUT: api/Warehouses/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutWarehouse([FromRoute] int id, [FromBody] Warehouse warehouse)

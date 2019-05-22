@@ -19,6 +19,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { WarehouseaccessComponent } from './warehouseaccess/warehouseaccess.component';
 import { UomComponent } from './uom/uom.component';
 import { ReceiptComponent } from './receipt/receipt.component';
+import { ReceiptHeaderComponent } from './receipt/receipt-header/receipt-header.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -38,9 +39,10 @@ const routes: Routes = [
     {path:'',component:OrderComponent},
     {path:'edit/:id',component:OrderComponent,canActivate:[AuthGuard]}
   ]},
-  {path:'receipt',children:[
-    {path:'',component:ReceiptComponent},
-    {path:'edit/:id',component:ReceiptComponent,canActivate:[AuthGuard]}
+  {path:'receipt',component:ReceiptComponent,canActivate:[AuthGuard]},
+  {path:'receiptheader',children:[
+    {path:'',component:ReceiptHeaderComponent},
+    {path:'edit/:id',component:ReceiptHeaderComponent,canActivate:[AuthGuard]}
   ]},
   {path:'home',component:HomeComponent,canActivate:[AuthGuard]},
   {path:'roles',component:RolesComponent},

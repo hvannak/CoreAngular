@@ -22,13 +22,14 @@ using Microsoft.IdentityModel.Tokens;
 using AngularJsCore.Services;
 using AngularJsCore.Filters;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using System.Web.Http;
 
 namespace AngularJsCore
 {
     public class Startup
     {
         public Startup(IConfiguration configuration)
-        {
+        {        
             Configuration = configuration;
         }
 
@@ -123,7 +124,7 @@ namespace AngularJsCore
                 }
             });
             app.UseHttpsRedirection();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvcWithDefaultRoute();           
             app.UseDefaultFiles();
             app.UseStaticFiles();
 

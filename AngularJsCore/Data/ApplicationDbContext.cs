@@ -49,6 +49,7 @@ namespace AngularJsCore.Data
         public DbSet<WarehouseAccess> WarehouseAccess { get; set; }
         public DbSet<Receipt> receipts  { get; set; }
         public DbSet<ReceiptLine> receiptLines { get; set; }
+        public DbSet<INSiteStatus> iNSiteStatuses { get; set; }
 
     }
 }

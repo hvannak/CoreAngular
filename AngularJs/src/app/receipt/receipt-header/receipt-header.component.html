@@ -1,3 +1,93 @@
-<p>
-  receipt-header works!
-</p>
+<app-menus></app-menus>
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Inventory Register</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="service.formReceipt" autocomplete="off" (submit)="onSubmit()">
+        <input type="hidden" name="ReceiptId" [value]="service.formReceipt.ReceiptId">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+                <label>Tran.Type</label>
+                <select class="form-control" formControlName="TranType" required>
+                  <option value="Receipt" >Receipt</option>
+                  <option value="Issue" >Issue</option>
+                  <option value="Adjust" >Adjust</option>
+                </select>
+            </div>
+            <div class="form-group required">
+                <label>ReceiptNbr</label>
+                <input class="form-control" formControlName="ReceiptNbr" placeholder="NEW" readonly> 
+                <label class="text-danger" *ngIf="service.formReceipt.get('ReceiptNbr').touched && service.formReceipt.get('ReceiptNbr').errors?.required">This field is mandatory.</label>
+              </div>
+              <div class="form-group required">
+                <label>Description</label>
+                <input class="form-control" formControlName="Description">
+                <label class="text-danger" *ngIf="service.formReceipt.get('Description').touched && service.formReceipt.get('Description').errors?.required">This field is mandatory.</label>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group required">
+              <label>TotalQty</label>
+              <input class="form-control" formControlName="TotalQty" readonly>
+              <label class="text-danger" *ngIf="service.formReceipt.get('TotalQty').touched && service.formReceipt.get('TotalQty').errors?.required">This field is mandatory.</label>
+            </div>
+            <div class="form-group required">
+              <label>TotalCost</label>
+              <input class="form-control" formControlName="TotalCost" readonly>
+              <label class="text-danger" *ngIf="service.formReceipt.get('TotalCost').touched && service.formReceipt.get('TotalCost').errors?.required">This field is mandatory.</label>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                  <input class="form-control" formControlName="ReceiptDate" matInput [matDatepicker]="myDatepicker1" placeholder="Choose date">
+                  <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
+                  <mat-datepicker #myDatepicker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+          </div>
+        </div> 
+        
+        <!--Receipt line table-->
+        <table class="table table-borderless">
+            <thead class="thead-light">
+              <th>ProjectId</th>
+              <th>WarehouseId</th>
+              <th>InventoryId</th>
+              <th>Qty</th>
+              <th>UnitCost</th>
+              <th>ExtCost</th>
+              <th>
+                <a class="btn btn-sm btn-success text-white" (click)="AddOrEditReceiptLine(null,service.formReceipt.ReceiptId)"><i class="fa fa-plus"></i> Add Item</a>
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngIf="service.receiptLine.length==0" [class.text-danger]="!isValid && service.receiptLine.length==0">
+                <td class="font-italic text-center" colspan="5">
+                  No receipt line selected for this receipt.
+                </td>
+              </tr>
+  
+              <tr *ngFor="let item of service.receiptLine;let i=index;">
+                <td>{{item.ProjectName}}</td>
+                <td>{{item.WarehouseName}}</td>
+                <td>{{item.InventoryDesr}}</td>
+                <td>{{item.Qty}}</td>
+                <td>{{item.UnitCost}}</td>
+                <td>{{item.ExtCost}}</td>
+                <td>
+                  <a class="btn btn-sm btn-info text-white" (click)="AddOrEditReceiptLine(i,service.formReceipt.ReceiptId)"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-sm btn-danger text-white ml-1" (click)="onDeleteReceiptLine(item.ReceiptLineId,i)"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-dark" [disabled]="!service.formReceipt.valid"><i class="fa fa-database"></i> Submit</button>
+          <a class="btn btn-outline-dark ml-1" routerLink="/receipt"><i class="fa fa-table"></i> View Inventory Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

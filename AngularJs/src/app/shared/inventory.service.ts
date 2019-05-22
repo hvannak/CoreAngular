@@ -30,4 +30,7 @@ export class InventoryService {
         .then(res => this.list = res as Inventory[])
   }
   
+  getInventory(){
+    return this.http.get(environment.apiURL + "/Inventorys").toPromise();
+  }
 }

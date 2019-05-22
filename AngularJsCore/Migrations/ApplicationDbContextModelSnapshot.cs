@@ -127,6 +127,51 @@ namespace AngularJsCore.Migrations
                     b.ToTable("customers");
                 });
 
+            modelBuilder.Entity("AngularJsCore.Models.INSiteStatus", b =>
+                {
+                    b.Property<int>("InSiteId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("AdjustCost");
+
+                    b.Property<string>("InventoryDesc");
+
+                    b.Property<int>("InventoryId");
+
+                    b.Property<decimal>("IssueCost");
+
+                    b.Property<decimal>("LastCost");
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<string>("ProjectName");
+
+                    b.Property<decimal>("QtyAdjust");
+
+                    b.Property<decimal>("QtyBegin");
+
+                    b.Property<decimal>("QtyIssue");
+
+                    b.Property<decimal>("QtyOnHand");
+
+                    b.Property<decimal>("QtyReceipt");
+
+                    b.Property<decimal>("QtySaleByKg");
+
+                    b.Property<decimal>("QtySaleByUnit");
+
+                    b.Property<decimal>("ReceiptCost");
+
+                    b.Property<int>("WarehouseId");
+
+                    b.Property<string>("WarehouseName");
+
+                    b.HasKey("InSiteId");
+
+                    b.ToTable("iNSiteStatuses");
+                });
+
             modelBuilder.Entity("AngularJsCore.Models.Inventorys", b =>
                 {
                     b.Property<int>("InventoryId")
@@ -258,19 +303,25 @@ namespace AngularJsCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CreateBy");
-
                     b.Property<DateTime>("CreateDate");
 
                     b.Property<string>("Description");
 
                     b.Property<DateTime>("ReceiptDate");
 
-                    b.Property<int>("ReceiptNbr");
+                    b.Property<string>("ReceiptNbr");
+
+                    b.Property<int>("Release");
+
+                    b.Property<decimal>("TotalCost");
+
+                    b.Property<decimal>("TotalQty");
+
+                    b.Property<string>("TranType");
 
                     b.HasKey("ReceiptId");
 
-                    b.ToTable("Receipt");
+                    b.ToTable("receipts");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.ReceiptLine", b =>
@@ -279,13 +330,17 @@ namespace AngularJsCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CreateBy");
-
                     b.Property<DateTime>("CreateDate");
 
                     b.Property<decimal>("ExtCost");
 
+                    b.Property<string>("InventoryDesr");
+
+                    b.Property<int>("InventoryId");
+
                     b.Property<int>("ProjectId");
+
+                    b.Property<string>("ProjectName");
 
                     b.Property<decimal>("Qty");
 
@@ -295,9 +350,9 @@ namespace AngularJsCore.Migrations
 
                     b.Property<decimal>("UnitCost");
 
-                    b.Property<int>("UomId");
-
                     b.Property<int>("WarehouseId");
+
+                    b.Property<string>("WarehouseName");
 
                     b.HasKey("ReceiptLineId");
 
@@ -305,7 +360,7 @@ namespace AngularJsCore.Migrations
 
                     b.HasIndex("ReceiptId");
 
-                    b.ToTable("ReceiptLine");
+                    b.ToTable("receiptLines");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.UnitOfMeasure", b =>

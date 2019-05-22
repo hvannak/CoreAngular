@@ -31,7 +31,7 @@ export class OrdersComponent implements OnInit {
     if (confirm('Are you sure to delete this record?')) {
       this.service.deleteOrder(id).then(res => {
         this.refreshList();
-        this.toastr.warning("Deleted Successfully", "Restaurent App.");
+        this.toastr.warning("Deleted Successfully", "Order Register.");
       });
     }
   }

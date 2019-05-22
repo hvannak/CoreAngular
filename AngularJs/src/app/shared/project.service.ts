@@ -28,4 +28,8 @@ export class ProjectService {
         .toPromise()
         .then(res => this.list = res as Project[])
   }
+  getActiveProject(){
+   return this.http.get(environment.apiURL + "/Projects")
+        .toPromise();
+  }
 }
