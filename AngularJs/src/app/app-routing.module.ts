@@ -20,6 +20,7 @@ import { WarehouseaccessComponent } from './warehouseaccess/warehouseaccess.comp
 import { UomComponent } from './uom/uom.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { ReceiptHeaderComponent } from './receipt/receipt-header/receipt-header.component';
+import { StandardComponent } from './standard/standard.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'category',component:CategoryComponent,canActivate:[AuthGuard]},
   {path:'inventory',component:InventoryComponent,canActivate:[AuthGuard]},
   {path:'uom',component:UomComponent,canActivate:[AuthGuard]},
+  {path:'standard',component:StandardComponent,canActivate:[AuthGuard]},
   {path:'error/403',component:ForbiddenComponent},
   {path:'paymentcard',component:PaymentDetailsComponent,canActivate:[AuthGuard]},
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},

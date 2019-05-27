@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularJsCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190517084107_removecreatebyinreceipt")]
-    partial class removecreatebyinreceipt
+    [Migration("20190527083710_againanimalgrow")]
+    partial class againanimalgrow
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -127,6 +127,82 @@ namespace AngularJsCore.Migrations
                     b.HasKey("CustomerId");
 
                     b.ToTable("customers");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.DailyAnimalGrow", b =>
+                {
+                    b.Property<int>("DailyGrowId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateGrow");
+
+                    b.Property<string>("InventoryDesc");
+
+                    b.Property<int>("InventoryId");
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<string>("ProjectName");
+
+                    b.Property<int>("WarehouseId");
+
+                    b.Property<string>("WarehouseName");
+
+                    b.Property<decimal>("Weight");
+
+                    b.HasKey("DailyGrowId");
+
+                    b.HasIndex("InventoryId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("dailyAnimalGrow");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.INSiteStatus", b =>
+                {
+                    b.Property<int>("InSiteId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("AdjustCost");
+
+                    b.Property<string>("InventoryDesc");
+
+                    b.Property<int>("InventoryId");
+
+                    b.Property<decimal>("IssueCost");
+
+                    b.Property<decimal>("LastCost");
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<string>("ProjectName");
+
+                    b.Property<decimal>("QtyAdjust");
+
+                    b.Property<decimal>("QtyBegin");
+
+                    b.Property<decimal>("QtyIssue");
+
+                    b.Property<decimal>("QtyOnHand");
+
+                    b.Property<decimal>("QtyReceipt");
+
+                    b.Property<decimal>("QtySaleByKg");
+
+                    b.Property<decimal>("QtySaleByUnit");
+
+                    b.Property<decimal>("ReceiptCost");
+
+                    b.Property<int>("WarehouseId");
+
+                    b.Property<string>("WarehouseName");
+
+                    b.HasKey("InSiteId");
+
+                    b.ToTable("iNSiteStatuses");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.Inventorys", b =>
@@ -268,9 +344,13 @@ namespace AngularJsCore.Migrations
 
                     b.Property<string>("ReceiptNbr");
 
+                    b.Property<int>("Release");
+
                     b.Property<decimal>("TotalCost");
 
                     b.Property<decimal>("TotalQty");
+
+                    b.Property<string>("TranType");
 
                     b.HasKey("ReceiptId");
 
@@ -314,6 +394,29 @@ namespace AngularJsCore.Migrations
                     b.HasIndex("ReceiptId");
 
                     b.ToTable("receiptLines");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.Standard", b =>
+                {
+                    b.Property<int>("StandardKey")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("NumberOfDay");
+
+                    b.Property<decimal>("ResultOfDay");
+
+                    b.Property<string>("StandardName");
+
+                    b.Property<string>("UOM");
+
+                    b.Property<int>("UomId");
+
+                    b.HasKey("StandardKey");
+
+                    b.HasIndex("UomId");
+
+                    b.ToTable("standards");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.UnitOfMeasure", b =>
@@ -447,6 +550,19 @@ namespace AngularJsCore.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("AngularJsCore.Models.DailyAnimalGrow", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.Inventorys", "Inventorys")
+                        .WithMany("DailyAnimalGrows")
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("AngularJsCore.Models.Project", "Project")
+                        .WithMany("DailyAnimalGrows")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("AngularJsCore.Models.Inventorys", b =>
                 {
                     b.HasOne("AngularJsCore.Models.Category", "Category")
@@ -457,7 +573,7 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.UnitOfMeasure", "UnitOfMeasure")
                         .WithMany("Inventorys")
                         .HasForeignKey("UomId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.OrderLines", b =>
@@ -494,12 +610,20 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Project", "Project")
                         .WithMany("ReceiptLines")
                         .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("AngularJsCore.Models.Receipt", "Receipt")
                         .WithMany("ReceiptLines")
                         .HasForeignKey("ReceiptId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.Standard", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.UnitOfMeasure", "UnitOfMeasure")
+                        .WithMany("Standards")
+                        .HasForeignKey("UomId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.WarehouseAccess", b =>

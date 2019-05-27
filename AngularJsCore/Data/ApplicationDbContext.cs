@@ -20,6 +20,12 @@ namespace AngularJsCore.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new WarehouseAccessConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderLineConfiguration());
+            modelBuilder.ApplyConfiguration(new ProjectConfiguration());
+            modelBuilder.ApplyConfiguration(new ReceiptLineConfiguration());
+            modelBuilder.ApplyConfiguration(new UomConfiguration());
+            modelBuilder.ApplyConfiguration(new DailyAnimalGrowConfiguration());
 
             //modelBuilder.Entity<ApplicationUser>().HasData(
             //            new ApplicationUser
@@ -50,6 +56,8 @@ namespace AngularJsCore.Data
         public DbSet<Receipt> receipts  { get; set; }
         public DbSet<ReceiptLine> receiptLines { get; set; }
         public DbSet<INSiteStatus> iNSiteStatuses { get; set; }
+        public DbSet<Standard> standards { get; set; }
+        public DbSet<DailyAnimalGrow> dailyAnimalGrow { get; set; }
 
     }
 }

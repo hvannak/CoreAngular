@@ -63,6 +63,10 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { ReceiptHeaderComponent } from './receipt/receipt-header/receipt-header.component';
 import { ReceiptLineComponent } from './receipt/receipt-line/receipt-line.component';
 import { InsitestatusService } from './shared/insitestatus.service';
+import { StandardComponent } from './standard/standard.component';
+import { StandardDetailComponent } from './standard/standard-detail/standard-detail.component';
+import { StandardListComponent } from './standard/standard-list/standard-list.component';
+import { StandardService } from './shared/standard.service';
 
 @NgModule({
   declarations: [
@@ -105,7 +109,10 @@ import { InsitestatusService } from './shared/insitestatus.service';
     UomListComponent,
     ReceiptComponent,
     ReceiptHeaderComponent,
-    ReceiptLineComponent
+    ReceiptLineComponent,
+    StandardComponent,
+    StandardDetailComponent,
+    StandardListComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +128,7 @@ import { InsitestatusService } from './shared/insitestatus.service';
   entryComponents:[OrderItemsComponent,ReceiptLineComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
-    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,{
+    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

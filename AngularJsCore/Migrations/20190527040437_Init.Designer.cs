@@ -10,14 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularJsCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190507044340_Init")]
+    [Migration("20190527040437_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -129,6 +129,51 @@ namespace AngularJsCore.Migrations
                     b.ToTable("customers");
                 });
 
+            modelBuilder.Entity("AngularJsCore.Models.INSiteStatus", b =>
+                {
+                    b.Property<int>("InSiteId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("AdjustCost");
+
+                    b.Property<string>("InventoryDesc");
+
+                    b.Property<int>("InventoryId");
+
+                    b.Property<decimal>("IssueCost");
+
+                    b.Property<decimal>("LastCost");
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<string>("ProjectName");
+
+                    b.Property<decimal>("QtyAdjust");
+
+                    b.Property<decimal>("QtyBegin");
+
+                    b.Property<decimal>("QtyIssue");
+
+                    b.Property<decimal>("QtyOnHand");
+
+                    b.Property<decimal>("QtyReceipt");
+
+                    b.Property<decimal>("QtySaleByKg");
+
+                    b.Property<decimal>("QtySaleByUnit");
+
+                    b.Property<decimal>("ReceiptCost");
+
+                    b.Property<int>("WarehouseId");
+
+                    b.Property<string>("WarehouseName");
+
+                    b.HasKey("InSiteId");
+
+                    b.ToTable("iNSiteStatuses");
+                });
+
             modelBuilder.Entity("AngularJsCore.Models.Inventorys", b =>
                 {
                     b.Property<int>("InventoryId")
@@ -143,9 +188,13 @@ namespace AngularJsCore.Migrations
 
                     b.Property<decimal>("Price");
 
+                    b.Property<int>("UomId");
+
                     b.HasKey("InventoryId");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("UomId");
 
                     b.ToTable("Inventorys");
                 });
@@ -248,6 +297,108 @@ namespace AngularJsCore.Migrations
                     b.HasIndex("WarehouseId");
 
                     b.ToTable("projects");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.Receipt", b =>
+                {
+                    b.Property<int>("ReceiptId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreateDate");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("ReceiptDate");
+
+                    b.Property<string>("ReceiptNbr");
+
+                    b.Property<int>("Release");
+
+                    b.Property<decimal>("TotalCost");
+
+                    b.Property<decimal>("TotalQty");
+
+                    b.Property<string>("TranType");
+
+                    b.HasKey("ReceiptId");
+
+                    b.ToTable("receipts");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.ReceiptLine", b =>
+                {
+                    b.Property<int>("ReceiptLineId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreateDate");
+
+                    b.Property<decimal>("ExtCost");
+
+                    b.Property<string>("InventoryDesr");
+
+                    b.Property<int>("InventoryId");
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<string>("ProjectName");
+
+                    b.Property<decimal>("Qty");
+
+                    b.Property<int>("ReceiptId");
+
+                    b.Property<DateTime>("ReceiptLineDate");
+
+                    b.Property<decimal>("UnitCost");
+
+                    b.Property<int>("WarehouseId");
+
+                    b.Property<string>("WarehouseName");
+
+                    b.HasKey("ReceiptLineId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("ReceiptId");
+
+                    b.ToTable("receiptLines");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.Standard", b =>
+                {
+                    b.Property<int>("StandardKey")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("NumberOfDay");
+
+                    b.Property<decimal>("ResultOfDay");
+
+                    b.Property<string>("StandardName");
+
+                    b.Property<string>("UOM");
+
+                    b.Property<int>("UomId");
+
+                    b.HasKey("StandardKey");
+
+                    b.HasIndex("UomId");
+
+                    b.ToTable("standards");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.UnitOfMeasure", b =>
+                {
+                    b.Property<int>("UomId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("UOM");
+
+                    b.HasKey("UomId");
+
+                    b.ToTable("unitOfMeasures");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.Warehouse", b =>
@@ -374,6 +525,11 @@ namespace AngularJsCore.Migrations
                         .WithMany("Inventorys")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("AngularJsCore.Models.UnitOfMeasure", "UnitOfMeasure")
+                        .WithMany("Inventorys")
+                        .HasForeignKey("UomId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.OrderLines", b =>
@@ -403,6 +559,27 @@ namespace AngularJsCore.Migrations
                         .WithMany("Projects")
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.ReceiptLine", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.Project", "Project")
+                        .WithMany("ReceiptLines")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("AngularJsCore.Models.Receipt", "Receipt")
+                        .WithMany("ReceiptLines")
+                        .HasForeignKey("ReceiptId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.Standard", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.UnitOfMeasure", "UnitOfMeasure")
+                        .WithMany("Standards")
+                        .HasForeignKey("UomId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.WarehouseAccess", b =>

@@ -55,7 +55,7 @@ export class ProjectDetailComponent implements OnInit {
   insertRecord(form:NgForm){
     this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
     this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
-    console.log(this.service.formData.EndDate.toLocaleString());
+    // console.log(this.service.formData.EndDate.toLocaleString());
     this.service.postProjectsDetail().subscribe(
       res=>{
         this.resetForm(form);

@@ -1,0 +1,40 @@
+  <div class="row">
+    <div class="col-md-12 mat-elevation-z8">  
+      <div class="row">
+        <div class="col-md-4">
+            <mat-form-field>
+              <input matInput (keyup)="service.applyFilter($event.target.value)" placeholder="Filter">
+            </mat-form-field>
+        </div>         
+      </div>  
+      <table class="table table-hover" mat-table [dataSource]="service.list" matSort>
+        <ng-container matColumnDef="StandardName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Standard Name </th>
+          <td mat-cell *matCellDef="let element" (click)="populateForm(element)"> {{element.StandardName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="NumberOfDay">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Number Of Day </th>
+          <td mat-cell *matCellDef="let element" (click)="populateForm(element)"> {{element.NumberOfDay}} </td>
+        </ng-container>
+        <ng-container matColumnDef="ResultOfDay">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Result Of Day </th>
+          <td mat-cell *matCellDef="let element" (click)="populateForm(element)"> {{element.ResultOfDay}} </td>
+        </ng-container>
+        <ng-container matColumnDef="UOM">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> UOM </th>
+          <td mat-cell *matCellDef="let element" (click)="populateForm(element)"> {{element.UOM}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Delete">
+          <th mat-header-cell *matHeaderCellDef> 
+            
+          </th>
+          <td mat-cell *matCellDef="let element"> 
+              <i class="fa fa-trash-alt fa-lg text-danger" (click)="onDelete(element.StandardKey)"></i>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="service.displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: service.displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </div>

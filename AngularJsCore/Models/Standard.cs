@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace AngularJsCore.Models
 {
-    public class UnitOfMeasure
+    public class Standard
     {
         [Key]
+        public int StandardKey { get; set; }
+        public string StandardName { get; set; }
+        public int NumberOfDay { get; set; }
+        public decimal ResultOfDay { get; set; }
         public int UomId { get; set; }
         public string UOM { get; set; }
-        public virtual ICollection<Inventorys> Inventorys { get; set; }
-        public virtual ICollection<Standard> Standards { get; set; }
+        public UnitOfMeasure UnitOfMeasure { get; set; }
     }
 }

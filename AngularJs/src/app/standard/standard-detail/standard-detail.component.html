@@ -1,0 +1,54 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="CategoryId" [value]="service.formData.StandardKey">
+  <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fa-thermometer-three-quarters" [class.green-icon]="StandardName.valid" [class.red-icon]="StandardName.invalid"></i>
+          </div>
+        </div>
+        <select name="StandardName" #StandardName="ngModel" [(ngModel)]="service.formData.StandardName" class="form-control">
+          <option value="">-Select-</option>
+          <option value="FEED">FEED</option>
+          <option value="ANIMAL">ANIMAL</option>
+        </select>
+      </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+            <i class="fas fa-sort-numeric-up" [class.green-icon]="NumberOfDay.valid" [class.red-icon]="NumberOfDay.invalid"></i>
+        </div>
+      </div>
+      <input name="NumberOfDay" #NumberOfDay="ngModel" [(ngModel)]="service.formData.NumberOfDay" class="form-control" placeholder="NumberOfDay" required>
+    </div>
+  </div>
+  <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fa-poll" [class.green-icon]="ResultOfDay.valid" [class.red-icon]="ResultOfDay.invalid"></i>
+          </div>
+        </div>
+        <input name="ResultOfDay" #ResultOfDay="ngModel" [(ngModel)]="service.formData.ResultOfDay" class="form-control" placeholder="ResultOfDay" required>
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-align-right" [class.green-icon]="UomId.valid" [class.red-icon]="UomId.invalid"></i>
+            </div>
+          </div>
+          <select name="UomId" #UomId="ngModel" [(ngModel)]="service.formData.UomId" class="form-control"
+          [class.is-invalid]="service.formData.UomId==0">
+            <option value="0">-Select Uom-</option>
+            <option *ngFor="let item of uomList" value="{{item.UomId}}">{{item.UOM}}</option>
+          </select>
+        </div>
+    </div>
+  <div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i>Submit</button>
+  </div>
+</form>

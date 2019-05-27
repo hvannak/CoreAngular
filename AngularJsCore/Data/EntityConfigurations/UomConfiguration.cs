@@ -15,6 +15,9 @@ namespace AngularJsCore.Data.EntityConfigurations
             builder.HasMany(x => x.Inventorys)
                 .WithOne(x => x.UnitOfMeasure)
                 .HasForeignKey(x => x.UomId).OnDelete(DeleteBehavior.Restrict);
+            builder.HasMany(x => x.Standards)
+                .WithOne(x => x.UnitOfMeasure)
+                .HasForeignKey(x => x.UomId).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
