@@ -21,9 +21,11 @@ export class InventoryService {
   PutInventoryDetail(){
     return this.http.put(environment.apiURL + "/Inventorys/" + this.formData.InventoryId , this.formData)
   }
+
   DeleteInventoryDetail(id){
     return this.http.delete(environment.apiURL + "/Inventorys/" + id)
   }
+  
   refressList(){
     this.http.get(environment.apiURL + "/Inventorys")
         .toPromise()
@@ -33,4 +35,9 @@ export class InventoryService {
   getInventory(){
     return this.http.get(environment.apiURL + "/Inventorys").toPromise();
   }
+
+  getInventoryAnimal(){
+    return this.http.get(environment.apiURL + "/Inventorys/Category/ANIMAL").toPromise();
+  }
+
 }

@@ -10,10 +10,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 export class StandardService {
 
   formData:Standard;
-  displayedColumns: string[] = ['StandardName','NumberOfDay', 'ResultOfDay','UOM','Delete'];
   list:MatTableDataSource<Standard>;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
   constructor(private http:HttpClient) { }
 
   postStandardDetail(){
@@ -29,22 +26,11 @@ export class StandardService {
   }
 
   refressList(){
-    this.http.get(environment.apiURL + "/Standards").toPromise().then(res=> {
-      this.list = new MatTableDataSource(res as Array<Standard>);
-      this.list.paginator = this.paginator;
-      this.list.sort = this.sort;
-    });
+    return this.http.get(environment.apiURL + "/Standards").toPromise();
   }
 
   getStandard(){
     return this.http.get(environment.apiURL + "/Standards").toPromise();
   }
 
-  applyFilter(filterValue: string) {
-    this.list.filter = filterValue.trim().toLowerCase();
-  
-    if (this.list.paginator) {
-      this.list.paginator.firstPage();
-    }
-  }
 }

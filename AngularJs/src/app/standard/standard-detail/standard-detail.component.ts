@@ -3,6 +3,7 @@ import { StandardService } from 'src/app/shared/standard.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { UomService } from 'src/app/shared/uom.service';
+import { Standard } from 'src/app/shared/standard.model';
 
 @Component({
   selector: 'app-standard-detail',
@@ -50,9 +51,10 @@ export class StandardDetailComponent implements OnInit {
   insertRecord(form:NgForm){
     this.service.postStandardDetail().subscribe(
       res=>{
+        this.service.list.data.push(res as Standard);
+        this.service.list._updateChangeSubscription();
         this.resetForm(form);
         this.toastr.success("Submited successfully","Standard Detail Register");
-        this.service.refressList();
       },
       err=>{
         console.log(err);
@@ -62,9 +64,16 @@ export class StandardDetailComponent implements OnInit {
   updateRecord(form:NgForm){
     this.service.PutStandardDetail().subscribe(
       res=>{
+        let index = this.service.list.data.findIndex(x=>x.StandardKey == this.service.formData.StandardKey);
+        this.service.list.data[index].StandardKey = this.service.formData.StandardKey;
+        this.service.list.data[index].StandardName = this.service.formData.StandardName;
+        this.service.list.data[index].NumberOfDay = this.service.formData.NumberOfDay;
+        this.service.list.data[index].ResultOfDay = this.service.formData.ResultOfDay;
+        this.service.list.data[index].UOM = this.service.formData.UOM;
+        this.service.list.data[index].UomId = this.service.formData.UomId;
+        this.service.list._updateChangeSubscription();
         this.resetForm(form);
         this.toastr.info("Submited successfully","Standard Detail Register");
-        this.service.refressList();
       },
       err=>{
         console.log(err);

@@ -25,7 +25,7 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<DailyAnimalGrow> GetDailyAnimalGrow()
         {
-            return _context.dailyAnimalGrow;
+            return _context.dailyAnimalGrow.Take(300);
         }
 
         // GET: api/DailyAnimalGrows/5
@@ -47,6 +47,27 @@ namespace AngularJsCore.Controllers
             return Ok(dailyAnimalGrow);
         }
 
+        [HttpGet("viewwithstandard/{projectId}")]
+        public async Task<IActionResult> GetDailyGrowWithStandard(int projectId)
+        {
+            var result = await _context.dailyAnimalGrow.Join(_context.standards, x => x.NumberOfDay,
+                                                        y => y.NumberOfDay, (x, y) =>
+                                                           new AnimalGrowStandard
+                                                           {
+                                                               ProjectId = x.ProjectId,
+                                                               ProjectName = x.ProjectName,
+                                                               WarehouseName = x.WarehouseName,
+                                                               InventoryDesc = x.InventoryDesc,
+                                                               Weight = x.Weight,
+                                                               NumberOfDay = x.NumberOfDay,
+                                                               DateGrow = x.DateGrow,
+                                                               StandardName = y.StandardName,
+                                                               ResultOfDay = y.ResultOfDay,
+                                                               UOM = y.UOM
+                                                           }).Where(z => z.StandardName == "ANIMAL" && z.ProjectId == projectId).ToListAsync();
+            return Ok(result);
+        }
+
         // PUT: api/DailyAnimalGrows/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDailyAnimalGrow([FromRoute] int id, [FromBody] DailyAnimalGrow dailyAnimalGrow)
@@ -60,6 +81,10 @@ namespace AngularJsCore.Controllers
             {
                 return BadRequest();
             }
+            //Numberofday
+            var project = _context.projects.Find(dailyAnimalGrow.ProjectId);
+            int numberofday = Convert.ToInt32(dailyAnimalGrow.DateGrow.Subtract(project.StartDate).TotalDays);
+            dailyAnimalGrow.NumberOfDay = numberofday;
 
             _context.Entry(dailyAnimalGrow).State = EntityState.Modified;
 
@@ -86,15 +111,28 @@ namespace AngularJsCore.Controllers
         [HttpPost]
         public async Task<IActionResult> PostDailyAnimalGrow([FromBody] DailyAnimalGrow dailyAnimalGrow)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //Numberofday
+            DateTime projectstart = _context.projects.Find(dailyAnimalGrow.ProjectId).StartDate;
+            int numberofday = Convert.ToInt32(dailyAnimalGrow.DateGrow.Subtract(projectstart).TotalDays);
+            dailyAnimalGrow.NumberOfDay = numberofday;
 
             _context.dailyAnimalGrow.Add(dailyAnimalGrow);
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetDailyAnimalGrow", new { id = dailyAnimalGrow.DailyGrowId }, dailyAnimalGrow);
+            DailyAnimalGrow dailyAnimalGrowReturn = new DailyAnimalGrow()
+            {
+                DailyGrowId = dailyAnimalGrow.DailyGrowId,
+                WarehouseId = dailyAnimalGrow.WarehouseId,
+                ProjectId = dailyAnimalGrow.ProjectId,
+                WarehouseName = dailyAnimalGrow.WarehouseName,
+                ProjectName = dailyAnimalGrow.ProjectName,
+                Weight = dailyAnimalGrow.Weight,
+                DateGrow = dailyAnimalGrow.DateGrow,
+                NumberOfDay = dailyAnimalGrow.NumberOfDay,
+                InventoryId = dailyAnimalGrow.InventoryId,
+                InventoryDesc = dailyAnimalGrow.InventoryDesc
+                
+            };
+            return Ok(dailyAnimalGrowReturn);
         }
 
         // DELETE: api/DailyAnimalGrows/5

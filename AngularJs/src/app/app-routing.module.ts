@@ -21,6 +21,8 @@ import { UomComponent } from './uom/uom.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { ReceiptHeaderComponent } from './receipt/receipt-header/receipt-header.component';
 import { StandardComponent } from './standard/standard.component';
+import { DailyanimalgrowComponent } from './dailyanimalgrow/dailyanimalgrow.component';
+import { ViewwithstandardComponent } from './dailyanimalgrow/viewwithstandard/viewwithstandard.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -34,6 +36,8 @@ const routes: Routes = [
   {path:'inventory',component:InventoryComponent,canActivate:[AuthGuard]},
   {path:'uom',component:UomComponent,canActivate:[AuthGuard]},
   {path:'standard',component:StandardComponent,canActivate:[AuthGuard]},
+  {path:'dailygrow',component:DailyanimalgrowComponent,canActivate:[AuthGuard]},
+  {path:'viewwithstandard',component:ViewwithstandardComponent,canActivate:[AuthGuard]},
   {path:'error/403',component:ForbiddenComponent},
   {path:'paymentcard',component:PaymentDetailsComponent,canActivate:[AuthGuard]},
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},

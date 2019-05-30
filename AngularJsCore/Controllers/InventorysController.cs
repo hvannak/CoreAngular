@@ -49,6 +49,14 @@ namespace AngularJsCore.Controllers
             return Ok(inventorys);
         }
 
+        [HttpGet("Category/{category}")]
+        public async Task<IActionResult> GetInventoryByCategory(string category)
+        {
+            int categoryId = _context.categories.Where(x => x.CategoryName == category).Select(x => x.CategoryId).FirstOrDefault();
+            var result = await _context.Inventorys.Where(x=>x.CategoryId == categoryId).ToListAsync();
+            return Ok(result);
+        }
+
         // PUT: api/Inventorys/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutInventorys([FromRoute] int id, [FromBody] Inventorys inventorys)

@@ -67,6 +67,11 @@ import { StandardComponent } from './standard/standard.component';
 import { StandardDetailComponent } from './standard/standard-detail/standard-detail.component';
 import { StandardListComponent } from './standard/standard-list/standard-list.component';
 import { StandardService } from './shared/standard.service';
+import { DailyanimalgrowComponent } from './dailyanimalgrow/dailyanimalgrow.component';
+import { DailyanimalgrowDetailComponent } from './dailyanimalgrow/dailyanimalgrow-detail/dailyanimalgrow-detail.component';
+import { DailyanimalgrowListComponent } from './dailyanimalgrow/dailyanimalgrow-list/dailyanimalgrow-list.component';
+import { DailyanimalgrowService } from './shared/dailyanimalgrow.service';
+import { ViewwithstandardComponent } from './dailyanimalgrow/viewwithstandard/viewwithstandard.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +117,11 @@ import { StandardService } from './shared/standard.service';
     ReceiptLineComponent,
     StandardComponent,
     StandardDetailComponent,
-    StandardListComponent
+    StandardListComponent,
+    DailyanimalgrowComponent,
+    DailyanimalgrowDetailComponent,
+    DailyanimalgrowListComponent,
+    ViewwithstandardComponent
   ],
   imports: [
     BrowserModule,
@@ -128,7 +137,7 @@ import { StandardService } from './shared/standard.service';
   entryComponents:[OrderItemsComponent,ReceiptLineComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
-    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,{
+    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,DailyanimalgrowService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
