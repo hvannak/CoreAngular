@@ -68,7 +68,9 @@ export class ReceiptComponent implements OnInit {
     else{
       if (confirm('Are you sure to delete this record?')) {
         this.service.deleteReceipt(id).then(res => {
-          this.refreshList();
+          let index = this.receiptList.data.findIndex(x=>x.ReceiptId == id);
+          this.receiptList.data.splice(index,1);
+          //this.refreshList();
           this.toastr.warning("Deleted Successfully", "Receipt Register.");
         });
       }

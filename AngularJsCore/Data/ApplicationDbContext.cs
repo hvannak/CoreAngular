@@ -26,6 +26,8 @@ namespace AngularJsCore.Data
             modelBuilder.ApplyConfiguration(new ReceiptLineConfiguration());
             modelBuilder.ApplyConfiguration(new UomConfiguration());
             modelBuilder.ApplyConfiguration(new DailyAnimalGrowConfiguration());
+            modelBuilder.ApplyConfiguration(new InvoiceConfiguration());
+            modelBuilder.ApplyConfiguration(new InvoiceLineConfiguration());
 
             //modelBuilder.Entity<ApplicationUser>().HasData(
             //            new ApplicationUser
@@ -58,6 +60,8 @@ namespace AngularJsCore.Data
         public DbSet<INSiteStatus> iNSiteStatuses { get; set; }
         public DbSet<Standard> standards { get; set; }
         public DbSet<DailyAnimalGrow> dailyAnimalGrow { get; set; }
+        public DbSet<SaleInvoice> saleInvoices { get; set; }
+        public DbSet<SaleInvoiceLine> saleInvoiceLines { get; set; }
 
     }
 }

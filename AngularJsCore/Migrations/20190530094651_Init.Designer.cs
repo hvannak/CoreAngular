@@ -4,14 +4,16 @@ using AngularJsCore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AngularJsCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190530094651_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -195,8 +197,6 @@ namespace AngularJsCore.Migrations
                     b.Property<decimal>("QtySaleByUnit");
 
                     b.Property<decimal>("ReceiptCost");
-
-                    b.Property<decimal>("SaleAmount");
 
                     b.Property<int>("WarehouseId");
 
@@ -408,19 +408,9 @@ namespace AngularJsCore.Migrations
 
                     b.Property<int>("CustomerId");
 
-                    b.Property<string>("CustomerName");
-
-                    b.Property<string>("Description");
-
                     b.Property<DateTime>("DocDate");
 
-                    b.Property<string>("InvoiceNbr");
-
                     b.Property<int>("ProjectId");
-
-                    b.Property<string>("ProjectName");
-
-                    b.Property<int>("Release");
 
                     b.Property<decimal>("TotalAmount");
 
@@ -443,8 +433,6 @@ namespace AngularJsCore.Migrations
 
                     b.Property<decimal>("ExtAmount");
 
-                    b.Property<string>("InventoryDesc");
-
                     b.Property<int>("InventoryId");
 
                     b.Property<decimal>("Qty");
@@ -454,10 +442,6 @@ namespace AngularJsCore.Migrations
                     b.Property<decimal>("Unitprice");
 
                     b.Property<int>("WarehouseId");
-
-                    b.Property<string>("WarehouseName");
-
-                    b.Property<decimal>("Weight");
 
                     b.HasKey("SaleInvoiceLineId");
 

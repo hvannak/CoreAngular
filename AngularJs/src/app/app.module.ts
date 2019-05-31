@@ -72,6 +72,10 @@ import { DailyanimalgrowDetailComponent } from './dailyanimalgrow/dailyanimalgro
 import { DailyanimalgrowListComponent } from './dailyanimalgrow/dailyanimalgrow-list/dailyanimalgrow-list.component';
 import { DailyanimalgrowService } from './shared/dailyanimalgrow.service';
 import { ViewwithstandardComponent } from './dailyanimalgrow/viewwithstandard/viewwithstandard.component';
+import { SaleinvoiceComponent } from './saleinvoice/saleinvoice.component';
+import { SaleinvoiceService } from './shared/saleinvoice.service';
+import { SaleinvoiceHeaderComponent } from './saleinvoice/saleinvoice-header/saleinvoice-header.component';
+import { SaleinvoiceLineComponent } from './saleinvoice/saleinvoice-line/saleinvoice-line.component';
 
 @NgModule({
   declarations: [
@@ -121,7 +125,10 @@ import { ViewwithstandardComponent } from './dailyanimalgrow/viewwithstandard/vi
     DailyanimalgrowComponent,
     DailyanimalgrowDetailComponent,
     DailyanimalgrowListComponent,
-    ViewwithstandardComponent
+    ViewwithstandardComponent,
+    SaleinvoiceComponent,
+    SaleinvoiceHeaderComponent,
+    SaleinvoiceLineComponent
   ],
   imports: [
     BrowserModule,
@@ -134,10 +141,11 @@ import { ViewwithstandardComponent } from './dailyanimalgrow/viewwithstandard/vi
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  entryComponents:[OrderItemsComponent,ReceiptLineComponent],
+  entryComponents:[OrderItemsComponent,ReceiptLineComponent,SaleinvoiceLineComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
-    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,DailyanimalgrowService,{
+    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,
+    DailyanimalgrowService,SaleinvoiceService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

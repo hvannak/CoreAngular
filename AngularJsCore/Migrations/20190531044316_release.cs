@@ -2,13 +2,13 @@
 
 namespace AngularJsCore.Migrations
 {
-    public partial class addnumberofdayindailygrow : Migration
+    public partial class release : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "NumberOfDay",
-                table: "dailyAnimalGrow",
+                name: "Release",
+                table: "saleInvoices",
                 nullable: false,
                 defaultValue: 0);
         }
@@ -16,8 +16,8 @@ namespace AngularJsCore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "NumberOfDay",
-                table: "dailyAnimalGrow");
+                name: "Release",
+                table: "saleInvoices");
         }
     }
 }

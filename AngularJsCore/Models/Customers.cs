@@ -14,6 +14,7 @@ namespace AngularJsCore.Models
         [Required]
         [Column(TypeName = "nvarchar(100)")]
         public string CustomerName { get; set; }
+        public virtual ICollection<SaleInvoice> SaleInvoices { get; set; }
         public virtual ICollection<Orders> Orders { get; set; }
     }
 }

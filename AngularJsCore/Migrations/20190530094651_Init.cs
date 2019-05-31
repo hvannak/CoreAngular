@@ -423,6 +423,39 @@ namespace AngularJsCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "dailyAnimalGrow",
+                columns: table => new
+                {
+                    DailyGrowId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    InventoryId = table.Column<int>(nullable: false),
+                    ProjectId = table.Column<int>(nullable: false),
+                    WarehouseId = table.Column<int>(nullable: false),
+                    ProjectName = table.Column<string>(nullable: true),
+                    WarehouseName = table.Column<string>(nullable: true),
+                    InventoryDesc = table.Column<string>(nullable: true),
+                    DateGrow = table.Column<DateTime>(nullable: false),
+                    Weight = table.Column<decimal>(nullable: false),
+                    NumberOfDay = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_dailyAnimalGrow", x => x.DailyGrowId);
+                    table.ForeignKey(
+                        name: "FK_dailyAnimalGrow_Inventorys_InventoryId",
+                        column: x => x.InventoryId,
+                        principalTable: "Inventorys",
+                        principalColumn: "InventoryId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_dailyAnimalGrow_projects_ProjectId",
+                        column: x => x.ProjectId,
+                        principalTable: "projects",
+                        principalColumn: "ProjectId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "receiptLines",
                 columns: table => new
                 {
@@ -455,6 +488,66 @@ namespace AngularJsCore.Migrations
                         column: x => x.ReceiptId,
                         principalTable: "receipts",
                         principalColumn: "ReceiptId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "saleInvoices",
+                columns: table => new
+                {
+                    SaleInvoiceId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CustomerId = table.Column<int>(nullable: false),
+                    ProjectId = table.Column<int>(nullable: false),
+                    DocDate = table.Column<DateTime>(nullable: false),
+                    Currency = table.Column<string>(nullable: true),
+                    TotalQty = table.Column<decimal>(nullable: false),
+                    TotalAmount = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_saleInvoices", x => x.SaleInvoiceId);
+                    table.ForeignKey(
+                        name: "FK_saleInvoices_customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "customers",
+                        principalColumn: "CustomerId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_saleInvoices_projects_ProjectId",
+                        column: x => x.ProjectId,
+                        principalTable: "projects",
+                        principalColumn: "ProjectId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "saleInvoiceLines",
+                columns: table => new
+                {
+                    SaleInvoiceLineId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    SaleInvoiceId = table.Column<int>(nullable: false),
+                    WarehouseId = table.Column<int>(nullable: false),
+                    InventoryId = table.Column<int>(nullable: false),
+                    Qty = table.Column<decimal>(nullable: false),
+                    Unitprice = table.Column<decimal>(nullable: false),
+                    ExtAmount = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_saleInvoiceLines", x => x.SaleInvoiceLineId);
+                    table.ForeignKey(
+                        name: "FK_saleInvoiceLines_Inventorys_InventoryId",
+                        column: x => x.InventoryId,
+                        principalTable: "Inventorys",
+                        principalColumn: "InventoryId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_saleInvoiceLines_saleInvoices_SaleInvoiceId",
+                        column: x => x.SaleInvoiceId,
+                        principalTable: "saleInvoices",
+                        principalColumn: "SaleInvoiceId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -498,6 +591,16 @@ namespace AngularJsCore.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_dailyAnimalGrow_InventoryId",
+                table: "dailyAnimalGrow",
+                column: "InventoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_dailyAnimalGrow_ProjectId",
+                table: "dailyAnimalGrow",
+                column: "ProjectId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Inventorys_CategoryId",
                 table: "Inventorys",
                 column: "CategoryId");
@@ -538,6 +641,26 @@ namespace AngularJsCore.Migrations
                 column: "ReceiptId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_saleInvoiceLines_InventoryId",
+                table: "saleInvoiceLines",
+                column: "InventoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_saleInvoiceLines_SaleInvoiceId",
+                table: "saleInvoiceLines",
+                column: "SaleInvoiceId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_saleInvoices_CustomerId",
+                table: "saleInvoices",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_saleInvoices_ProjectId",
+                table: "saleInvoices",
+                column: "ProjectId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_standards_UomId",
                 table: "standards",
                 column: "UomId");
@@ -571,6 +694,9 @@ namespace AngularJsCore.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "dailyAnimalGrow");
+
+            migrationBuilder.DropTable(
                 name: "iNSiteStatuses");
 
             migrationBuilder.DropTable(
@@ -583,6 +709,9 @@ namespace AngularJsCore.Migrations
                 name: "receiptLines");
 
             migrationBuilder.DropTable(
+                name: "saleInvoiceLines");
+
+            migrationBuilder.DropTable(
                 name: "standards");
 
             migrationBuilder.DropTable(
@@ -592,16 +721,16 @@ namespace AngularJsCore.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Inventorys");
-
-            migrationBuilder.DropTable(
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "projects");
+                name: "receipts");
 
             migrationBuilder.DropTable(
-                name: "receipts");
+                name: "Inventorys");
+
+            migrationBuilder.DropTable(
+                name: "saleInvoices");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
@@ -614,6 +743,9 @@ namespace AngularJsCore.Migrations
 
             migrationBuilder.DropTable(
                 name: "customers");
+
+            migrationBuilder.DropTable(
+                name: "projects");
 
             migrationBuilder.DropTable(
                 name: "warehouses");

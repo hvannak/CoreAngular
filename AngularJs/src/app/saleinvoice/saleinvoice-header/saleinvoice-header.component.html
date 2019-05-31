@@ -1,0 +1,107 @@
+<app-menus></app-menus>
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Invoice Register</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="service.formInvoice" autocomplete="off" (submit)="onSubmit()">
+        <input type="hidden" name="SaleInvoiceId" [value]="service.formInvoice.SaleInvoiceId">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group required">
+                <label>InvoiceNbr</label>
+                <input class="form-control" formControlName="InvoiceNbr" placeholder="NEW" readonly> 
+                <label class="text-danger" *ngIf="service.formInvoice.get('InvoiceNbr').touched && service.formInvoice.get('InvoiceNbr').errors?.required">This field is mandatory.</label>
+              </div>
+              <div class="form-group">
+                  <label>Currency</label>
+                  <select class="form-control" formControlName="Currency" required>
+                    <option value="Receipt" >KHR</option>
+                    <option value="Issue" >USD</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label>Customer</label>
+                <select class="form-control" formControlName="CustomerId" required>
+                  <option value="0">-Select-</option>
+                  <option *ngFor="let item of customerList" value="{{item.CustomerId}}">{{item.CustomerName}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Project</label>
+                <select class="form-control" formControlName="ProjectId" required>
+                  <option value="0">-Select-</option>
+                  <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
+                </select>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group required">
+              <label>TotalQty</label>
+              <input class="form-control" formControlName="TotalQty" readonly>
+              <label class="text-danger" *ngIf="service.formInvoice.get('TotalQty').touched && service.formInvoice.get('TotalQty').errors?.required">This field is mandatory.</label>
+            </div>
+            <div class="form-group required">
+              <label>TotalAmount</label>
+              <input class="form-control" formControlName="TotalAmount" readonly>
+              <label class="text-danger" *ngIf="service.formInvoice.get('TotalAmount').touched && service.formInvoice.get('TotalAmount').errors?.required">This field is mandatory.</label>
+            </div>
+            <div class="form-group required">
+              <label>Description</label>
+              <input class="form-control" formControlName="Description">
+              <label class="text-danger" *ngIf="service.formInvoice.get('Description').touched && service.formInvoice.get('Description').errors?.required">This field is mandatory.</label>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                  <input class="form-control" formControlName="DocDate" matInput [matDatepicker]="myDatepicker1" placeholder="Choose date">
+                  <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
+                  <mat-datepicker #myDatepicker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+          </div>
+        </div> 
+        
+        <!--Receipt line table-->
+        <table class="table table-borderless">
+            <thead class="thead-light">
+              <th>WarehouseId</th>
+              <th>InventoryId</th>
+              <th>InventoryId</th>
+              <th>Qty</th>
+              <th>Weight</th>
+              <th>Unitprice</th>
+              <th>ExtAmount</th>
+              <th>
+                <a class="btn btn-sm btn-success text-white" (click)="AddOrEditInvoiceLine(null,service.formInvoice.SaleInvoiceId)"><i class="fa fa-plus"></i> Add Item</a>
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngIf="service.invoiceLine.length==0" [class.text-danger]="!isValid && service.invoiceLine.length==0">
+                <td class="font-italic text-center" colspan="5">
+                  No invoice line selected for this invoice.
+                </td>
+              </tr>
+  
+              <tr *ngFor="let item of service.invoiceLine;let i=index;">
+                <td>{{item.WarehouseName}}</td>
+                <td>{{item.InventoryDesc}}</td>
+                <td>{{item.Qty}}</td>
+                <td>{{item.Weight}}</td>
+                <td>{{item.Unitprice}}</td>
+                <td>{{item.ExtAmount}}</td>
+                <td>
+                  <a class="btn btn-sm btn-info text-white" (click)="AddOrEditInvoiceLine(i,service.formInvoice.SaleInvoiceId)"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-sm btn-danger text-white ml-1" (click)="onDeleteInvoiceLine(item.SaleInvoiceLineId,i)"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-dark" [disabled]="!service.formInvoice.valid"><i class="fa fa-database"></i> Submit</button>
+          <a class="btn btn-outline-dark ml-1" routerLink="/invoice"><i class="fa fa-table"></i> View Invoice Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

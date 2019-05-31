@@ -1,0 +1,143 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AngularJsCore.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using AngularJsCore.Models;
+
+namespace AngularJsCore.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class SaleInvoiceController : ControllerBase
+    {
+        private readonly ApplicationDbContext _context;
+        public SaleInvoiceController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/SaleInvoice
+        [HttpGet]
+        public System.Object GetSaleInvoice()
+        {
+            var result = _context.saleInvoices.Select(x => new
+            {
+                x.SaleInvoiceId,
+                x.InvoiceNbr,
+                x.Description,
+                x.DocDate,
+                x.CustomerName,
+                x.ProjectName,
+                x.Currency,
+                x.TotalQty,
+                x.TotalAmount
+            }).Take(300).ToList();
+            return result;
+        }
+
+        // GET: api/SaleInvoice/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetSaleInvoice([FromRoute] int id)
+        {
+            var invoice = await _context.saleInvoices.Where(x => x.SaleInvoiceId == id).FirstOrDefaultAsync();
+            var invoiceline = await _context.saleInvoiceLines.Where(x => x.SaleInvoiceId == invoice.SaleInvoiceId).ToListAsync();
+            return Ok(new { invoice, invoiceline });
+        }
+
+        // PUT: api/SaleInvoice/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutSaleInvoice([FromRoute] int id, [FromBody] SaleInvoice saleInvoice)
+        {
+            _context.Entry(saleInvoice).State = EntityState.Modified;
+            foreach (var item in saleInvoice.SaleInvoiceLines)
+            {
+                if (item.SaleInvoiceLineId == 0)
+                {
+                    _context.saleInvoiceLines.Add(item);
+                }
+                else
+                {
+                    _context.Entry(item).State = EntityState.Modified;
+                }
+                //Handle InsiteStatus
+                HandleInSiteStatus(saleInvoice, item);
+            }
+            foreach (var item in saleInvoice.DeletedInvoiceLineIDs.Split(',').Where(x => x != ""))
+            {
+                SaleInvoiceLine saleInvoiceLine = _context.saleInvoiceLines.Find(Convert.ToInt32(item));
+                _context.saleInvoiceLines.Remove(saleInvoiceLine);
+            }
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!InvoiceExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return NoContent();
+        }
+
+        // POST: api/SaleInvoice
+        [HttpPost]
+        public async Task<IActionResult> PostSaleInvoice([FromBody] SaleInvoice saleInvoice)
+        {
+            _context.saleInvoices.Add(saleInvoice);
+            var invoiceNbr = _context.saleInvoices.Max(x => x.InvoiceNbr);
+            saleInvoice.InvoiceNbr = (Convert.ToInt32(invoiceNbr) + 1).ToString("00000");
+            foreach (var item in saleInvoice.SaleInvoiceLines)
+            {
+                _context.saleInvoiceLines.Add(item);
+                //Handle InsiteStatus
+                HandleInSiteStatus(saleInvoice, item);
+            }
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        // DELETE: api/SaleInvoice/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteSaleInvoice([FromRoute] int id)
+        {
+            var invoice = await _context.saleInvoiceLines.FindAsync(id);
+            _context.saleInvoiceLines.Remove(invoice);
+            await _context.SaveChangesAsync();
+
+            return Ok(invoice);
+        }
+
+        private void HandleInSiteStatus(SaleInvoice saleInvoice, SaleInvoiceLine item)
+        {
+            if (saleInvoice.Release == 1)
+            {
+                var inSite = _context.iNSiteStatuses.Where(x => x.InventoryId == item.InventoryId && x.ProjectId == saleInvoice.ProjectId && x.WarehouseId == item.WarehouseId).FirstOrDefault();
+                if(inSite != null)
+                {
+                    inSite.QtyOnHand = inSite.QtyOnHand - item.Qty;
+                    inSite.QtySaleByUnit = inSite.QtySaleByUnit + item.Qty;
+                    inSite.QtySaleByKg = inSite.QtySaleByKg + item.Weight;
+                    inSite.SaleAmount = inSite.SaleAmount + item.ExtAmount;
+                }
+            }
+        }
+
+        private bool InvoiceExists(int id)
+        {
+            return _context.saleInvoices.Any(e => e.SaleInvoiceId == id);
+        }
+
+    }
+}

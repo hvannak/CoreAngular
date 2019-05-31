@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularJsCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190529082624_addnumberofdayindailygrow")]
-    partial class addnumberofdayindailygrow
+    [Migration("20190531024854_addinvoiceNbrininvoice")]
+    partial class addinvoiceNbrininvoice
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -398,6 +398,64 @@ namespace AngularJsCore.Migrations
                     b.ToTable("receiptLines");
                 });
 
+            modelBuilder.Entity("AngularJsCore.Models.SaleInvoice", b =>
+                {
+                    b.Property<int>("SaleInvoiceId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Currency");
+
+                    b.Property<int>("CustomerId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("DocDate");
+
+                    b.Property<string>("InvoiceNbr");
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<decimal>("TotalAmount");
+
+                    b.Property<decimal>("TotalQty");
+
+                    b.HasKey("SaleInvoiceId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("saleInvoices");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.SaleInvoiceLine", b =>
+                {
+                    b.Property<int>("SaleInvoiceLineId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("ExtAmount");
+
+                    b.Property<int>("InventoryId");
+
+                    b.Property<decimal>("Qty");
+
+                    b.Property<int>("SaleInvoiceId");
+
+                    b.Property<decimal>("Unitprice");
+
+                    b.Property<int>("WarehouseId");
+
+                    b.HasKey("SaleInvoiceLineId");
+
+                    b.HasIndex("InventoryId");
+
+                    b.HasIndex("SaleInvoiceId");
+
+                    b.ToTable("saleInvoiceLines");
+                });
+
             modelBuilder.Entity("AngularJsCore.Models.Standard", b =>
                 {
                     b.Property<int>("StandardKey")
@@ -617,6 +675,32 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Receipt", "Receipt")
                         .WithMany("ReceiptLines")
                         .HasForeignKey("ReceiptId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.SaleInvoice", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.Customers", "Customers")
+                        .WithMany("SaleInvoices")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("AngularJsCore.Models.Project", "Project")
+                        .WithMany("SaleInvoices")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.SaleInvoiceLine", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.Inventorys", "Inventorys")
+                        .WithMany("SaleInvoiceLines")
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("AngularJsCore.Models.SaleInvoice", "SaleInvoice")
+                        .WithMany("SaleInvoiceLines")
+                        .HasForeignKey("SaleInvoiceId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

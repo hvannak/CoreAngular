@@ -20,6 +20,7 @@ namespace AngularJsCore.Models
         public int UomId { get; set; }
         public Category Category { get; set; }
         public UnitOfMeasure UnitOfMeasure { get; set; }
+        public virtual ICollection<SaleInvoiceLine> SaleInvoiceLines { get; set; }
         public virtual ICollection<OrderLines> OrderLines { get; set; }
         public virtual ICollection<DailyAnimalGrow> DailyAnimalGrows { get; set; }
     }

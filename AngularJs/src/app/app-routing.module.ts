@@ -23,6 +23,8 @@ import { ReceiptHeaderComponent } from './receipt/receipt-header/receipt-header.
 import { StandardComponent } from './standard/standard.component';
 import { DailyanimalgrowComponent } from './dailyanimalgrow/dailyanimalgrow.component';
 import { ViewwithstandardComponent } from './dailyanimalgrow/viewwithstandard/viewwithstandard.component';
+import { SaleinvoiceComponent } from './saleinvoice/saleinvoice.component';
+import { SaleinvoiceHeaderComponent } from './saleinvoice/saleinvoice-header/saleinvoice-header.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -44,6 +46,11 @@ const routes: Routes = [
   {path:'order',children:[
     {path:'',component:OrderComponent},
     {path:'edit/:id',component:OrderComponent,canActivate:[AuthGuard]}
+  ]},
+  {path:'invoice',component:SaleinvoiceComponent,canActivate:[AuthGuard]},
+  {path:'invoiceheader',children:[
+    {path:'',component:SaleinvoiceHeaderComponent},
+    {path:'edit/:id',component:SaleinvoiceHeaderComponent,canActivate:[AuthGuard]}
   ]},
   {path:'receipt',component:ReceiptComponent,canActivate:[AuthGuard]},
   {path:'receiptheader',children:[
