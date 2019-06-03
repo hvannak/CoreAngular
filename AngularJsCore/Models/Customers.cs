@@ -11,6 +11,7 @@ namespace AngularJsCore.Models
     {
         [Key]
         public int CustomerId { get; set; }
+        public string CustomerCD { get; set; }
         [Required]
         [Column(TypeName = "nvarchar(100)")]
         public string CustomerName { get; set; }

@@ -20,6 +20,7 @@ namespace AngularJsCore.Models
         public string Currency { get; set; }
         public string Description { get; set; }
         public decimal TotalQty { get; set; }
+        public decimal TotalWeight { get; set; }
         public decimal TotalAmount { get; set; }
         [NotMapped]
         public string DeletedInvoiceLineIDs { get; set; }

@@ -25,6 +25,7 @@ import { DailyanimalgrowComponent } from './dailyanimalgrow/dailyanimalgrow.comp
 import { ViewwithstandardComponent } from './dailyanimalgrow/viewwithstandard/viewwithstandard.component';
 import { SaleinvoiceComponent } from './saleinvoice/saleinvoice.component';
 import { SaleinvoiceHeaderComponent } from './saleinvoice/saleinvoice-header/saleinvoice-header.component';
+import { CustomersComponent } from './customers/customers.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:'warehouse',component:WarehouseComponent,canActivate:[AuthGuard]},
   {path:'warehouseaccess',component:WarehouseaccessComponent,canActivate:[AuthGuard]},
   {path:'project',component:ProjectComponent,canActivate:[AuthGuard]},
+  {path:'customer',component:CustomersComponent,canActivate:[AuthGuard]},
   {path:'category',component:CategoryComponent,canActivate:[AuthGuard]},
   {path:'inventory',component:InventoryComponent,canActivate:[AuthGuard]},
   {path:'uom',component:UomComponent,canActivate:[AuthGuard]},

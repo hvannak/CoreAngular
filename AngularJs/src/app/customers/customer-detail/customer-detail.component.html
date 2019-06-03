@@ -1,0 +1,26 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="CustomerId" [value]="service.formData.CustomerId">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+            <i class="fas fa-fingerprint" [class.green-icon]="CustomerCD.valid" [class.red-icon]="CustomerCD.invalid"></i>
+        </div>
+      </div>
+      <input name="CustomerCD" #CustomerCD="ngModel" [(ngModel)]="service.formData.CustomerCD" class="form-control" placeholder="Customer Id" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+            <i class="fas fa-address-book" [class.green-icon]="CustomerName.valid" [class.red-icon]="CustomerName.invalid"></i>
+        </div>
+      </div>
+      <input name="CustomerName" #CustomerName="ngModel" [(ngModel)]="service.formData.CustomerName" class="form-control" placeholder="Customer Name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i>Submit</button>
+  </div>
+</form>

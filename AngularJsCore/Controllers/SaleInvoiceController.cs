@@ -27,13 +27,17 @@ namespace AngularJsCore.Controllers
             var result = _context.saleInvoices.Select(x => new
             {
                 x.SaleInvoiceId,
-                x.InvoiceNbr,
+                x.CustomerId,
+                x.CustomerName,
                 x.Description,
                 x.DocDate,
-                x.CustomerName,
-                x.ProjectName,
                 x.Currency,
+                x.InvoiceNbr,
+                x.ProjectId,
+                x.ProjectName,
+                x.Release,
                 x.TotalQty,
+                x.TotalWeight,
                 x.TotalAmount
             }).Take(300).ToList();
             return result;
@@ -43,9 +47,43 @@ namespace AngularJsCore.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSaleInvoice([FromRoute] int id)
         {
-            var invoice = await _context.saleInvoices.Where(x => x.SaleInvoiceId == id).FirstOrDefaultAsync();
-            var invoiceline = await _context.saleInvoiceLines.Where(x => x.SaleInvoiceId == invoice.SaleInvoiceId).ToListAsync();
+            var invoice = await _context.saleInvoices.Where(x => x.SaleInvoiceId == id).Select(x => new
+            {
+                x.SaleInvoiceId,
+                x.CustomerId,
+                x.CustomerName,
+                x.Description,
+                x.DocDate,
+                x.Currency,
+                x.InvoiceNbr,
+                x.ProjectId,
+                x.ProjectName,
+                x.Release,
+                x.TotalQty,
+                x.TotalWeight,
+                x.TotalAmount
+            }).FirstOrDefaultAsync();
+            var invoiceline = await _context.saleInvoiceLines.Where(x => x.SaleInvoiceId == invoice.SaleInvoiceId).Select(x => new
+            {
+                x.SaleInvoiceLineId,
+                x.SaleInvoiceId,
+                x.InventoryId,
+                x.InventoryDesc,
+                x.WarehouseId,
+                x.WarehouseName,
+                x.Weight,
+                x.Unitprice,
+                x.Qty,
+                x.ExtAmount
+            }).ToListAsync();
             return Ok(new { invoice, invoiceline });
+        }
+
+        [HttpGet("InvoiceByDate/{from}/{to}")]
+        public IEnumerable<SaleInvoice> GetSaleInvoiceByDate(DateTime from, DateTime to)
+        {
+            var result = _context.saleInvoices.Where(x => x.DocDate.Date >= from.Date && x.DocDate.Date <= to.Date).ToList();
+            return result;
         }
 
         // PUT: api/SaleInvoice/5
@@ -112,8 +150,8 @@ namespace AngularJsCore.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSaleInvoice([FromRoute] int id)
         {
-            var invoice = await _context.saleInvoiceLines.FindAsync(id);
-            _context.saleInvoiceLines.Remove(invoice);
+            var invoice = await _context.saleInvoices.FindAsync(id);
+            _context.saleInvoices.Remove(invoice);
             await _context.SaveChangesAsync();
 
             return Ok(invoice);

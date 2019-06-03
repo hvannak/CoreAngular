@@ -52,6 +52,7 @@ export class SaleinvoiceHeaderComponent implements OnInit {
           Currency:res.invoice['Currency'],
           Description:res.invoice['Description'],
           TotalQty:res.invoice['TotalQty'],
+          TotalWeight:res.invoice['TotalWeight'],
           TotalAmount:res.invoice['TotalAmount'],
           Release:res.invoice['Release'],
           DeletedInvoiceLineIDs:''
@@ -69,11 +70,12 @@ export class SaleinvoiceHeaderComponent implements OnInit {
   }
 
   AddOrEditInvoiceLine(invoiceLineIndex,invoiceId){
+    let projectId = this.service.formInvoice.value.ProjectId;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = "50%";
-    dialogConfig.data = { invoiceLineIndex, invoiceId };
+    dialogConfig.data = { invoiceLineIndex, invoiceId, projectId };
     this.dialog.open(SaleinvoiceLineComponent, dialogConfig).afterClosed().subscribe(res => {
       this.updateGrandTotal();
     });
@@ -88,12 +90,29 @@ export class SaleinvoiceHeaderComponent implements OnInit {
       
   }
 
+  onChangeCustomer(item){
+    let text = item.target.options[item.target.options.selectedIndex].text;
+    this.service.formInvoice.patchValue({
+      CustomerName:text
+    });
+  }
+
+  onChangeProject(item){
+    let text = item.target.options[item.target.options.selectedIndex].text;
+    this.service.formInvoice.patchValue({
+      ProjectName:text
+    });
+  }
+
   updateGrandTotal(){
     this.service.formInvoice.patchValue({
       TotalQty:this.service.invoiceLine.reduce((prev, curr) => {
-        return prev + curr.Qty;
+        return prev + parseFloat(curr.Qty.toString()) ;
       }, 0),
-      TotalCost:this.service.invoiceLine.reduce((prev,curr) => { 
+      TotalWeight:this.service.invoiceLine.reduce((prev, curr) => {
+        return prev + parseFloat(curr.Weight.toString()) ;
+      }, 0),
+      TotalAmount:this.service.invoiceLine.reduce((prev,curr) => { 
         return prev + curr.ExtAmount;
       },0)
     });
@@ -126,6 +145,9 @@ export class SaleinvoiceHeaderComponent implements OnInit {
   }
 
   insertRecord(){
+    this.service.formInvoice.patchValue({
+      DocDate: this.getLocalDate(this.service.formInvoice.value.DocDate.toLocaleDateString())
+    });
     this.service.postInvoice().subscribe(res => {
       this.service.formInvoice.reset();
       this.service.invoiceLine=[];
@@ -135,6 +157,11 @@ export class SaleinvoiceHeaderComponent implements OnInit {
   }
 
   updateRecord(){
+    if(this.service.formInvoice.value.DocDate.toLocaleString().indexOf('/') !== -1){
+      this.service.formInvoice.patchValue({
+        DocDate: this.getLocalDate(this.service.formInvoice.value.DocDate.toLocaleDateString())
+      });
+    }
     this.service.formInvoice.patchValue({
       DeletedInvoiceLineIDs:this.deleteInvoiceLine
     });
@@ -145,6 +172,12 @@ export class SaleinvoiceHeaderComponent implements OnInit {
       this.toastr.success('Submitted Successfully','Invoice Register');
       this.router.navigate(['/invoice']);
     })
+  }
+
+  getLocalDate(item:string){
+    var ldate = item.split('/');
+    var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
+    return new Date(date);
   }
 
 }

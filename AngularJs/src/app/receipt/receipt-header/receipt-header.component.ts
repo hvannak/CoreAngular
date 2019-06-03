@@ -85,7 +85,7 @@ export class ReceiptHeaderComponent implements OnInit {
   updateGrandTotal(){
     this.service.formReceipt.patchValue({
       TotalQty:this.service.receiptLine.reduce((prev, curr) => {
-        return prev + curr.Qty;
+        return prev + parseFloat(curr.Qty.toString());
       }, 0),
       TotalCost:this.service.receiptLine.reduce((prev,curr) => { 
         return prev + curr.ExtCost;
@@ -120,6 +120,9 @@ export class ReceiptHeaderComponent implements OnInit {
   }
 
   insertRecord(){
+    this.service.formReceipt.patchValue({
+      DocDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
+    });
     this.service.postReceipt().subscribe(res => {
       this.service.formReceipt.reset();
       this.service.receiptLine=[];
@@ -129,6 +132,11 @@ export class ReceiptHeaderComponent implements OnInit {
   }
 
   updateRecord(){
+    if(this.service.formReceipt.value.ReceiptDate.toLocaleString().indexOf('/') !== -1){
+      this.service.formReceipt.patchValue({
+        DocDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
+      });
+    }
     this.service.formReceipt.patchValue({
       DeletedReceiptLineIDs:this.deleteReceiptLine
     });
@@ -141,5 +149,10 @@ export class ReceiptHeaderComponent implements OnInit {
     })
   }
 
+  getLocalDate(item:string){
+    var ldate = item.split('/');
+    var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
+    return new Date(date);
+  }
  
 }

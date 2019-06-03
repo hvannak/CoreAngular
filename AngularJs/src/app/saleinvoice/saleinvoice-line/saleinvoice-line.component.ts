@@ -19,6 +19,7 @@ export class SaleinvoiceLineComponent implements OnInit {
 
   ngOnInit() {
     this.inventoryService.getInventory().then(res => this.inventoryList = res);
+    this.warehouseService.getWarehouseByProjectId(this.data.projectId).then(res => this.warehouseList = res);
     if(this.data.invoiceLineIndex == null){
       this.service.formInvoiceLine.reset();
       this.service.formInvoiceLine.patchValue({
@@ -43,19 +44,19 @@ export class SaleinvoiceLineComponent implements OnInit {
   onChangeInventory(item){
     let text = item.target.options[item.target.options.selectedIndex].text;
     this.service.formInvoiceLine.patchValue({
-      InventoryDesr:text
+      InventoryDesc:text
     });
   }
 
   updatePrice(valuechange,type){
     if(type == '1'){
-      let extcost = parseFloat((this.service.formInvoiceLine.value.Unitprice * valuechange).toFixed(2));
+      let extamount = parseFloat((this.service.formInvoiceLine.value.Unitprice * valuechange).toFixed(2));
       this.service.formInvoiceLine.patchValue({
-        ExtCost:extcost
+        ExtAmount:extamount
       });
     }
     else{
-      let extamount = parseFloat((this.service.formInvoiceLine.value.Qty * valuechange).toFixed(2));
+      let extamount = parseFloat((this.service.formInvoiceLine.value.Weight * valuechange).toFixed(2));
       this.service.formInvoiceLine.patchValue({
         ExtAmount:extamount
       });

@@ -22,42 +22,54 @@
               </div>
               <div class="form-group">
                 <label>Customer</label>
-                <select class="form-control" formControlName="CustomerId" required>
+                <select class="form-control" formControlName="CustomerId" required (change)="onChangeCustomer($event)" >
                   <option value="0">-Select-</option>
                   <option *ngFor="let item of customerList" value="{{item.CustomerId}}">{{item.CustomerName}}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label>Project</label>
-                <select class="form-control" formControlName="ProjectId" required>
+                <select class="form-control" formControlName="ProjectId" required (change)="onChangeProject($event)">
                   <option value="0">-Select-</option>
                   <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
                 </select>
               </div>
           </div>
           <div class="col-md-6">
-            <div class="form-group required">
-              <label>TotalQty</label>
-              <input class="form-control" formControlName="TotalQty" readonly>
-              <label class="text-danger" *ngIf="service.formInvoice.get('TotalQty').touched && service.formInvoice.get('TotalQty').errors?.required">This field is mandatory.</label>
-            </div>
-            <div class="form-group required">
-              <label>TotalAmount</label>
-              <input class="form-control" formControlName="TotalAmount" readonly>
-              <label class="text-danger" *ngIf="service.formInvoice.get('TotalAmount').touched && service.formInvoice.get('TotalAmount').errors?.required">This field is mandatory.</label>
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group required">
+                      <label>TotalQty</label>
+                      <input class="form-control" formControlName="TotalQty" readonly>
+                      <label class="text-danger" *ngIf="service.formInvoice.get('TotalQty').touched && service.formInvoice.get('TotalQty').errors?.required">This field is mandatory.</label>
+                    </div>
+                    <div class="form-group required">
+                      <label>TotalWeight</label>
+                      <input class="form-control" formControlName="TotalWeight" readonly>
+                      <label class="text-danger" *ngIf="service.formInvoice.get('TotalWeight').touched && service.formInvoice.get('TotalWeight').errors?.required">This field is mandatory.</label>
+                    </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group required">
+                    <label>TotalAmount</label>
+                    <input class="form-control" formControlName="TotalAmount" readonly>
+                    <label class="text-danger" *ngIf="service.formInvoice.get('TotalAmount').touched && service.formInvoice.get('TotalAmount').errors?.required">This field is mandatory.</label>
+                  </div>
+                  <div class="form-group">
+                      <mat-form-field>
+                        <input class="form-control" formControlName="DocDate" matInput [matDatepicker]="myDatepicker1" placeholder="Choose date">
+                        <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
+                        <mat-datepicker #myDatepicker1></mat-datepicker>
+                      </mat-form-field>
+                  </div>
+              </div>
             </div>
             <div class="form-group required">
               <label>Description</label>
               <input class="form-control" formControlName="Description">
               <label class="text-danger" *ngIf="service.formInvoice.get('Description').touched && service.formInvoice.get('Description').errors?.required">This field is mandatory.</label>
             </div>
-            <div class="form-group">
-                <mat-form-field>
-                  <input class="form-control" formControlName="DocDate" matInput [matDatepicker]="myDatepicker1" placeholder="Choose date">
-                  <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
-                  <mat-datepicker #myDatepicker1></mat-datepicker>
-                </mat-form-field>
-            </div>
+
           </div>
         </div> 
         
@@ -65,7 +77,6 @@
         <table class="table table-borderless">
             <thead class="thead-light">
               <th>WarehouseId</th>
-              <th>InventoryId</th>
               <th>InventoryId</th>
               <th>Qty</th>
               <th>Weight</th>

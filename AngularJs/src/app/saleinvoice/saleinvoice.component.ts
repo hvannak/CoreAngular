@@ -51,6 +51,7 @@ export class SaleinvoiceComponent implements OnInit {
         this.service.deleteInvoice(id).then(res => {
           let index = this.invoiceList.data.findIndex(x=>x.SaleInvoiceId == id);
           this.invoiceList.data.splice(index,1);
+          this.invoiceList._updateChangeSubscription();
           this.toastr.warning("Deleted Successfully", "Invoice Register.");
         });
       }

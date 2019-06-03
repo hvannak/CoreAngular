@@ -9,6 +9,7 @@ export class Saleinvoice {
     Currency:string;
     Description:string;
     TotalQty:number;
+    TotalWeight:number;
     TotalAmount:number;
     Release:number;
     DeletedInvoiceLineIDs:string;

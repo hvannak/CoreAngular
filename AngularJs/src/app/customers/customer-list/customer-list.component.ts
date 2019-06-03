@@ -1,32 +1,32 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { StandardService } from 'src/app/shared/standard.service';
+import { CustomerService } from 'src/app/shared/customer.service';
 import { ToastrService } from 'ngx-toastr';
-import { Standard } from 'src/app/shared/standard.model';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { Customer } from 'src/app/shared/customer.model';
 
 @Component({
-  selector: 'app-standard-list',
-  templateUrl: './standard-list.component.html',
-  styleUrls: ['./standard-list.component.css']
+  selector: 'app-customer-list',
+  templateUrl: './customer-list.component.html',
+  styleUrls: ['./customer-list.component.css']
 })
-export class StandardListComponent implements OnInit {
+export class CustomerListComponent implements OnInit {
 
-  displayedColumns: string[] = ['StandardName','NumberOfDay', 'ResultOfDay','Delete'];
+  displayedColumns: string[] = ['CustomerCD','CustomerName','Delete'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(public service:StandardService,private toastr:ToastrService) { }
+  constructor(public service:CustomerService,private toastr:ToastrService) { }
 
   ngOnInit() {
     this.refressList();
   }
 
-  populateForm(pd:Standard){
+  populateForm(pd:Customer){
     this.service.formData = Object.assign({},pd);
  }
 
  refressList(){
-  this.service.refressList().then(res=> {
-    this.service.list = new MatTableDataSource(res as Array<Standard>);
+  this.service.getCustomerList().then(res=> {
+    this.service.list = new MatTableDataSource(res as Array<Customer>);
     this.service.list.paginator = this.paginator;
     this.service.list.sort = this.sort;
   });
@@ -42,18 +42,18 @@ applyFilter(filterValue: string) {
 
  onDelete(PMId){
    if(confirm('Are you sure to delete this record?')){
-     this.service.DeleteStandardDetail(PMId).subscribe(
+     this.service.DeleteCustomersDetail(PMId).subscribe(
        res => {
-        let index = this.service.list.data.findIndex(x=>x.StandardKey == PMId);
+        let index = this.service.list.data.findIndex(x=>x.CustomerId == PMId);
         this.service.list.data.splice(index,1);
         this.service.list._updateChangeSubscription();
-         this.toastr.warning("Deleted successfully","Standard Detail Register");
+         this.toastr.warning("Deleted successfully","Customer Register");
        },
        err => {
          console.log(err);
        }
      )
    }
-
   }
+
 }

@@ -18,18 +18,25 @@ export class SaleinvoiceService {
     SaleInvoiceId:[''],
     InvoiceNbr:['',Validators.required],
     CustomerId:['',Validators.required],
+    CustomerName:[''],
     ProjectId:['',Validators.required],
+    ProjectName:[''],
     DocDate:['',Validators.required],
     Currency:['',Validators.required],
     Description:[''],
     TotalQty:['',Validators.required],
-    TotalAmount:['',Validators.required]
+    TotalWeight:['',Validators.required],
+    TotalAmount:['',Validators.required],
+    Release:[''],
+    DeletedInvoiceLineIDs:['']
   });
 
   formInvoiceLine = this.fb.group({
     SaleInvoiceLineId:[''],
     SaleInvoiceId:['',Validators.required],
     WarehouseId:['',Validators.required],
+    WarehouseName:[''],
+    InventoryDesc:[''],
     InventoryId:['',Validators.required],
     Qty:['',Validators.required],
     Weight:['',Validators.required],
@@ -46,13 +53,13 @@ export class SaleinvoiceService {
   }
 
   getInvoiceByDate(from:Date,to:Date){
-    return this.http.get(environment.apiURL + '/SaleInvoice/ReceiptByDate/'+ from + "/" + to).toPromise();
+    return this.http.get(environment.apiURL + '/SaleInvoice/InvoiceByDate/'+ from + "/" + to).toPromise();
   }
 
   postInvoice(){
     var body = {
       ...this.formInvoice.value,
-      ReceiptLines: this.invoiceLine
+      SaleInvoiceLines: this.invoiceLine
     };
     return this.http.post(environment.apiURL + '/SaleInvoice', body);
   }
@@ -60,9 +67,9 @@ export class SaleinvoiceService {
   putInvoice(){
     var body = {
       ...this.formInvoice.value,
-      ReceiptLines: this.invoiceLine
+      SaleInvoiceLines: this.invoiceLine
     };
-    return this.http.put(environment.apiURL + '/SaleInvoice/' + this.formInvoice.value.ReceiptId, body);
+    return this.http.put(environment.apiURL + '/SaleInvoice/' + this.formInvoice.value.SaleInvoiceId, body);
   }
 
   deleteInvoice(id:number) {
