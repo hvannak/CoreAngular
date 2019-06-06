@@ -28,6 +28,7 @@ import { SaleinvoiceHeaderComponent } from './saleinvoice/saleinvoice-header/sal
 import { CustomersComponent } from './customers/customers.component';
 import { ProjectaccessComponent } from './projectaccess/projectaccess.component';
 import { StandardnameComponent } from './standardname/standardname.component';
+import { ProjectdailyComponent } from './visual-data/projectdaily/projectdaily.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path:'viewwithstandard',component:ViewwithstandardComponent,canActivate:[AuthGuard]},
   {path:'error/403',component:ForbiddenComponent},
   {path:'paymentcard',component:PaymentDetailsComponent,canActivate:[AuthGuard]},
+  {path:'projectdaily',component:ProjectdailyComponent,canActivate:[AuthGuard]},
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},
   {path:'order',children:[
     {path:'',component:OrderComponent},

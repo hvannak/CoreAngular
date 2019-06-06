@@ -23,6 +23,15 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label>Reason</label>
+                    <select class="form-control" formControlName="Reason">
+                      <option value="FEED">FEED</option>
+                      <option value="ANIMAL">ANIMAL</option>
+                      <option value="MEDICINE">MEDICINE</option>
+                      <option value="OTHER">OTHER</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Inventory</label>
                     <select class="form-control" formControlName="InventoryId" (change)="onChangeInventory($event)">
                       <option value="0">
@@ -47,7 +56,7 @@
                     <label class="text-danger" *ngIf="service.formReceiptLine.get('ExtCost').touched && service.formReceiptLine.get('ExtCost').errors?.required">This field is mandatory.</label>
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Submit</button>
+                  <button type="submit" class="btn btn-dark" [disabled]="!service.formReceiptLine.valid"><i class="fa fa-database"></i> Submit</button>
                   <button type="button" class="btn btn-outline-dark ml-1" [mat-dialog-close]><i class="fa fa-close"></i> Close</button>
                 </div>
               </form>

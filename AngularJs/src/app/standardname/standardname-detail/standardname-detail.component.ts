@@ -25,6 +25,7 @@ export class StandardnameDetailComponent implements OnInit {
     this.service.formData = {
       StandardNameId:0,
       Standard:'',
+      Type:''
     }
   }
 

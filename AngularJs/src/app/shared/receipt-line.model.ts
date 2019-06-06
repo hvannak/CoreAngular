@@ -11,4 +11,5 @@ export class ReceiptLine {
     WarehouseName:string;
     InventoryId:number;
     InventoryDesr:string;
+    Reason:string;
 }

@@ -41,7 +41,7 @@ export class SaleinvoiceService {
     Qty:['',Validators.required],
     Weight:['',Validators.required],
     Unitprice:['',Validators.required],
-    ExtAmount:['',Validators.required]
+    ExtAmount:['',Validators.required],
   });
 
   getInvoiceList() {

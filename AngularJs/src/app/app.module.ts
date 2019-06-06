@@ -87,6 +87,8 @@ import { StandardnameComponent } from './standardname/standardname.component';
 import { StandardnameService } from './shared/standardname.service';
 import { StandardnameDetailComponent } from './standardname/standardname-detail/standardname-detail.component';
 import { StandardnameListComponent } from './standardname/standardname-list/standardname-list.component';
+import { VisualDataComponent } from './visual-data/visual-data.component';
+import { ProjectdailyComponent } from './visual-data/projectdaily/projectdaily.component';
 
 @NgModule({
   declarations: [
@@ -148,7 +150,9 @@ import { StandardnameListComponent } from './standardname/standardname-list/stan
     ProjectaccessListComponent,
     StandardnameComponent,
     StandardnameDetailComponent,
-    StandardnameListComponent
+    StandardnameListComponent,
+    VisualDataComponent,
+    ProjectdailyComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,20 @@
     </div>
   </div>
   <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+              <i class="fas fa-thermometer-three-quarters" [class.green-icon]="Type.valid" [class.red-icon]="Type.invalid"></i>
+          </div>
+        </div>
+        <select name="Type" #Type="ngModel" [(ngModel)]="service.formData.Type" class="form-control">
+          <option value="0">-Select Type-</option>
+          <option value="FEED">FEED</option>
+          <option value="ANIMAL">ANIMAL</option>
+        </select>
+      </div>
+  </div>
+  <div class="form-group">
     <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i>Submit</button>
   </div>
 </form>

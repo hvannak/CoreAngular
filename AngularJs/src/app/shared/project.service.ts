@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Project } from './project.model';
 import { MatTableDataSource } from '@angular/material';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,16 @@ export class ProjectService {
   formData:Project
   list:MatTableDataSource<Project>;
 
-  constructor(private http:HttpClient) { }
+
+
+  constructor(private http:HttpClient,private fb:FormBuilder) { }
+
+  formDaily = this.fb.group({
+    ProjectId:['',Validators.required],
+    StdFeedId:['',Validators.required],
+    StdAnimalId:['',Validators.required]
+  });
+
 
   postProjectsDetail(){
     
@@ -29,5 +39,8 @@ export class ProjectService {
   }
   getActiveProject(){
    return this.http.get(environment.apiURL + "/Projects/ProjectStatus/Active").toPromise();
+  }
+  getDailyProject(projectId:number,standardFeed:number,standardAnimal:number){
+    return this.http.get(environment.apiURL + "/Projects/ProjectDaily/" + projectId + "/" + standardFeed + "/" + standardAnimal).toPromise();
   }
 }

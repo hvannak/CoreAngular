@@ -1,0 +1,50 @@
+
+  <app-menus></app-menus>
+  <div class="container">
+    <div class="col-md-8 offset-md-2">
+        <div class="jumbotron">
+            <h1 class="display-6 text-center">Daily Project Performance</h1>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <form [formGroup]="service.formDaily" autocomplete="off" (submit)="onSubmit()">
+                      <div class="form-group">
+                        <label>Project</label>
+                        <select class="form-control" formControlName="ProjectId" required>
+                          <option value="0">-Select-</option>
+                          <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Standard Animal</label>
+                        <select class="form-control" formControlName="StdAnimalId" required>
+                          <option value="0">-Select-</option>
+                          <option *ngFor="let item of filterItemsOfType('ANIMAL')" value="{{item.StandardNameId}}">{{item.Standard}}</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Standard Feed</label>
+                        <select class="form-control" formControlName="StdFeedId" required>
+                          <option value="0">-Select-</option>
+                          <option *ngFor="let item of filterItemsOfType('FEED')" value="{{item.StandardNameId}}">{{item.Standard}}</option>
+                        </select>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-8 offset-md-2">
+                          <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formDaily.valid">Load</button>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+              </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-hover">
+    <tr *ngFor="let pd of dailyList">
+      <td >{{pd.DailyDate | date}}</td>
+      <td >{{pd.NumberOfDay}}</td>
+      <td >{{pd.ResultOfDayAnimal}}</td>
+      <td >{{pd.ResultOfDayFeed}}</td>
+    </tr>
+  </table>

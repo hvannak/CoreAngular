@@ -37,8 +37,8 @@ export class ReceiptService {
     WarehouseId:['',Validators.required],
     WarehouseName:[''],
     InventoryId:['',Validators.required],
-    InventoryDesr:['']
-
+    InventoryDesr:[''],
+    Reason:['',Validators.required]
   });
 
   getReceiptList() {

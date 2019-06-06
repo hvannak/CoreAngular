@@ -23,8 +23,8 @@ export class ViewwithstandardComponent implements OnInit {
   constructor(private service:DailyanimalgrowService,private projectService:ProjectService,private standardnameService:StandardnameService) { }
 
   ngOnInit() {
-    this.getProject();
-    this.getStandard();
+     this.getProject();
+     this.getStandard();
   }
 
   onSubmit(){

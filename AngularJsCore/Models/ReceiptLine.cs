@@ -20,6 +20,7 @@ namespace AngularJsCore.Models
         public decimal ExtCost { get; set; }
         public int WarehouseId { get; set; }
         public string WarehouseName { get; set; }
+        public string Reason { get; set; }
         public DateTime CreateDate { get; set; }
         public Project Project { get; set; }
         public Receipt Receipt { get; set; }

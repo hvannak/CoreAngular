@@ -11,6 +11,7 @@ namespace AngularJsCore.Models
         [Key]
         public int StandardNameId { get; set; }
         public string Standard { get; set; }
+        public string Type { get; set; }
         public virtual ICollection<Standard> Standards { get; set; }
     }
 }

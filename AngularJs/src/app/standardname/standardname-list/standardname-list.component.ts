@@ -11,7 +11,7 @@ import { Standardname } from 'src/app/shared/standardname.model';
 })
 export class StandardnameListComponent implements OnInit {
 
-  displayedColumns: string[] = ['Standard','Delete'];
+  displayedColumns: string[] = ['Standard','Type','Delete'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   constructor(public service:StandardnameService,private toastr:ToastrService) { }

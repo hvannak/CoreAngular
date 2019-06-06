@@ -4,14 +4,16 @@ using AngularJsCore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AngularJsCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190606092744_reasonsaleinvoiceline")]
+    partial class reasonsaleinvoiceline
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -406,8 +408,6 @@ namespace AngularJsCore.Migrations
 
                     b.Property<decimal>("Qty");
 
-                    b.Property<string>("Reason");
-
                     b.Property<int>("ReceiptId");
 
                     b.Property<DateTime>("ReceiptLineDate");
@@ -479,6 +479,8 @@ namespace AngularJsCore.Migrations
                     b.Property<int>("InventoryId");
 
                     b.Property<decimal>("Qty");
+
+                    b.Property<string>("Reason");
 
                     b.Property<int>("SaleInvoiceId");
 

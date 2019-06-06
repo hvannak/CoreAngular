@@ -47,8 +47,8 @@ namespace AngularJsCore.Controllers
             return Ok(result);
         }
 
-        [HttpGet("ProjectDaily/{projectId}")]
-        public async Task<IActionResult> GetProjectDaily(int projectId)
+        [HttpGet("ProjectDaily/{projectId}/{standardFeed}/{standardAnimal}")]
+        public async Task<IActionResult> GetProjectDaily(int projectId,int standardFeed,int standardAnimal)
         {
             //string userId = User.Claims.First(c => c.Type == "UserID").Value;
             var project = _context.projects.Where(x => x.ProjectId == projectId).FirstOrDefault();
@@ -68,16 +68,22 @@ namespace AngularJsCore.Controllers
                     start = start.Date.AddDays(1);
                     i++;
                 }
-                var projectanimalstandard = (from x in projectDailies
-                                             join y in _context.standards on x.NumberOfDay equals y.NumberOfDay into yt
+                var standardFeeds = _context.standards.Where(x => x.StandardNameId == standardFeed);
+                var standardAnimals = _context.standards.Where(x => x.StandardNameId == standardAnimal);
+
+                var projectstandard = (from x in projectDailies
+                                             join y in standardAnimals on x.NumberOfDay equals y.NumberOfDay into yt
+                                             join z in standardFeeds on x.NumberOfDay equals z.NumberOfDay into zt
                                              from yz in yt.DefaultIfEmpty()
+                                             from zk in zt.DefaultIfEmpty()
                                              select new
                                              {
                                                  NumberOfDay = yz != null ? yz.NumberOfDay : null,
-                                                 ResultOfDay = yz != null ? yz.ResultOfDay : null,
+                                                 ResultOfDayAnimal = yz != null ? yz.ResultOfDay : null,
+                                                 ResultOfDayFeed = zk != null ? zk.ResultOfDay : null,
                                                  x.DailyDate
                                              }).ToList();
-                return Ok(projectanimalstandard);
+                return Ok(projectstandard);
             }
 
             return Ok();
