@@ -20,9 +20,11 @@ namespace AngularJsCore.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new WarehouseAccessConfiguration());
+            modelBuilder.ApplyConfiguration(new CustomerConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new OrderLineConfiguration());
             modelBuilder.ApplyConfiguration(new ProjectConfiguration());
+            modelBuilder.ApplyConfiguration(new ProjectAccessConfiguration());
             modelBuilder.ApplyConfiguration(new ReceiptLineConfiguration());
             modelBuilder.ApplyConfiguration(new UomConfiguration());
             modelBuilder.ApplyConfiguration(new DailyAnimalGrowConfiguration());
@@ -52,6 +54,7 @@ namespace AngularJsCore.Data
         public DbSet<OrderLines> OrderLines { get; set; }
         public DbSet<Warehouse> warehouses { get; set; }
         public DbSet<Project> projects { get; set; }
+        public DbSet<ProjectAccess> projectAccesses { get; set; }
         public DbSet<Category> categories { get; set; }
         public DbSet<UnitOfMeasure> unitOfMeasures { get; set; }
         public DbSet<WarehouseAccess> WarehouseAccess { get; set; }

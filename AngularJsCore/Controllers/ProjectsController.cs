@@ -25,16 +25,8 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<Project> Getprojects()
         {
-            var result = _context.projects.Include(x => x.Warehouse).Select(x => new Project()
-            {
-                WarehouseId = x.WarehouseId,
-                WarehouseName = x.Warehouse.WarehouseName,
-                ProjectId = x.ProjectId,
-                ProjectName = x.ProjectName,
-                StartDate = x.StartDate,
-                EndDate = x.EndDate,
-                Status = x.Status
-            });
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var result = _context.projects.Where(s => s.ProjectAccesses.Any(c => c.UserId == userId)).OrderByDescending(x=>x.ProjectId);
             return result;
         }
 
@@ -42,35 +34,32 @@ namespace AngularJsCore.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProject([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var project = await _context.projects.FindAsync(id);
-
-            if (project == null)
-            {
-                return NotFound();
-            }
-
             return Ok(project);
+        }
+
+        [HttpGet("ProjectStatus/{status}")]
+        public async Task<IActionResult> GetProject(string status)
+        {
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var result = await _context.projects.Where(s => s.ProjectAccesses.Any(c => c.UserId == userId)).Where(x=>x.Status == status).OrderByDescending(x => x.ProjectId).ToListAsync();
+            //var project = await _context.projects.Where(x => x.Status == status).ToListAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("ProjectDaily/{projectId}")]
+        public async Task<IActionResult> GetProjectDaily(int projectId)
+        {
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var startproject = _context.projects.Where(x => x.ProjectId == projectId).Select(x => x.StartDate).FirstOrDefault();
+
+            return Ok();
         }
 
         // PUT: api/Projects/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProject([FromRoute] int id, [FromBody] Project project)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != project.ProjectId)
-            {
-                return BadRequest();
-            }
-
             _context.Entry(project).State = EntityState.Modified;
 
             try

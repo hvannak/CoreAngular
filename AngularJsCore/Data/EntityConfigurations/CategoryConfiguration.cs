@@ -13,7 +13,7 @@ namespace AngularJsCore.Data.EntityConfigurations
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasMany(x => x.Inventorys)
-                .WithOne(x => x.Category)
+                .WithOne(x => x.Category).OnDelete(DeleteBehavior.Restrict)
                 .HasForeignKey(x => x.CategoryId);
         }
     }

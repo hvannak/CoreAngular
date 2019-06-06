@@ -25,7 +25,26 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<DailyAnimalGrow> GetDailyAnimalGrow()
         {
-            return _context.dailyAnimalGrow.Take(300);
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var result = (from x in _context.dailyAnimalGrow
+                          join y in _context.projectAccesses on x.ProjectId equals y.ProjectId
+                          where y.UserId == userId
+                          select new DailyAnimalGrow()
+                          {
+                              DailyGrowId = x.DailyGrowId,
+                              InventoryDesc = x.InventoryDesc,
+                              DateGrow = x.DateGrow,
+                              InventoryId = x.InventoryId,
+                              Inventorys = x.Inventorys,
+                              NumberOfDay = x.NumberOfDay,
+                              ProjectId = x.ProjectId,
+                              ProjectName = x.ProjectName,
+                              WarehouseId = x.WarehouseId,
+                              WarehouseName = x.WarehouseName,
+                              Weight = x.Weight
+                          }).OrderByDescending(x => x.DailyGrowId).Take(300);
+            //return _context.dailyAnimalGrow.Take(300);
+            return result;
         }
 
         // GET: api/DailyAnimalGrows/5

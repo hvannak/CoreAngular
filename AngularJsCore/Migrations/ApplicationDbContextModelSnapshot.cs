@@ -126,6 +126,10 @@ namespace AngularJsCore.Migrations
 
                     b.HasKey("CustomerId");
 
+                    b.HasIndex("CustomerCD")
+                        .IsUnique()
+                        .HasFilter("[CustomerCD] IS NOT NULL");
+
                     b.ToTable("customers");
                 });
 
@@ -199,6 +203,8 @@ namespace AngularJsCore.Migrations
                     b.Property<decimal>("ReceiptCost");
 
                     b.Property<decimal>("SaleAmount");
+
+                    b.Property<decimal>("SaleAmountKhr");
 
                     b.Property<int>("WarehouseId");
 
@@ -332,6 +338,25 @@ namespace AngularJsCore.Migrations
                     b.HasIndex("WarehouseId");
 
                     b.ToTable("projects");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.ProjectAccess", b =>
+                {
+                    b.Property<int>("ProjectAccessId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("ProjectAccessId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("projectAccesses");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.Receipt", b =>
@@ -631,12 +656,12 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Inventorys", "Inventorys")
                         .WithMany("DailyAnimalGrows")
                         .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("AngularJsCore.Models.Project", "Project")
                         .WithMany("DailyAnimalGrows")
                         .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.Inventorys", b =>
@@ -644,7 +669,7 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Category", "Category")
                         .WithMany("Inventorys")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("AngularJsCore.Models.UnitOfMeasure", "UnitOfMeasure")
                         .WithMany("Inventorys")
@@ -657,7 +682,7 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Inventorys", "Inventorys")
                         .WithMany("OrderLines")
                         .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("AngularJsCore.Models.Orders", "Orders")
                         .WithMany("OrderLines")
@@ -670,7 +695,7 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Customers", "Customers")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.Project", b =>
@@ -678,7 +703,19 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Warehouse", "Warehouse")
                         .WithMany("Projects")
                         .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.ProjectAccess", b =>
+                {
+                    b.HasOne("AngularJsCore.Models.Project", "Project")
+                        .WithMany("ProjectAccesses")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("AngularJsCore.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("ProjectAccesses")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.ReceiptLine", b =>
@@ -699,12 +736,12 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Customers", "Customers")
                         .WithMany("SaleInvoices")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("AngularJsCore.Models.Project", "Project")
                         .WithMany("SaleInvoices")
                         .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.SaleInvoiceLine", b =>
@@ -712,7 +749,7 @@ namespace AngularJsCore.Migrations
                     b.HasOne("AngularJsCore.Models.Inventorys", "Inventorys")
                         .WithMany("SaleInvoiceLines")
                         .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("AngularJsCore.Models.SaleInvoice", "SaleInvoice")
                         .WithMany("SaleInvoiceLines")

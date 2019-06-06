@@ -79,6 +79,10 @@ import { SaleinvoiceLineComponent } from './saleinvoice/saleinvoice-line/saleinv
 import { CustomersComponent } from './customers/customers.component';
 import { CustomerDetailComponent } from './customers/customer-detail/customer-detail.component';
 import { CustomerListComponent } from './customers/customer-list/customer-list.component';
+import { ProjectService } from './shared/project.service';
+import { ProjectaccessComponent } from './projectaccess/projectaccess.component';
+import { ProjectaccessDetailComponent } from './projectaccess/projectaccess-detail/projectaccess-detail.component';
+import { ProjectaccessListComponent } from './projectaccess/projectaccess-list/projectaccess-list.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +138,10 @@ import { CustomerListComponent } from './customers/customer-list/customer-list.c
     SaleinvoiceLineComponent,
     CustomersComponent,
     CustomerDetailComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    ProjectaccessComponent,
+    ProjectaccessDetailComponent,
+    ProjectaccessListComponent
   ],
   imports: [
     BrowserModule,
@@ -151,7 +158,7 @@ import { CustomerListComponent } from './customers/customer-list/customer-list.c
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
     UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,
-    DailyanimalgrowService,SaleinvoiceService,CustomerService,{
+    DailyanimalgrowService,SaleinvoiceService,CustomerService,ProjectService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

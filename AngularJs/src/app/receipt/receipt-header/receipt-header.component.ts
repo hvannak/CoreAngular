@@ -121,7 +121,7 @@ export class ReceiptHeaderComponent implements OnInit {
 
   insertRecord(){
     this.service.formReceipt.patchValue({
-      DocDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
+      ReceiptDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
     });
     this.service.postReceipt().subscribe(res => {
       this.service.formReceipt.reset();
@@ -134,7 +134,7 @@ export class ReceiptHeaderComponent implements OnInit {
   updateRecord(){
     if(this.service.formReceipt.value.ReceiptDate.toLocaleString().indexOf('/') !== -1){
       this.service.formReceipt.patchValue({
-        DocDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
+        ReceiptDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
       });
     }
     this.service.formReceipt.patchValue({

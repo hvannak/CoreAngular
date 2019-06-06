@@ -14,7 +14,7 @@ namespace AngularJsCore.Data.EntityConfigurations
         {
             builder.HasOne(x => x.Inventorys)
                 .WithMany(x => x.SaleInvoiceLines)
-                .HasForeignKey(x => x.InventoryId);
+                .HasForeignKey(x => x.InventoryId).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(x => x.SaleInvoice)
                 .WithMany(x => x.SaleInvoiceLines)
                 .HasForeignKey(x => x.SaleInvoiceId)

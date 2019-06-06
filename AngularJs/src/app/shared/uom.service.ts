@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Uom } from './uom';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { MatTableDataSource } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class UomService {
 
   formData:Uom
-  list: Uom[];
+  list:MatTableDataSource<Uom>;
   constructor(private http:HttpClient) { }
   postUomDetail(){
     
@@ -23,15 +24,9 @@ export class UomService {
   DeleteUomDetail(id){
     return this.http.delete(environment.apiURL + "/UnitOfMeasures/" + id)
   }
-  refressList(){
-    this.http.get(environment.apiURL + "/UnitOfMeasures")
-        .toPromise()
-        .then(res => this.list = res as Uom[])
-  }
-
+  
   getUom(){
-    return this.http.get(environment.apiURL + "/UnitOfMeasures")
-        .toPromise();
+    return this.http.get(environment.apiURL + "/UnitOfMeasures").toPromise();
   }
 
 }

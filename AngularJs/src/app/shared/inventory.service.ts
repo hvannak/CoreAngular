@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Inventory } from './inventory.model';
 import { HttpClient } from '@angular/common/http';
+import { MatTableDataSource } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class InventoryService {
 
   formData:Inventory
-  list: Inventory[];
+  list:MatTableDataSource<Inventory>;
 
   constructor(private http:HttpClient) { }
 
@@ -24,12 +25,6 @@ export class InventoryService {
 
   DeleteInventoryDetail(id){
     return this.http.delete(environment.apiURL + "/Inventorys/" + id)
-  }
-  
-  refressList(){
-    this.http.get(environment.apiURL + "/Inventorys")
-        .toPromise()
-        .then(res => this.list = res as Inventory[])
   }
   
   getInventory(){

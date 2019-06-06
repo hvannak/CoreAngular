@@ -14,10 +14,10 @@ namespace AngularJsCore.Data.EntityConfigurations
         {
             builder.HasOne(x => x.Customers)
                 .WithMany(x => x.SaleInvoices)
-                .HasForeignKey(x => x.CustomerId);
+                .HasForeignKey(x => x.CustomerId).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(x => x.Project)
                .WithMany(x => x.SaleInvoices)
-               .HasForeignKey(x => x.ProjectId);
+               .HasForeignKey(x => x.ProjectId).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

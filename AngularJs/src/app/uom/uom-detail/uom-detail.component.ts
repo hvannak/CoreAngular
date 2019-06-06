@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UomService } from 'src/app/shared/uom.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
+import { Uom } from 'src/app/shared/uom';
 
 @Component({
   selector: 'app-uom-detail',
@@ -39,9 +40,10 @@ export class UomDetailComponent implements OnInit {
   insertRecord(form:NgForm){
     this.service.postUomDetail().subscribe(
       res=>{
+        this.service.list.data.push(res as Uom);
+        this.service.list._updateChangeSubscription();
         this.resetForm(form);
         this.toastr.success("Submited successfully","UOM Detail Register");
-        this.service.refressList();
       },
       err=>{
         console.log(err);
@@ -51,9 +53,11 @@ export class UomDetailComponent implements OnInit {
   updateRecord(form:NgForm){
     this.service.PutUomDetail().subscribe(
       res=>{
+        let index = this.service.list.data.findIndex(x=>x.UomId == this.service.formData.UomId);
+        this.service.list.data[index].UomId = this.service.formData.UomId;
+        this.service.list.data[index].UOM = this.service.formData.UOM;
         this.resetForm(form);
         this.toastr.info("Submited successfully","UOM Detail Register");
-        this.service.refressList();
       },
       err=>{
         console.log(err);

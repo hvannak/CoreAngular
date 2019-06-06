@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { WarehouseService } from 'src/app/shared/warehouse.service';
 import { ToastrService } from 'ngx-toastr';
 import { Warehouse } from 'src/app/shared/warehouse.model';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-warehouse-list',
@@ -10,10 +11,17 @@ import { Warehouse } from 'src/app/shared/warehouse.model';
 })
 export class WarehouseListComponent implements OnInit {
 
+  displayedColumns: string[] = ['WarehouseName','Delete'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   constructor(public service:WarehouseService,private toastr:ToastrService) { }
 
   ngOnInit() {
-    this.service.refressList();
+    this.service.getWarehouse().then(res => {
+      this.service.list = new MatTableDataSource(res as Array<Warehouse>);
+      this.service.list.paginator = this.paginator;
+      this.service.list.sort = this.sort;
+    })
   }
 
   populateForm(pd:Warehouse){
@@ -24,7 +32,9 @@ export class WarehouseListComponent implements OnInit {
    if(confirm('Are you sure to delete this record?')){
      this.service.DeleteWarehousesDetail(PMId).subscribe(
        res => {
-         this.service.refressList();
+        let index = this.service.list.data.findIndex(x=>x.WarehouseId == PMId);
+        this.service.list.data.splice(index,1);
+        this.service.list._updateChangeSubscription();
          this.toastr.warning("Deleted successfully","Warehouse Detail Register");
        },
        err => {

@@ -18,7 +18,7 @@ export class SaleinvoiceLineComponent implements OnInit {
   private warehouseService:WarehouseService,private inventoryService:InventoryService) { }
 
   ngOnInit() {
-    this.inventoryService.getInventory().then(res => this.inventoryList = res);
+    this.inventoryService.getInventoryAnimal().then(res => this.inventoryList = res);
     this.warehouseService.getWarehouseByProjectId(this.data.projectId).then(res => this.warehouseList = res);
     if(this.data.invoiceLineIndex == null){
       this.service.formInvoiceLine.reset();

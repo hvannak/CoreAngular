@@ -14,7 +14,7 @@ namespace AngularJsCore.Data.EntityConfigurations
         {
             builder.HasOne(x => x.Warehouse)
                .WithMany(x => x.Projects)
-               .HasForeignKey(x => x.WarehouseId);
+               .HasForeignKey(x => x.WarehouseId).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

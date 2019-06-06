@@ -23,5 +23,6 @@ namespace AngularJsCore.Models
         public virtual ICollection<SaleInvoice> SaleInvoices { get; set; }
         public virtual ICollection<ReceiptLine> ReceiptLines { get; set; }
         public virtual ICollection<DailyAnimalGrow> DailyAnimalGrows { get; set; }
+        public virtual ICollection<ProjectAccess> ProjectAccesses { get; set; }
     }
 }

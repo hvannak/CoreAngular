@@ -6,6 +6,7 @@ import { WarehouseService } from 'src/app/shared/warehouse.service';
 import { InventoryService } from 'src/app/shared/inventory.service';
 import { resetFakeAsyncZone } from '@angular/core/testing';
 import { InsitestatusService } from 'src/app/shared/insitestatus.service';
+import { CategoryService } from 'src/app/shared/category.service';
 
 @Component({
   selector: 'app-receipt-line',
@@ -17,9 +18,10 @@ export class ReceiptLineComponent implements OnInit {
   projectList;
   warehouseList;
   inventoryList;
+  categoryList;
   constructor(@Inject(MAT_DIALOG_DATA) public data,
   public dialogRef: MatDialogRef<ReceiptLineComponent>,private service:ReceiptService,
-  private projectService:ProjectService,private warehouseService:WarehouseService,
+  private projectService:ProjectService,private warehouseService:WarehouseService,private categoryService:CategoryService,
   private inventoryService:InventoryService,private insiteStatusService:InsitestatusService) { }
 
   ngOnInit() {

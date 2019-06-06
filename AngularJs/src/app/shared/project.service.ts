@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Project } from './project.model';
+import { MatTableDataSource } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
   formData:Project
-  list: Project[];
+  list:MatTableDataSource<Project>;
 
   constructor(private http:HttpClient) { }
 
@@ -23,13 +24,10 @@ export class ProjectService {
   DeleteProjectsDetail(id){
     return this.http.delete(environment.apiURL + "/Projects/" + id)
   }
-  refressList(){
-    this.http.get(environment.apiURL + "/Projects")
-        .toPromise()
-        .then(res => this.list = res as Project[])
+  getAllProject(){
+    return this.http.get(environment.apiURL + "/Projects").toPromise();
   }
   getActiveProject(){
-   return this.http.get(environment.apiURL + "/Projects")
-        .toPromise();
+   return this.http.get(environment.apiURL + "/Projects/ProjectStatus/Active").toPromise();
   }
 }

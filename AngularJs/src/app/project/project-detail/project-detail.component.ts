@@ -7,6 +7,7 @@ import * as _moment from 'moment';
 import * as _momentzone from 'moment-timezone';
 import {default as _rollupMoment} from 'moment';
 import { MAT_DATEPICKER_VALUE_ACCESSOR, MatDatepickerInputEvent } from '@angular/material';
+import { Project } from 'src/app/shared/project.model';
 const moment = _rollupMoment || _moment;
 
 @Component({
@@ -38,6 +39,11 @@ export class ProjectDetailComponent implements OnInit {
     }
   }
 
+  onChangeWarehouse(item){
+    let text = item.target.options[item.target.options.selectedIndex].text;
+    this.service.formData.WarehouseName = text;
+  }
+
   getWarehouse(){
     this.warehouseService.getWarehouse().then(res => this.warehouseList = res);
   }
@@ -58,9 +64,10 @@ export class ProjectDetailComponent implements OnInit {
     // console.log(this.service.formData.EndDate.toLocaleString());
     this.service.postProjectsDetail().subscribe(
       res=>{
+        this.service.list.data.push(res as Project);
+        this.service.list._updateChangeSubscription();
         this.resetForm(form);
         this.toastr.success("Submited successfully","Project Detail Register");
-        this.service.refressList();
       },
       err=>{
         console.log(err);
@@ -76,9 +83,17 @@ export class ProjectDetailComponent implements OnInit {
     }
     this.service.PutProjectsDetail().subscribe(
       res=>{
+        let index = this.service.list.data.findIndex(x=>x.ProjectId == this.service.formData.ProjectId);
+        this.service.list.data[index].ProjectId = this.service.formData.ProjectId;
+        this.service.list.data[index].ProjectName = this.service.formData.ProjectName;
+        this.service.list.data[index].StartDate = this.service.formData.StartDate;
+        this.service.list.data[index].EndDate = this.service.formData.EndDate;
+        this.service.list.data[index].Status = this.service.formData.Status;
+        this.service.list.data[index].WarehouseId = this.service.formData.WarehouseId;
+        this.service.list.data[index].WarehouseName = this.service.formData.WarehouseName;
+        this.service.list._updateChangeSubscription();
         this.resetForm(form);
         this.toastr.info("Submited successfully","Project Detail Register");
-        this.service.refressList();
       },
       err=>{
         console.log(err);

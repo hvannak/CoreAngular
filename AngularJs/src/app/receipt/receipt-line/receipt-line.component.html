@@ -25,7 +25,9 @@
                 <div class="form-group">
                     <label>Inventory</label>
                     <select class="form-control" formControlName="InventoryId" (change)="onChangeInventory($event)">
-                      <option value="0">-Select Inventory-</option>
+                      <option value="0">
+                        -Select Inventory-
+                      </option>
                       <option *ngFor="let item of inventoryList" value="{{item.InventoryId}}">{{item.InventoryDesr}}</option>
                     </select>
                 </div>

@@ -8,12 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using AngularJsCore.Data;
 using AngularJsCore.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Data.SqlClient;
 
 namespace AngularJsCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class CustomersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -88,15 +89,31 @@ namespace AngularJsCore.Controllers
         [HttpPost]
         public async Task<IActionResult> PostCustomers([FromBody] Customers customers)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                _context.customers.Add(customers);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetCustomers", new { id = customers.CustomerId }, customers);
             }
-
-            _context.customers.Add(customers);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCustomers", new { id = customers.CustomerId }, customers);
+            catch(DbUpdateException ex)
+            {
+                var sqlException = ex.GetBaseException() as SqlException;
+                if(sqlException != null)
+                {
+                    switch (sqlException.Number)
+                    {
+                        case 2601:
+                            return Ok(new Customers() { ErrorCode = 2601 });
+                        default:
+                            throw;
+                    }
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         // DELETE: api/Customers/5

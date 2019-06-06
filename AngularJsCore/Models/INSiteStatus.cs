@@ -27,6 +27,7 @@ namespace AngularJsCore.Models
         public decimal IssueCost { get; set; }
         public decimal ReceiptCost { get; set; }
         public decimal AdjustCost { get; set; }
-        public decimal SaleAmount { get; set; }
+        public decimal SaleAmount{ get; set; }
+        public decimal SaleAmountKhr { get; set; }
     }
 }

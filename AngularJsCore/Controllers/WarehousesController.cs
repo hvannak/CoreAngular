@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using AngularJsCore.Data;
 using AngularJsCore.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace AngularJsCore.Controllers
 {
@@ -25,25 +27,16 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<Warehouse> Getwarehouses()
         {
-            return _context.warehouses;
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var result = _context.warehouses.Where(s => s.WarehouseAccesses.Any(c => c.UserId == userId));
+            return result;
         }
 
         // GET: api/Warehouses/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetWarehouse([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var warehouse = await _context.warehouses.FindAsync(id);
-
-            if (warehouse == null)
-            {
-                return NotFound();
-            }
-
             return Ok(warehouse);
         }
 

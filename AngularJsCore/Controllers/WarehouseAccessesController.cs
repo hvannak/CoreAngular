@@ -59,9 +59,5 @@ namespace AngularJsCore.Controllers
             return Ok(warehouseAccess);
         }
 
-        private bool WarehouseAccessExists(int id)
-        {
-            return _context.WarehouseAccess.Any(e => e.WarehouseAccessId == id);
-        }
     }
 }

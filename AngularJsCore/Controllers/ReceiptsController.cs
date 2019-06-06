@@ -27,13 +27,47 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<Receipt> Getreceipts()
         {
-            return _context.receipts.OrderByDescending(x=>x.ReceiptId).Take(300);
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var entryPoint = (from ep in _context.receipts
+                              join e in _context.receiptLines on ep.ReceiptId equals e.ReceiptId
+                              join t in _context.projectAccesses on e.ProjectId equals t.ProjectId
+                              where t.UserId == userId
+                              select new Receipt()
+                              {
+                                  TranType = ep.TranType,
+                                  ReceiptId = ep.ReceiptId,
+                                  ReceiptNbr = ep.ReceiptNbr,
+                                  ReceiptDate = ep.ReceiptDate,
+                                  Description = ep.Description,
+                                  TotalQty = ep.TotalQty,
+                                  TotalCost = ep.TotalCost,
+                                  Release = ep.Release
+                              }).OrderByDescending(x=>x.ReceiptId).Take(300);
+            //return _context.receipts.OrderByDescending(x=>x.ReceiptId).Take(300);
+            return entryPoint;
         }
 
         [HttpGet("ReceiptByDate/{from}/{to}")]
         public IEnumerable<Receipt> GetReceiptByDate(DateTime from,DateTime to)
         {
-            var result = _context.receipts.Where(x => x.ReceiptDate.Date >= from.Date && x.ReceiptDate.Date <= to.Date).ToList();
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var result = (from ep in _context.receipts
+                              join e in _context.receiptLines on ep.ReceiptId equals e.ReceiptId
+                              join t in _context.projectAccesses on e.ProjectId equals t.ProjectId
+                              where t.UserId == userId
+                              select new Receipt()
+                              {
+                                  TranType = ep.TranType,
+                                  ReceiptId = ep.ReceiptId,
+                                  ReceiptNbr = ep.ReceiptNbr,
+                                  ReceiptDate = ep.ReceiptDate,
+                                  Description = ep.Description,
+                                  TotalQty = ep.TotalQty,
+                                  TotalCost = ep.TotalCost,
+                                  Release = ep.Release
+                              }).Where(x => x.ReceiptDate.Date >= from.Date && x.ReceiptDate.Date <= to.Date).OrderByDescending(x => x.ReceiptId).Take(300);
+
+            //var result = _context.receipts.Where(x => x.ReceiptDate.Date >= from.Date && x.ReceiptDate.Date <= to.Date).ToList();
             return result;
         }
 

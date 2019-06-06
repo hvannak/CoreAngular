@@ -24,22 +24,42 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public System.Object GetSaleInvoice()
         {
-            var result = _context.saleInvoices.Select(x => new
-            {
-                x.SaleInvoiceId,
-                x.CustomerId,
-                x.CustomerName,
-                x.Description,
-                x.DocDate,
-                x.Currency,
-                x.InvoiceNbr,
-                x.ProjectId,
-                x.ProjectName,
-                x.Release,
-                x.TotalQty,
-                x.TotalWeight,
-                x.TotalAmount
-            }).Take(300).ToList();
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var result = (from x in _context.saleInvoices
+                              join t in _context.projectAccesses on x.ProjectId equals t.ProjectId
+                              where t.UserId == userId
+                              select new
+                              {
+                                  x.SaleInvoiceId,
+                                  x.CustomerId,
+                                  x.CustomerName,
+                                  x.Description,
+                                  x.DocDate,
+                                  x.Currency,
+                                  x.InvoiceNbr,
+                                  x.ProjectId,
+                                  x.ProjectName,
+                                  x.Release,
+                                  x.TotalQty,
+                                  x.TotalWeight,
+                                  x.TotalAmount
+                              }).OrderByDescending(x => x.SaleInvoiceId).Take(300);
+            //var result = _context.saleInvoices.Select(x => new
+            //{
+            //    x.SaleInvoiceId,
+            //    x.CustomerId,
+            //    x.CustomerName,
+            //    x.Description,
+            //    x.DocDate,
+            //    x.Currency,
+            //    x.InvoiceNbr,
+            //    x.ProjectId,
+            //    x.ProjectName,
+            //    x.Release,
+            //    x.TotalQty,
+            //    x.TotalWeight,
+            //    x.TotalAmount
+            //}).Take(300).ToList();
             return result;
         }
 
@@ -82,7 +102,28 @@ namespace AngularJsCore.Controllers
         [HttpGet("InvoiceByDate/{from}/{to}")]
         public IEnumerable<SaleInvoice> GetSaleInvoiceByDate(DateTime from, DateTime to)
         {
-            var result = _context.saleInvoices.Where(x => x.DocDate.Date >= from.Date && x.DocDate.Date <= to.Date).ToList();
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var result = (from x in _context.saleInvoices
+                           join t in _context.projectAccesses on x.ProjectId equals t.ProjectId
+                           where t.UserId == userId
+                           select new SaleInvoice
+                           {
+                              SaleInvoiceId = x.SaleInvoiceId,
+                              CustomerId = x.CustomerId,
+                               CustomerName = x.CustomerName,
+                               Description = x.Description,
+                               DocDate = x.DocDate,
+                               Currency = x.Currency,
+                               InvoiceNbr = x.InvoiceNbr,
+                               ProjectId = x.ProjectId,
+                               ProjectName = x.ProjectName,
+                               Release = x.Release,
+                               TotalQty = x.TotalQty,
+                               TotalWeight = x.TotalWeight,
+                               TotalAmount = x.TotalAmount
+                           }).Where(x => x.DocDate.Date >= from.Date && x.DocDate.Date <= to.Date).OrderByDescending(x => x.SaleInvoiceId).ToList();
+
+            //var result = _context.saleInvoices.Where(x => x.DocDate.Date >= from.Date && x.DocDate.Date <= to.Date).ToList();
             return result;
         }
 
@@ -167,7 +208,14 @@ namespace AngularJsCore.Controllers
                     inSite.QtyOnHand = inSite.QtyOnHand - item.Qty;
                     inSite.QtySaleByUnit = inSite.QtySaleByUnit + item.Qty;
                     inSite.QtySaleByKg = inSite.QtySaleByKg + item.Weight;
-                    inSite.SaleAmount = inSite.SaleAmount + item.ExtAmount;
+                    if(saleInvoice.Currency == "USD")
+                    {
+                        inSite.SaleAmount = inSite.SaleAmount + item.ExtAmount;
+                    }
+                    else if(saleInvoice.Currency == "KHR")
+                    {
+                        inSite.SaleAmountKhr = inSite.SaleAmountKhr + item.ExtAmount;
+                    }
                 }
             }
         }

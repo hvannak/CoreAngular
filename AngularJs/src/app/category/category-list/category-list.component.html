@@ -1,8 +1,28 @@
-<table class="table table-hover">
-  <tr *ngFor="let pd of service.list">
-    <td (click)="populateForm(pd)">{{pd.CategoryName}}</td>
-    <td>
-      <i class="fa fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.CategoryId)"></i>
-    </td>
-  </tr>
-</table>
+<div class="row">
+    <div class="col-md-12 mat-elevation-z8">  
+      <div class="row">
+        <div class="col-md-4">
+            <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+            </mat-form-field>
+        </div>         
+      </div>  
+      <table class="table table-hover" mat-table [dataSource]="service.list" matSort>
+        <ng-container matColumnDef="CategoryName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Category Name </th>
+          <td mat-cell *matCellDef="let element" (click)="populateForm(element)"> {{element.CategoryName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Delete">
+          <th mat-header-cell *matHeaderCellDef> 
+            
+          </th>
+          <td mat-cell *matCellDef="let element"> 
+              <i class="fa fa-trash-alt fa-lg text-danger" (click)="onDelete(element.CategoryId)"></i>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </div>

@@ -39,11 +39,20 @@ export class CustomerDetailComponent implements OnInit {
   
   insertRecord(form:NgForm){
     this.service.postCustomersDetail().subscribe(
-      res=>{
-        this.service.list.data.push(res as Customer);
-        this.service.list._updateChangeSubscription();
-        this.resetForm(form);
-        this.toastr.success("Submited successfully","Customer Register");
+      (res:any)=>{
+
+        if(res.ErrorCode == 0){
+          this.service.list.data.push(res as Customer);
+          this.service.list._updateChangeSubscription();
+          this.resetForm(form);
+          this.toastr.success("Submited successfully","Customer Register");
+        }
+        else if(res.ErrorCode == '2601'){
+          this.toastr.error('Customer is already taken','Customer failed.');
+        }
+        else{
+          this.toastr.error('Customer is failed','Customer failed.');
+        }
       },
       err=>{
         console.log(err);
@@ -62,6 +71,7 @@ export class CustomerDetailComponent implements OnInit {
         this.toastr.info("Submited successfully","Customer Register");
       },
       err=>{
+        console.log("error here")
         console.log(err);
       })
   }

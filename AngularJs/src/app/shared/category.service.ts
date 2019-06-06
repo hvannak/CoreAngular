@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Category } from './category.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { MatTableDataSource } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class CategoryService {
 
   formData:Category;
-  list:Category[]
+  list:MatTableDataSource<Category>;
   constructor(private http:HttpClient) { }
 
   postCategoryDetail(){
@@ -21,11 +22,6 @@ export class CategoryService {
   }
   DeleteCategoryDetail(id){
     return this.http.delete(environment.apiURL + "/Categories/" + id)
-  }
-  refressList(){
-    this.http.get(environment.apiURL + "/Categories")
-        .toPromise()
-        .then(res => this.list = res as Category[])
   }
 
   getCategory(){

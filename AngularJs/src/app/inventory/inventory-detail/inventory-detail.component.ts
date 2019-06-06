@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { CategoryService } from 'src/app/shared/category.service';
 import { UomService } from 'src/app/shared/uom.service';
 import { Uom } from 'src/app/shared/uom';
+import { Inventory } from 'src/app/shared/inventory.model';
 
 @Component({
   selector: 'app-inventory-detail',
@@ -56,9 +57,10 @@ export class InventoryDetailComponent implements OnInit {
   insertRecord(form:NgForm){
     this.service.postInventoryDetail().subscribe(
       res=>{
+        this.service.list.data.push(res as Inventory);
+        this.service.list._updateChangeSubscription();
         this.resetForm(form);
         this.toastr.success("Submited successfully","Inventory Detail Register");
-        this.service.refressList();
       },
       err=>{
         console.log(err);
@@ -68,9 +70,14 @@ export class InventoryDetailComponent implements OnInit {
   updateRecord(form:NgForm){
     this.service.PutInventoryDetail().subscribe(
       res=>{
+        let index = this.service.list.data.findIndex(x=>x.InventoryId == this.service.formData.InventoryId);
+        this.service.list.data[index].InventoryId = this.service.formData.InventoryId;
+        this.service.list.data[index].InventoryDesr = this.service.formData.InventoryDesr;
+        this.service.list.data[index].Price = this.service.formData.Price;
+        this.service.list.data[index].UomId = this.service.formData.UomId;
+        this.service.list.data[index].CategoryId = this.service.formData.CategoryId;
         this.resetForm(form);
         this.toastr.info("Submited successfully","Warehouse Detail Register");
-        this.service.refressList();
       },
       err=>{
         console.log(err);

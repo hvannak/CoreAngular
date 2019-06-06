@@ -27,7 +27,6 @@ export class UserrolelistComponent implements OnInit {
       Roles:item.Roles
     });
     this.service.rolesAdded = item.Roles;
-    console.log(this.service.rolesAdded);
   }
 
 
