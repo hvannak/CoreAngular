@@ -4,14 +4,16 @@ using AngularJsCore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AngularJsCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190606032755_standardnae")]
+    partial class standardnae
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -509,15 +511,11 @@ namespace AngularJsCore.Migrations
 
                     b.Property<string>("StandardName");
 
-                    b.Property<int>("StandardNameId");
-
                     b.Property<string>("UOM");
 
                     b.Property<int>("UomId");
 
                     b.HasKey("StandardKey");
-
-                    b.HasIndex("StandardNameId");
 
                     b.HasIndex("UomId");
 
@@ -534,7 +532,7 @@ namespace AngularJsCore.Migrations
 
                     b.HasKey("StandardNameId");
 
-                    b.ToTable("standardNames");
+                    b.ToTable("StandardName");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.UnitOfMeasure", b =>
@@ -776,11 +774,6 @@ namespace AngularJsCore.Migrations
 
             modelBuilder.Entity("AngularJsCore.Models.Standard", b =>
                 {
-                    b.HasOne("AngularJsCore.Models.StandardName", "StandardNames")
-                        .WithMany("Standards")
-                        .HasForeignKey("StandardNameId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
                     b.HasOne("AngularJsCore.Models.UnitOfMeasure", "UnitOfMeasure")
                         .WithMany("Standards")
                         .HasForeignKey("UomId")

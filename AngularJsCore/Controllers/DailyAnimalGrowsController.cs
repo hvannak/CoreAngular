@@ -66,8 +66,8 @@ namespace AngularJsCore.Controllers
             return Ok(dailyAnimalGrow);
         }
 
-        [HttpGet("viewwithstandard/{projectId}")]
-        public async Task<IActionResult> GetDailyGrowWithStandard(int projectId)
+        [HttpGet("viewwithstandard/{projectId}/{standardId}")]
+        public async Task<IActionResult> GetDailyGrowWithStandard(int projectId,int standardId)
         {
             var result = await _context.dailyAnimalGrow.Join(_context.standards, x => x.NumberOfDay,
                                                         y => y.NumberOfDay, (x, y) =>
@@ -81,9 +81,10 @@ namespace AngularJsCore.Controllers
                                                                NumberOfDay = x.NumberOfDay,
                                                                DateGrow = x.DateGrow,
                                                                StandardName = y.StandardName,
+                                                               StandardNameId = y.StandardNameId,
                                                                ResultOfDay = y.ResultOfDay,
                                                                UOM = y.UOM
-                                                           }).Where(z => z.StandardName == "ANIMAL" && z.ProjectId == projectId).ToListAsync();
+                                                           }).Where(z => z.StandardNameId == standardId && z.ProjectId == projectId).ToListAsync();
             return Ok(result);
         }
 

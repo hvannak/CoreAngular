@@ -35,8 +35,8 @@ export class DailyanimalgrowService {
     return this.http.get(environment.apiURL + '/DailyAnimalGrows/' + Id).toPromise();
   }
 
-  getDailyGrowWithStandard(projectId:number){
-    return this.http.get(environment.apiURL + '/DailyAnimalGrows/viewwithstandard/' + projectId).toPromise();
+  getDailyGrowWithStandard(projectId:number,standardId:number){
+    return this.http.get(environment.apiURL + '/DailyAnimalGrows/viewwithstandard/' + projectId + "/" + standardId).toPromise();
   }
 
   deleteDailyGrow(id:number){

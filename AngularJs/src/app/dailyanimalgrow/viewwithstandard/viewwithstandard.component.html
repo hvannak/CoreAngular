@@ -14,6 +14,12 @@
                     <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
                   </select>
                 </div>
+                <div class="form-group">
+                  <select class="form-control" name="standardId" [(ngModel)]="standardId">
+                    <option value="0" >-Select Standard-</option>
+                    <option *ngFor="let item of standardList" value="{{item.StandardNameId}}">{{item.Standard}}</option>
+                  </select>
+                </div>
                 <button mat-button type="submit" [disabled]="form.invalid">Load...</button>
               </div>
             </form>

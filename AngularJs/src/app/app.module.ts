@@ -83,6 +83,10 @@ import { ProjectService } from './shared/project.service';
 import { ProjectaccessComponent } from './projectaccess/projectaccess.component';
 import { ProjectaccessDetailComponent } from './projectaccess/projectaccess-detail/projectaccess-detail.component';
 import { ProjectaccessListComponent } from './projectaccess/projectaccess-list/projectaccess-list.component';
+import { StandardnameComponent } from './standardname/standardname.component';
+import { StandardnameService } from './shared/standardname.service';
+import { StandardnameDetailComponent } from './standardname/standardname-detail/standardname-detail.component';
+import { StandardnameListComponent } from './standardname/standardname-list/standardname-list.component';
 
 @NgModule({
   declarations: [
@@ -141,7 +145,10 @@ import { ProjectaccessListComponent } from './projectaccess/projectaccess-list/p
     CustomerListComponent,
     ProjectaccessComponent,
     ProjectaccessDetailComponent,
-    ProjectaccessListComponent
+    ProjectaccessListComponent,
+    StandardnameComponent,
+    StandardnameDetailComponent,
+    StandardnameListComponent
   ],
   imports: [
     BrowserModule,
@@ -158,7 +165,7 @@ import { ProjectaccessListComponent } from './projectaccess/projectaccess-list/p
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
     UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,
-    DailyanimalgrowService,SaleinvoiceService,CustomerService,ProjectService,{
+    StandardnameService ,DailyanimalgrowService,SaleinvoiceService,CustomerService,ProjectService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

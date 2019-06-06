@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { UomService } from 'src/app/shared/uom.service';
 import { Standard } from 'src/app/shared/standard.model';
+import { StandardnameService } from 'src/app/shared/standardname.service';
 
 @Component({
   selector: 'app-standard-detail',
@@ -13,12 +14,14 @@ import { Standard } from 'src/app/shared/standard.model';
 export class StandardDetailComponent implements OnInit {
 
   uomList;
-  constructor(public service:StandardService,private uomService:UomService,
+  standardList;
+  constructor(public service:StandardService,private uomService:UomService,private standardnameService:StandardnameService,
     private toastr:ToastrService) { }
 
   ngOnInit() {
     this.resetForm();
     this.getUom();
+    this.getStandardname();
   }
 
   resetForm(form?:NgForm){
@@ -26,12 +29,27 @@ export class StandardDetailComponent implements OnInit {
       form.resetForm();
     this.service.formData = {
       StandardKey:0,
+      StandardNameId:0,
       StandardName:'',
       NumberOfDay:0,
       ResultOfDay:0,
       UomId:0,
       UOM:''
     }
+  }
+
+  onChangeStandard(item){
+    let text = item.target.options[item.target.options.selectedIndex].text;
+    this.service.formData.StandardName = text;
+  }
+
+  onChangeUom(item){
+    let text = item.target.options[item.target.options.selectedIndex].text;
+    this.service.formData.UOM = text;
+  }
+
+  getStandardname(){
+    this.standardnameService.getStandard().then(res => this.standardList = res);
   }
 
   getUom(){

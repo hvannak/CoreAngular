@@ -50,8 +50,35 @@ namespace AngularJsCore.Controllers
         [HttpGet("ProjectDaily/{projectId}")]
         public async Task<IActionResult> GetProjectDaily(int projectId)
         {
-            string userId = User.Claims.First(c => c.Type == "UserID").Value;
-            var startproject = _context.projects.Where(x => x.ProjectId == projectId).Select(x => x.StartDate).FirstOrDefault();
+            //string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var project = _context.projects.Where(x => x.ProjectId == projectId).FirstOrDefault();
+            List<ProjectDaily> projectDailies = new List<ProjectDaily>();
+            if (project != null)
+            {
+                DateTime start = project.StartDate;
+                DateTime end = project.EndDate;
+                int i = 0;
+                while (start <= end)
+                {
+                    projectDailies.Add(new ProjectDaily
+                    {
+                        DailyDate = start,
+                        NumberOfDay = i
+                    });
+                    start = start.Date.AddDays(1);
+                    i++;
+                }
+                var projectanimalstandard = (from x in projectDailies
+                                             join y in _context.standards on x.NumberOfDay equals y.NumberOfDay into yt
+                                             from yz in yt.DefaultIfEmpty()
+                                             select new
+                                             {
+                                                 NumberOfDay = yz != null ? yz.NumberOfDay : null,
+                                                 ResultOfDay = yz != null ? yz.ResultOfDay : null,
+                                                 x.DailyDate
+                                             }).ToList();
+                return Ok(projectanimalstandard);
+            }
 
             return Ok();
         }

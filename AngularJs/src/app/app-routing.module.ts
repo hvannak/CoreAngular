@@ -27,6 +27,7 @@ import { SaleinvoiceComponent } from './saleinvoice/saleinvoice.component';
 import { SaleinvoiceHeaderComponent } from './saleinvoice/saleinvoice-header/saleinvoice-header.component';
 import { CustomersComponent } from './customers/customers.component';
 import { ProjectaccessComponent } from './projectaccess/projectaccess.component';
+import { StandardnameComponent } from './standardname/standardname.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path:'inventory',component:InventoryComponent,canActivate:[AuthGuard]},
   {path:'uom',component:UomComponent,canActivate:[AuthGuard]},
   {path:'standard',component:StandardComponent,canActivate:[AuthGuard]},
+  {path:'standardname',component:StandardnameComponent,canActivate:[AuthGuard]},
   {path:'dailygrow',component:DailyanimalgrowComponent,canActivate:[AuthGuard]},
   {path:'viewwithstandard',component:ViewwithstandardComponent,canActivate:[AuthGuard]},
   {path:'error/403',component:ForbiddenComponent},
