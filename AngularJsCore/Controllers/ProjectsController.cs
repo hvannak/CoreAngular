@@ -30,6 +30,13 @@ namespace AngularJsCore.Controllers
             return result;
         }
 
+        [HttpGet("All")]
+        public IEnumerable<Project> GetAllprojects()
+        {
+            var result = _context.projects;
+            return result;
+        }
+
         // GET: api/Projects/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProject([FromRoute] int id)
@@ -70,17 +77,63 @@ namespace AngularJsCore.Controllers
                 }
                 var standardFeeds = _context.standards.Where(x => x.StandardNameId == standardFeed);
                 var standardAnimals = _context.standards.Where(x => x.StandardNameId == standardAnimal);
+                var dailyAnimalGrow = _context.dailyAnimalGrow.Where(x => x.ProjectId == projectId);
+                var dailyIssue = _context.receipts.Join(_context.receiptLines, x => x.ReceiptId,
+                                            y => y.ReceiptId, (x, y) => new
+                                            {
+                                                x.ReceiptDate,
+                                                x.TranType,
+                                                y.ProjectId,
+                                                y.Qty,
+                                                y.Reason
+                                            }).Where(z => (z.TranType == "Issue" || z.TranType == "Adjust") && z.ProjectId == projectId && (z.Reason == "FEED" || z.Reason == "ANIMAL"));
+                var dailyIssue_Feed = dailyIssue.Where(x=>x.Reason == "FEED").GroupBy(zt => zt.ReceiptDate).Select(zr => new
+                                                                            {
+                                                                                zr.FirstOrDefault().ReceiptDate,
+                                                                                Qty = zr.Sum(k => k.Qty)
+                                                                            });
+                var dailyIssue_Animal = dailyIssue.Where(x => x.Reason == "ANIMAL").GroupBy(zt => zt.ReceiptDate).Select(zr => new
+                                                                            {
+                                                                                zr.FirstOrDefault().ReceiptDate,
+                                                                                Qty = zr.Sum(k => k.Qty)
+                                                                            });
+                var dailySale = _context.saleInvoices.Join(_context.saleInvoiceLines, x => x.SaleInvoiceId, y => y.SaleInvoiceId, (x, y) => new
+                {
+                    x.DocDate,
+                    x.ProjectId,
+                    y.Qty,
+                    y.ExtAmount
+                }).Where(z => z.ProjectId == projectId).GroupBy(k=>k.DocDate).Select( kz => new
+                {
+                    kz.FirstOrDefault().DocDate,
+                    Qty = kz.Sum(x=>x.Qty),
+                    ExtAmount = kz.Sum(x=>x.ExtAmount)
+                });
 
                 var projectstandard = (from x in projectDailies
                                              join y in standardAnimals on x.NumberOfDay equals y.NumberOfDay into yt
                                              join z in standardFeeds on x.NumberOfDay equals z.NumberOfDay into zt
+                                             join l in dailyAnimalGrow on x.DailyDate.Date equals l.DateGrow.Date into lt
+                                             join f in dailyIssue_Feed on x.DailyDate.Date equals f.ReceiptDate.Date into ft
+                                             join a in dailyIssue_Animal on x.DailyDate.Date equals a.ReceiptDate.Date into at
+                                             join s in dailySale on x.DailyDate.Date equals s.DocDate.Date into st
                                              from yz in yt.DefaultIfEmpty()
                                              from zk in zt.DefaultIfEmpty()
+                                             from tl in lt.DefaultIfEmpty()
+                                             from tf in ft.DefaultIfEmpty()
+                                             from ta in at.DefaultIfEmpty()
+                                             from ts in st.DefaultIfEmpty()
                                              select new
                                              {
-                                                 NumberOfDay = yz != null ? yz.NumberOfDay : null,
+                                                 //NumberOfDay = yz != null ? yz.NumberOfDay : null,
+                                                 x.NumberOfDay,
                                                  ResultOfDayAnimal = yz != null ? yz.ResultOfDay : null,
                                                  ResultOfDayFeed = zk != null ? zk.ResultOfDay : null,
+                                                 AcualAnimalWeight = tl != null ? tl.Weight : null,
+                                                 AcualFeed = tf != null ? tf.Qty : null,
+                                                 AnimalDead = ta != null ? ta.Qty : null,
+                                                 QtySale = ts != null ? ts.Qty : null,
+                                                 ExtAmount = ts != null ? ts.ExtAmount : null,
                                                  x.DailyDate
                                              }).ToList();
                 return Ok(projectstandard);

@@ -32,20 +32,17 @@ namespace AngularJsCore.Data
             modelBuilder.ApplyConfiguration(new InvoiceLineConfiguration());
             modelBuilder.ApplyConfiguration(new StandardNameConfiguration());
 
-            //modelBuilder.Entity<ApplicationUser>().HasData(
-            //            new ApplicationUser
-            //            {
-            //                Id = "a8cafcd6-6db8-481f-ab02-7be54e3ad91e",
-            //                UserName = "vannak2010@gmail.com",
-            //                Email = "vannak2010@gmail.com",
-            //                PasswordHash = "AQAAAAEAACcQAAAAEMoKosrjxHRPcDMbSBqZFnA26OM4vMaS6DQZ/dhWNAb6JRtVePjM6wATR9bqHfucJA==",
-            //                NormalizedEmail = "VANNAK2010@GMAIL.COM",
-            //                NormalizedUserName = "VANNAK2010@GMAIL.COM",
-            //                SecurityStamp = "KEXGJ2ZWULJA4V3FJSK5YEP2KCXO43N5",
-            //                LockoutEnabled = true,
-            //                ConcurrencyStamp = "194b0238-0192-4e4b-b2b0-cf1fd41e2483",
-            //                EmailConfirmed = false
-            //            });
+            modelBuilder.Entity<ApplicationUser>().HasData(
+                        new ApplicationUser
+                        {
+                            UserName = "vannak2010@gmail.com",
+                            NormalizedUserName= "vannak2010@gmail.com",
+                            Email = "vannak2010@gmail.com",
+                            NormalizedEmail= "vannak2010@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==",
+                            SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO",
+                            FullName = "Vannak Heng"
+                        });
         }
         
         public DbSet<PaymentDetail> paymentDetails { get; set; }

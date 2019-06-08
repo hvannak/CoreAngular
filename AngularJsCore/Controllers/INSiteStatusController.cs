@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AngularJsCore.Data;
 using AngularJsCore.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AngularJsCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class INSiteStatusController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -48,9 +50,20 @@ namespace AngularJsCore.Controllers
         }
 
         [HttpGet("Cost/{projectId}/{warehouseId}/{inventoryId}")]
-        public async Task<IActionResult> GetReceiptByDate(int projectId,int warehouseId,int inventoryId)
+        public async Task<IActionResult> GetReceiptByDate(int projectId, int warehouseId, int inventoryId)
         {
             var result = await _context.iNSiteStatuses.Where(x => x.ProjectId == projectId && x.WarehouseId == warehouseId && x.InventoryId == inventoryId).FirstOrDefaultAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("Projectstatus/{projectId}/{inventoryId}")]
+        public async Task<IActionResult> GetProjectStatusByInventory(int projectId,int inventoryId)
+        {
+            var result = await _context.iNSiteStatuses.Where(x => x.ProjectId == projectId).ToListAsync();
+            if(inventoryId != 0)
+            {
+                result = result.Where(x => x.InventoryId == inventoryId).ToList();
+            }
             return Ok(result);
         }
 

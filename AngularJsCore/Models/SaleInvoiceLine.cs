@@ -15,10 +15,10 @@ namespace AngularJsCore.Models
         public int InventoryId { get; set; }
         public string WarehouseName { get; set; }
         public string InventoryDesc { get; set; }
-        public decimal Qty { get; set; }
-        public decimal Weight { get; set; }
-        public decimal Unitprice { get; set; }
-        public decimal ExtAmount { get; set; }
+        public decimal? Qty { get; set; }
+        public decimal? Weight { get; set; }
+        public decimal? Unitprice { get; set; }
+        public decimal? ExtAmount { get; set; }
         public Inventorys Inventorys { get; set; }
         public SaleInvoice SaleInvoice { get; set; }
     }

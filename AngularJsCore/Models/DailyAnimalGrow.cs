@@ -17,7 +17,7 @@ namespace AngularJsCore.Models
         public string WarehouseName { get; set; }
         public string InventoryDesc { get; set; }
         public DateTime DateGrow { get; set; }
-        public decimal Weight { get; set; }
+        public decimal? Weight { get; set; }
         public int NumberOfDay { get; set; }
         public Inventorys Inventorys { get; set; }
         public Project Project  { get; set; }

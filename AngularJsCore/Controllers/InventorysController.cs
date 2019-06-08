@@ -13,7 +13,7 @@ namespace AngularJsCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class InventorysController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

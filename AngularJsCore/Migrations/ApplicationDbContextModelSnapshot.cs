@@ -97,6 +97,10 @@ namespace AngularJsCore.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new { Id = "a3c488e4-ed00-4532-9f96-9530b7c7f8e3", AccessFailedCount = 0, ConcurrencyStamp = "b595bcb6-5925-4390-b6c1-001415c372ee", Email = "vannak2010@gmail.com", EmailConfirmed = false, FullName = "Vannak Heng", LockoutEnabled = false, NormalizedEmail = "vannak2010@gmail.com", NormalizedUserName = "vannak2010@gmail.com", PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", PhoneNumberConfirmed = false, SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", TwoFactorEnabled = false, UserName = "vannak2010@gmail.com" }
+                    );
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.Category", b =>
@@ -155,7 +159,7 @@ namespace AngularJsCore.Migrations
 
                     b.Property<string>("WarehouseName");
 
-                    b.Property<decimal>("Weight");
+                    b.Property<decimal?>("Weight");
 
                     b.HasKey("DailyGrowId");
 
@@ -172,39 +176,39 @@ namespace AngularJsCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("AdjustCost");
+                    b.Property<decimal?>("AdjustCost");
 
                     b.Property<string>("InventoryDesc");
 
                     b.Property<int>("InventoryId");
 
-                    b.Property<decimal>("IssueCost");
+                    b.Property<decimal?>("IssueCost");
 
-                    b.Property<decimal>("LastCost");
+                    b.Property<decimal?>("LastCost");
 
                     b.Property<int>("ProjectId");
 
                     b.Property<string>("ProjectName");
 
-                    b.Property<decimal>("QtyAdjust");
+                    b.Property<decimal?>("QtyAdjust");
 
-                    b.Property<decimal>("QtyBegin");
+                    b.Property<decimal?>("QtyBegin");
 
-                    b.Property<decimal>("QtyIssue");
+                    b.Property<decimal?>("QtyIssue");
 
-                    b.Property<decimal>("QtyOnHand");
+                    b.Property<decimal?>("QtyOnHand");
 
-                    b.Property<decimal>("QtyReceipt");
+                    b.Property<decimal?>("QtyReceipt");
 
-                    b.Property<decimal>("QtySaleByKg");
+                    b.Property<decimal?>("QtySaleByKg");
 
-                    b.Property<decimal>("QtySaleByUnit");
+                    b.Property<decimal?>("QtySaleByUnit");
 
-                    b.Property<decimal>("ReceiptCost");
+                    b.Property<decimal?>("ReceiptCost");
 
-                    b.Property<decimal>("SaleAmount");
+                    b.Property<decimal?>("SaleAmount");
 
-                    b.Property<decimal>("SaleAmountKhr");
+                    b.Property<decimal?>("SaleAmountKhr");
 
                     b.Property<int>("WarehouseId");
 
@@ -404,7 +408,7 @@ namespace AngularJsCore.Migrations
 
                     b.Property<string>("ProjectName");
 
-                    b.Property<decimal>("Qty");
+                    b.Property<decimal?>("Qty");
 
                     b.Property<string>("Reason");
 
@@ -472,23 +476,23 @@ namespace AngularJsCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("ExtAmount");
+                    b.Property<decimal?>("ExtAmount");
 
                     b.Property<string>("InventoryDesc");
 
                     b.Property<int>("InventoryId");
 
-                    b.Property<decimal>("Qty");
+                    b.Property<decimal?>("Qty");
 
                     b.Property<int>("SaleInvoiceId");
 
-                    b.Property<decimal>("Unitprice");
+                    b.Property<decimal?>("Unitprice");
 
                     b.Property<int>("WarehouseId");
 
                     b.Property<string>("WarehouseName");
 
-                    b.Property<decimal>("Weight");
+                    b.Property<decimal?>("Weight");
 
                     b.HasKey("SaleInvoiceLineId");
 

@@ -1,0 +1,93 @@
+<div *ngIf="isLoaded">
+    <app-menus></app-menus>
+    <div class="container">
+      <div class="col-md-8 offset-md-2">
+          <div class="jumbotron">
+              <h1 class="display-6 text-center">Project Inventory Status</h1>
+              <hr>
+              <div class="row">
+                  <div class="col-md-12">
+                      <form [formGroup]="service.formInsiteFilter" autocomplete="off" (submit)="onSubmit()">
+                        <div class="form-group">
+                          <label>Project</label>
+                          <select class="form-control" formControlName="ProjectId" required (change)="onChangeProject($event)">
+                            <option value="0">-Select-</option>
+                            <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Inventory</label>
+                          <select class="form-control" formControlName="InventoryId" required>
+                            <option value="0">-Select-</option>
+                            <option *ngFor="let item of inventoryList" value="{{item.InventoryId}}">{{item.InventoryDesr}}</option>
+                          </select>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-8 offset-md-2">
+                            <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formInsiteFilter.valid">Load</button>
+                          </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isLoaded">
+    <h2 class="display-6 text-center" (click)="LoadAgain()" >Status Of {{projectheader}}</h2>
+    <mat-list>
+      <mat-list-item></mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+          <tr>
+            <th>Warehouse</th>
+            <th>Inventory</th>
+            <th>On Hand</th>
+            <th>Issue</th>
+            <th>Receipt</th>
+            <th>Adjust</th>
+            <th>S.Unit</th>
+            <th>S.Kg</th>
+            <th>I.Cost</th>
+            <th>R.Cost</th>
+            <th>A.Cost</th>
+            <th>A.USD</th>
+            <th>A.KHR</th>
+          </tr>
+      </thead>
+      <tr *ngFor="let pd of insiteList">
+        <td >{{pd.WarehouseName}}</td>
+        <td >{{pd.InventoryDesc}}</td>
+        <td >{{pd.QtyOnHand}}</td>
+        <td >{{pd.QtyIssue}}</td>
+        <td >{{pd.QtyReceipt}}</td>
+        <td>{{pd.QtyAdjust}}</td>
+        <td >{{pd.QtySaleByUnit}}</td>
+        <td>{{pd.QtySaleByKg}}</td>
+        <td>{{pd.IssueCost}}</td>
+        <td>{{pd.ReceiptCost}}</td>
+        <td>{{pd.AdjustCost}}</td>
+        <td>{{pd.SaleAmount}}</td>
+        <td>{{pd.SaleAmountKhr}}</td>
+      </tr>
+      <tr class="bg-success">
+          <td >------</td>
+          <td >Total:</td>
+          <td >{{getTotalQtyOnHand()}}</td>
+          <td >{{getTotalQtyIssue()}}</td>
+          <td >{{getTotalQtyReceipt()}}</td>
+          <td>{{getTotalQtyAdjust()}}</td>
+          <td>{{getTotalQtySaleByUnit()}}</td>
+          <td>{{getTotalQtySaleByKg()}}</td>
+          <td>{{getTotalIssueCost()}}</td>
+          <td>{{getTotalReceiptCost()}}</td>
+          <td>{{getTotalAdjustCost()}}</td>
+          <td>{{getTotalSaleAmount()}}</td>
+          <td>{{getTotalSaleAmountKhr()}}</td>
+      </tr>
+    </table>
+  </div>
+  

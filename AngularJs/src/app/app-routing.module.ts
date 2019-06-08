@@ -29,6 +29,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { ProjectaccessComponent } from './projectaccess/projectaccess.component';
 import { StandardnameComponent } from './standardname/standardname.component';
 import { ProjectdailyComponent } from './visual-data/projectdaily/projectdaily.component';
+import { ProjectstatusComponent } from './visual-data/projectstatus/projectstatus.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path:'error/403',component:ForbiddenComponent},
   {path:'paymentcard',component:PaymentDetailsComponent,canActivate:[AuthGuard]},
   {path:'projectdaily',component:ProjectdailyComponent,canActivate:[AuthGuard]},
+  {path:'projectstatus',component:ProjectstatusComponent,canActivate:[AuthGuard]},
   {path:'orders',component:OrdersComponent,canActivate:[AuthGuard]},
   {path:'order',children:[
     {path:'',component:OrderComponent},

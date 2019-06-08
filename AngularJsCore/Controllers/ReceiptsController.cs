@@ -9,11 +9,13 @@ using AngularJsCore.Data;
 using AngularJsCore.Models;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AngularJsCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ReceiptsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

@@ -140,21 +140,26 @@ namespace AngularJsCore
             var AppContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
 
             IdentityResult roleResult;
-            string path = AppDomain.CurrentDomain.BaseDirectory + "wwwroot\\accessapp.txt";
-            //string acessfromfile = null;
-            //using (StreamReader stream = new StreamReader(path))
-            //{
-            //    acessfromfile = stream.ReadToEnd();
-            //}
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Configs\\accessapp.json";
+            string acessfromfile = null;
+            using (StreamReader stream = new StreamReader(path))
+            {
+                acessfromfile = stream.ReadToEnd();
+            }
             //Adding Addmin Role  
             var roleCheck = await RoleManager.RoleExistsAsync("Admin");
             if (!roleCheck)
             {
                 //create the roles and seed them to the database  
-                roleResult = await RoleManager.CreateAsync(new ApplicationRole { Name = "Admin", Access = null });
+                roleResult = await RoleManager.CreateAsync(new ApplicationRole { Name = "Admin", Access = acessfromfile });
 
                 //Assign Admin role to the main User here we have given our newly loregistered login id for Admin management
-                //ApplicationUser user = await UserManager.FindByEmailAsync("vannak2010@gmail.com");
+                var user = await UserManager.FindByEmailAsync("vannak2010@gmail.com");
+                await UserManager.AddToRoleAsync(user, "Admin");
+
+            }
+            else
+            {
 
                 var user = await UserManager.FindByEmailAsync("vannak2010@gmail.com");
                 await UserManager.AddToRoleAsync(user, "Admin");

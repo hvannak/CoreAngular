@@ -31,15 +31,23 @@ export class ProjectService {
   PutProjectsDetail(){
     return this.http.put(environment.apiURL + "/Projects/" + this.formData.ProjectId , this.formData)
   }
+
   DeleteProjectsDetail(id){
     return this.http.delete(environment.apiURL + "/Projects/" + id)
   }
+
   getAllProject(){
     return this.http.get(environment.apiURL + "/Projects").toPromise();
   }
+
+  getAllAccessProject(){
+    return this.http.get(environment.apiURL + "/Projects/All").toPromise();
+  }
+
   getActiveProject(){
    return this.http.get(environment.apiURL + "/Projects/ProjectStatus/Active").toPromise();
   }
+
   getDailyProject(projectId:number,standardFeed:number,standardAnimal:number){
     return this.http.get(environment.apiURL + "/Projects/ProjectDaily/" + projectId + "/" + standardFeed + "/" + standardAnimal).toPromise();
   }

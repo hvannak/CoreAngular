@@ -28,7 +28,7 @@ export class ProjectaccessDetailComponent implements OnInit {
   }
 
   getProject(){
-    this.projectService.getAllProject().then(res=> this.projectList = res);
+    this.projectService.getAllAccessProject().then(res=> this.projectList = res);
   }
 
   onAdd(item){

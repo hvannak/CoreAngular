@@ -32,6 +32,13 @@ namespace AngularJsCore.Controllers
             return result;
         }
 
+        [HttpGet("All")]
+        public IEnumerable<Warehouse> GetAllwarehouses()
+        {
+            var result = _context.warehouses;
+            return result;
+        }
+
         // GET: api/Warehouses/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetWarehouse([FromRoute] int id)

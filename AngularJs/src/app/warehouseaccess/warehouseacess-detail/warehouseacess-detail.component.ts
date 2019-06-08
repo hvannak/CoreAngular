@@ -28,7 +28,7 @@ export class WarehouseacessDetailComponent implements OnInit {
   }
 
   getWarehouses(){
-    this.warehouseService.getWarehouse().then(res=> this.warehouseList = res);
+    this.warehouseService.getAllWarehouse().then(res=> this.warehouseList = res);
   }
 
   onAdd(item){

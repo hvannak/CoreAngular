@@ -28,6 +28,11 @@ export class WarehouseService {
     
   }
 
+  getAllWarehouse(){
+    return this.http.get(environment.apiURL + "/Warehouses/All").toPromise();
+    
+  }
+
   getWarehouseByProjectId(item){
     return this.http.get(environment.apiURL + "/Warehouses/ProjectId/" + item).toPromise();
   }

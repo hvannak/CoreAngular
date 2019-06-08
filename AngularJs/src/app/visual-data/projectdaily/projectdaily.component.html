@@ -1,4 +1,4 @@
-
+<div *ngIf="isLoaded">
   <app-menus></app-menus>
   <div class="container">
     <div class="col-md-8 offset-md-2">
@@ -10,7 +10,7 @@
                     <form [formGroup]="service.formDaily" autocomplete="off" (submit)="onSubmit()">
                       <div class="form-group">
                         <label>Project</label>
-                        <select class="form-control" formControlName="ProjectId" required>
+                        <select class="form-control" formControlName="ProjectId" required (change)="onChangeProject($event)">
                           <option value="0">-Select-</option>
                           <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
                         </select>
@@ -40,11 +40,37 @@
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="!isLoaded">
+  <h2 class="display-6 text-center" (click)="LoadAgain()" >Daily Performance Of {{projectheader}}</h2>
+  <mat-list>
+    <mat-list-item>Total Dead:{{getTotalDead()}} | Total Feed: {{getTotalFeed()}} | Total Qty Sold:{{getTotalQtySold()}} | Total Weight Sold: {{getTotalWeightSold()}} | Total Amount: {{getTotalAmount()}} | FCR: {{getFCR()}}</mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
   <table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+          <th>Daily Date</th>
+          <th>#Day</th>
+          <th>#Dead</th>
+          <th>Acual Feed</th>
+          <th>Standard Feed</th>
+          <th>Acual Weight</th>
+          <th>Standard Animal</th>
+          <th>Qty Sold</th>
+          <th>Amount</th>
+        </tr>
+    </thead>
     <tr *ngFor="let pd of dailyList">
       <td >{{pd.DailyDate | date}}</td>
       <td >{{pd.NumberOfDay}}</td>
-      <td >{{pd.ResultOfDayAnimal}}</td>
+      <td >{{pd.AnimalDead}}</td>
+      <td >{{pd.AcualFeed}}</td>
       <td >{{pd.ResultOfDayFeed}}</td>
+      <td>{{pd.AcualAnimalWeight}}</td>
+      <td >{{pd.ResultOfDayAnimal}}</td>
+      <td>{{pd.QtySale}}</td>
+      <td>{{pd.ExtAmount}}</td>
     </tr>
   </table>
+</div>
