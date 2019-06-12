@@ -90,6 +90,8 @@ import { StandardnameListComponent } from './standardname/standardname-list/stan
 import { VisualDataComponent } from './visual-data/visual-data.component';
 import { ProjectdailyComponent } from './visual-data/projectdaily/projectdaily.component';
 import { ProjectstatusComponent } from './visual-data/projectstatus/projectstatus.component';
+import { UploadComponent } from './upload/upload.component';
+import { UploadService } from './shared/upload.service';
 
 @NgModule({
   declarations: [
@@ -154,7 +156,8 @@ import { ProjectstatusComponent } from './visual-data/projectstatus/projectstatu
     StandardnameListComponent,
     VisualDataComponent,
     ProjectdailyComponent,
-    ProjectstatusComponent
+    ProjectstatusComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
@@ -167,10 +170,10 @@ import { ProjectstatusComponent } from './visual-data/projectstatus/projectstatu
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  entryComponents:[OrderItemsComponent,ReceiptLineComponent,SaleinvoiceLineComponent],
+  entryComponents:[OrderItemsComponent,ReceiptLineComponent,SaleinvoiceLineComponent,UploadComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
-    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,
+    UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,UploadService,
     StandardnameService ,DailyanimalgrowService,SaleinvoiceService,CustomerService,ProjectService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

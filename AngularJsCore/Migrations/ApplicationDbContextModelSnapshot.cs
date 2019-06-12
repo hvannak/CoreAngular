@@ -99,7 +99,7 @@ namespace AngularJsCore.Migrations
                     b.ToTable("AspNetUsers");
 
                     b.HasData(
-                        new { Id = "a3c488e4-ed00-4532-9f96-9530b7c7f8e3", AccessFailedCount = 0, ConcurrencyStamp = "b595bcb6-5925-4390-b6c1-001415c372ee", Email = "vannak2010@gmail.com", EmailConfirmed = false, FullName = "Vannak Heng", LockoutEnabled = false, NormalizedEmail = "vannak2010@gmail.com", NormalizedUserName = "vannak2010@gmail.com", PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", PhoneNumberConfirmed = false, SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", TwoFactorEnabled = false, UserName = "vannak2010@gmail.com" }
+                        new { Id = "abe2367f-7523-4fd9-85c0-85c8d05a33be", AccessFailedCount = 0, ConcurrencyStamp = "a6468cd2-445a-48dd-b78f-6d986e3c8af4", Email = "vannak2010@gmail.com", EmailConfirmed = false, FullName = "Vannak Heng", LockoutEnabled = false, NormalizedEmail = "vannak2010@gmail.com", NormalizedUserName = "vannak2010@gmail.com", PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", PhoneNumberConfirmed = false, SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", TwoFactorEnabled = false, UserName = "vannak2010@gmail.com" }
                     );
                 });
 
@@ -168,6 +168,25 @@ namespace AngularJsCore.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("dailyAnimalGrow");
+                });
+
+            modelBuilder.Entity("AngularJsCore.Models.ImagesFile", b =>
+                {
+                    b.Property<int>("FileId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Caption");
+
+                    b.Property<string>("ModuleId");
+
+                    b.Property<int>("OperationId");
+
+                    b.Property<byte[]>("StoreFile");
+
+                    b.HasKey("FileId");
+
+                    b.ToTable("imagesFiles");
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.INSiteStatus", b =>

@@ -1,0 +1,22 @@
+export class Insitestatus {
+    InSiteId:number;
+    ProjectId:number;
+    ProjectName:number;
+    WarehouseId:number;
+    WarehouseName:string;
+    InventoryId:number;
+    InventoryDesc:string;
+    QtyOnHand:number;
+    QtyBegin:number;
+    QtyIssue:number;
+    QtyReceipt:number;
+    QtyAdjust:number;
+    QtySaleByUnit:number;
+    QtySaleByKg:number;
+    LastCost:number;
+    IssueCost:number;
+    ReceiptCost:number;
+    AdjustCost:number;
+    SaleAmount:number;
+    SaleAmountKhr:number;
+}

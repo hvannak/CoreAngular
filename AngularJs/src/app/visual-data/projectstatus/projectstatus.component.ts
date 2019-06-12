@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { InsitestatusService } from 'src/app/shared/insitestatus.service';
 import { ProjectService } from 'src/app/shared/project.service';
 import { InventoryService } from 'src/app/shared/inventory.service';
+import { Insitestatus } from 'src/app/shared/insitestatus.model';
+import { Observable, Subscriber } from 'rxjs';
+import { tap, map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-projectstatus',
@@ -10,7 +13,7 @@ import { InventoryService } from 'src/app/shared/inventory.service';
 })
 export class ProjectstatusComponent implements OnInit {
 
-  insiteList;
+  insiteList:Insitestatus[];
   projectList;
   inventoryList;
   projectheader;
@@ -30,11 +33,11 @@ export class ProjectstatusComponent implements OnInit {
 
   onSubmit(){
     this.isLoaded = false;
-    this.service.getInsiteStatusByProjectInventory(this.service.formInsiteFilter.value.ProjectId,this.service.formInsiteFilter.value.InventoryId).then(res => this.insiteList = res);
+    this.service.getInsiteStatusByProjectInventory(this.service.formInsiteFilter.value.ProjectId,this.service.formInsiteFilter.value.InventoryId).then(res => this.insiteList = res as Array<Insitestatus>);
   }
 
   getTotalQtyOnHand() {
-    return this.insiteList.map(t => t.QtyOnHand).reduce((acc, value) => acc + value, 0);
+    return this.insiteList.map(t =>  t.QtyOnHand).reduce((acc, value) => acc + value, 0);
   }
 
   getTotalQtyIssue() {

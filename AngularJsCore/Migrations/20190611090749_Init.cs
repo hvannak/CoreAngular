@@ -77,6 +77,22 @@ namespace AngularJsCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "imagesFiles",
+                columns: table => new
+                {
+                    FileId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Caption = table.Column<string>(nullable: true),
+                    ModuleId = table.Column<string>(nullable: true),
+                    OperationId = table.Column<int>(nullable: false),
+                    StoreFile = table.Column<byte[]>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_imagesFiles", x => x.FileId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "iNSiteStatuses",
                 columns: table => new
                 {
@@ -614,7 +630,7 @@ namespace AngularJsCore.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a3c488e4-ed00-4532-9f96-9530b7c7f8e3", 0, "b595bcb6-5925-4390-b6c1-001415c372ee", "vannak2010@gmail.com", false, "Vannak Heng", false, null, "vannak2010@gmail.com", "vannak2010@gmail.com", "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", null, false, "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", false, "vannak2010@gmail.com" });
+                values: new object[] { "abe2367f-7523-4fd9-85c0-85c8d05a33be", 0, "a6468cd2-445a-48dd-b78f-6d986e3c8af4", "vannak2010@gmail.com", false, "Vannak Heng", false, null, "vannak2010@gmail.com", "vannak2010@gmail.com", "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", null, false, "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", false, "vannak2010@gmail.com" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -782,6 +798,9 @@ namespace AngularJsCore.Migrations
 
             migrationBuilder.DropTable(
                 name: "dailyAnimalGrow");
+
+            migrationBuilder.DropTable(
+                name: "imagesFiles");
 
             migrationBuilder.DropTable(
                 name: "iNSiteStatuses");

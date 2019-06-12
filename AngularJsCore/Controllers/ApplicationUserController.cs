@@ -17,7 +17,7 @@ namespace AngularJsCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ApplicationUserController : ControllerBase
     {
         private UserManager<ApplicationUser> _userManager;
