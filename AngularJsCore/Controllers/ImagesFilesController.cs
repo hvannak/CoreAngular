@@ -31,67 +31,37 @@ namespace AngularJsCore.Controllers
 
         // GET: api/ImagesFiles/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetImagesFile([FromRoute] int id)
+        public IEnumerable<ImagesFile> GetImagesFile([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var imagesFile = await _context.imagesFiles.FindAsync(id);
-
-            if (imagesFile == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(imagesFile);
+            var imagesFile = _context.imagesFiles.Where(x=>x.FileId == id).ToList();
+            //string[] arraystring = imagesFile.StoreFile.Split(',');
+            //string convertStr = arraystring[1];
+            //imagesFile.StoreFile = convertStr;
+            //byte[] imageBytes = Convert.FromBase64String(convertStr);
+            //string path = AppDomain.CurrentDomain.BaseDirectory + "Configs\\2.png";
+            //System.IO.File.WriteAllBytes(path, imageBytes);
+            return imagesFile;
         }
 
-        // PUT: api/ImagesFiles/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutImagesFile([FromRoute] int id, [FromBody] ImagesFile imagesFile)
+        // GET: api/ImagesFiles/5
+        [HttpGet("FileByModule/{id}/{module}")]
+        public IEnumerable<ImagesFile> GetImagesFileByModule([FromRoute] int id,string module)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != imagesFile.FileId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(imagesFile).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ImagesFileExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            var imagesFile = _context.imagesFiles.Where(x => x.OperationId == id && x.ModuleId == module).ToList();
+            //string[] arraystring = imagesFile.StoreFile.Split(',');
+            //string convertStr = arraystring[1];
+            //imagesFile.StoreFile = convertStr;
+            //byte[] imageBytes = Convert.FromBase64String(convertStr);
+            //string path = AppDomain.CurrentDomain.BaseDirectory + "Configs\\2.png";
+            //System.IO.File.WriteAllBytes(path, imageBytes);
+            return imagesFile;
         }
 
         // POST: api/ImagesFiles
         [HttpPost]
         public async Task<IActionResult> PostImagesFile([FromBody] ImagesFile imagesFile)
         {
-            using (var memoryStream = new MemoryStream())
-            {
-                await imagesFile.formFile.CopyToAsync(memoryStream);
-                imagesFile.StoreFile = memoryStream.ToArray();
-            }
+
             _context.imagesFiles.Add(imagesFile);
             await _context.SaveChangesAsync();
             return Ok();
@@ -102,26 +72,11 @@ namespace AngularJsCore.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteImagesFile([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var imagesFile = await _context.imagesFiles.FindAsync(id);
-            if (imagesFile == null)
-            {
-                return NotFound();
-            }
-
             _context.imagesFiles.Remove(imagesFile);
             await _context.SaveChangesAsync();
-
             return Ok(imagesFile);
         }
 
-        private bool ImagesFileExists(int id)
-        {
-            return _context.imagesFiles.Any(e => e.FileId == id);
-        }
     }
 }

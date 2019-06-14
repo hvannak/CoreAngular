@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularJsCore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190611090749_Init")]
+    [Migration("20190613043127_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,7 +101,7 @@ namespace AngularJsCore.Migrations
                     b.ToTable("AspNetUsers");
 
                     b.HasData(
-                        new { Id = "abe2367f-7523-4fd9-85c0-85c8d05a33be", AccessFailedCount = 0, ConcurrencyStamp = "a6468cd2-445a-48dd-b78f-6d986e3c8af4", Email = "vannak2010@gmail.com", EmailConfirmed = false, FullName = "Vannak Heng", LockoutEnabled = false, NormalizedEmail = "vannak2010@gmail.com", NormalizedUserName = "vannak2010@gmail.com", PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", PhoneNumberConfirmed = false, SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", TwoFactorEnabled = false, UserName = "vannak2010@gmail.com" }
+                        new { Id = "22d7f3ca-c537-4854-af8a-bf70eb5d5349", AccessFailedCount = 0, ConcurrencyStamp = "0a2e0d42-5082-41d5-97fa-810e9730c15a", Email = "vannak2010@gmail.com", EmailConfirmed = false, FullName = "Vannak Heng", LockoutEnabled = false, NormalizedEmail = "vannak2010@gmail.com", NormalizedUserName = "vannak2010@gmail.com", PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", PhoneNumberConfirmed = false, SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", TwoFactorEnabled = false, UserName = "vannak2010@gmail.com" }
                     );
                 });
 
@@ -184,7 +184,7 @@ namespace AngularJsCore.Migrations
 
                     b.Property<int>("OperationId");
 
-                    b.Property<byte[]>("StoreFile");
+                    b.Property<string>("StoreFile");
 
                     b.HasKey("FileId");
 

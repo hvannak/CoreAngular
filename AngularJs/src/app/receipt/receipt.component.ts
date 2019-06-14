@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialogConfig, MatDialog } from '@angular/material';
 import { Receipt } from '../shared/receipt.model';
 import { UploadComponent } from '../upload/upload.component';
+import { ViewuploadComponent } from '../upload/viewupload/viewupload.component';
 
 @Component({
   selector: 'app-receipt',
@@ -15,7 +16,7 @@ export class ReceiptComponent implements OnInit {
 
   fromDate:Date;
   toDate:Date;
-  displayedColumns: string[] = ['TranType','ReceiptNbr', 'Description','ReceiptDate','TotalQty','TotalCost','Delete','Upload'];
+  displayedColumns: string[] = ['TranType','ReceiptNbr', 'Description','ReceiptDate','TotalQty','TotalCost','Delete','Upload','ViewUpload'];
   receiptList: MatTableDataSource<Receipt>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -36,6 +37,18 @@ export class ReceiptComponent implements OnInit {
     dialogConfig.width = "50%";
     dialogConfig.data = { ReceiptId };
     this.dialog.open(UploadComponent, dialogConfig).afterClosed().subscribe(res => {
+      console.log('done');
+    });
+  }
+
+  viewUploadFile(ReceiptId){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = "50%";
+    dialogConfig.height = "100%";
+    dialogConfig.data = { ReceiptId };
+    this.dialog.open(ViewuploadComponent, dialogConfig).afterClosed().subscribe(res => {
       console.log('done');
     });
   }

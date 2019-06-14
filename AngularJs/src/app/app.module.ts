@@ -92,6 +92,7 @@ import { ProjectdailyComponent } from './visual-data/projectdaily/projectdaily.c
 import { ProjectstatusComponent } from './visual-data/projectstatus/projectstatus.component';
 import { UploadComponent } from './upload/upload.component';
 import { UploadService } from './shared/upload.service';
+import { ViewuploadComponent } from './upload/viewupload/viewupload.component';
 
 @NgModule({
   declarations: [
@@ -157,7 +158,8 @@ import { UploadService } from './shared/upload.service';
     VisualDataComponent,
     ProjectdailyComponent,
     ProjectstatusComponent,
-    UploadComponent
+    UploadComponent,
+    ViewuploadComponent
   ],
   imports: [
     BrowserModule,
@@ -170,7 +172,7 @@ import { UploadService } from './shared/upload.service';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  entryComponents:[OrderItemsComponent,ReceiptLineComponent,SaleinvoiceLineComponent,UploadComponent],
+  entryComponents:[OrderItemsComponent,ReceiptLineComponent,SaleinvoiceLineComponent,UploadComponent,ViewuploadComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
     UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,UploadService,

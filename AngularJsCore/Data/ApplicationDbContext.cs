@@ -32,17 +32,17 @@ namespace AngularJsCore.Data
             modelBuilder.ApplyConfiguration(new InvoiceLineConfiguration());
             modelBuilder.ApplyConfiguration(new StandardNameConfiguration());
 
-            modelBuilder.Entity<ApplicationUser>().HasData(
-                        new ApplicationUser
-                        {
-                            UserName = "vannak2010@gmail.com",
-                            NormalizedUserName = "vannak2010@gmail.com",
-                            Email = "vannak2010@gmail.com",
-                            NormalizedEmail = "vannak2010@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==",
-                            SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO",
-                            FullName = "Vannak Heng"
-                        });
+            //modelBuilder.Entity<ApplicationUser>().HasData(
+            //            new ApplicationUser
+            //            {
+            //                UserName = "vannak2010@gmail.com",
+            //                NormalizedUserName = "vannak2010@gmail.com",
+            //                Email = "vannak2010@gmail.com",
+            //                NormalizedEmail = "vannak2010@gmail.com",
+            //                PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==",
+            //                SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO",
+            //                FullName = "Vannak Heng"
+            //            });
         }
         
         public DbSet<PaymentDetail> paymentDetails { get; set; }

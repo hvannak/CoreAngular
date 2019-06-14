@@ -1,7 +1,9 @@
-export class File {
+export class Fileupload {
     FileId:number;
     Caption:string;
     ModuleId:number;
     OperationId:number;
-    formFile:File
+    StoreFile:string;
+    cols:number;
+    rows:number;
 }

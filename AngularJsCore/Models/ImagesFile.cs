@@ -15,8 +15,6 @@ namespace AngularJsCore.Models
         public string Caption { get; set; }
         public string ModuleId { get; set; }
         public int OperationId { get; set; }
-        public byte[] StoreFile { get; set; }
-        [NotMapped]
-        public IFormFile formFile { get; set; }
+        public string StoreFile { get; set; }
     }
 }

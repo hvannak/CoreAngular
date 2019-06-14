@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { File } from './file.model';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({
@@ -16,12 +15,23 @@ export class UploadService {
     Caption:['',Validators.required],
     ModuleId:[''],
     OperationId:[''],
-    formFile:['',Validators.required]
+    StoreFile:['']
   })
 
   postFile(){ 
-    console.log('in');
-    console.log(this.formModel.value);
-    return this.http.post(environment.apiURL + "/ImagesFiles", this.formModel.value)
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type':  'multipart/form-data'
+    //   })
+    // };
+    return this.http.post(environment.apiURL + "/ImagesFiles", this.formModel.value);
+  }
+
+  getFile(id:number,module:string){
+    return this.http.get(environment.apiURL + "/ImagesFiles/FileByModule/" + id + "/" + module ).toPromise();
+  }
+
+  deleteFile(id){
+    return this.http.delete(environment.apiURL + "/ImagesFiles/" + id)
   }
 }
