@@ -353,6 +353,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _standardname_standardname_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./standardname/standardname.component */ "./src/app/standardname/standardname.component.ts");
 /* harmony import */ var _visual_data_projectdaily_projectdaily_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./visual-data/projectdaily/projectdaily.component */ "./src/app/visual-data/projectdaily/projectdaily.component.ts");
 /* harmony import */ var _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./visual-data/projectstatus/projectstatus.component */ "./src/app/visual-data/projectstatus/projectstatus.component.ts");
+/* harmony import */ var _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./visual-data/inregister/inregister.component */ "./src/app/visual-data/inregister/inregister.component.ts");
+
 
 
 
@@ -407,6 +409,7 @@ var routes = [
     { path: 'paymentcard', component: _payment_details_payment_details_component__WEBPACK_IMPORTED_MODULE_3__["PaymentDetailsComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'projectdaily', component: _visual_data_projectdaily_projectdaily_component__WEBPACK_IMPORTED_MODULE_31__["ProjectdailyComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'projectstatus', component: _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_32__["ProjectstatusComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'inregister', component: _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_33__["InregisterComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'orders', component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_4__["OrdersComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'order', children: [
             { path: '', component: _orders_order_order_component__WEBPACK_IMPORTED_MODULE_5__["OrderComponent"] },
@@ -605,6 +608,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _visual_data_visual_data_component__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(/*! ./visual-data/visual-data.component */ "./src/app/visual-data/visual-data.component.ts");
 /* harmony import */ var _visual_data_projectdaily_projectdaily_component__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(/*! ./visual-data/projectdaily/projectdaily.component */ "./src/app/visual-data/projectdaily/projectdaily.component.ts");
 /* harmony import */ var _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(/*! ./visual-data/projectstatus/projectstatus.component */ "./src/app/visual-data/projectstatus/projectstatus.component.ts");
+/* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(/*! ./upload/upload.component */ "./src/app/upload/upload.component.ts");
+/* harmony import */ var _shared_upload_service__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! ./shared/upload.service */ "./src/app/shared/upload.service.ts");
+/* harmony import */ var _upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! ./upload/viewupload/viewupload.component */ "./src/app/upload/viewupload/viewupload.component.ts");
+/* harmony import */ var _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(/*! ./visual-data/inregister/inregister.component */ "./src/app/visual-data/inregister/inregister.component.ts");
+
+
+
+
 
 
 
@@ -764,7 +775,10 @@ var AppModule = /** @class */ (function () {
                 _standardname_standardname_list_standardname_list_component__WEBPACK_IMPORTED_MODULE_88__["StandardnameListComponent"],
                 _visual_data_visual_data_component__WEBPACK_IMPORTED_MODULE_89__["VisualDataComponent"],
                 _visual_data_projectdaily_projectdaily_component__WEBPACK_IMPORTED_MODULE_90__["ProjectdailyComponent"],
-                _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_91__["ProjectstatusComponent"]
+                _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_91__["ProjectstatusComponent"],
+                _upload_upload_component__WEBPACK_IMPORTED_MODULE_92__["UploadComponent"],
+                _upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_94__["ViewuploadComponent"],
+                _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_95__["InregisterComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -777,10 +791,10 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrModule"].forRoot(),
             ],
-            entryComponents: [_orders_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_17__["OrderItemsComponent"], _receipt_receipt_line_receipt_line_component__WEBPACK_IMPORTED_MODULE_63__["ReceiptLineComponent"], _saleinvoice_saleinvoice_line_saleinvoice_line_component__WEBPACK_IMPORTED_MODULE_77__["SaleinvoiceLineComponent"]],
+            entryComponents: [_orders_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_17__["OrderItemsComponent"], _receipt_receipt_line_receipt_line_component__WEBPACK_IMPORTED_MODULE_63__["ReceiptLineComponent"], _saleinvoice_saleinvoice_line_saleinvoice_line_component__WEBPACK_IMPORTED_MODULE_77__["SaleinvoiceLineComponent"], _upload_upload_component__WEBPACK_IMPORTED_MODULE_92__["UploadComponent"], _upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_94__["ViewuploadComponent"]],
             providers: [_shared_payment_detail_service__WEBPACK_IMPORTED_MODULE_14__["PaymentDetailService"], _shared_customer_service__WEBPACK_IMPORTED_MODULE_18__["CustomerService"], _shared_item_service__WEBPACK_IMPORTED_MODULE_19__["ItemService"],
                 _shared_order_service__WEBPACK_IMPORTED_MODULE_20__["OrderService"], _shared_user_service__WEBPACK_IMPORTED_MODULE_23__["UserService"], _shared_warehouse_service__WEBPACK_IMPORTED_MODULE_39__["WarehouseService"], _shared_category_service__WEBPACK_IMPORTED_MODULE_47__["CategoryService"], _shared_inventory_service__WEBPACK_IMPORTED_MODULE_51__["InventoryService"], _shared_warehouseaccess_service__WEBPACK_IMPORTED_MODULE_55__["WarehouseaccessService"],
-                _shared_uom_service__WEBPACK_IMPORTED_MODULE_59__["UomService"], _shared_role_service__WEBPACK_IMPORTED_MODULE_30__["RoleService"], _shared_role_ctl_service__WEBPACK_IMPORTED_MODULE_31__["RoleCtlService"], _shared_receipt_service__WEBPACK_IMPORTED_MODULE_60__["ReceiptService"], _shared_insitestatus_service__WEBPACK_IMPORTED_MODULE_64__["InsitestatusService"], _shared_standard_service__WEBPACK_IMPORTED_MODULE_68__["StandardService"],
+                _shared_uom_service__WEBPACK_IMPORTED_MODULE_59__["UomService"], _shared_role_service__WEBPACK_IMPORTED_MODULE_30__["RoleService"], _shared_role_ctl_service__WEBPACK_IMPORTED_MODULE_31__["RoleCtlService"], _shared_receipt_service__WEBPACK_IMPORTED_MODULE_60__["ReceiptService"], _shared_insitestatus_service__WEBPACK_IMPORTED_MODULE_64__["InsitestatusService"], _shared_standard_service__WEBPACK_IMPORTED_MODULE_68__["StandardService"], _shared_upload_service__WEBPACK_IMPORTED_MODULE_93__["UploadService"],
                 _shared_standardname_service__WEBPACK_IMPORTED_MODULE_86__["StandardnameService"], _shared_dailyanimalgrow_service__WEBPACK_IMPORTED_MODULE_72__["DailyanimalgrowService"], _shared_saleinvoice_service__WEBPACK_IMPORTED_MODULE_75__["SaleinvoiceService"], _shared_customer_service__WEBPACK_IMPORTED_MODULE_18__["CustomerService"], _shared_project_service__WEBPACK_IMPORTED_MODULE_81__["ProjectService"], {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HTTP_INTERCEPTORS"],
                     useClass: _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_26__["AuthInterceptor"],
@@ -2348,7 +2362,7 @@ module.exports = "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n/* High
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>  \r\n  <mat-toolbar-row>\r\n    <span>MEDIVETGROUP</span>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\" >\r\n      <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/home\">\r\n        <mat-icon>voicemail</mat-icon>\r\n        <span>Profile</span>\r\n      </button>\r\n      <button mat-menu-item (click)=\"onLogout()\">\r\n        <mat-icon>home</mat-icon>\r\n        <span>Logout</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/user/registration\">\r\n        <mat-icon><i class=\"fas fa-user-plus\"></i></mat-icon>\r\n        <span>Register</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/userroles\">\r\n        <mat-icon><i class=\"fas fa-users-cog\"></i></mat-icon>\r\n        <span>User Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/roles\">\r\n        <mat-icon><i class=\"fas fa-pencil-ruler\"></i></mat-icon>\r\n        <span>Roles Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/warehouse\">\r\n        <mat-icon><i class=\"fas fa-warehouse\"></i></mat-icon>\r\n        <span>Warehouse</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/warehouseaccess\">\r\n        <mat-icon><i class=\"fas fa-warehouse\"></i></mat-icon>\r\n        <span>Warehouse Access</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/project\">\r\n        <mat-icon><i class=\"fas fa-project-diagram\"></i></mat-icon>\r\n        <span>Project</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/projectaccess\">\r\n        <mat-icon><i class=\"fas fa-project-diagram\"></i></mat-icon>\r\n        <span>Project Access</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/category\">\r\n        <mat-icon><i class=\"fas fas fa-align-right\"></i></mat-icon>\r\n        <span>Category</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/inventory\">\r\n        <mat-icon><i class=\"fas fa-boxes\"></i></mat-icon>\r\n        <span>Inventory</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/customer\">\r\n        <mat-icon><i class=\"fas fa-users\"></i></mat-icon>\r\n        <span>Customers</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/standardname\">\r\n        <mat-icon><i class=\"fab fa-amazon\"></i></mat-icon>\r\n        <span>Standard Name</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/standard\">\r\n        <mat-icon><i class=\"fab fa-amazon\"></i></mat-icon>\r\n        <span>Standard</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/uom\">\r\n        <mat-icon><i class=\"fas fa-boxes\"></i></mat-icon>\r\n        <span>Unit of Measure</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/paymentcard\">\r\n        <mat-icon>dialpad</mat-icon>\r\n        <span>Payment Card</span> \r\n      </button>\r\n    </mat-menu>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menupr\" >\r\n      <mat-icon><i class=\"fab fa-accusoft\"></i></mat-icon>\r\n    </button>\r\n    <mat-menu #menupr=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/invoice\">\r\n        <mat-icon><i class=\"fas fa-sort-amount-up\"></i></mat-icon>\r\n        <span>Sale Invoice</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/receipt\">\r\n        <mat-icon><i class=\"fas fa-receipt\"></i></mat-icon>\r\n        <span>Receipt/Issue/Adjust</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/dailygrow\">\r\n        <mat-icon><i class=\"fas fa-calendar-day\"></i></mat-icon>\r\n        <span>Daily Animal Grow</span> \r\n      </button>\r\n    </mat-menu>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menureport\" >       \r\n        <mat-icon><i class=\"fas fa-american-sign-language-interpreting\"></i></mat-icon>\r\n    </button>\r\n    <mat-menu #menureport=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/projectdaily\">\r\n        <mat-icon><i class=\"fas fa-sort-amount-up\"></i></mat-icon>\r\n        <span>Project Daily Performance</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/projectstatus\">\r\n        <mat-icon><i class=\"fas fa-receipt\"></i></mat-icon>\r\n        <span>Project Status</span> \r\n      </button>\r\n    </mat-menu>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n"
+module.exports = "<mat-toolbar>  \r\n  <mat-toolbar-row>\r\n    <span>MEDIVETGROUP</span>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\" >\r\n      <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/home\">\r\n        <mat-icon>voicemail</mat-icon>\r\n        <span>Profile</span>\r\n      </button>\r\n      <button mat-menu-item (click)=\"onLogout()\">\r\n        <mat-icon>home</mat-icon>\r\n        <span>Logout</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/user/registration\">\r\n        <mat-icon><i class=\"fas fa-user-plus\"></i></mat-icon>\r\n        <span>Register</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/userroles\">\r\n        <mat-icon><i class=\"fas fa-users-cog\"></i></mat-icon>\r\n        <span>User Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/roles\">\r\n        <mat-icon><i class=\"fas fa-pencil-ruler\"></i></mat-icon>\r\n        <span>Roles Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/warehouse\">\r\n        <mat-icon><i class=\"fas fa-warehouse\"></i></mat-icon>\r\n        <span>Warehouse</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/warehouseaccess\">\r\n        <mat-icon><i class=\"fas fa-warehouse\"></i></mat-icon>\r\n        <span>Warehouse Access</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/project\">\r\n        <mat-icon><i class=\"fas fa-project-diagram\"></i></mat-icon>\r\n        <span>Project</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/projectaccess\">\r\n        <mat-icon><i class=\"fas fa-project-diagram\"></i></mat-icon>\r\n        <span>Project Access</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/category\">\r\n        <mat-icon><i class=\"fas fas fa-align-right\"></i></mat-icon>\r\n        <span>Category</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/inventory\">\r\n        <mat-icon><i class=\"fas fa-boxes\"></i></mat-icon>\r\n        <span>Inventory</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/customer\">\r\n        <mat-icon><i class=\"fas fa-users\"></i></mat-icon>\r\n        <span>Customers</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/standardname\">\r\n        <mat-icon><i class=\"fab fa-amazon\"></i></mat-icon>\r\n        <span>Standard Name</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/standard\">\r\n        <mat-icon><i class=\"fab fa-amazon\"></i></mat-icon>\r\n        <span>Standard</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/uom\">\r\n        <mat-icon><i class=\"fas fa-boxes\"></i></mat-icon>\r\n        <span>Unit of Measure</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/paymentcard\">\r\n        <mat-icon>dialpad</mat-icon>\r\n        <span>Payment Card</span> \r\n      </button>\r\n    </mat-menu>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menupr\" >\r\n      <mat-icon><i class=\"fab fa-accusoft\"></i></mat-icon>\r\n    </button>\r\n    <mat-menu #menupr=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/invoice\">\r\n        <mat-icon><i class=\"fas fa-sort-amount-up\"></i></mat-icon>\r\n        <span>Sale Invoice</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/receipt\">\r\n        <mat-icon><i class=\"fas fa-receipt\"></i></mat-icon>\r\n        <span>Receipt/Issue/Adjust</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/dailygrow\">\r\n        <mat-icon><i class=\"fas fa-calendar-day\"></i></mat-icon>\r\n        <span>Daily Animal Grow</span> \r\n      </button>\r\n    </mat-menu>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menureport\" >       \r\n        <mat-icon><i class=\"fas fa-american-sign-language-interpreting\"></i></mat-icon>\r\n    </button>\r\n    <mat-menu #menureport=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/projectdaily\">\r\n        <mat-icon><i class=\"fas fa-sort-amount-up\"></i></mat-icon>\r\n        <span>Project Daily Performance</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/projectstatus\">\r\n        <mat-icon><i class=\"fas fa-receipt\"></i></mat-icon>\r\n        <span>Project Status</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/inregister\">\r\n        <mat-icon><i class=\"fas fa-dolly-flatbed\"></i></mat-icon>\r\n        <span>Inventory Register</span> \r\n      </button>\r\n    </mat-menu>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n"
 
 /***/ }),
 
@@ -3357,7 +3371,7 @@ var ProjectaccessDetailComponent = /** @class */ (function () {
     };
     ProjectaccessDetailComponent.prototype.getProject = function () {
         var _this = this;
-        this.projectService.getAllProject().then(function (res) { return _this.projectList = res; });
+        this.projectService.getAllAccessProject().then(function (res) { return _this.projectList = res; });
     };
     ProjectaccessDetailComponent.prototype.onAdd = function (item) {
         var _this = this;
@@ -3902,7 +3916,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-menus></app-menus>\r\n<div class=\"jumbotron\">\r\n  <h1 class=\"display-4 text-center\">Inventory Register</h1>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 mat-elevation-z8\">  \r\n      <div class=\"row\">\r\n        <div class=\"col-md-8\">\r\n            <form #form=\"ngForm\" (submit)=\"onSubmit()\">\r\n              <div class=\"form-row\">\r\n                  <mat-form-field>\r\n                    <input name=\"fromDate\" [(ngModel)]=\"fromDate\" class=\"form-control\" matInput [matDatepicker]=\"myDatepicker1\" placeholder=\"Start date\">\r\n                    <mat-datepicker-toggle matSuffix [for]=\"myDatepicker1\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #myDatepicker1></mat-datepicker>\r\n                  </mat-form-field>\r\n                  <mat-form-field>\r\n                    <input name=\"toDate\" [(ngModel)]=\"toDate\" class=\"form-control\" matInput [matDatepicker]=\"myDatepicker2\" placeholder=\"End date\">\r\n                    <mat-datepicker-toggle matSuffix [for]=\"myDatepicker2\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #myDatepicker2></mat-datepicker>\r\n                  </mat-form-field>\r\n                  <button mat-button type=\"submit\" [disabled]=\"form.invalid\">Load...</button>\r\n              </div>\r\n            </form>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n            <mat-form-field>\r\n              <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n            </mat-form-field>\r\n        </div>         \r\n      </div>  \r\n      <table class=\"table table-hover\" mat-table [dataSource]=\"receiptList\" matSort>\r\n        <ng-container matColumnDef=\"TranType\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Tran Type </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.TranType}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"ReceiptNbr\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> ReceiptNbr </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.ReceiptNbr}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"Description\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.Description}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"ReceiptDate\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Receipt Date </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.ReceiptDate | date}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"Delete\">\r\n          <th mat-header-cell *matHeaderCellDef> \r\n            <a class=\"btn btn-outline-success\" routerLink=\"/receiptheader\"><i class=\"fa fa-plus-square\"></i> Create New</a> \r\n          </th>\r\n          <td mat-cell *matCellDef=\"let element\"> \r\n            <a class=\"btn text-danger\" (click)=\"onReceiptDelete(element.ReceiptId,element.Release)\"><i class=\"fa fa-trash fa-lg\"></i></a> \r\n          </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n      </table>\r\n      <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<app-menus></app-menus>\r\n<div class=\"jumbotron\">\r\n  <h1 class=\"display-4 text-center\">Inventory Register</h1>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12 mat-elevation-z8\">  \r\n      <div class=\"row\">\r\n        <div class=\"col-md-8\">\r\n            <form #form=\"ngForm\" (submit)=\"onSubmit()\">\r\n              <div class=\"form-row\">\r\n                  <mat-form-field>\r\n                    <input name=\"fromDate\" [(ngModel)]=\"fromDate\" class=\"form-control\" matInput [matDatepicker]=\"myDatepicker1\" placeholder=\"Start date\">\r\n                    <mat-datepicker-toggle matSuffix [for]=\"myDatepicker1\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #myDatepicker1></mat-datepicker>\r\n                  </mat-form-field>\r\n                  <mat-form-field>\r\n                    <input name=\"toDate\" [(ngModel)]=\"toDate\" class=\"form-control\" matInput [matDatepicker]=\"myDatepicker2\" placeholder=\"End date\">\r\n                    <mat-datepicker-toggle matSuffix [for]=\"myDatepicker2\"></mat-datepicker-toggle>\r\n                    <mat-datepicker #myDatepicker2></mat-datepicker>\r\n                  </mat-form-field>\r\n                  <button mat-button type=\"submit\" [disabled]=\"form.invalid\">Load...</button>\r\n              </div>\r\n            </form>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n            <mat-form-field>\r\n              <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n            </mat-form-field>\r\n        </div>         \r\n      </div>  \r\n      <table class=\"table table-hover\" mat-table [dataSource]=\"receiptList\" matSort>\r\n        <ng-container matColumnDef=\"TranType\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Tran Type </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.TranType}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"ReceiptNbr\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> ReceiptNbr </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.ReceiptNbr}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"Description\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.Description}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"ReceiptDate\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Receipt Date </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.ReceiptDate | date}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"TotalQty\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Qty </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.TotalQty}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"TotalCost\">\r\n          <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Cost </th>\r\n          <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element.ReceiptId)\"> {{element.TotalCost}} </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"Delete\">\r\n          <th mat-header-cell *matHeaderCellDef> \r\n            \r\n          </th>\r\n          <td mat-cell *matCellDef=\"let element\"> \r\n            <a class=\"btn text-danger\" (click)=\"onReceiptDelete(element.ReceiptId,element.Release)\"><i class=\"fa fa-trash fa-lg\"></i></a> \r\n          </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"Upload\">\r\n          <th mat-header-cell *matHeaderCellDef> \r\n   \r\n          </th>\r\n          <td mat-cell *matCellDef=\"let element\"> \r\n            <a class=\"btn text-danger\" (click)=\"AddUploadFile(element.ReceiptId)\"><i class=\"fas fa-upload\"></i></a> \r\n          </td>\r\n        </ng-container>\r\n        <ng-container matColumnDef=\"ViewUpload\">\r\n          <th mat-header-cell *matHeaderCellDef> \r\n            <a class=\"btn btn-outline-success\" routerLink=\"/receiptheader\"><i class=\"fa fa-plus-square\"></i> Create New</a> \r\n          </th>\r\n          <td mat-cell *matCellDef=\"let element\"> \r\n            <a class=\"btn text-danger\" (click)=\"viewUploadFile(element.ReceiptId)\"><i class=\"fas fa-eye\"></i></a> \r\n          </td>\r\n        </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n      </table>\r\n      <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -3922,6 +3936,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../upload/upload.component */ "./src/app/upload/upload.component.ts");
+/* harmony import */ var _upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../upload/viewupload/viewupload.component */ "./src/app/upload/viewupload/viewupload.component.ts");
+
+
 
 
 
@@ -3929,14 +3947,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ReceiptComponent = /** @class */ (function () {
-    function ReceiptComponent(service, router, toastr) {
+    function ReceiptComponent(service, router, dialog, toastr) {
         this.service = service;
         this.router = router;
+        this.dialog = dialog;
         this.toastr = toastr;
-        this.displayedColumns = ['TranType', 'ReceiptNbr', 'Description', 'ReceiptDate', 'Delete'];
+        this.displayedColumns = ['TranType', 'ReceiptNbr', 'Description', 'ReceiptDate', 'TotalQty', 'TotalCost', 'Delete', 'Upload', 'ViewUpload'];
     }
     ReceiptComponent.prototype.ngOnInit = function () {
         this.refreshList();
+    };
+    ReceiptComponent.prototype.AddUploadFile = function (ReceiptId) {
+        var dialogConfig = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = "50%";
+        dialogConfig.data = { ReceiptId: ReceiptId };
+        this.dialog.open(_upload_upload_component__WEBPACK_IMPORTED_MODULE_6__["UploadComponent"], dialogConfig).afterClosed().subscribe(function (res) {
+            console.log('done');
+        });
+    };
+    ReceiptComponent.prototype.viewUploadFile = function (ReceiptId) {
+        var dialogConfig = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = "50%";
+        dialogConfig.height = "100%";
+        dialogConfig.data = { ReceiptId: ReceiptId };
+        this.dialog.open(_upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_7__["ViewuploadComponent"], dialogConfig).afterClosed().subscribe(function (res) {
+            console.log('done');
+        });
     };
     ReceiptComponent.prototype.refreshList = function () {
         var _this = this;
@@ -4003,7 +4043,7 @@ var ReceiptComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./receipt.component.css */ "./src/app/receipt/receipt.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_receipt_service__WEBPACK_IMPORTED_MODULE_2__["ReceiptService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
             ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
     ], ReceiptComponent);
     return ReceiptComponent;
@@ -5228,6 +5268,9 @@ var ProjectService = /** @class */ (function () {
     ProjectService.prototype.getAllProject = function () {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/Projects").toPromise();
     };
+    ProjectService.prototype.getAllAccessProject = function () {
+        return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/Projects/All").toPromise();
+    };
     ProjectService.prototype.getActiveProject = function () {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/Projects/ProjectStatus/Active").toPromise();
     };
@@ -5362,6 +5405,9 @@ var ReceiptService = /** @class */ (function () {
     };
     ReceiptService.prototype.getReceiptByID = function (id) {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + '/Receipts/' + id).toPromise();
+    };
+    ReceiptService.prototype.getReceiptByProjectdetail = function (projectId, tran, warehouseId, inventoryId) {
+        return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + '/Receipts/ReceiptByProjectdetail/' + projectId + "/" + tran + "/" + warehouseId + "/" + inventoryId).toPromise();
     };
     ReceiptService.prototype.getReceiptByDate = function (from, to) {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + '/Receipts/ReceiptByDate/' + from + "/" + to).toPromise();
@@ -5746,6 +5792,65 @@ var UomService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/shared/upload.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/shared/upload.service.ts ***!
+  \******************************************/
+/*! exports provided: UploadService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadService", function() { return UploadService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+
+
+
+
+
+var UploadService = /** @class */ (function () {
+    function UploadService(http, fb) {
+        this.http = http;
+        this.fb = fb;
+        this.formModel = this.fb.group({
+            FileId: [''],
+            Caption: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
+            ModuleId: [''],
+            OperationId: [''],
+            StoreFile: ['']
+        });
+    }
+    UploadService.prototype.postFile = function () {
+        // const httpOptions = {
+        //   headers: new HttpHeaders({
+        //     'Content-Type':  'multipart/form-data'
+        //   })
+        // };
+        return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/ImagesFiles", this.formModel.value);
+    };
+    UploadService.prototype.getFile = function (id, module) {
+        return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/ImagesFiles/FileByModule/" + id + "/" + module).toPromise();
+    };
+    UploadService.prototype.deleteFile = function (id) {
+        return this.http.delete(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/ImagesFiles/" + id);
+    };
+    UploadService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]])
+    ], UploadService);
+    return UploadService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/user.service.ts":
 /*!****************************************!*\
   !*** ./src/app/shared/user.service.ts ***!
@@ -5890,6 +5995,9 @@ var WarehouseService = /** @class */ (function () {
     };
     WarehouseService.prototype.getWarehouse = function () {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/Warehouses").toPromise();
+    };
+    WarehouseService.prototype.getAllWarehouse = function () {
+        return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/Warehouses/All").toPromise();
     };
     WarehouseService.prototype.getWarehouseByProjectId = function (item) {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiURL + "/Warehouses/ProjectId/" + item).toPromise();
@@ -6789,6 +6897,185 @@ var UomComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/upload/upload.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/upload/upload.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VwbG9hZC91cGxvYWQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/upload/upload.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/upload/upload.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<h4 class=\"dispaly-4\">Upload File</h4>\r\n<hr>\r\n<div class=\"container\">\r\n  <div class=\"col-md-12\">\r\n      <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <form [formGroup]=\"service.formModel\" autocomplete=\"off\" (submit)=\"onSubmit() \">\r\n                  <input hidden class=\"form-control\" formControlName=\"FileId\">\r\n                  <div class=\"form-group required\">\r\n                    <label>Caption</label>\r\n                    <input class=\"form-control\" formControlName=\"Caption\">\r\n                    <label class=\"text-danger\" *ngIf=\"service.formModel.get('Caption').touched && service.formModel.get('Caption').errors?.required\">This field is mandatory.</label>\r\n                  </div>\r\n                  <div class=\"form-group required\">                   \r\n                      <img [src]=\"imageUrl\"  style=\"width:250px;height:200px\">\r\n                      <input type=\"file\" (change)=\"handleFileInput($event.target.files)\">\r\n                  </div>\r\n                  <!-- <div class=\"form-group required\">                   \r\n                    <img *ngFor=\"let item of fileRetrive\" [src]=\"{{item.StoreFile}}\"  style=\"width:250px;height:200px\">\r\n                  </div> -->\r\n                  <div class=\"form-group\">\r\n                    <button type=\"submit\" class=\"btn btn-dark\" [disabled]=\"!service.formModel.valid\"><i class=\"fa fa-database\"></i> Submit</button>\r\n                    <button type=\"button\" class=\"btn btn-outline-dark ml-1\" [mat-dialog-close]><i class=\"fa fa-close\"></i> Close</button>\r\n                  </div>\r\n                </form>\r\n            </div>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/upload/upload.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/upload/upload.component.ts ***!
+  \********************************************/
+/*! exports provided: UploadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UploadComponent", function() { return UploadComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_upload_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/upload.service */ "./src/app/shared/upload.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var UploadComponent = /** @class */ (function () {
+    function UploadComponent(service, toastr, data, dialogRef) {
+        this.service = service;
+        this.toastr = toastr;
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.imageUrl = "/assets/img/default-image.png";
+        this.fileToUpload = null;
+    }
+    UploadComponent.prototype.ngOnInit = function () {
+        if (this.data.ReceiptId != null) {
+            this.service.formModel.reset();
+            this.service.formModel.patchValue({
+                FileId: 0,
+                ModuleId: 'IN',
+                OperationId: this.data.ReceiptId
+            });
+        }
+    };
+    UploadComponent.prototype.handleFileInput = function (file) {
+        var _this = this;
+        this.fileToUpload = file.item(0);
+        console.log(this.fileToUpload);
+        //Show image preview
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            _this.imageUrl = event.target.result;
+            _this.service.formModel.patchValue({
+                StoreFile: _this.imageUrl
+            });
+        };
+        reader.readAsDataURL(this.fileToUpload);
+    };
+    UploadComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.service.postFile().subscribe(function (res) {
+            _this.service.formModel.reset();
+            _this.toastr.success('Uploaded Successfully', 'Upload File');
+        });
+    };
+    UploadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-upload',
+            template: __webpack_require__(/*! ./upload.component.html */ "./src/app/upload/upload.component.html"),
+            styles: [__webpack_require__(/*! ./upload.component.css */ "./src/app/upload/upload.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_upload_service__WEBPACK_IMPORTED_MODULE_2__["UploadService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], Object, _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"]])
+    ], UploadComponent);
+    return UploadComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/upload/viewupload/viewupload.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/upload/viewupload/viewupload.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "div.polaroid {\r\n    width: 100%;\r\n    background-color: white;\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n    margin-bottom: 25px;\r\n  }\r\n  \r\n  div.textimgcontainer {\r\n    text-align: center;\r\n    padding: 10px 20px;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXBsb2FkL3ZpZXd1cGxvYWQvdmlld3VwbG9hZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztJQUNYLHVCQUF1QjtJQUN2Qiw0RUFBNEU7SUFDNUUsbUJBQW1CO0VBQ3JCOztFQUVBO0lBQ0Usa0JBQWtCO0lBQ2xCLGtCQUFrQjtFQUNwQiIsImZpbGUiOiJzcmMvYXBwL3VwbG9hZC92aWV3dXBsb2FkL3ZpZXd1cGxvYWQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImRpdi5wb2xhcm9pZCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLCAwLCAwLCAwLjIpLCAwIDZweCAyMHB4IDAgcmdiYSgwLCAwLCAwLCAwLjE5KTtcclxuICAgIG1hcmdpbi1ib3R0b206IDI1cHg7XHJcbiAgfVxyXG4gIFxyXG4gIGRpdi50ZXh0aW1nY29udGFpbmVyIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBhZGRpbmc6IDEwcHggMjBweDtcclxuICB9Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/upload/viewupload/viewupload.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/upload/viewupload/viewupload.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<h4 class=\"dispaly-4\">View File</h4>\r\n<hr>\r\n<div class=\"container\">\r\n  <div class=\"col-md-12\">\r\n      <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                  <div *ngFor=\"let item of fileList;let i = index\">\r\n                    <div class=\"polaroid\">\r\n                      <img src=\"{{item.StoreFile}}\" alt=\"{{item.Caption}}\" class=\"img-thumbnail\">\r\n                      <div class=\"textimgcontainer\">{{item.Caption}}<i class=\"fa fa-trash-alt fa-lg text-danger\" (click)=\"deleteFile(item.FileId)\"></i></div>\r\n                    </div>\r\n                  </div>\r\n                <hr>\r\n                <div class=\"form-group\">\r\n                  <button type=\"button\" class=\"btn btn-outline-dark ml-1\" [mat-dialog-close]><i class=\"fa fa-close\"></i> Close</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/upload/viewupload/viewupload.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/upload/viewupload/viewupload.component.ts ***!
+  \***********************************************************/
+/*! exports provided: ViewuploadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewuploadComponent", function() { return ViewuploadComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_upload_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/upload.service */ "./src/app/shared/upload.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var ViewuploadComponent = /** @class */ (function () {
+    function ViewuploadComponent(service, toastr, data, dialogRef) {
+        this.service = service;
+        this.toastr = toastr;
+        this.data = data;
+        this.dialogRef = dialogRef;
+    }
+    ViewuploadComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (this.data.ReceiptId != null) {
+            this.service.getFile(this.data.ReceiptId, "IN").then(function (res) {
+                _this.fileList = res;
+            });
+        }
+    };
+    ViewuploadComponent.prototype.deleteFile = function (id) {
+        var _this = this;
+        this.service.deleteFile(id).subscribe(function (res) {
+            var index = _this.fileList.findIndex(function (x) { return x.FileId == id; });
+            _this.fileList.splice(index, 1);
+            _this.toastr.warning("Deleted successfully", "File Register");
+        });
+    };
+    ViewuploadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-viewupload',
+            template: __webpack_require__(/*! ./viewupload.component.html */ "./src/app/upload/viewupload/viewupload.component.html"),
+            styles: [__webpack_require__(/*! ./viewupload.component.css */ "./src/app/upload/viewupload/viewupload.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_upload_service__WEBPACK_IMPORTED_MODULE_2__["UploadService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], Object, _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"]])
+    ], ViewuploadComponent);
+    return ViewuploadComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/user/login/login.component.css":
 /*!************************************************!*\
   !*** ./src/app/user/login/login.component.css ***!
@@ -7247,6 +7534,102 @@ var UserrolesComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/visual-data/inregister/inregister.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/visual-data/inregister/inregister.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Zpc3VhbC1kYXRhL2lucmVnaXN0ZXIvaW5yZWdpc3Rlci5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/visual-data/inregister/inregister.component.html":
+/*!******************************************************************!*\
+  !*** ./src/app/visual-data/inregister/inregister.component.html ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"isLoaded\">\r\n  <app-menus></app-menus>\r\n  <div class=\"container\">\r\n    <div class=\"col-md-8 offset-md-2\">\r\n        <div class=\"jumbotron\">\r\n            <h1 class=\"display-6 text-center\">Inventory Register</h1>\r\n            <hr>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                  <form [formGroup]=\"formFilter\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                    <div class=\"form-group\">\r\n                      <label>Project</label>\r\n                      <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                        <option value=\"0\">-Select-</option>\r\n                        <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                      </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                      <label>Tran.Type</label>\r\n                      <select class=\"form-control\" formControlName=\"TranType\">\r\n                        <option value=\"0\">-Select-</option>\r\n                        <option value=\"Receipt\" >Receipt</option>\r\n                        <option value=\"Issue\" >Issue</option>\r\n                        <option value=\"Adjust\" >Adjust</option>\r\n                      </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Warehouse</label>\r\n                        <select class=\"form-control\" formControlName=\"WarehouseId\">\r\n                          <option value=\"0\">-Select Warehouse-</option>\r\n                          <option *ngFor=\"let item of warehouseList\" value=\"{{item.WarehouseId}}\">{{item.WarehouseName}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Inventory</label>\r\n                        <select class=\"form-control\" formControlName=\"InventoryId\">\r\n                          <option value=\"0\">\r\n                            -Select Inventory-\r\n                          </option>\r\n                          <option *ngFor=\"let item of inventoryList\" value=\"{{item.InventoryId}}\">{{item.InventoryDesr}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"form-row\">\r\n                      <div class=\"form-group col-md-8 offset-md-2\">\r\n                        <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!formFilter.valid\">Load</button>\r\n                      </div>\r\n                    </div>\r\n                  </form>\r\n                </div>\r\n              </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div *ngIf=\"!isLoaded\">\r\n  <h2 class=\"display-6 text-center\" (click)=\"LoadAgain()\" >Inventory Register Of {{projectheader}}</h2>\r\n\r\n  <table class=\"table table-hover\">\r\n      <thead class=\"thead-dark\">\r\n          <tr>\r\n            <th>ReceiptNbr</th>\r\n            <th>ReceiptDate</th>\r\n            <th>ProjectName</th>\r\n            <th>WarehouseName</th>\r\n            <th>InventoryDesr</th>\r\n            <th>Qty</th>\r\n            <th>UnitCost</th>\r\n            <th>ExtCost</th>\r\n          </tr>\r\n      </thead>\r\n  </table>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/visual-data/inregister/inregister.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/visual-data/inregister/inregister.component.ts ***!
+  \****************************************************************/
+/*! exports provided: InregisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InregisterComponent", function() { return InregisterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/project.service */ "./src/app/shared/project.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/inventory.service */ "./src/app/shared/inventory.service.ts");
+/* harmony import */ var src_app_shared_warehouse_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/warehouse.service */ "./src/app/shared/warehouse.service.ts");
+/* harmony import */ var src_app_shared_receipt_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/receipt.service */ "./src/app/shared/receipt.service.ts");
+
+
+
+
+
+
+
+var InregisterComponent = /** @class */ (function () {
+    function InregisterComponent(service, inventoryService, warehouseService, receiptService, fb) {
+        this.service = service;
+        this.inventoryService = inventoryService;
+        this.warehouseService = warehouseService;
+        this.receiptService = receiptService;
+        this.fb = fb;
+        this.isLoaded = true;
+        this.formFilter = this.fb.group({
+            ProjectId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            TranType: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            WarehouseId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            InventoryId: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+        });
+    }
+    InregisterComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.service.getActiveProject().then(function (res) { return _this.projectList = res; });
+        this.inventoryService.getInventory().then(function (res) { return _this.inventoryList = res; });
+    };
+    InregisterComponent.prototype.onChangeProject = function (item) {
+        var _this = this;
+        var text = item.target.options[item.target.options.selectedIndex].text;
+        this.projectheader = text;
+        this.warehouseService.getWarehouseByProjectId(item.target.value).then(function (res) { return _this.warehouseList = res; });
+    };
+    InregisterComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.isLoaded = false;
+        this.receiptService.getReceiptByProjectdetail(this.formFilter.value.ProjectId, this.formFilter.value.TranType, this.formFilter.value.WarehouseId, this.formFilter.value.InventoryId).then(function (res) { return _this.inRegisterList = res; });
+    };
+    InregisterComponent.prototype.LoadAgain = function () {
+        this.isLoaded = true;
+    };
+    InregisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-inregister',
+            template: __webpack_require__(/*! ./inregister.component.html */ "./src/app/visual-data/inregister/inregister.component.html"),
+            styles: [__webpack_require__(/*! ./inregister.component.css */ "./src/app/visual-data/inregister/inregister.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_2__["ProjectService"], src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_4__["InventoryService"],
+            src_app_shared_warehouse_service__WEBPACK_IMPORTED_MODULE_5__["WarehouseService"], src_app_shared_receipt_service__WEBPACK_IMPORTED_MODULE_6__["ReceiptService"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
+    ], InregisterComponent);
+    return InregisterComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/visual-data/projectdaily/projectdaily.component.css":
 /*!*********************************************************************!*\
   !*** ./src/app/visual-data/projectdaily/projectdaily.component.css ***!
@@ -7297,6 +7680,8 @@ var ProjectdailyComponent = /** @class */ (function () {
     ProjectdailyComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.service.formDaily.reset();
+        this.stdList = [];
+        this.dailyList = [];
         this.service.getActiveProject().then(function (res) { return _this.projectList = res; });
         this.stdService.getStandard().then(function (res) { return _this.stdList = res; });
     };
@@ -7371,7 +7756,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isLoaded\">\r\n    <app-menus></app-menus>\r\n    <div class=\"container\">\r\n      <div class=\"col-md-8 offset-md-2\">\r\n          <div class=\"jumbotron\">\r\n              <h1 class=\"display-6 text-center\">Project Inventory Status</h1>\r\n              <hr>\r\n              <div class=\"row\">\r\n                  <div class=\"col-md-12\">\r\n                      <form [formGroup]=\"service.formInsiteFilter\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                        <div class=\"form-group\">\r\n                          <label>Project</label>\r\n                          <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                            <option value=\"0\">-Select-</option>\r\n                            <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                          <label>Inventory</label>\r\n                          <select class=\"form-control\" formControlName=\"InventoryId\" required>\r\n                            <option value=\"0\">-Select-</option>\r\n                            <option *ngFor=\"let item of inventoryList\" value=\"{{item.InventoryId}}\">{{item.InventoryDesr}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                          <div class=\"form-group col-md-8 offset-md-2\">\r\n                            <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formInsiteFilter.valid\">Load</button>\r\n                          </div>\r\n                        </div>\r\n                      </form>\r\n                  </div>\r\n                </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"!isLoaded\">\r\n    <h2 class=\"display-6 text-center\" (click)=\"LoadAgain()\" >Status Of {{projectheader}}</h2>\r\n    <mat-list>\r\n      <mat-list-item></mat-list-item>\r\n      <mat-divider></mat-divider>\r\n    </mat-list>\r\n    <table class=\"table table-hover\">\r\n      <thead class=\"thead-dark\">\r\n          <tr>\r\n            <th>Warehouse</th>\r\n            <th>Inventory</th>\r\n            <th>On Hand</th>\r\n            <th>Issue</th>\r\n            <th>Receipt</th>\r\n            <th>Adjust</th>\r\n            <th>S.Unit</th>\r\n            <th>S.Kg</th>\r\n            <th>I.Cost</th>\r\n            <th>R.Cost</th>\r\n            <th>A.Cost</th>\r\n            <th>A.USD</th>\r\n            <th>A.KHR</th>\r\n          </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let pd of insiteList\">\r\n        <td >{{pd.WarehouseName}}</td>\r\n        <td >{{pd.InventoryDesc}}</td>\r\n        <td >{{pd.QtyOnHand}}</td>\r\n        <td >{{pd.QtyIssue}}</td>\r\n        <td >{{pd.QtyReceipt}}</td>\r\n        <td>{{pd.QtyAdjust}}</td>\r\n        <td >{{pd.QtySaleByUnit}}</td>\r\n        <td>{{pd.QtySaleByKg}}</td>\r\n        <td>{{pd.IssueCost}}</td>\r\n        <td>{{pd.ReceiptCost}}</td>\r\n        <td>{{pd.AdjustCost}}</td>\r\n        <td>{{pd.SaleAmount}}</td>\r\n        <td>{{pd.SaleAmountKhr}}</td>\r\n      </tr>\r\n      <tr class=\"bg-success\">\r\n          <td >------</td>\r\n          <td >Total:</td>\r\n          <td >{{getTotalQtyOnHand()}}</td>\r\n          <td >{{getTotalQtyIssue()}}</td>\r\n          <td >{{getTotalQtyReceipt()}}</td>\r\n          <td>{{getTotalQtyAdjust()}}</td>\r\n          <td>{{getTotalQtySaleByUnit()}}</td>\r\n          <td>{{getTotalQtySaleByKg()}}</td>\r\n          <td>{{getTotalIssueCost()}}</td>\r\n          <td>{{getTotalReceiptCost()}}</td>\r\n          <td>{{getTotalAdjustCost()}}</td>\r\n          <td>{{getTotalSaleAmount()}}</td>\r\n          <td>{{getTotalSaleAmountKhr()}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  "
+module.exports = "<div *ngIf=\"isLoaded\">\r\n    <app-menus></app-menus>\r\n    <div class=\"container\">\r\n      <div class=\"col-md-8 offset-md-2\">\r\n          <div class=\"jumbotron\">\r\n              <h1 class=\"display-6 text-center\">Project Inventory Status</h1>\r\n              <hr>\r\n              <div class=\"row\">\r\n                  <div class=\"col-md-12\">\r\n                      <form [formGroup]=\"service.formInsiteFilter\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                        <div class=\"form-group\">\r\n                          <label>Project</label>\r\n                          <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                            <option value=\"0\">-Select-</option>\r\n                            <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                          <label>Inventory</label>\r\n                          <select class=\"form-control\" formControlName=\"InventoryId\" required>\r\n                            <option value=\"0\">-Select-</option>\r\n                            <option *ngFor=\"let item of inventoryList\" value=\"{{item.InventoryId}}\">{{item.InventoryDesr}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                          <div class=\"form-group col-md-8 offset-md-2\">\r\n                            <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formInsiteFilter.valid\">Load</button>\r\n                          </div>\r\n                        </div>\r\n                      </form>\r\n                  </div>\r\n                </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"!isLoaded\">\r\n    <h2 class=\"display-6 text-center\" (click)=\"LoadAgain()\" >Status Of {{projectheader}}</h2>\r\n    <table class=\"table table-hover\">\r\n      <thead class=\"thead-dark\">\r\n          <tr>\r\n            <th>Warehouse</th>\r\n            <th>Inventory</th>\r\n            <th>On Hand</th>\r\n            <th>Issue</th>\r\n            <th>Receipt</th>\r\n            <th>Adjust</th>\r\n            <th>S.Unit</th>\r\n            <th>S.Kg</th>\r\n            <th>I.Cost</th>\r\n            <th>R.Cost</th>\r\n            <th>A.Cost</th>\r\n            <th>A.USD</th>\r\n            <th>A.KHR</th>\r\n          </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let pd of insiteList\">\r\n        <td >{{pd.WarehouseName}}</td>\r\n        <td >{{pd.InventoryDesc}}</td>\r\n        <td >{{pd.QtyOnHand}}</td>\r\n        <td >{{pd.QtyIssue}}</td>\r\n        <td >{{pd.QtyReceipt}}</td>\r\n        <td>{{pd.QtyAdjust}}</td>\r\n        <td >{{pd.QtySaleByUnit}}</td>\r\n        <td>{{pd.QtySaleByKg}}</td>\r\n        <td>{{pd.IssueCost}}</td>\r\n        <td>{{pd.ReceiptCost}}</td>\r\n        <td>{{pd.AdjustCost}}</td>\r\n        <td>{{pd.SaleAmount}}</td>\r\n        <td>{{pd.SaleAmountKhr}}</td>\r\n      </tr>\r\n      <tr class=\"bg-success\">\r\n          <td >------</td>\r\n          <td >Total:</td>\r\n          <td >{{getTotalQtyOnHand()}}</td>\r\n          <td >{{getTotalQtyIssue()}}</td>\r\n          <td >{{getTotalQtyReceipt()}}</td>\r\n          <td>{{getTotalQtyAdjust()}}</td>\r\n          <td>{{getTotalQtySaleByUnit()}}</td>\r\n          <td>{{getTotalQtySaleByKg()}}</td>\r\n          <td>{{getTotalIssueCost()}}</td>\r\n          <td>{{getTotalReceiptCost()}}</td>\r\n          <td>{{getTotalAdjustCost()}}</td>\r\n          <td>{{getTotalSaleAmount()}}</td>\r\n          <td>{{getTotalSaleAmountKhr()}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -7404,6 +7789,7 @@ var ProjectstatusComponent = /** @class */ (function () {
     }
     ProjectstatusComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.insiteList = [];
         this.projectService.getActiveProject().then(function (res) { return _this.projectList = res; });
         this.inventoryService.getInventory().then(function (res) { return _this.inventoryList = res; });
     };
@@ -7896,7 +8282,7 @@ var WarehouseacessDetailComponent = /** @class */ (function () {
     };
     WarehouseacessDetailComponent.prototype.getWarehouses = function () {
         var _this = this;
-        this.warehouseService.getWarehouse().then(function (res) { return _this.warehouseList = res; });
+        this.warehouseService.getAllWarehouse().then(function (res) { return _this.warehouseList = res; });
     };
     WarehouseacessDetailComponent.prototype.onAdd = function (item) {
         var _this = this;

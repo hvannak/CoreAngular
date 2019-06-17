@@ -1,0 +1,72 @@
+<div *ngIf="isLoaded">
+  <app-menus></app-menus>
+  <div class="container">
+    <div class="col-md-8 offset-md-2">
+        <div class="jumbotron">
+            <h1 class="display-6 text-center">Inventory Register</h1>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                  <form [formGroup]="formFilter" autocomplete="off" (submit)="onSubmit()">
+                    <div class="form-group">
+                      <label>Project</label>
+                      <select class="form-control" formControlName="ProjectId" required (change)="onChangeProject($event)">
+                        <option value="0">-Select-</option>
+                        <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Tran.Type</label>
+                      <select class="form-control" formControlName="TranType">
+                        <option value="0">-Select-</option>
+                        <option value="Receipt" >Receipt</option>
+                        <option value="Issue" >Issue</option>
+                        <option value="Adjust" >Adjust</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Warehouse</label>
+                        <select class="form-control" formControlName="WarehouseId">
+                          <option value="0">-Select Warehouse-</option>
+                          <option *ngFor="let item of warehouseList" value="{{item.WarehouseId}}">{{item.WarehouseName}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Inventory</label>
+                        <select class="form-control" formControlName="InventoryId">
+                          <option value="0">
+                            -Select Inventory-
+                          </option>
+                          <option *ngFor="let item of inventoryList" value="{{item.InventoryId}}">{{item.InventoryDesr}}</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-8 offset-md-2">
+                        <button type="submit" class="btn btn-lg btn-block" [disabled]="!formFilter.valid">Load</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isLoaded">
+  <h2 class="display-6 text-center" (click)="LoadAgain()" >Inventory Register Of {{projectheader}}</h2>
+
+  <table class="table table-hover">
+      <thead class="thead-dark">
+          <tr>
+            <th>ReceiptNbr</th>
+            <th>ReceiptDate</th>
+            <th>ProjectName</th>
+            <th>WarehouseName</th>
+            <th>InventoryDesr</th>
+            <th>Qty</th>
+            <th>UnitCost</th>
+            <th>ExtCost</th>
+          </tr>
+      </thead>
+  </table>
+</div>

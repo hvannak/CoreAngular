@@ -93,6 +93,7 @@ import { ProjectstatusComponent } from './visual-data/projectstatus/projectstatu
 import { UploadComponent } from './upload/upload.component';
 import { UploadService } from './shared/upload.service';
 import { ViewuploadComponent } from './upload/viewupload/viewupload.component';
+import { InregisterComponent } from './visual-data/inregister/inregister.component';
 
 @NgModule({
   declarations: [
@@ -159,7 +160,8 @@ import { ViewuploadComponent } from './upload/viewupload/viewupload.component';
     ProjectdailyComponent,
     ProjectstatusComponent,
     UploadComponent,
-    ViewuploadComponent
+    ViewuploadComponent,
+    InregisterComponent
   ],
   imports: [
     BrowserModule,

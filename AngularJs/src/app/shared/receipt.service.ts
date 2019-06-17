@@ -49,6 +49,10 @@ export class ReceiptService {
     return this.http.get(environment.apiURL + '/Receipts/'+id).toPromise();
   }
 
+  getReceiptByProjectdetail(projectId:number,tran:string,warehouseId:number,inventoryId:number){
+    return this.http.get(environment.apiURL + '/Receipts/ReceiptByProjectdetail/'+projectId+"/" + tran + "/" + warehouseId + "/" + inventoryId).toPromise();
+  }
+
   getReceiptByDate(from:Date,to:Date){
     return this.http.get(environment.apiURL + '/Receipts/ReceiptByDate/'+ from + "/" + to).toPromise();
   }

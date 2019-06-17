@@ -21,12 +21,14 @@ export class ProjectdailyComponent implements OnInit {
 
   ngOnInit() {
     this.service.formDaily.reset();
+    this.stdList=[];
+    this.dailyList=[];
     this.service.getActiveProject().then(res => this.projectList = res);
     this.stdService.getStandard().then(res => this.stdList = res as Standardname[]);
   }
 
   filterItemsOfType(type){
-    return this.stdList.filter(x=>x.Type == type);
+    return this.stdList.filter(x=>x.Type == type );
   }
 
   onChangeProject(item){

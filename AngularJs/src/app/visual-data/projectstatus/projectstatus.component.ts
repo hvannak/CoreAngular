@@ -21,6 +21,7 @@ export class ProjectstatusComponent implements OnInit {
   constructor(private service:InsitestatusService,private projectService:ProjectService,private inventoryService:InventoryService) { }
 
   ngOnInit() {
+    this.insiteList=[];
     this.projectService.getActiveProject().then(res => this.projectList = res);
     this.inventoryService.getInventory().then(res => this.inventoryList = res);
   }

@@ -33,7 +33,7 @@ namespace AngularJsCore.Controllers
             var entryPoint = (from ep in _context.receipts
                               join e in _context.receiptLines on ep.ReceiptId equals e.ReceiptId
                               join t in _context.projectAccesses on e.ProjectId equals t.ProjectId
-                              where t.UserId == userId
+                              where t.UserId == userId           
                               select new Receipt()
                               {
                                   TranType = ep.TranType,
@@ -44,32 +44,39 @@ namespace AngularJsCore.Controllers
                                   TotalQty = ep.TotalQty,
                                   TotalCost = ep.TotalCost,
                                   Release = ep.Release
-                              }).OrderByDescending(x=>x.ReceiptId).Take(300);
-            //return _context.receipts.OrderByDescending(x=>x.ReceiptId).Take(300);
-            return entryPoint;
+                              }).Take(300).Distinct().ToList();
+            var result = entryPoint.OrderByDescending(x => x.ReceiptId);
+            return result;
         }
 
         [HttpGet("ReceiptByDate/{from}/{to}")]
         public IEnumerable<Receipt> GetReceiptByDate(DateTime from,DateTime to)
         {
             string userId = User.Claims.First(c => c.Type == "UserID").Value;
-            var result = (from ep in _context.receipts
-                              join e in _context.receiptLines on ep.ReceiptId equals e.ReceiptId
-                              join t in _context.projectAccesses on e.ProjectId equals t.ProjectId
-                              where t.UserId == userId
-                              select new Receipt()
-                              {
-                                  TranType = ep.TranType,
-                                  ReceiptId = ep.ReceiptId,
-                                  ReceiptNbr = ep.ReceiptNbr,
-                                  ReceiptDate = ep.ReceiptDate,
-                                  Description = ep.Description,
-                                  TotalQty = ep.TotalQty,
-                                  TotalCost = ep.TotalCost,
-                                  Release = ep.Release
-                              }).Where(x => x.ReceiptDate.Date >= from.Date && x.ReceiptDate.Date <= to.Date).OrderByDescending(x => x.ReceiptId).Take(300);
-
+            var entryPoint = (from ep in _context.receipts
+                          join e in _context.receiptLines on ep.ReceiptId equals e.ReceiptId
+                          join t in _context.projectAccesses on e.ProjectId equals t.ProjectId
+                          where t.UserId == userId
+                          select new Receipt()
+                          {
+                              TranType = ep.TranType,
+                              ReceiptId = ep.ReceiptId,
+                              ReceiptNbr = ep.ReceiptNbr,
+                              ReceiptDate = ep.ReceiptDate,
+                              Description = ep.Description,
+                              TotalQty = ep.TotalQty,
+                              TotalCost = ep.TotalCost,
+                              Release = ep.Release
+                          }).Distinct().ToList();
+            var result = entryPoint.Where(x => x.ReceiptDate.Date >= from.Date && x.ReceiptDate.Date <= to.Date).OrderByDescending(x => x.ReceiptId);
             //var result = _context.receipts.Where(x => x.ReceiptDate.Date >= from.Date && x.ReceiptDate.Date <= to.Date).ToList();
+            return result;
+        }
+
+        [HttpGet("ReceiptByProjectdetail/{projectId}/{tran}/{warehouseId}/{inventoryId}")]
+        public System.Object GetReceiptByProjectdetail(int projectId, string tran,int warehouseId,int inventoryId)
+        {
+            var result = _context.receiptLines;
             return result;
         }
 

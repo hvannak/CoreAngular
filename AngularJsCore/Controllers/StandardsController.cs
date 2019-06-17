@@ -30,7 +30,9 @@ namespace AngularJsCore.Controllers
             var result = _context.standards.Include(x => x.UnitOfMeasure).Select(x => new Standard()
             {
                 StandardKey = x.StandardKey,
+                StandardNameId = x.StandardNameId,
                 UOM = x.UnitOfMeasure.UOM,
+                
                 StandardName = x.StandardName,
                 NumberOfDay = x.NumberOfDay,
                 ResultOfDay = x.ResultOfDay,
