@@ -14,51 +14,23 @@ import { element } from '@angular/core/src/render3';
 })
 export class RoleComponent implements OnInit {
 
-  ctlList;
-  roleList:Role;
   constructor(public service:RoleService,
-    private serviceCtl:RoleCtlService,
-    private toastr:ToastrService,private currentRoute: ActivatedRoute,private router: Router) {
+    private toastr:ToastrService) {
      
   } 
 
   ngOnInit() {
-    this.getCtl();
-    let roleId = this.currentRoute.snapshot.paramMap.get('id');
-    if(roleId == null){
-      this.service.formModel.reset();
-      this.service.rolesAdded = [];
-      this.service.selectedCtl = [];
-    }
-    else{
-      this.service.getRoleByID(roleId).then(res => {
-        this.roleList = res;
-        this.service.formModel.patchValue({
-          Id:this.roleList.Id,
-          RoleName:this.roleList.Name,
-        });
-        if(this.roleList.Access != null){
-          this.service.rolesAdded = [];
-          this.service.selectedCtl = [];
-          var accesslist = JSON.parse(this.roleList.Access);
-          this.service.selectedCtl = accesslist;
-          for(let i = 0; i < accesslist.length; i++){
-            this.service.rolesAdded.push(accesslist[i].Id);
-        }
-      }
-       this.service.formModel.value.Id = roleId;
-      });
-    }
+    this.service.formModel.patchValue({
+      Id: '0'
+    });
   }
 
   onSubmit()
   {
-    if(this.service.formModel.value.Id == '' || this.service.formModel.value.Id == null){
+    if(this.service.formModel.value.Id == '0'){
       this.postRole();
-      console.log('post');
     }
     else{
-      console.log('put');
       this.putRole();
     }
     
@@ -67,23 +39,39 @@ export class RoleComponent implements OnInit {
   postRole(){
     this.service.postRoles().subscribe(
       (res:any) => {
-        if(res.Succeeded){
-          
+        if(res.Succeeded){   
+           
+          this.service.roleList.data.push({
+            Id:res.Id,
+            Name:this.service.formModel.value.RoleName,
+            Access:this.service.formModel.value.SelectedControllers
+          });
+          this.service.roleList._updateChangeSubscription();   
+          this.service.formModel.reset();
+          this.service.formModel.patchValue({
+            Id: '0'
+          });
           this.toastr.success("New role created","Register Role");
         }
       },
       err =>{
         console.log(err);
-      }
-
-    );
+      });
   }
 
   putRole(){
     this.service.putRoles().subscribe(
       (res:any) => {
-        if(res.Succeeded){
-          
+        if(res.Succeeded){   
+          let index = this.service.roleList.data.findIndex(x=>x.Id == this.service.formModel.value.Id);
+          this.service.roleList.data[index].Id = this.service.formModel.value.Id;
+          this.service.roleList.data[index].Name = this.service.formModel.value.RoleName;
+          this.service.roleList.data[index].Access = this.service.formModel.value.SelectedControllers;
+          this.service.roleList._updateChangeSubscription();   
+          this.service.formModel.reset();
+          this.service.formModel.patchValue({
+            Id: '0'
+          });
           this.toastr.success("New role updated","Register Role");
         }
       },
@@ -94,15 +82,4 @@ export class RoleComponent implements OnInit {
     );
   }
 
-  getCtl(){
-    this.serviceCtl.getTreeList().then(res => this.ctlList = res);
-  }
-
-  onDelete(item:any){
-    this.service.onDelete(item);
-  }
-
-  onAdd(item:any){
-    this.service.onAdd(item);
-  }
 }

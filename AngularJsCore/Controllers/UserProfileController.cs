@@ -34,5 +34,6 @@ namespace AngularJsCore.Controllers
                 user.UserName
             };
         }
+
     }
 }

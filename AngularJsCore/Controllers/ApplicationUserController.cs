@@ -32,7 +32,8 @@ namespace AngularJsCore.Controllers
 
         // GET: api/ApplicationUser
         [HttpGet]
-        public System.Object Get()
+        [Authorize]
+        public System.Object GetAllUser()
         {
             var result = _userManager.Users.Select(x => new
             {
@@ -40,6 +41,34 @@ namespace AngularJsCore.Controllers
                 x.UserName
             }).ToList();
             return result;
+        }
+
+        // GET: api/ApplicationUser/1
+        [HttpGet("{id}")]
+        //[Authorize]
+        public System.Object GetAllUserById(string id)
+        {
+            var result = _userManager.Users.Where(x=>x.Id == id).Select(x => new
+            {
+                x.Id,
+                x.UserName,
+                x.Email,
+                x.FullName
+            }).ToList();
+            return result;
+        }
+
+        // PUT: api/ApplicationUser/5
+        [HttpPut("{id}/{token}")]
+        public async Task<IActionResult> PutUser(string id,string token, ApplicationUserModel applicationUserModel)
+        {
+            var applicationUser = await _userManager.FindByIdAsync(id);
+            applicationUser.UserName = applicationUserModel.UserName;
+            applicationUser.Email = applicationUserModel.Email;
+            applicationUser.FullName = applicationUserModel.FullName;
+            applicationUser.PasswordHash = _userManager.PasswordHasher.HashPassword(applicationUser, applicationUserModel.Password);
+            await _userManager.UpdateAsync(applicationUser);
+            return Ok();
         }
 
         [HttpPost]

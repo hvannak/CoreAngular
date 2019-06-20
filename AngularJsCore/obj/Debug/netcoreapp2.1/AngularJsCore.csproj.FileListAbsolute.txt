@@ -67,3 +67,4 @@ C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcor
 C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorTargetAssemblyInfo.cache
 C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.dll
 C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.pdb
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache

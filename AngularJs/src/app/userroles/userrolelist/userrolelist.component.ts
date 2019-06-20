@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormBuilder } from '@angular/forms';
 import { RoleService } from 'src/app/shared/role.service';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { UsereditComponent } from 'src/app/user/useredit/useredit.component';
 
 @Component({
   selector: 'app-userrolelist',
@@ -14,7 +16,7 @@ export class UserrolelistComponent implements OnInit {
 
   userroleList;
   constructor(private service:UserService,private router: Router,
-    private toastr:ToastrService) { }
+    private toastr:ToastrService,private dialog: MatDialog) { }
 
   ngOnInit() {
     this.refressList();
@@ -27,9 +29,19 @@ export class UserrolelistComponent implements OnInit {
       Roles:item.Roles
     });
     this.service.rolesAdded = item.Roles;
+    this.service.userroleModel.get('UserName').disable();
   }
 
-
+  onUserEdit(id){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = "50%";
+    dialogConfig.data = { id };
+    this.dialog.open(UsereditComponent, dialogConfig).afterClosed().subscribe(res => {
+      console.log('done');
+    });
+  }
 
   refressList(){
     this.service.getUserRoles().then(res => this.userroleList = res);

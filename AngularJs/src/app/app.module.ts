@@ -94,6 +94,8 @@ import { UploadComponent } from './upload/upload.component';
 import { UploadService } from './shared/upload.service';
 import { ViewuploadComponent } from './upload/viewupload/viewupload.component';
 import { InregisterComponent } from './visual-data/inregister/inregister.component';
+import { RolesaccessComponent } from './rolesaccess/rolesaccess.component';
+import { UsereditComponent } from './user/useredit/useredit.component';
 
 @NgModule({
   declarations: [
@@ -106,11 +108,13 @@ import { InregisterComponent } from './visual-data/inregister/inregister.compone
     OrderItemsComponent,
     MenusComponent,
     UserComponent,
+    UsereditComponent,
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
     RolesComponent,
     RoleComponent,
+    RolesaccessComponent,
     RoleCtlComponent,
     UserroleComponent,
     UserrolelistComponent,
@@ -174,7 +178,7 @@ import { InregisterComponent } from './visual-data/inregister/inregister.compone
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  entryComponents:[OrderItemsComponent,ReceiptLineComponent,SaleinvoiceLineComponent,UploadComponent,ViewuploadComponent],
+  entryComponents:[OrderItemsComponent,ReceiptLineComponent,SaleinvoiceLineComponent,UploadComponent,ViewuploadComponent,UsereditComponent],
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
     UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,UploadService,

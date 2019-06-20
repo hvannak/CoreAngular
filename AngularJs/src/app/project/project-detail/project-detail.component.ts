@@ -31,8 +31,10 @@ export class ProjectDetailComponent implements OnInit {
     this.service.formData = {
       ProjectId:0,
       ProjectName:'',
-      StartDate:new Date(),
-      EndDate:new Date(),
+      // StartDate:new Date(),
+      // EndDate:new Date(),
+      StartDate:'',
+      EndDate:'',
       WarehouseId:0,
       WarehouseName:'',
       Status:''
@@ -59,9 +61,10 @@ export class ProjectDetailComponent implements OnInit {
 
   
   insertRecord(form:NgForm){
-    this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
-    this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
+    // this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
+    // this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
     // console.log(this.service.formData.EndDate.toLocaleString());
+
     this.service.postProjectsDetail().subscribe(
       res=>{
         this.service.list.data.push(res as Project);
@@ -75,12 +78,13 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   updateRecord(form:NgForm){
-    if(this.service.formData.StartDate.toLocaleString().indexOf('/') !== -1){
-      this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
-    }
-    if(this.service.formData.EndDate.toLocaleString().indexOf('/') !== -1){
-      this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
-    }
+    // if(this.service.formData.StartDate.toLocaleString().indexOf('/') !== -1){
+    //   this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
+    // }
+    // if(this.service.formData.EndDate.toLocaleString().indexOf('/') !== -1){
+    //   this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
+    // }
+
     this.service.PutProjectsDetail().subscribe(
       res=>{
         let index = this.service.list.data.findIndex(x=>x.ProjectId == this.service.formData.ProjectId);

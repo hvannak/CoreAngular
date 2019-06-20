@@ -31,6 +31,7 @@ import { StandardnameComponent } from './standardname/standardname.component';
 import { ProjectdailyComponent } from './visual-data/projectdaily/projectdaily.component';
 import { ProjectstatusComponent } from './visual-data/projectstatus/projectstatus.component';
 import { InregisterComponent } from './visual-data/inregister/inregister.component';
+import { RolesaccessComponent } from './rolesaccess/rolesaccess.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -70,11 +71,8 @@ const routes: Routes = [
     {path:'edit/:id',component:ReceiptHeaderComponent,canActivate:[AuthGuard]}
   ]},
   {path:'home',component:HomeComponent,canActivate:[AuthGuard]},
+  {path:'roleaccess',component:RolesaccessComponent,canActivate:[AuthGuard]},
   {path:'roles',component:RolesComponent},
-  {path:'role',children:[
-    {path:'',component:RoleComponent},
-    {path:'edit/:id',component:RoleComponent}
-  ]},
   {
     path:'userroles',component:UserrolesComponent,canActivate:[AuthGuard]
   },

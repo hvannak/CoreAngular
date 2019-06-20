@@ -10,32 +10,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RolesComponent implements OnInit {
 
-  roleList;
-  constructor(private service: RoleService,
-    private router: Router,
-    private toastr: ToastrService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.refreshList();
+    
   }
-
-  refreshList() {
-    this.service.getRolesList().then(res => this.roleList = res);
-  }
-
-  openForEdit(id: number) {
-    this.router.navigate(['/role/edit/' + id]);
-  }
-
-  onRoleDelete(id: number) {
-    if (confirm('Are you sure to delete this record?')) {
-      this.service.deleteRole(id).then(res => {
-        this.refreshList();
-        this.toastr.warning("Deleted Successfully", "Restaurent App.");
-      });
-    }
-  }
-
-
 
 }

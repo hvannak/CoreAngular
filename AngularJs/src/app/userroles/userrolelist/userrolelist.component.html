@@ -2,7 +2,10 @@
     <tr *ngFor="let item of userroleList">
       <td (click)="populateForm(item)">{{item.UserName}}</td>
       <td>
-        <i class="fa fa-trash-alt fa-lg text-danger" (click)="onUserDelete(item.UserId)"></i>
+        <i class="fas fa-user-slash" (click)="onUserDelete(item.UserId)"></i>
+      </td>
+      <td>
+          <i class="fas fa-edit" (click)="onUserEdit(item.UserId)"></i>
       </td>
     </tr>
   </table>

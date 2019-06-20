@@ -48,7 +48,10 @@ export class UserService {
 
   
   onDelete(item:any){
+    console.log(item);
+    console.log(this.rolesAdded);
     var index = this.rolesAdded.indexOf(item.Name);
+    console.log(index);
     if (index > -1) {
       this.rolesAdded.splice(index, 1);
     }
@@ -56,6 +59,7 @@ export class UserService {
 
   onAdd(item:any):void{
     var index = this.rolesAdded.indexOf(item.Name);
+    console.log(index);
     if(index <= -1){
       this.rolesAdded.push(item.Name);
     }
@@ -86,6 +90,21 @@ export class UserService {
 
   getUserProfile() {
     return this.http.get(environment.apiURL + '/UserProfile');
+  }
+
+  getUserById(id:string){
+    return this.http.get(environment.apiURL + "/ApplicationUser/" + id).toPromise();
+  }
+
+  putUserandResetpassword(id:string,token:string){
+    var body = {
+      UserName: this.formModel.value.UserName,
+      Email: this.formModel.value.Email,
+      FullName: this.formModel.value.FullName,
+      Password: this.formModel.value.Passwords.Password
+    };
+
+    return this.http.put(environment.apiURL + '/ApplicationUser/' + id + "/" + token, body);
   }
 
   getUserRoles(){
