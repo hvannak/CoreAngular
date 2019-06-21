@@ -7,6 +7,8 @@ import { ProjectService } from 'src/app/shared/project.service';
 import { SaleinvoiceLineComponent } from '../saleinvoice-line/saleinvoice-line.component';
 import { Customer } from 'src/app/shared/customer.model';
 import { CustomerService } from 'src/app/shared/customer.service';
+import { formatDate } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-saleinvoice-header',
@@ -145,8 +147,9 @@ export class SaleinvoiceHeaderComponent implements OnInit {
   }
 
   insertRecord(){
+    let date = formatDate(this.service.formInvoice.value.DocDate,environment.format,environment.locale);
     this.service.formInvoice.patchValue({
-      DocDate: this.getLocalDate(this.service.formInvoice.value.DocDate.toLocaleDateString())
+      DocDate: date
     });
     this.service.postInvoice().subscribe(res => {
       this.service.formInvoice.reset();
@@ -157,12 +160,9 @@ export class SaleinvoiceHeaderComponent implements OnInit {
   }
 
   updateRecord(){
-    if(this.service.formInvoice.value.DocDate.toLocaleString().indexOf('/') !== -1){
-      this.service.formInvoice.patchValue({
-        DocDate: this.getLocalDate(this.service.formInvoice.value.DocDate.toLocaleDateString())
-      });
-    }
+    let date = formatDate(this.service.formInvoice.value.DocDate,environment.format,environment.locale);
     this.service.formInvoice.patchValue({
+      DocDate: date,
       DeletedInvoiceLineIDs:this.deleteInvoiceLine
     });
     this.service.putInvoice().subscribe(res => {
@@ -174,10 +174,5 @@ export class SaleinvoiceHeaderComponent implements OnInit {
     })
   }
 
-  getLocalDate(item:string){
-    var ldate = item.split('/');
-    var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-    return new Date(date);
-  }
 
 }

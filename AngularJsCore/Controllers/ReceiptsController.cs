@@ -76,7 +76,38 @@ namespace AngularJsCore.Controllers
         [HttpGet("ReceiptByProjectdetail/{projectId}/{tran}/{warehouseId}/{inventoryId}")]
         public System.Object GetReceiptByProjectdetail(int projectId, string tran,int warehouseId,int inventoryId)
         {
-            var result = _context.receiptLines;
+            var result = (from x in _context.receipts
+                          join y in _context.receiptLines on x.ReceiptId equals y.ReceiptId
+                          select new
+                          {
+                              x.ReceiptId,
+                              x.TranType,
+                              x.ReceiptNbr,
+                              x.ReceiptDate,
+                              y.WarehouseId,
+                              y.WarehouseName,
+                              y.ProjectId,
+                              y.ProjectName,
+                              y.InventoryId,
+                              y.InventoryDesr,
+                              y.Reason,
+                              y.Qty,
+                              y.UnitCost,
+                              y.ExtCost
+                          }).Where(x => x.ProjectId == projectId).ToList();
+
+            if(tran != "0")
+            {
+                result = result.Where(x => x.TranType == tran).ToList();
+            }
+            if(warehouseId != 0)
+            {
+                result = result.Where(x => x.WarehouseId == warehouseId).ToList();
+            }
+            if(inventoryId != 0)
+            {
+                result = result.Where(x => x.InventoryId == inventoryId).ToList();
+            }
             return result;
         }
 

@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:2394/api'
+  apiURL: 'http://localhost:2394/api',
+  format: 'yyyy-MM-dd',
+  locale: 'en-US'
 };
 
 /*

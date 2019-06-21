@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Saleinvoice } from '../shared/saleinvoice.model';
+import { formatDate } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-saleinvoice',
@@ -64,7 +66,7 @@ export class SaleinvoiceComponent implements OnInit {
   }
 
   onSubmit(){
-    this.getReceiptByDate(this.getLocalDate(this.fromDate.toLocaleDateString()),this.getLocalDate(this.toDate.toLocaleDateString()));
+    this.getReceiptByDate(formatDate(this.fromDate,environment.format,environment.locale),formatDate(this.toDate,environment.format,environment.locale));
   }
 
   applyFilter(filterValue: string) {
@@ -73,12 +75,6 @@ export class SaleinvoiceComponent implements OnInit {
     if (this.invoiceList.paginator) {
       this.invoiceList.paginator.firstPage();
     }
-  }
-
-  getLocalDate(item:string){
-    var ldate = item.split('/');
-    var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-    return date;
   }
 
 }

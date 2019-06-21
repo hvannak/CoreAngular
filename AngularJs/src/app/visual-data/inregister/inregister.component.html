@@ -11,7 +11,6 @@
                     <div class="form-group">
                       <label>Project</label>
                       <select class="form-control" formControlName="ProjectId" required (change)="onChangeProject($event)">
-                        <option value="0">-Select-</option>
                         <option *ngFor="let item of projectList" value="{{item.ProjectId}}">{{item.ProjectName}}</option>
                       </select>
                     </div>
@@ -58,15 +57,41 @@
   <table class="table table-hover">
       <thead class="thead-dark">
           <tr>
-            <th>ReceiptNbr</th>
+            <th>RefNbr</th>
+            <th>Tran.Type</th>
             <th>ReceiptDate</th>
             <th>ProjectName</th>
             <th>WarehouseName</th>
             <th>InventoryDesr</th>
+            <th>Reason</th>
             <th>Qty</th>
             <th>UnitCost</th>
             <th>ExtCost</th>
           </tr>
       </thead>
+      <tr *ngFor="let item of inRegisterList">
+        <td>{{item.ReceiptNbr}}</td>
+        <td>{{item.TranType}}</td>
+        <td>{{item.ReceiptDate | date}}</td>
+        <td>{{item.ProjectName}}</td>
+        <td>{{item.WarehouseName}}</td>
+        <td>{{item.InventoryDesr}}</td>
+        <td>{{item.Reason}}</td>
+        <td>{{item.Qty}}</td>
+        <td>{{item.UnitCost}}</td>
+        <td>{{item.ExtCost}}</td>
+      </tr>
+      <tr class="bg-success">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Total:</td>
+        <td>{{getTotalQty()}}</td>
+        <td>{{getTotalUnitCost()}}</td>
+        <td>{{getTotalExtCost()}}</td>
+      </tr>
   </table>
 </div>

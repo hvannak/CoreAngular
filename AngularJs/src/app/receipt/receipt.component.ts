@@ -6,6 +6,8 @@ import { MatTableDataSource, MatPaginator, MatSort, MatDialogConfig, MatDialog }
 import { Receipt } from '../shared/receipt.model';
 import { UploadComponent } from '../upload/upload.component';
 import { ViewuploadComponent } from '../upload/viewupload/viewupload.component';
+import { formatDate } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-receipt',
@@ -75,7 +77,7 @@ export class ReceiptComponent implements OnInit {
   }
 
   onSubmit(){
-    this.getReceiptByDate(this.getLocalDate(this.fromDate.toLocaleDateString()),this.getLocalDate(this.toDate.toLocaleDateString()));
+    this.getReceiptByDate(formatDate(this.fromDate,environment.format,environment.locale),formatDate(this.toDate,environment.format,environment.locale));
   }
 
   applyFilter(filterValue: string) {
@@ -103,9 +105,4 @@ export class ReceiptComponent implements OnInit {
    
   }
 
-  getLocalDate(item:string){
-    var ldate = item.split('/');
-    var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-    return date;
-  }
 }

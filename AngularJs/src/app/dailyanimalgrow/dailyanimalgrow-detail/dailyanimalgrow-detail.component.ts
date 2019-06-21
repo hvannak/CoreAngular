@@ -6,6 +6,8 @@ import { WarehouseService } from 'src/app/shared/warehouse.service';
 import { InventoryService } from 'src/app/shared/inventory.service';
 import { Dailyanimalgrow } from 'src/app/shared/dailyanimalgrow.model';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { formatDate } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dailyanimalgrow-detail',
@@ -39,7 +41,10 @@ export class DailyanimalgrowDetailComponent implements OnInit {
   }
 
   postDailyGrow(){
-    this.service.formModel.value.DateGrow = this.getLocalDate(this.service.formModel.value.DateGrow.toLocaleDateString());
+    let date = formatDate(this.service.formModel.value.DateGrow,environment.format,environment.locale);
+    this.service.formModel.patchValue({
+      DateGrow: date
+    });
     this.service.postDailyGrow().subscribe( (res:any) => {
       this.service.list.data.push(res);
       this.service.list._updateChangeSubscription();
@@ -53,10 +58,10 @@ export class DailyanimalgrowDetailComponent implements OnInit {
   }
 
   putDailyGrow(){
-    console.log("do");
-    if(this.service.formModel.value.DateGrow.toLocaleString().indexOf('/') !== -1){
-      this.service.formModel.value.DateGrow = this.getLocalDate(this.service.formModel.value.DateGrow.toLocaleDateString());
-    }
+    let date = formatDate(this.service.formModel.value.DateGrow,environment.format,environment.locale);
+    this.service.formModel.patchValue({
+      DateGrow: date
+    });
     this.service.putDailyGrow().subscribe( (res:any) => {
       let index = this.service.list.data.findIndex(x=>x.DailyGrowId == this.service.formModel.value.DailyGrowId);
       this.service.list.data[index] = this.service.formModel.value;
@@ -90,12 +95,6 @@ export class DailyanimalgrowDetailComponent implements OnInit {
     this.service.formModel.patchValue({
       InventoryDesc:text
     });
-  }
-
-  getLocalDate(item:string){
-    var ldate = item.split('/');
-    var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-    return new Date(date);
   }
 
 }

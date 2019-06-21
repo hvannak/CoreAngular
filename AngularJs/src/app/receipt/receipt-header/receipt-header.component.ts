@@ -7,6 +7,8 @@ import { InventoryService } from 'src/app/shared/inventory.service';
 import { ProjectService } from 'src/app/shared/project.service';
 import { ReceiptLineComponent } from '../receipt-line/receipt-line.component';
 import { Receipt } from 'src/app/shared/receipt.model';
+import { formatDate } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-receipt-header',
@@ -120,8 +122,9 @@ export class ReceiptHeaderComponent implements OnInit {
   }
 
   insertRecord(){
+    let date = formatDate(this.service.formReceipt.value.ReceiptDate,environment.format,environment.locale);
     this.service.formReceipt.patchValue({
-      ReceiptDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
+      ReceiptDate:date
     });
     this.service.postReceipt().subscribe(res => {
       this.service.formReceipt.reset();
@@ -132,12 +135,9 @@ export class ReceiptHeaderComponent implements OnInit {
   }
 
   updateRecord(){
-    if(this.service.formReceipt.value.ReceiptDate.toLocaleString().indexOf('/') !== -1){
-      this.service.formReceipt.patchValue({
-        ReceiptDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
-      });
-    }
+    let date = formatDate(this.service.formReceipt.value.ReceiptDate,environment.format,environment.locale);
     this.service.formReceipt.patchValue({
+      ReceiptDate:date,
       DeletedReceiptLineIDs:this.deleteReceiptLine
     });
     this.service.putReceipt().subscribe(res => {
@@ -149,10 +149,4 @@ export class ReceiptHeaderComponent implements OnInit {
     })
   }
 
-  getLocalDate(item:string){
-    var ldate = item.split('/');
-    var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-    return new Date(date);
-  }
- 
 }

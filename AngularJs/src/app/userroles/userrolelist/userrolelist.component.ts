@@ -14,7 +14,7 @@ import { UsereditComponent } from 'src/app/user/useredit/useredit.component';
 })
 export class UserrolelistComponent implements OnInit {
 
-  userroleList;
+  userroleList:any[];
   constructor(private service:UserService,private router: Router,
     private toastr:ToastrService,private dialog: MatDialog) { }
 
@@ -39,12 +39,13 @@ export class UserrolelistComponent implements OnInit {
     dialogConfig.width = "50%";
     dialogConfig.data = { id };
     this.dialog.open(UsereditComponent, dialogConfig).afterClosed().subscribe(res => {
-      console.log('done');
+      let index = this.userroleList.findIndex(x=>x.UserId == id);
+      this.userroleList[index].UserName = this.service.formModel.value.UserName;
     });
   }
 
   refressList(){
-    this.service.getUserRoles().then(res => this.userroleList = res);
+    this.service.getUserRoles().then(res => this.userroleList = res as any[]);
   }
 
   onUserDelete(id: string) {

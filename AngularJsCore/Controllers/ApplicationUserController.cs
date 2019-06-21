@@ -45,7 +45,7 @@ namespace AngularJsCore.Controllers
 
         // GET: api/ApplicationUser/1
         [HttpGet("{id}")]
-        //[Authorize]
+        [Authorize]
         public System.Object GetAllUserById(string id)
         {
             var result = _userManager.Users.Where(x=>x.Id == id).Select(x => new
@@ -60,6 +60,7 @@ namespace AngularJsCore.Controllers
 
         // PUT: api/ApplicationUser/5
         [HttpPut("{id}/{token}")]
+        [Authorize]
         public async Task<IActionResult> PutUser(string id,string token, ApplicationUserModel applicationUserModel)
         {
             var applicationUser = await _userManager.FindByIdAsync(id);
