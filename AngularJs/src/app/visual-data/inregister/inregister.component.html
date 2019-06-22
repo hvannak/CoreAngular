@@ -52,7 +52,11 @@
   </div>
 </div>
 <div *ngIf="!isLoaded">
-  <h2 class="display-6 text-center" (click)="LoadAgain()" >Inventory Register Of {{projectheader}}</h2>
+  <input type="button" value="Print" class="btn float-left" (click)="captureScreen()"/> 
+  <input type="button" value="Back" class="btn float-left" (click)="LoadAgain()"/> 
+</div> 
+<div id="contentToConvert" *ngIf="!isLoaded">
+  <h2 class="display-6 text-center">Inventory Register Of {{projectheader}}</h2>
 
   <table class="table table-hover">
       <thead class="thead-dark">

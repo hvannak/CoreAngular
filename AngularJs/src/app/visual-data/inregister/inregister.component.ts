@@ -4,6 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { InventoryService } from 'src/app/shared/inventory.service';
 import { WarehouseService } from 'src/app/shared/warehouse.service';
 import { ReceiptService } from 'src/app/shared/receipt.service';
+import { JspdfService } from 'src/app/shared/jspdf.service';
 
 @Component({
   selector: 'app-inregister',
@@ -18,7 +19,7 @@ export class InregisterComponent implements OnInit {
   inRegisterList:any[];
   public isLoaded = true;
   projectheader;
-  constructor(private service:ProjectService,private inventoryService:InventoryService,
+  constructor(private service:ProjectService,private inventoryService:InventoryService,private jspdfService:JspdfService,
    private warehouseService:WarehouseService,private receiptService:ReceiptService ,private fb:FormBuilder) { }
   formFilter = this.fb.group({
     ProjectId:['',Validators.required],
@@ -54,6 +55,11 @@ export class InregisterComponent implements OnInit {
   onSubmit(){
     this.isLoaded = false;
     this.receiptService.getReceiptByProjectdetail(this.formFilter.value.ProjectId,this.formFilter.value.TranType,this.formFilter.value.WarehouseId,this.formFilter.value.InventoryId).then(res => this.inRegisterList = res as []);
+ 
+  }
+
+  captureScreen(){
+    this.jspdfService.captureScreen();
   }
 
   LoadAgain(){

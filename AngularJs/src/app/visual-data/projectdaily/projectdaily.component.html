@@ -42,7 +42,11 @@
   </div>
 </div>
 <div *ngIf="!isLoaded">
-  <h2 class="display-6 text-center" (click)="LoadAgain()" >Daily Performance Of {{projectheader}}</h2>
+  <input type="button" value="Print" class="btn float-left" (click)="captureScreen()"/> 
+  <input type="button" value="Back" class="btn float-left" (click)="LoadAgain()"/> 
+</div> 
+<div id="contentToConvert" *ngIf="!isLoaded">
+  <h2 class="display-6 text-center">Daily Performance Of {{projectheader}}</h2>
   <mat-list>
     <mat-list-item>Total Dead:{{getTotalDead()}} | Total Feed: {{getTotalFeed()}} | Total Qty Sold:{{getTotalQtySold()}} | Total Weight Sold: {{getTotalWeightSold()}} | Total Amount: {{getTotalAmount()}} | FCR: {{getFCR()}}</mat-list-item>
     <mat-divider></mat-divider>

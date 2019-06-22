@@ -3,6 +3,7 @@ import { ProjectService } from 'src/app/shared/project.service';
 import { StandardnameService } from 'src/app/shared/standardname.service';
 import { Standardname } from 'src/app/shared/standardname.model';
 import { Projectdailyperformance } from 'src/app/shared/projectdailyperformance.model';
+import { JspdfService } from 'src/app/shared/jspdf.service';
 
 @Component({
   selector: 'app-projectdaily',
@@ -17,7 +18,7 @@ export class ProjectdailyComponent implements OnInit {
   public isLoaded = true;
   projectheader;
   //displayedColumns: string[] = ['DailyDate', 'NumberOfDay','AnimalDead','AcualFeed','ResultOfDayFeed','AcualAnimalWeight','ResultOfDayAnimal','QtySale','ExtAmount'];
-  constructor(private service:ProjectService,private stdService:StandardnameService) { }
+  constructor(private service:ProjectService,private stdService:StandardnameService,private jspdfService:JspdfService) { }
 
   ngOnInit() {
     this.service.formDaily.reset();
@@ -68,6 +69,10 @@ export class ProjectdailyComponent implements OnInit {
   onSubmit(){
     this.isLoaded = false;
     this.service.getDailyProject(this.service.formDaily.value.ProjectId,this.service.formDaily.value.StdFeedId,this.service.formDaily.value.StdAnimalId).then(res => this.dailyList = res as Projectdailyperformance[]);
+  }
+
+  captureScreen(){
+    this.jspdfService.captureScreen();
   }
 
   LoadAgain(){

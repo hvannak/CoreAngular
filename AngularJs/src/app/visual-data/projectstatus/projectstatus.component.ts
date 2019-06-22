@@ -5,6 +5,7 @@ import { InventoryService } from 'src/app/shared/inventory.service';
 import { Insitestatus } from 'src/app/shared/insitestatus.model';
 import { Observable, Subscriber } from 'rxjs';
 import { tap, map, filter } from 'rxjs/operators';
+import { JspdfService } from 'src/app/shared/jspdf.service';
 
 @Component({
   selector: 'app-projectstatus',
@@ -18,7 +19,8 @@ export class ProjectstatusComponent implements OnInit {
   inventoryList;
   projectheader;
   public isLoaded = true;
-  constructor(private service:InsitestatusService,private projectService:ProjectService,private inventoryService:InventoryService) { }
+  constructor(private service:InsitestatusService,private projectService:ProjectService,
+    private inventoryService:InventoryService,private jspdfService:JspdfService) { }
 
   ngOnInit() {
     this.insiteList=[];
@@ -35,6 +37,10 @@ export class ProjectstatusComponent implements OnInit {
   onSubmit(){
     this.isLoaded = false;
     this.service.getInsiteStatusByProjectInventory(this.service.formInsiteFilter.value.ProjectId,this.service.formInsiteFilter.value.InventoryId).then(res => this.insiteList = res as Array<Insitestatus>);
+  }
+
+  captureScreen(){
+    this.jspdfService.captureScreen();
   }
 
   getTotalQtyOnHand() {

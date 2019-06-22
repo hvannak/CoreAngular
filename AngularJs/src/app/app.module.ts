@@ -96,6 +96,7 @@ import { ViewuploadComponent } from './upload/viewupload/viewupload.component';
 import { InregisterComponent } from './visual-data/inregister/inregister.component';
 import { RolesaccessComponent } from './rolesaccess/rolesaccess.component';
 import { UsereditComponent } from './user/useredit/useredit.component';
+import { JspdfService } from './shared/jspdf.service';
 
 @NgModule({
   declarations: [
@@ -182,7 +183,7 @@ import { UsereditComponent } from './user/useredit/useredit.component';
   providers: [PaymentDetailService,CustomerService,ItemService,
     OrderService,UserService,WarehouseService,CategoryService,InventoryService,WarehouseaccessService,
     UomService,RoleService,RoleCtlService,ReceiptService,InsitestatusService,StandardService,UploadService,
-    StandardnameService ,DailyanimalgrowService,SaleinvoiceService,CustomerService,ProjectService,{
+    StandardnameService ,DailyanimalgrowService,SaleinvoiceService,CustomerService,ProjectService,JspdfService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
