@@ -28,25 +28,30 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<Customers> Getcustomers()
         {
-            return _context.customers;
+            return _context.customers.Take(1);
         }
 
         // GET: api/Customers/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCustomers([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var customers = await _context.customers.FindAsync(id);
+            return Ok(customers);
+        }
 
-            if (customers == null)
-            {
-                return NotFound();
-            }
+        // GET: api/Customers/5
+        [HttpGet("Name/{name}")]
+        public async Task<IActionResult> GetCustomersByName(string name)
+        {
+            var customers = await _context.customers.Where(x=>x.CustomerName.ToLower().Contains(name.ToLower())).ToListAsync();
+            return Ok(customers);
+        }
 
+        // GET: api/Customers/5
+        [HttpGet("Last/{last}")]
+        public async Task<IActionResult> GetCustomersByLast(int last)
+        {
+            var customers = await _context.customers.Where(x => x.CustomerId > last && x.CustomerId <= last + 1).ToListAsync();
             return Ok(customers);
         }
 

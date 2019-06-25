@@ -35,6 +35,7 @@ namespace AngularJsCore.Controllers
                                   x.SaleInvoiceId,
                                   x.CustomerId,
                                   x.CustomerName,
+                                  x.TranType,
                                   x.Description,
                                   x.DocDate,
                                   x.Currency,
@@ -75,6 +76,7 @@ namespace AngularJsCore.Controllers
                 x.CustomerId,
                 x.CustomerName,
                 x.Description,
+                x.TranType,
                 x.DocDate,
                 x.Currency,
                 x.InvoiceNbr,
@@ -114,6 +116,7 @@ namespace AngularJsCore.Controllers
                               CustomerId = x.CustomerId,
                                CustomerName = x.CustomerName,
                                Description = x.Description,
+                               TranType = x.TranType,
                                DocDate = x.DocDate,
                                Currency = x.Currency,
                                InvoiceNbr = x.InvoiceNbr,
@@ -200,6 +203,15 @@ namespace AngularJsCore.Controllers
             return Ok(invoice);
         }
 
+        [HttpPost]
+        [Route("Sync")]
+        //POST: api/SaleInvoice/Sync
+        public async Task<Object> SyncInvoices(SaleInvoice saleInvoice)
+        {
+
+            return null;
+        }
+
         private void HandleInSiteStatus(SaleInvoice saleInvoice, SaleInvoiceLine item)
         {
             if (saleInvoice.Release == 1)
@@ -207,17 +219,35 @@ namespace AngularJsCore.Controllers
                 var inSite = _context.iNSiteStatuses.Where(x => x.InventoryId == item.InventoryId && x.ProjectId == saleInvoice.ProjectId && x.WarehouseId == item.WarehouseId).FirstOrDefault();
                 if(inSite != null)
                 {
-                    inSite.QtyOnHand = inSite.QtyOnHand - item.Qty;
-                    inSite.QtySaleByUnit = inSite.QtySaleByUnit + item.Qty;
-                    inSite.QtySaleByKg = inSite.QtySaleByKg + item.Weight;
-                    if(saleInvoice.Currency == "USD")
+                    if(saleInvoice.TranType == "IV")
                     {
-                        inSite.SaleAmount = inSite.SaleAmount + item.ExtAmount;
+                        inSite.QtyOnHand = inSite.QtyOnHand - item.Qty;
+                        inSite.QtySaleByUnit = (inSite.QtySaleByUnit == null) ? item.Qty : (inSite.QtySaleByUnit + item.Qty);
+                        inSite.QtySaleByKg = (inSite.QtySaleByKg == null) ? item.Weight : (inSite.QtySaleByKg + item.Weight);
+                        if (saleInvoice.Currency == "USD")
+                        {
+                            inSite.SaleAmount = (inSite.SaleAmount == null) ? item.ExtAmount : (inSite.SaleAmount + item.ExtAmount);
+                        }
+                        else if (saleInvoice.Currency == "KHR")
+                        {
+                            inSite.SaleAmountKhr = (inSite.SaleAmountKhr == null) ? item.ExtAmount : (inSite.SaleAmountKhr + item.ExtAmount);
+                        }
                     }
-                    else if(saleInvoice.Currency == "KHR")
+                    else if(saleInvoice.TranType == "CM")
                     {
-                        inSite.SaleAmountKhr = inSite.SaleAmountKhr + item.ExtAmount;
+                        inSite.QtyOnHand = inSite.QtyOnHand + item.Qty;
+                        inSite.QtySaleByUnit = (inSite.QtySaleByUnit == null) ? item.Qty : (inSite.QtySaleByUnit - item.Qty);
+                        inSite.QtySaleByKg = (inSite.QtySaleByKg == null) ? item.Weight : (inSite.QtySaleByKg - item.Weight);
+                        if (saleInvoice.Currency == "USD")
+                        {
+                            inSite.SaleAmount = (inSite.SaleAmount == null) ? item.ExtAmount : (inSite.SaleAmount - item.ExtAmount);
+                        }
+                        else if (saleInvoice.Currency == "KHR")
+                        {
+                            inSite.SaleAmountKhr = (inSite.SaleAmountKhr == null) ? item.ExtAmount : (inSite.SaleAmountKhr - item.ExtAmount);
+                        }
                     }
+
                 }
             }
         }

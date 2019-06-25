@@ -26,7 +26,9 @@ export class ReceiptLineComponent implements OnInit {
 
   ngOnInit() {
     this.getActiveProject();
-    this.getInventory();
+    this.warehouseList=[];
+    this.inventoryList=[];
+    //this.getInventory();
     if(this.data.receiptLineIndex == null){
       this.service.formReceiptLine.reset();
       this.service.formReceiptLine.patchValue({
@@ -36,6 +38,12 @@ export class ReceiptLineComponent implements OnInit {
     }
     else{
       console.log(this.service.receiptLine[this.data.receiptLineIndex].WarehouseId);
+      this.warehouseService.getWarehouseById(this.service.receiptLine[this.data.receiptLineIndex].WarehouseId).then(res => {
+        this.warehouseList.push(res);
+      });
+      this.inventoryService.getInventoryById(this.service.receiptLine[this.data.receiptLineIndex].InventoryId).then(res =>{
+        this.inventoryList.push(res);
+      })
       //edit
       this.service.formReceiptLine.setValue(this.service.receiptLine[this.data.receiptLineIndex]);
     }
@@ -47,6 +55,13 @@ export class ReceiptLineComponent implements OnInit {
 
   getInventory(){
     this.inventoryService.getInventory().then(res=>this.inventoryList = res);
+  }
+
+  onSearchInventory(){
+    var data = document.getElementById('inventory') as HTMLInputElement; 
+    if(data.value != ''){
+      this.inventoryService.getInventoryByName(data.value).then(res=>this.inventoryList = res);
+    }
   }
 
   onChangeProject(item){

@@ -20,6 +20,17 @@ export class CustomerListComponent implements OnInit {
     this.refressList();
   }
 
+  getCustomerByLastRecord(){
+    let inventoryId = this.service.list.data.map(x=>x.CustomerId);
+    let last = Math.max.apply(Math, inventoryId);
+    this.service.getCustomerByLast(last).then((res:any) => {
+        res.forEach(element => {
+          this.service.list.data.push(element);
+        });
+        this.service.list._updateChangeSubscription();
+    });
+  }
+
   populateForm(pd:Customer){
     this.service.formData = Object.assign({},pd);
  }

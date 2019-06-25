@@ -97,10 +97,6 @@ namespace AngularJsCore.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasData(
-                        new { Id = "22d7f3ca-c537-4854-af8a-bf70eb5d5349", AccessFailedCount = 0, ConcurrencyStamp = "0a2e0d42-5082-41d5-97fa-810e9730c15a", Email = "vannak2010@gmail.com", EmailConfirmed = false, FullName = "Vannak Heng", LockoutEnabled = false, NormalizedEmail = "vannak2010@gmail.com", NormalizedUserName = "vannak2010@gmail.com", PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", PhoneNumberConfirmed = false, SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", TwoFactorEnabled = false, UserName = "vannak2010@gmail.com" }
-                    );
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.Category", b =>
@@ -468,6 +464,8 @@ namespace AngularJsCore.Migrations
 
                     b.Property<string>("InvoiceNbr");
 
+                    b.Property<int>("IsSyn");
+
                     b.Property<int>("ProjectId");
 
                     b.Property<string>("ProjectName");
@@ -479,6 +477,8 @@ namespace AngularJsCore.Migrations
                     b.Property<decimal>("TotalQty");
 
                     b.Property<decimal>("TotalWeight");
+
+                    b.Property<string>("TranType");
 
                     b.HasKey("SaleInvoiceId");
 

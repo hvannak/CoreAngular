@@ -26,7 +26,8 @@ export class SaleinvoiceHeaderComponent implements OnInit {
 
   ngOnInit() {
     let invoiceId = this.currentRoute.snapshot.paramMap.get('id');
-    this.customerService.getCustomerList().then(res => this.customerList = res as Customer[]);
+    this.customerList = [];
+    //this.customerService.getCustomerList().then(res => this.customerList = res as Customer[]);
     this.projectService.getActiveProject().then(res => this.projectList = res);
     if(invoiceId == null){
       this.service.formInvoice.reset();
@@ -43,10 +44,14 @@ export class SaleinvoiceHeaderComponent implements OnInit {
       this.service.invoiceLine = [];
       this.deleteInvoiceLine='';
       this.service.getInvoiceByID(parseInt(invoiceId)).then(res => {
+        this.customerService.getCustomerById(res.invoice['CustomerId']).then(res => {
+          this.customerList.push(res as Customer);
+        });
         this.service.formInvoice.setValue({
           SaleInvoiceId:res.invoice['SaleInvoiceId'],
           InvoiceNbr:res.invoice['InvoiceNbr'],
           CustomerId:res.invoice['CustomerId'],
+          TranType:res.invoice['TranType'],
           CustomerName:res.invoice['CustomerName'],
           ProjectId:res.invoice['ProjectId'],
           ProjectName:res.invoice['ProjectName'],
@@ -90,6 +95,13 @@ export class SaleinvoiceHeaderComponent implements OnInit {
       this.updateGrandTotal();
     }
       
+  }
+
+  onSearchCustomer(){
+    var data = document.getElementById('customer') as HTMLInputElement; 
+    if(data.value != ''){
+      this.customerService.getCustomerByName(data.value).then(res=>this.customerList = res as Customer[]);
+    }
   }
 
   onChangeCustomer(item){

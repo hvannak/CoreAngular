@@ -3,6 +3,7 @@ export class Saleinvoice {
     InvoiceNbr:string;
     CustomerId:number;
     CustomerName:string;
+    TranType:string;
     ProjectId:number;
     ProjectName:string;
     DocDate:Date;

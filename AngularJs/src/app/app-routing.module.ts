@@ -32,6 +32,7 @@ import { ProjectdailyComponent } from './visual-data/projectdaily/projectdaily.c
 import { ProjectstatusComponent } from './visual-data/projectstatus/projectstatus.component';
 import { InregisterComponent } from './visual-data/inregister/inregister.component';
 import { RolesaccessComponent } from './rolesaccess/rolesaccess.component';
+import { SaleinvoiceSynComponent } from './saleinvoice/saleinvoice-syn/saleinvoice-syn.component';
 
 const routes: Routes = [
   {path:'user',component:UserComponent,children:[
@@ -60,6 +61,7 @@ const routes: Routes = [
     {path:'',component:OrderComponent},
     {path:'edit/:id',component:OrderComponent,canActivate:[AuthGuard]}
   ]},
+  {path:'invoicesyn',component:SaleinvoiceSynComponent,canActivate:[AuthGuard]},
   {path:'invoice',component:SaleinvoiceComponent,canActivate:[AuthGuard]},
   {path:'invoiceheader',children:[
     {path:'',component:SaleinvoiceHeaderComponent},

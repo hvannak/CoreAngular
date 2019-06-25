@@ -73,15 +73,18 @@ namespace AngularJsCore.Controllers
             return result;
         }
 
-        [HttpGet("ReceiptByProjectdetail/{projectId}/{tran}/{warehouseId}/{inventoryId}")]
-        public System.Object GetReceiptByProjectdetail(int projectId, string tran,int warehouseId,int inventoryId)
+        [HttpGet("ReceiptByProjectdetail/{projectId}/{tran}/{warehouseId}/{inventoryId}/{categoryId}")]
+        public System.Object GetReceiptByProjectdetail(int projectId, string tran,int warehouseId,int inventoryId,int categoryId)
         {
             var result = (from x in _context.receipts
-                          join y in _context.receiptLines on x.ReceiptId equals y.ReceiptId
+                          join y in _context.receiptLines on x.ReceiptId equals y.ReceiptId 
+                          join z in _context.Inventorys on y.InventoryId equals z.InventoryId
+                          join t in _context.categories on z.CategoryId equals t.CategoryId
                           select new
                           {
                               x.ReceiptId,
                               x.TranType,
+                              t.CategoryId,
                               x.ReceiptNbr,
                               x.ReceiptDate,
                               y.WarehouseId,
@@ -96,13 +99,17 @@ namespace AngularJsCore.Controllers
                               y.ExtCost
                           }).Where(x => x.ProjectId == projectId).ToList();
 
-            if(tran != "0")
+            if (tran != "0")
             {
                 result = result.Where(x => x.TranType == tran).ToList();
             }
             if(warehouseId != 0)
             {
                 result = result.Where(x => x.WarehouseId == warehouseId).ToList();
+            }
+            if(categoryId != 0)
+            {
+                result = result.Where(x => x.CategoryId == categoryId).ToList();
             }
             if(inventoryId != 0)
             {
@@ -135,6 +142,7 @@ namespace AngularJsCore.Controllers
                 x.ExtCost,
                 x.ProjectId,
                 x.ProjectName,
+                x.Reason,
                 x.WarehouseId,
                 x.WarehouseName,
                 x.InventoryId,
@@ -148,6 +156,8 @@ namespace AngularJsCore.Controllers
         public async Task<IActionResult> PutReceipt([FromRoute] int id, [FromBody] Receipt receipt)
         {
             _context.Entry(receipt).State = EntityState.Modified;
+            //Handle InsiteStatus
+            HandleInSiteStatus(receipt, receipt.ReceiptLines.ToList());
             foreach (var item in receipt.ReceiptLines)
             {
                 if (item.ReceiptLineId == 0)
@@ -158,8 +168,6 @@ namespace AngularJsCore.Controllers
                 {
                     _context.Entry(item).State = EntityState.Modified;
                 }     
-                //Handle InsiteStatus
-                HandleInSiteStatus(receipt, item);
             }
             foreach (var item in receipt.DeletedReceiptLineIDs.Split(',').Where(x => x != ""))
             {
@@ -194,13 +202,13 @@ namespace AngularJsCore.Controllers
             var receiptNbr = _context.receipts.Max(x => x.ReceiptNbr);
             receipt.ReceiptNbr = (Convert.ToInt32(receiptNbr) + 1).ToString("00000");
             receipt.CreateDate = DateTime.Now;
+            //Handle InsiteStatus
+            HandleInSiteStatus(receipt, receipt.ReceiptLines.ToList());
             foreach (var item in receipt.ReceiptLines)
             {
                 item.ReceiptLineDate = receipt.ReceiptDate;
                 item.CreateDate = DateTime.Now;
                 _context.receiptLines.Add(item);
-                //Handle InsiteStatus
-                HandleInSiteStatus(receipt, item);
             }
 
             await _context.SaveChangesAsync();
@@ -229,66 +237,92 @@ namespace AngularJsCore.Controllers
             return Ok(receipt);
         }
 
-        private void HandleInSiteStatus(Receipt receipt, ReceiptLine item)
+        private void HandleInSiteStatus(Receipt receipt, List<ReceiptLine> listitems)
         {
-            if (receipt.Release == 1)
+            var list = listitems.GroupBy(x => new
             {
-                var inSite = _context.iNSiteStatuses.Where(x => x.InventoryId == item.InventoryId && x.ProjectId == item.ProjectId && x.WarehouseId == item.WarehouseId).FirstOrDefault();
-                if (inSite != null)
+                x.InventoryId,
+                x.WarehouseId,
+                x.ProjectId
+            }).Select(x => new ReceiptLine()
+            {
+                ProjectId = x.Key.ProjectId,
+                WarehouseId = x.Key.WarehouseId,
+                InventoryId = x.Key.InventoryId,
+                ReceiptLineId = x.FirstOrDefault().ReceiptLineId,
+                ReceiptId = x.FirstOrDefault().ReceiptId,
+                ProjectName = x.FirstOrDefault().ProjectName,
+                WarehouseName = x.FirstOrDefault().WarehouseName,
+                InventoryDesr = x.FirstOrDefault().InventoryDesr,
+                ReceiptLineDate = x.FirstOrDefault().ReceiptLineDate,
+                CreateDate = x.FirstOrDefault().CreateDate,
+                Reason = x.FirstOrDefault().Reason,
+                Qty = x.Sum(y => y.Qty),
+                UnitCost = (x.Sum(y => y.UnitCost))/x.Count(),
+                ExtCost = x.Sum(y => y.ExtCost)
+            }).ToList();
+            foreach (var item in list)
+            {
+                if (receipt.Release == 1)
                 {
-                    //update site
-                    if (receipt.TranType == "Receipt")
+                    var inSite = _context.iNSiteStatuses.Where(x => x.InventoryId == item.InventoryId && x.ProjectId == item.ProjectId && x.WarehouseId == item.WarehouseId).FirstOrDefault();
+                    if (inSite != null)
                     {
-                        inSite.LastCost = (inSite.LastCost + item.UnitCost) / 2;
-                        inSite.QtyOnHand = inSite.QtyOnHand + item.Qty;
-                        inSite.QtyReceipt = inSite.QtyReceipt + item.Qty;
-                        inSite.ReceiptCost = inSite.ReceiptCost + item.ExtCost;
+                        //update site
+                        if (receipt.TranType == "Receipt")
+                        {
+                            inSite.LastCost = (inSite.LastCost == null) ? item.UnitCost : ((inSite.LastCost + item.UnitCost) / 2);
+                            inSite.QtyOnHand = (inSite.QtyOnHand == null) ? item.Qty : (inSite.QtyOnHand + item.Qty);
+                            inSite.QtyReceipt = (inSite.QtyReceipt == null) ? item.Qty : (inSite.QtyReceipt + item.Qty);
+                            inSite.ReceiptCost = (inSite.ReceiptCost == null) ? item.ExtCost : (inSite.ReceiptCost + item.ExtCost);
+                        }
+                        else if (receipt.TranType == "Issue")
+                        {
+                            inSite.QtyOnHand = inSite.QtyOnHand - item.Qty;
+                            inSite.QtyIssue = (inSite.QtyIssue == null) ? item.Qty : (inSite.QtyIssue + item.Qty);
+                            inSite.IssueCost = (inSite.IssueCost == null) ? item.ExtCost : (inSite.IssueCost + item.ExtCost);
+                        }
+                        else if (receipt.TranType == "Adjust")
+                        {
+                            inSite.QtyOnHand = (inSite.QtyOnHand == null) ? item.Qty : (inSite.QtyOnHand + item.Qty);
+                            inSite.QtyAdjust = (inSite.QtyAdjust == null) ? item.Qty : (inSite.QtyAdjust + item.Qty);
+                            inSite.AdjustCost = (inSite.AdjustCost == null) ? item.ExtCost : (inSite.AdjustCost + item.ExtCost);
+                        }
+                        _context.Entry(inSite).State = EntityState.Modified;
                     }
-                    else if (receipt.TranType == "Issue")
+                    else
                     {
-                        inSite.QtyOnHand = inSite.QtyOnHand - item.Qty;
-                        inSite.QtyIssue = inSite.QtyIssue + item.Qty;
-                        inSite.IssueCost = inSite.IssueCost + item.ExtCost;
+                        //insert site
+                        var inSiteStatus = new INSiteStatus();
+                        inSiteStatus.ProjectId = item.ProjectId;
+                        inSiteStatus.ProjectName = item.ProjectName;
+                        inSiteStatus.WarehouseId = item.WarehouseId;
+                        inSiteStatus.WarehouseName = item.WarehouseName;
+                        inSiteStatus.InventoryId = item.InventoryId;
+                        inSiteStatus.InventoryDesc = item.InventoryDesr;
+                        inSiteStatus.QtyOnHand = item.Qty;
+                        inSiteStatus.LastCost = item.UnitCost;
+                        inSiteStatus.QtyBegin = item.Qty;
+                        if (receipt.TranType == "Receipt")
+                        {
+                            inSiteStatus.QtyReceipt = item.Qty;
+                            inSiteStatus.ReceiptCost = item.ExtCost;
+                        }
+                        else if (receipt.TranType == "Issue")
+                        {
+                            inSiteStatus.QtyIssue = item.Qty;
+                            inSiteStatus.IssueCost = item.ExtCost;
+                        }
+                        else if (receipt.TranType == "Adjust")
+                        {
+                            inSiteStatus.QtyAdjust = item.Qty;
+                            inSiteStatus.AdjustCost = item.ExtCost;
+                        }
+                        _context.iNSiteStatuses.Add(inSiteStatus);
                     }
-                    else if (receipt.TranType == "Adjust")
-                    {
-                        inSite.QtyOnHand = inSite.QtyOnHand + item.Qty;
-                        inSite.QtyAdjust = inSite.QtyAdjust + item.Qty;
-                        inSite.AdjustCost = inSite.AdjustCost + item.ExtCost;
-                    }
-                    _context.Entry(inSite).State = EntityState.Modified;
-                }
-                else
-                {
-                    //insert site
-                    var inSiteStatus = new INSiteStatus();
-                    inSiteStatus.ProjectId = item.ProjectId;
-                    inSiteStatus.ProjectName = item.ProjectName;
-                    inSiteStatus.WarehouseId = item.WarehouseId;
-                    inSiteStatus.WarehouseName = item.WarehouseName;
-                    inSiteStatus.InventoryId = item.InventoryId;
-                    inSiteStatus.InventoryDesc = item.InventoryDesr;
-                    inSiteStatus.QtyOnHand = item.Qty;
-                    inSiteStatus.LastCost = item.UnitCost;
-                    inSiteStatus.QtyBegin = item.Qty;
-                    if (receipt.TranType == "Receipt")
-                    {
-                        inSiteStatus.QtyReceipt = item.Qty;
-                        inSiteStatus.ReceiptCost = item.ExtCost;
-                    }
-                    else if (receipt.TranType == "Issue")
-                    {
-                        inSiteStatus.QtyIssue = item.Qty;
-                        inSiteStatus.IssueCost = item.ExtCost;
-                    }
-                    else if (receipt.TranType == "Adjust")
-                    {
-                        inSiteStatus.QtyAdjust = item.Qty;
-                        inSiteStatus.AdjustCost = item.ExtCost;
-                    }
-                    _context.iNSiteStatuses.Add(inSiteStatus);
                 }
             }
+            
         }
 
         private bool ReceiptExists(int id)

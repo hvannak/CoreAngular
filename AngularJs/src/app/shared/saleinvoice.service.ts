@@ -19,6 +19,7 @@ export class SaleinvoiceService {
     InvoiceNbr:['',Validators.required],
     CustomerId:['',Validators.required],
     CustomerName:[''],
+    TranType:['',Validators.required],
     ProjectId:['',Validators.required],
     ProjectName:[''],
     DocDate:['',Validators.required],
@@ -70,6 +71,10 @@ export class SaleinvoiceService {
       SaleInvoiceLines: this.invoiceLine
     };
     return this.http.put(environment.apiURL + '/SaleInvoice/' + this.formInvoice.value.SaleInvoiceId, body);
+  }
+
+  syncInvoice(item){
+    return this.http.post(environment.apiURL + '/SaleInvoice', item);
   }
 
   deleteInvoice(id:number) {

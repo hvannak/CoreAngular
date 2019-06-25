@@ -97,6 +97,7 @@ import { InregisterComponent } from './visual-data/inregister/inregister.compone
 import { RolesaccessComponent } from './rolesaccess/rolesaccess.component';
 import { UsereditComponent } from './user/useredit/useredit.component';
 import { JspdfService } from './shared/jspdf.service';
+import { SaleinvoiceSynComponent } from './saleinvoice/saleinvoice-syn/saleinvoice-syn.component';
 
 @NgModule({
   declarations: [
@@ -152,6 +153,7 @@ import { JspdfService } from './shared/jspdf.service';
     SaleinvoiceComponent,
     SaleinvoiceHeaderComponent,
     SaleinvoiceLineComponent,
+    SaleinvoiceSynComponent,
     CustomersComponent,
     CustomerDetailComponent,
     CustomerListComponent,

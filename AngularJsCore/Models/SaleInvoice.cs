@@ -24,7 +24,9 @@ namespace AngularJsCore.Models
         public decimal TotalAmount { get; set; }
         [NotMapped]
         public string DeletedInvoiceLineIDs { get; set; }
+        public string TranType { get; set; }
         public int Release { get; set; }
+        public int IsSyn { get; set; }
         public Customers Customers { get; set; }
         public Project Project { get; set; }
         public virtual ICollection<SaleInvoiceLine> SaleInvoiceLines { get; set; }

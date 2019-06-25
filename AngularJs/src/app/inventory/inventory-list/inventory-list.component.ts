@@ -25,6 +25,18 @@ export class InventoryListComponent implements OnInit {
     });
   }
 
+  getInventoryByLastRecord(){
+    let inventoryId = this.service.list.data.map(x=>x.InventoryId);
+    let last = Math.max.apply(Math, inventoryId);
+    this.service.getInventoryByLast(last).then((res:any) => {
+        res.forEach(element => {
+          this.service.list.data.push(element);
+        });
+        this.service.list._updateChangeSubscription();
+    });
+  }
+
+
   populateForm(pd:Inventory){
     this.service.formData = Object.assign({},pd);
  }

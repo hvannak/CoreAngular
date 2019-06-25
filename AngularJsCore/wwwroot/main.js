@@ -332,28 +332,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./auth/auth.guard */ "./src/app/auth/auth.guard.ts");
 /* harmony import */ var _roles_roles_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./roles/roles.component */ "./src/app/roles/roles.component.ts");
-/* harmony import */ var _roles_role_role_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./roles/role/role.component */ "./src/app/roles/role/role.component.ts");
-/* harmony import */ var _userroles_userroles_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./userroles/userroles.component */ "./src/app/userroles/userroles.component.ts");
-/* harmony import */ var _error_forbidden_forbidden_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./error/forbidden/forbidden.component */ "./src/app/error/forbidden/forbidden.component.ts");
-/* harmony import */ var _warehouse_warehouse_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./warehouse/warehouse.component */ "./src/app/warehouse/warehouse.component.ts");
-/* harmony import */ var _project_project_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./project/project.component */ "./src/app/project/project.component.ts");
-/* harmony import */ var _category_category_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./category/category.component */ "./src/app/category/category.component.ts");
-/* harmony import */ var _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./inventory/inventory.component */ "./src/app/inventory/inventory.component.ts");
-/* harmony import */ var _warehouseaccess_warehouseaccess_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./warehouseaccess/warehouseaccess.component */ "./src/app/warehouseaccess/warehouseaccess.component.ts");
-/* harmony import */ var _uom_uom_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./uom/uom.component */ "./src/app/uom/uom.component.ts");
-/* harmony import */ var _receipt_receipt_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./receipt/receipt.component */ "./src/app/receipt/receipt.component.ts");
-/* harmony import */ var _receipt_receipt_header_receipt_header_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./receipt/receipt-header/receipt-header.component */ "./src/app/receipt/receipt-header/receipt-header.component.ts");
-/* harmony import */ var _standard_standard_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./standard/standard.component */ "./src/app/standard/standard.component.ts");
-/* harmony import */ var _dailyanimalgrow_dailyanimalgrow_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./dailyanimalgrow/dailyanimalgrow.component */ "./src/app/dailyanimalgrow/dailyanimalgrow.component.ts");
-/* harmony import */ var _dailyanimalgrow_viewwithstandard_viewwithstandard_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./dailyanimalgrow/viewwithstandard/viewwithstandard.component */ "./src/app/dailyanimalgrow/viewwithstandard/viewwithstandard.component.ts");
-/* harmony import */ var _saleinvoice_saleinvoice_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./saleinvoice/saleinvoice.component */ "./src/app/saleinvoice/saleinvoice.component.ts");
-/* harmony import */ var _saleinvoice_saleinvoice_header_saleinvoice_header_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./saleinvoice/saleinvoice-header/saleinvoice-header.component */ "./src/app/saleinvoice/saleinvoice-header/saleinvoice-header.component.ts");
-/* harmony import */ var _customers_customers_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./customers/customers.component */ "./src/app/customers/customers.component.ts");
-/* harmony import */ var _projectaccess_projectaccess_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./projectaccess/projectaccess.component */ "./src/app/projectaccess/projectaccess.component.ts");
-/* harmony import */ var _standardname_standardname_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./standardname/standardname.component */ "./src/app/standardname/standardname.component.ts");
-/* harmony import */ var _visual_data_projectdaily_projectdaily_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./visual-data/projectdaily/projectdaily.component */ "./src/app/visual-data/projectdaily/projectdaily.component.ts");
-/* harmony import */ var _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./visual-data/projectstatus/projectstatus.component */ "./src/app/visual-data/projectstatus/projectstatus.component.ts");
-/* harmony import */ var _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./visual-data/inregister/inregister.component */ "./src/app/visual-data/inregister/inregister.component.ts");
+/* harmony import */ var _userroles_userroles_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./userroles/userroles.component */ "./src/app/userroles/userroles.component.ts");
+/* harmony import */ var _error_forbidden_forbidden_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./error/forbidden/forbidden.component */ "./src/app/error/forbidden/forbidden.component.ts");
+/* harmony import */ var _warehouse_warehouse_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./warehouse/warehouse.component */ "./src/app/warehouse/warehouse.component.ts");
+/* harmony import */ var _project_project_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./project/project.component */ "./src/app/project/project.component.ts");
+/* harmony import */ var _category_category_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./category/category.component */ "./src/app/category/category.component.ts");
+/* harmony import */ var _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./inventory/inventory.component */ "./src/app/inventory/inventory.component.ts");
+/* harmony import */ var _warehouseaccess_warehouseaccess_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./warehouseaccess/warehouseaccess.component */ "./src/app/warehouseaccess/warehouseaccess.component.ts");
+/* harmony import */ var _uom_uom_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./uom/uom.component */ "./src/app/uom/uom.component.ts");
+/* harmony import */ var _receipt_receipt_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./receipt/receipt.component */ "./src/app/receipt/receipt.component.ts");
+/* harmony import */ var _receipt_receipt_header_receipt_header_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./receipt/receipt-header/receipt-header.component */ "./src/app/receipt/receipt-header/receipt-header.component.ts");
+/* harmony import */ var _standard_standard_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./standard/standard.component */ "./src/app/standard/standard.component.ts");
+/* harmony import */ var _dailyanimalgrow_dailyanimalgrow_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./dailyanimalgrow/dailyanimalgrow.component */ "./src/app/dailyanimalgrow/dailyanimalgrow.component.ts");
+/* harmony import */ var _dailyanimalgrow_viewwithstandard_viewwithstandard_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./dailyanimalgrow/viewwithstandard/viewwithstandard.component */ "./src/app/dailyanimalgrow/viewwithstandard/viewwithstandard.component.ts");
+/* harmony import */ var _saleinvoice_saleinvoice_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./saleinvoice/saleinvoice.component */ "./src/app/saleinvoice/saleinvoice.component.ts");
+/* harmony import */ var _saleinvoice_saleinvoice_header_saleinvoice_header_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./saleinvoice/saleinvoice-header/saleinvoice-header.component */ "./src/app/saleinvoice/saleinvoice-header/saleinvoice-header.component.ts");
+/* harmony import */ var _customers_customers_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./customers/customers.component */ "./src/app/customers/customers.component.ts");
+/* harmony import */ var _projectaccess_projectaccess_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./projectaccess/projectaccess.component */ "./src/app/projectaccess/projectaccess.component.ts");
+/* harmony import */ var _standardname_standardname_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./standardname/standardname.component */ "./src/app/standardname/standardname.component.ts");
+/* harmony import */ var _visual_data_projectdaily_projectdaily_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./visual-data/projectdaily/projectdaily.component */ "./src/app/visual-data/projectdaily/projectdaily.component.ts");
+/* harmony import */ var _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./visual-data/projectstatus/projectstatus.component */ "./src/app/visual-data/projectstatus/projectstatus.component.ts");
+/* harmony import */ var _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./visual-data/inregister/inregister.component */ "./src/app/visual-data/inregister/inregister.component.ts");
+/* harmony import */ var _rolesaccess_rolesaccess_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./rolesaccess/rolesaccess.component */ "./src/app/rolesaccess/rolesaccess.component.ts");
 
 
 
@@ -393,46 +393,43 @@ var routes = [
             { path: 'registration', component: _user_registration_registration_component__WEBPACK_IMPORTED_MODULE_7__["RegistrationComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
             { path: 'login', component: _user_login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"] }
         ] },
-    { path: 'warehouse', component: _warehouse_warehouse_component__WEBPACK_IMPORTED_MODULE_15__["WarehouseComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'warehouseaccess', component: _warehouseaccess_warehouseaccess_component__WEBPACK_IMPORTED_MODULE_19__["WarehouseaccessComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'project', component: _project_project_component__WEBPACK_IMPORTED_MODULE_16__["ProjectComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'projectaccess', component: _projectaccess_projectaccess_component__WEBPACK_IMPORTED_MODULE_29__["ProjectaccessComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'customer', component: _customers_customers_component__WEBPACK_IMPORTED_MODULE_28__["CustomersComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'category', component: _category_category_component__WEBPACK_IMPORTED_MODULE_17__["CategoryComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'inventory', component: _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_18__["InventoryComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'uom', component: _uom_uom_component__WEBPACK_IMPORTED_MODULE_20__["UomComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'standard', component: _standard_standard_component__WEBPACK_IMPORTED_MODULE_23__["StandardComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'standardname', component: _standardname_standardname_component__WEBPACK_IMPORTED_MODULE_30__["StandardnameComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'dailygrow', component: _dailyanimalgrow_dailyanimalgrow_component__WEBPACK_IMPORTED_MODULE_24__["DailyanimalgrowComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'viewwithstandard', component: _dailyanimalgrow_viewwithstandard_viewwithstandard_component__WEBPACK_IMPORTED_MODULE_25__["ViewwithstandardComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'error/403', component: _error_forbidden_forbidden_component__WEBPACK_IMPORTED_MODULE_14__["ForbiddenComponent"] },
+    { path: 'warehouse', component: _warehouse_warehouse_component__WEBPACK_IMPORTED_MODULE_14__["WarehouseComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'warehouseaccess', component: _warehouseaccess_warehouseaccess_component__WEBPACK_IMPORTED_MODULE_18__["WarehouseaccessComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'project', component: _project_project_component__WEBPACK_IMPORTED_MODULE_15__["ProjectComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'projectaccess', component: _projectaccess_projectaccess_component__WEBPACK_IMPORTED_MODULE_28__["ProjectaccessComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'customer', component: _customers_customers_component__WEBPACK_IMPORTED_MODULE_27__["CustomersComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'category', component: _category_category_component__WEBPACK_IMPORTED_MODULE_16__["CategoryComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'inventory', component: _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_17__["InventoryComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'uom', component: _uom_uom_component__WEBPACK_IMPORTED_MODULE_19__["UomComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'standard', component: _standard_standard_component__WEBPACK_IMPORTED_MODULE_22__["StandardComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'standardname', component: _standardname_standardname_component__WEBPACK_IMPORTED_MODULE_29__["StandardnameComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'dailygrow', component: _dailyanimalgrow_dailyanimalgrow_component__WEBPACK_IMPORTED_MODULE_23__["DailyanimalgrowComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'viewwithstandard', component: _dailyanimalgrow_viewwithstandard_viewwithstandard_component__WEBPACK_IMPORTED_MODULE_24__["ViewwithstandardComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'error/403', component: _error_forbidden_forbidden_component__WEBPACK_IMPORTED_MODULE_13__["ForbiddenComponent"] },
     { path: 'paymentcard', component: _payment_details_payment_details_component__WEBPACK_IMPORTED_MODULE_3__["PaymentDetailsComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'projectdaily', component: _visual_data_projectdaily_projectdaily_component__WEBPACK_IMPORTED_MODULE_31__["ProjectdailyComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'projectstatus', component: _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_32__["ProjectstatusComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
-    { path: 'inregister', component: _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_33__["InregisterComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'projectdaily', component: _visual_data_projectdaily_projectdaily_component__WEBPACK_IMPORTED_MODULE_30__["ProjectdailyComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'projectstatus', component: _visual_data_projectstatus_projectstatus_component__WEBPACK_IMPORTED_MODULE_31__["ProjectstatusComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'inregister', component: _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_32__["InregisterComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'orders', component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_4__["OrdersComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'order', children: [
             { path: '', component: _orders_order_order_component__WEBPACK_IMPORTED_MODULE_5__["OrderComponent"] },
             { path: 'edit/:id', component: _orders_order_order_component__WEBPACK_IMPORTED_MODULE_5__["OrderComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] }
         ] },
-    { path: 'invoice', component: _saleinvoice_saleinvoice_component__WEBPACK_IMPORTED_MODULE_26__["SaleinvoiceComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'invoice', component: _saleinvoice_saleinvoice_component__WEBPACK_IMPORTED_MODULE_25__["SaleinvoiceComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'invoiceheader', children: [
-            { path: '', component: _saleinvoice_saleinvoice_header_saleinvoice_header_component__WEBPACK_IMPORTED_MODULE_27__["SaleinvoiceHeaderComponent"] },
-            { path: 'edit/:id', component: _saleinvoice_saleinvoice_header_saleinvoice_header_component__WEBPACK_IMPORTED_MODULE_27__["SaleinvoiceHeaderComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] }
+            { path: '', component: _saleinvoice_saleinvoice_header_saleinvoice_header_component__WEBPACK_IMPORTED_MODULE_26__["SaleinvoiceHeaderComponent"] },
+            { path: 'edit/:id', component: _saleinvoice_saleinvoice_header_saleinvoice_header_component__WEBPACK_IMPORTED_MODULE_26__["SaleinvoiceHeaderComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] }
         ] },
-    { path: 'receipt', component: _receipt_receipt_component__WEBPACK_IMPORTED_MODULE_21__["ReceiptComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'receipt', component: _receipt_receipt_component__WEBPACK_IMPORTED_MODULE_20__["ReceiptComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'receiptheader', children: [
-            { path: '', component: _receipt_receipt_header_receipt_header_component__WEBPACK_IMPORTED_MODULE_22__["ReceiptHeaderComponent"] },
-            { path: 'edit/:id', component: _receipt_receipt_header_receipt_header_component__WEBPACK_IMPORTED_MODULE_22__["ReceiptHeaderComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] }
+            { path: '', component: _receipt_receipt_header_receipt_header_component__WEBPACK_IMPORTED_MODULE_21__["ReceiptHeaderComponent"] },
+            { path: 'edit/:id', component: _receipt_receipt_header_receipt_header_component__WEBPACK_IMPORTED_MODULE_21__["ReceiptHeaderComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] }
         ] },
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
+    { path: 'roleaccess', component: _rolesaccess_rolesaccess_component__WEBPACK_IMPORTED_MODULE_33__["RolesaccessComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]] },
     { path: 'roles', component: _roles_roles_component__WEBPACK_IMPORTED_MODULE_11__["RolesComponent"] },
-    { path: 'role', children: [
-            { path: '', component: _roles_role_role_component__WEBPACK_IMPORTED_MODULE_12__["RoleComponent"] },
-            { path: 'edit/:id', component: _roles_role_role_component__WEBPACK_IMPORTED_MODULE_12__["RoleComponent"] }
-        ] },
     {
-        path: 'userroles', component: _userroles_userroles_component__WEBPACK_IMPORTED_MODULE_13__["UserrolesComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]]
+        path: 'userroles', component: _userroles_userroles_component__WEBPACK_IMPORTED_MODULE_12__["UserrolesComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_10__["AuthGuard"]]
     },
     { path: '', redirectTo: '/user/login', pathMatch: 'full' }
 ];
@@ -490,7 +487,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'AngularJs';
+        this.title = 'MEDIVETGROUP';
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -612,6 +609,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_upload_service__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! ./shared/upload.service */ "./src/app/shared/upload.service.ts");
 /* harmony import */ var _upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! ./upload/viewupload/viewupload.component */ "./src/app/upload/viewupload/viewupload.component.ts");
 /* harmony import */ var _visual_data_inregister_inregister_component__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(/*! ./visual-data/inregister/inregister.component */ "./src/app/visual-data/inregister/inregister.component.ts");
+/* harmony import */ var _rolesaccess_rolesaccess_component__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! ./rolesaccess/rolesaccess.component */ "./src/app/rolesaccess/rolesaccess.component.ts");
+/* harmony import */ var _user_useredit_useredit_component__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! ./user/useredit/useredit.component */ "./src/app/user/useredit/useredit.component.ts");
+/* harmony import */ var _shared_jspdf_service__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! ./shared/jspdf.service */ "./src/app/shared/jspdf.service.ts");
+
+
+
 
 
 
@@ -723,11 +726,13 @@ var AppModule = /** @class */ (function () {
                 _orders_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_17__["OrderItemsComponent"],
                 _menus_menus_component__WEBPACK_IMPORTED_MODULE_9__["MenusComponent"],
                 _user_user_component__WEBPACK_IMPORTED_MODULE_21__["UserComponent"],
+                _user_useredit_useredit_component__WEBPACK_IMPORTED_MODULE_97__["UsereditComponent"],
                 _user_registration_registration_component__WEBPACK_IMPORTED_MODULE_22__["RegistrationComponent"],
                 _user_login_login_component__WEBPACK_IMPORTED_MODULE_24__["LoginComponent"],
                 _home_home_component__WEBPACK_IMPORTED_MODULE_25__["HomeComponent"],
                 _roles_roles_component__WEBPACK_IMPORTED_MODULE_27__["RolesComponent"],
                 _roles_role_role_component__WEBPACK_IMPORTED_MODULE_28__["RoleComponent"],
+                _rolesaccess_rolesaccess_component__WEBPACK_IMPORTED_MODULE_96__["RolesaccessComponent"],
                 _roles_role_ctl_role_ctl_component__WEBPACK_IMPORTED_MODULE_29__["RoleCtlComponent"],
                 _userroles_userrole_userrole_component__WEBPACK_IMPORTED_MODULE_32__["UserroleComponent"],
                 _userroles_userrolelist_userrolelist_component__WEBPACK_IMPORTED_MODULE_33__["UserrolelistComponent"],
@@ -791,11 +796,11 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrModule"].forRoot(),
             ],
-            entryComponents: [_orders_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_17__["OrderItemsComponent"], _receipt_receipt_line_receipt_line_component__WEBPACK_IMPORTED_MODULE_63__["ReceiptLineComponent"], _saleinvoice_saleinvoice_line_saleinvoice_line_component__WEBPACK_IMPORTED_MODULE_77__["SaleinvoiceLineComponent"], _upload_upload_component__WEBPACK_IMPORTED_MODULE_92__["UploadComponent"], _upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_94__["ViewuploadComponent"]],
+            entryComponents: [_orders_order_items_order_items_component__WEBPACK_IMPORTED_MODULE_17__["OrderItemsComponent"], _receipt_receipt_line_receipt_line_component__WEBPACK_IMPORTED_MODULE_63__["ReceiptLineComponent"], _saleinvoice_saleinvoice_line_saleinvoice_line_component__WEBPACK_IMPORTED_MODULE_77__["SaleinvoiceLineComponent"], _upload_upload_component__WEBPACK_IMPORTED_MODULE_92__["UploadComponent"], _upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_94__["ViewuploadComponent"], _user_useredit_useredit_component__WEBPACK_IMPORTED_MODULE_97__["UsereditComponent"]],
             providers: [_shared_payment_detail_service__WEBPACK_IMPORTED_MODULE_14__["PaymentDetailService"], _shared_customer_service__WEBPACK_IMPORTED_MODULE_18__["CustomerService"], _shared_item_service__WEBPACK_IMPORTED_MODULE_19__["ItemService"],
                 _shared_order_service__WEBPACK_IMPORTED_MODULE_20__["OrderService"], _shared_user_service__WEBPACK_IMPORTED_MODULE_23__["UserService"], _shared_warehouse_service__WEBPACK_IMPORTED_MODULE_39__["WarehouseService"], _shared_category_service__WEBPACK_IMPORTED_MODULE_47__["CategoryService"], _shared_inventory_service__WEBPACK_IMPORTED_MODULE_51__["InventoryService"], _shared_warehouseaccess_service__WEBPACK_IMPORTED_MODULE_55__["WarehouseaccessService"],
                 _shared_uom_service__WEBPACK_IMPORTED_MODULE_59__["UomService"], _shared_role_service__WEBPACK_IMPORTED_MODULE_30__["RoleService"], _shared_role_ctl_service__WEBPACK_IMPORTED_MODULE_31__["RoleCtlService"], _shared_receipt_service__WEBPACK_IMPORTED_MODULE_60__["ReceiptService"], _shared_insitestatus_service__WEBPACK_IMPORTED_MODULE_64__["InsitestatusService"], _shared_standard_service__WEBPACK_IMPORTED_MODULE_68__["StandardService"], _shared_upload_service__WEBPACK_IMPORTED_MODULE_93__["UploadService"],
-                _shared_standardname_service__WEBPACK_IMPORTED_MODULE_86__["StandardnameService"], _shared_dailyanimalgrow_service__WEBPACK_IMPORTED_MODULE_72__["DailyanimalgrowService"], _shared_saleinvoice_service__WEBPACK_IMPORTED_MODULE_75__["SaleinvoiceService"], _shared_customer_service__WEBPACK_IMPORTED_MODULE_18__["CustomerService"], _shared_project_service__WEBPACK_IMPORTED_MODULE_81__["ProjectService"], {
+                _shared_standardname_service__WEBPACK_IMPORTED_MODULE_86__["StandardnameService"], _shared_dailyanimalgrow_service__WEBPACK_IMPORTED_MODULE_72__["DailyanimalgrowService"], _shared_saleinvoice_service__WEBPACK_IMPORTED_MODULE_75__["SaleinvoiceService"], _shared_customer_service__WEBPACK_IMPORTED_MODULE_18__["CustomerService"], _shared_project_service__WEBPACK_IMPORTED_MODULE_81__["ProjectService"], _shared_jspdf_service__WEBPACK_IMPORTED_MODULE_98__["JspdfService"], {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HTTP_INTERCEPTORS"],
                     useClass: _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_26__["AuthInterceptor"],
                     multi: true
@@ -1478,6 +1483,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/project.service */ "./src/app/shared/project.service.ts");
 /* harmony import */ var src_app_shared_warehouse_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/warehouse.service */ "./src/app/shared/warehouse.service.ts");
 /* harmony import */ var src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/inventory.service */ "./src/app/shared/inventory.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
 
 
 
@@ -1511,7 +1520,10 @@ var DailyanimalgrowDetailComponent = /** @class */ (function () {
     };
     DailyanimalgrowDetailComponent.prototype.postDailyGrow = function () {
         var _this = this;
-        this.service.formModel.value.DateGrow = this.getLocalDate(this.service.formModel.value.DateGrow.toLocaleDateString());
+        var date = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["formatDate"])(this.service.formModel.value.DateGrow, src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].locale);
+        this.service.formModel.patchValue({
+            DateGrow: date
+        });
         this.service.postDailyGrow().subscribe(function (res) {
             _this.service.list.data.push(res);
             _this.service.list._updateChangeSubscription();
@@ -1525,10 +1537,10 @@ var DailyanimalgrowDetailComponent = /** @class */ (function () {
     };
     DailyanimalgrowDetailComponent.prototype.putDailyGrow = function () {
         var _this = this;
-        console.log("do");
-        if (this.service.formModel.value.DateGrow.toLocaleString().indexOf('/') !== -1) {
-            this.service.formModel.value.DateGrow = this.getLocalDate(this.service.formModel.value.DateGrow.toLocaleDateString());
-        }
+        var date = Object(_angular_common__WEBPACK_IMPORTED_MODULE_7__["formatDate"])(this.service.formModel.value.DateGrow, src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].locale);
+        this.service.formModel.patchValue({
+            DateGrow: date
+        });
         this.service.putDailyGrow().subscribe(function (res) {
             var index = _this.service.list.data.findIndex(function (x) { return x.DailyGrowId == _this.service.formModel.value.DailyGrowId; });
             _this.service.list.data[index] = _this.service.formModel.value;
@@ -1560,11 +1572,6 @@ var DailyanimalgrowDetailComponent = /** @class */ (function () {
         this.service.formModel.patchValue({
             InventoryDesc: text
         });
-    };
-    DailyanimalgrowDetailComponent.prototype.getLocalDate = function (item) {
-        var ldate = item.split('/');
-        var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-        return new Date(date);
     };
     DailyanimalgrowDetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2362,7 +2369,7 @@ module.exports = "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n/* High
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>  \r\n  <mat-toolbar-row>\r\n    <span>MEDIVETGROUP</span>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\" >\r\n      <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/home\">\r\n        <mat-icon>voicemail</mat-icon>\r\n        <span>Profile</span>\r\n      </button>\r\n      <button mat-menu-item (click)=\"onLogout()\">\r\n        <mat-icon>home</mat-icon>\r\n        <span>Logout</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/user/registration\">\r\n        <mat-icon><i class=\"fas fa-user-plus\"></i></mat-icon>\r\n        <span>Register</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/userroles\">\r\n        <mat-icon><i class=\"fas fa-users-cog\"></i></mat-icon>\r\n        <span>User Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/roles\">\r\n        <mat-icon><i class=\"fas fa-pencil-ruler\"></i></mat-icon>\r\n        <span>Roles Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/warehouse\">\r\n        <mat-icon><i class=\"fas fa-warehouse\"></i></mat-icon>\r\n        <span>Warehouse</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/warehouseaccess\">\r\n        <mat-icon><i class=\"fas fa-warehouse\"></i></mat-icon>\r\n        <span>Warehouse Access</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/project\">\r\n        <mat-icon><i class=\"fas fa-project-diagram\"></i></mat-icon>\r\n        <span>Project</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/projectaccess\">\r\n        <mat-icon><i class=\"fas fa-project-diagram\"></i></mat-icon>\r\n        <span>Project Access</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/category\">\r\n        <mat-icon><i class=\"fas fas fa-align-right\"></i></mat-icon>\r\n        <span>Category</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/inventory\">\r\n        <mat-icon><i class=\"fas fa-boxes\"></i></mat-icon>\r\n        <span>Inventory</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/customer\">\r\n        <mat-icon><i class=\"fas fa-users\"></i></mat-icon>\r\n        <span>Customers</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/standardname\">\r\n        <mat-icon><i class=\"fab fa-amazon\"></i></mat-icon>\r\n        <span>Standard Name</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/standard\">\r\n        <mat-icon><i class=\"fab fa-amazon\"></i></mat-icon>\r\n        <span>Standard</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/uom\">\r\n        <mat-icon><i class=\"fas fa-boxes\"></i></mat-icon>\r\n        <span>Unit of Measure</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/paymentcard\">\r\n        <mat-icon>dialpad</mat-icon>\r\n        <span>Payment Card</span> \r\n      </button>\r\n    </mat-menu>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menupr\" >\r\n      <mat-icon><i class=\"fab fa-accusoft\"></i></mat-icon>\r\n    </button>\r\n    <mat-menu #menupr=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/invoice\">\r\n        <mat-icon><i class=\"fas fa-sort-amount-up\"></i></mat-icon>\r\n        <span>Sale Invoice</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/receipt\">\r\n        <mat-icon><i class=\"fas fa-receipt\"></i></mat-icon>\r\n        <span>Receipt/Issue/Adjust</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/dailygrow\">\r\n        <mat-icon><i class=\"fas fa-calendar-day\"></i></mat-icon>\r\n        <span>Daily Animal Grow</span> \r\n      </button>\r\n    </mat-menu>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menureport\" >       \r\n        <mat-icon><i class=\"fas fa-american-sign-language-interpreting\"></i></mat-icon>\r\n    </button>\r\n    <mat-menu #menureport=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/projectdaily\">\r\n        <mat-icon><i class=\"fas fa-sort-amount-up\"></i></mat-icon>\r\n        <span>Project Daily Performance</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/projectstatus\">\r\n        <mat-icon><i class=\"fas fa-receipt\"></i></mat-icon>\r\n        <span>Project Status</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/inregister\">\r\n        <mat-icon><i class=\"fas fa-dolly-flatbed\"></i></mat-icon>\r\n        <span>Inventory Register</span> \r\n      </button>\r\n    </mat-menu>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n"
+module.exports = "<mat-toolbar>  \r\n  <mat-toolbar-row>\r\n    <span>MEDIVETGROUP</span>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menu\" >\r\n      <mat-icon>more_vert</mat-icon>\r\n    </button>\r\n    <mat-menu #menu=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/home\">\r\n        <mat-icon>voicemail</mat-icon>\r\n        <span>Profile</span>\r\n      </button>\r\n      <button mat-menu-item (click)=\"onLogout()\">\r\n        <mat-icon>home</mat-icon>\r\n        <span>Logout</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/user/registration\">\r\n        <mat-icon><i class=\"fas fa-user-plus\"></i></mat-icon>\r\n        <span>Register</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/userroles\">\r\n        <mat-icon><i class=\"fas fa-users-cog\"></i></mat-icon>\r\n        <span>User Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/roles\">\r\n        <mat-icon><i class=\"fas fa-pencil-ruler\"></i></mat-icon>\r\n        <span>Roles Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/roleaccess\">\r\n        <mat-icon><i class=\"fas fa-pencil-ruler\"></i></mat-icon>\r\n        <span>Roles Access Setting</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/warehouse\">\r\n        <mat-icon><i class=\"fas fa-warehouse\"></i></mat-icon>\r\n        <span>Warehouse</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/warehouseaccess\">\r\n        <mat-icon><i class=\"fas fa-warehouse\"></i></mat-icon>\r\n        <span>Warehouse Access</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/project\">\r\n        <mat-icon><i class=\"fas fa-project-diagram\"></i></mat-icon>\r\n        <span>Project</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/projectaccess\">\r\n        <mat-icon><i class=\"fas fa-project-diagram\"></i></mat-icon>\r\n        <span>Project Access</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/category\">\r\n        <mat-icon><i class=\"fas fas fa-align-right\"></i></mat-icon>\r\n        <span>Category</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/inventory\">\r\n        <mat-icon><i class=\"fas fa-boxes\"></i></mat-icon>\r\n        <span>Inventory</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/customer\">\r\n        <mat-icon><i class=\"fas fa-users\"></i></mat-icon>\r\n        <span>Customers</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/standardname\">\r\n        <mat-icon><i class=\"fab fa-amazon\"></i></mat-icon>\r\n        <span>Standard Name</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/standard\">\r\n        <mat-icon><i class=\"fab fa-amazon\"></i></mat-icon>\r\n        <span>Standard</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/uom\">\r\n        <mat-icon><i class=\"fas fa-boxes\"></i></mat-icon>\r\n        <span>Unit of Measure</span>\r\n      </button>\r\n      <button mat-menu-item routerLink=\"/paymentcard\">\r\n        <mat-icon>dialpad</mat-icon>\r\n        <span>Payment Card</span> \r\n      </button>\r\n    </mat-menu>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menupr\" >\r\n      <mat-icon><i class=\"fab fa-accusoft\"></i></mat-icon>\r\n    </button>\r\n    <mat-menu #menupr=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/invoice\">\r\n        <mat-icon><i class=\"fas fa-sort-amount-up\"></i></mat-icon>\r\n        <span>Sale Invoice</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/receipt\">\r\n        <mat-icon><i class=\"fas fa-receipt\"></i></mat-icon>\r\n        <span>Receipt/Issue/Adjust</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/dailygrow\">\r\n        <mat-icon><i class=\"fas fa-calendar-day\"></i></mat-icon>\r\n        <span>Daily Animal Grow</span> \r\n      </button>\r\n    </mat-menu>\r\n    <button mat-icon-button [matMenuTriggerFor]=\"menureport\" >       \r\n        <mat-icon><i class=\"fas fa-american-sign-language-interpreting\"></i></mat-icon>\r\n    </button>\r\n    <mat-menu #menureport=\"matMenu\" >\r\n      <button mat-menu-item routerLink=\"/projectdaily\">\r\n        <mat-icon><i class=\"fas fa-sort-amount-up\"></i></mat-icon>\r\n        <span>Project Daily Performance</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/projectstatus\">\r\n        <mat-icon><i class=\"fas fa-receipt\"></i></mat-icon>\r\n        <span>Project Status</span> \r\n      </button>\r\n      <button mat-menu-item routerLink=\"/inregister\">\r\n        <mat-icon><i class=\"fas fa-dolly-flatbed\"></i></mat-icon>\r\n        <span>Inventory Register</span> \r\n      </button>\r\n    </mat-menu>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n"
 
 /***/ }),
 
@@ -3069,8 +3076,10 @@ var ProjectDetailComponent = /** @class */ (function () {
         this.service.formData = {
             ProjectId: 0,
             ProjectName: '',
-            StartDate: new Date(),
-            EndDate: new Date(),
+            // StartDate:new Date(),
+            // EndDate:new Date(),
+            StartDate: '',
+            EndDate: '',
             WarehouseId: 0,
             WarehouseName: '',
             Status: ''
@@ -3093,10 +3102,10 @@ var ProjectDetailComponent = /** @class */ (function () {
         }
     };
     ProjectDetailComponent.prototype.insertRecord = function (form) {
-        var _this = this;
-        this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
-        this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
+        // this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
+        // this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
         // console.log(this.service.formData.EndDate.toLocaleString());
+        var _this = this;
         this.service.postProjectsDetail().subscribe(function (res) {
             _this.service.list.data.push(res);
             _this.service.list._updateChangeSubscription();
@@ -3107,13 +3116,13 @@ var ProjectDetailComponent = /** @class */ (function () {
         });
     };
     ProjectDetailComponent.prototype.updateRecord = function (form) {
+        // if(this.service.formData.StartDate.toLocaleString().indexOf('/') !== -1){
+        //   this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
+        // }
+        // if(this.service.formData.EndDate.toLocaleString().indexOf('/') !== -1){
+        //   this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
+        // }
         var _this = this;
-        if (this.service.formData.StartDate.toLocaleString().indexOf('/') !== -1) {
-            this.service.formData.StartDate = this.getLocalDate(this.service.formData.StartDate.toLocaleDateString());
-        }
-        if (this.service.formData.EndDate.toLocaleString().indexOf('/') !== -1) {
-            this.service.formData.EndDate = this.getLocalDate(this.service.formData.EndDate.toLocaleDateString());
-        }
         this.service.PutProjectsDetail().subscribe(function (res) {
             var index = _this.service.list.data.findIndex(function (x) { return x.ProjectId == _this.service.formData.ProjectId; });
             _this.service.list.data[index].ProjectId = _this.service.formData.ProjectId;
@@ -3327,7 +3336,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"service.formModel\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n    <div class=\"form-group\">\r\n      <input hidden class=\"form-control\" formControlName=\"ProjectAccessId\">\r\n    </div>\r\n    <div class=\"form-group required\">\r\n      <label>Project</label>\r\n      <select class=\"form-control\" formControlName=\"ProjectId\" (change)=\"onChange($event.target.value)\" >\r\n        <option value=\"0\">-Select Project-</option>\r\n        <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n      </select>\r\n      <label class=\"text-danger\" *ngIf=\"service.formModel.get('ProjectId').touched && service.formModel.get('ProjectId').errors?.required\">This field is mandatory.</label>\r\n    </div>\r\n  </form>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-6\">\r\n      <div class=\"form-group\">\r\n        <label>Users List</label>                     \r\n          <table class=\"table table-hover\">\r\n            <tr *ngFor=\"let item of userList\">\r\n              <td>{{item.UserName}}</td>\r\n              <td width=\"5%\"><i class=\"fas fa-minus\" (click)=\"onDelete(item)\"></i></td>\r\n              <td width=\"5%\"><i class=\"fas fa-plus\" (click)=\"onAdd(item)\"></i></td>\r\n            </tr>\r\n          </table>\r\n        </div> \r\n    </div>\r\n    <div class=\"col-md-6\">\r\n      <table class=\"table table-hover\">\r\n        <tr *ngFor=\"let item of userprojectChange\">\r\n          <td>{{item.UserName}}</td>\r\n        </tr>\r\n      </table>\r\n    </div>\r\n    \r\n  "
+module.exports = "<form [formGroup]=\"service.formModel\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n    <div class=\"form-group\">\r\n      <input hidden class=\"form-control\" formControlName=\"ProjectAccessId\">\r\n    </div>\r\n    <div class=\"form-group required\">\r\n      <label>Project</label>\r\n      <select class=\"form-control\" formControlName=\"ProjectId\" (change)=\"onChange($event.target.value)\" >\r\n        <option value=\"0\">-Select Project-</option>\r\n        <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n      </select>\r\n      <label class=\"text-danger\" *ngIf=\"service.formModel.get('ProjectId').touched && service.formModel.get('ProjectId').errors?.required\">This field is mandatory.</label>\r\n    </div>\r\n  </form>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-6\">\r\n      <div class=\"form-group\">\r\n        <label>Users List</label>                     \r\n          <table class=\"table table-hover\">\r\n            <tr *ngFor=\"let item of userList\">\r\n              <td>{{item.UserName}}</td>\r\n              <td width=\"5%\"><i class=\"fas fa-minus\" (click)=\"onDelete(item)\"></i></td>\r\n              <td width=\"5%\"><i class=\"fas fa-plus\" (click)=\"onAdd(item)\"></i></td>\r\n            </tr>\r\n          </table>\r\n        </div> \r\n    </div>\r\n    <div class=\"col-md-6\">\r\n      <table class=\"table table-hover\">\r\n        <tr *ngFor=\"let item of userprojectChange\">\r\n          <td>{{item.UserName}}</td>\r\n        </tr>\r\n      </table>\r\n    </div>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -3572,6 +3581,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/inventory.service */ "./src/app/shared/inventory.service.ts");
 /* harmony import */ var src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/shared/project.service */ "./src/app/shared/project.service.ts");
 /* harmony import */ var _receipt_line_receipt_line_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../receipt-line/receipt-line.component */ "./src/app/receipt/receipt-line/receipt-line.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
 
 
 
@@ -3686,8 +3699,9 @@ var ReceiptHeaderComponent = /** @class */ (function () {
     };
     ReceiptHeaderComponent.prototype.insertRecord = function () {
         var _this = this;
+        var date = Object(_angular_common__WEBPACK_IMPORTED_MODULE_9__["formatDate"])(this.service.formReceipt.value.ReceiptDate, src_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].locale);
         this.service.formReceipt.patchValue({
-            ReceiptDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
+            ReceiptDate: date
         });
         this.service.postReceipt().subscribe(function (res) {
             _this.service.formReceipt.reset();
@@ -3698,12 +3712,9 @@ var ReceiptHeaderComponent = /** @class */ (function () {
     };
     ReceiptHeaderComponent.prototype.updateRecord = function () {
         var _this = this;
-        if (this.service.formReceipt.value.ReceiptDate.toLocaleString().indexOf('/') !== -1) {
-            this.service.formReceipt.patchValue({
-                ReceiptDate: this.getLocalDate(this.service.formReceipt.value.ReceiptDate.toLocaleDateString())
-            });
-        }
+        var date = Object(_angular_common__WEBPACK_IMPORTED_MODULE_9__["formatDate"])(this.service.formReceipt.value.ReceiptDate, src_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].locale);
         this.service.formReceipt.patchValue({
+            ReceiptDate: date,
             DeletedReceiptLineIDs: this.deleteReceiptLine
         });
         this.service.putReceipt().subscribe(function (res) {
@@ -3713,11 +3724,6 @@ var ReceiptHeaderComponent = /** @class */ (function () {
             _this.toastr.success('Submitted Successfully', 'Receipt Register');
             _this.router.navigate(['/receipt']);
         });
-    };
-    ReceiptHeaderComponent.prototype.getLocalDate = function (item) {
-        var ldate = item.split('/');
-        var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-        return new Date(date);
     };
     ReceiptHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3938,6 +3944,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _upload_upload_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../upload/upload.component */ "./src/app/upload/upload.component.ts");
 /* harmony import */ var _upload_viewupload_viewupload_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../upload/viewupload/viewupload.component */ "./src/app/upload/viewupload/viewupload.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
 
 
 
@@ -3999,7 +4009,7 @@ var ReceiptComponent = /** @class */ (function () {
         this.router.navigate(['/receiptheader/edit/' + receiptId]);
     };
     ReceiptComponent.prototype.onSubmit = function () {
-        this.getReceiptByDate(this.getLocalDate(this.fromDate.toLocaleDateString()), this.getLocalDate(this.toDate.toLocaleDateString()));
+        this.getReceiptByDate(Object(_angular_common__WEBPACK_IMPORTED_MODULE_8__["formatDate"])(this.fromDate, src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].locale), Object(_angular_common__WEBPACK_IMPORTED_MODULE_8__["formatDate"])(this.toDate, src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].locale));
     };
     ReceiptComponent.prototype.applyFilter = function (filterValue) {
         this.receiptList.filter = filterValue.trim().toLowerCase();
@@ -4022,11 +4032,6 @@ var ReceiptComponent = /** @class */ (function () {
                 });
             }
         }
-    };
-    ReceiptComponent.prototype.getLocalDate = function (item) {
-        var ldate = item.split('/');
-        var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-        return date;
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatPaginator"]),
@@ -4071,7 +4076,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  role-ctl works!\r\n</p>\r\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-12 mat-elevation-z8\">  \r\n    <div class=\"row\">\r\n      <div class=\"col-md-4\">\r\n          <mat-form-field>\r\n            <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n          </mat-form-field>\r\n      </div>         \r\n    </div>  \r\n    <table class=\"table table-hover\" mat-table [dataSource]=\"service.roleList\" matSort>\r\n      <ng-container matColumnDef=\"Name\">\r\n        <th mat-header-cell *matHeaderCellDef mat-sort-header> Role Name </th>\r\n        <td mat-cell *matCellDef=\"let element\" (click)=\"openForEdit(element)\"> {{element.Name}} </td>\r\n      </ng-container>\r\n      <ng-container matColumnDef=\"Delete\">\r\n        <th mat-header-cell *matHeaderCellDef> \r\n          \r\n        </th>\r\n        <td mat-cell *matCellDef=\"let element\"> \r\n            <i class=\"fa fa-trash-alt fa-lg text-danger\" (click)=\"onRoleDelete(element.Id)\"></i>\r\n        </td>\r\n      </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n    </table>\r\n    <mat-paginator [pageSizeOptions]=\"[5, 10, 25, 100]\"></mat-paginator>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -4087,20 +4092,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoleCtlComponent", function() { return RoleCtlComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/role.service */ "./src/app/shared/role.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+
+
+
+
 
 
 var RoleCtlComponent = /** @class */ (function () {
-    function RoleCtlComponent() {
+    function RoleCtlComponent(service, router, toastr) {
+        this.service = service;
+        this.router = router;
+        this.toastr = toastr;
+        this.displayedColumns = ['Name', 'Delete'];
     }
     RoleCtlComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.service.getRolesList().then(function (res) {
+            _this.service.roleList = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableDataSource"](res);
+            _this.service.roleList.paginator = _this.paginator;
+            _this.service.roleList.sort = _this.sort;
+        });
     };
+    RoleCtlComponent.prototype.openForEdit = function (item) {
+        this.service.formModel.setValue({
+            Id: item.Id,
+            RoleName: item.Name,
+            SelectedControllers: ''
+        });
+    };
+    RoleCtlComponent.prototype.applyFilter = function (filterValue) {
+        this.service.roleList.filter = filterValue.trim().toLowerCase();
+        if (this.service.roleList.paginator) {
+            this.service.roleList.paginator.firstPage();
+        }
+    };
+    RoleCtlComponent.prototype.onRoleDelete = function (id) {
+        var _this = this;
+        if (confirm('Are you sure to delete this record?')) {
+            this.service.deleteRole(id).then(function (res) {
+                var index = _this.service.roleList.data.findIndex(function (x) { return x.Id == id; });
+                _this.service.roleList.data.splice(index, 1);
+                _this.service.roleList._updateChangeSubscription();
+                _this.toastr.warning("Deleted Successfully", "Restaurent App.");
+            });
+        }
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatPaginator"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatPaginator"])
+    ], RoleCtlComponent.prototype, "paginator", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSort"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSort"])
+    ], RoleCtlComponent.prototype, "sort", void 0);
     RoleCtlComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-role-ctl',
             template: __webpack_require__(/*! ./role-ctl.component.html */ "./src/app/roles/role-ctl/role-ctl.component.html"),
             styles: [__webpack_require__(/*! ./role-ctl.component.css */ "./src/app/roles/role-ctl/role-ctl.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_role_service__WEBPACK_IMPORTED_MODULE_2__["RoleService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
     ], RoleCtlComponent);
     return RoleCtlComponent;
 }());
@@ -4127,7 +4184,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-menus></app-menus>\r\n<div class=\"container\">\r\n  <div class=\"col-md-12\">\r\n      <div class=\"jumbotron\">\r\n          <h1 class=\"display-4 text-center\"><i class=\"fas fa-toilet-paper\"></i>Roles Management</h1>\r\n        <hr>\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n              <form [formGroup]=\"service.formModel\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                  <div class=\"form-group\">\r\n                    <input hidden class=\"form-control\" formControlName=\"Id\">\r\n                  </div>\r\n                  <div class=\"form-group required\">\r\n                    <label>RoleName</label>\r\n                    <input class=\"form-control\" formControlName=\"RoleName\">\r\n                    <label class=\"text-danger\" *ngIf=\"service.formModel.get('RoleName').touched && service.formModel.get('RoleName').errors?.required\">This field is mandatory.</label>\r\n                  </div>\r\n                  <div class=\"form-row\">\r\n                    <div class=\"form-group col-md-8 offset-md-2\">\r\n                      <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formModel.valid\">Submit</button>\r\n                    </div>\r\n                  </div>\r\n                </form>\r\n                <div class=\"row\">\r\n                  <div class=\"col-md-6\">\r\n                    <div class=\"form-group\">\r\n                      <label>Access List</label>                     \r\n                        <table class=\"table table-hover\">\r\n                          <tr *ngFor=\"let item of ctlList\">\r\n                            <td>{{item.Id}}</td>\r\n                            <td width=\"5%\"><i class=\"fas fa-minus\" (click)=\"onDelete(item)\"></i></td>\r\n                            <td width=\"5%\"><i class=\"fas fa-plus\" (click)=\"onAdd(item)\"></i></td>\r\n                          </tr>\r\n                        </table>\r\n                      </div> \r\n                  </div>\r\n                  <div class=\"col-md-6\">\r\n                    <table class=\"table table-hover\">\r\n                      <tr *ngFor=\"let item of service.rolesAdded\">\r\n                        <td>{{item}}</td>\r\n                      </tr>\r\n                    </table>\r\n                  </div>\r\n                </div>\r\n \r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-12\">\r\n      <div class=\"jumbotron\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n              <form [formGroup]=\"service.formModel\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                  <div class=\"form-group\">\r\n                    <input hidden class=\"form-control\" formControlName=\"Id\">\r\n                  </div>\r\n                  <div class=\"form-group required\">\r\n                    <label>RoleName</label>\r\n                    <input class=\"form-control\" formControlName=\"RoleName\">\r\n                    <label class=\"text-danger\" *ngIf=\"service.formModel.get('RoleName').touched && service.formModel.get('RoleName').errors?.required\">This field is mandatory.</label>\r\n                  </div>\r\n                  <div class=\"form-row\">\r\n                    <div class=\"form-group col-md-8 offset-md-2\">\r\n                      <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formModel.valid\">Submit</button>\r\n                    </div>\r\n                  </div>\r\n                </form>\r\n          </div>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -4145,58 +4202,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/role.service */ "./src/app/shared/role.service.ts");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
-/* harmony import */ var src_app_shared_role_ctl_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/role-ctl.service */ "./src/app/shared/role-ctl.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
-
 
 
 
 
 var RoleComponent = /** @class */ (function () {
-    function RoleComponent(service, serviceCtl, toastr, currentRoute, router) {
+    function RoleComponent(service, toastr) {
         this.service = service;
-        this.serviceCtl = serviceCtl;
         this.toastr = toastr;
-        this.currentRoute = currentRoute;
-        this.router = router;
     }
     RoleComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.getCtl();
-        var roleId = this.currentRoute.snapshot.paramMap.get('id');
-        if (roleId == null) {
-            this.service.formModel.reset();
-            this.service.rolesAdded = [];
-            this.service.selectedCtl = [];
-        }
-        else {
-            this.service.getRoleByID(roleId).then(function (res) {
-                _this.roleList = res;
-                _this.service.formModel.patchValue({
-                    Id: _this.roleList.Id,
-                    RoleName: _this.roleList.Name,
-                });
-                if (_this.roleList.Access != null) {
-                    _this.service.rolesAdded = [];
-                    _this.service.selectedCtl = [];
-                    var accesslist = JSON.parse(_this.roleList.Access);
-                    _this.service.selectedCtl = accesslist;
-                    for (var i = 0; i < accesslist.length; i++) {
-                        _this.service.rolesAdded.push(accesslist[i].Id);
-                    }
-                }
-                _this.service.formModel.value.Id = roleId;
-            });
-        }
+        this.service.formModel.patchValue({
+            Id: '0'
+        });
     };
     RoleComponent.prototype.onSubmit = function () {
-        if (this.service.formModel.value.Id == '' || this.service.formModel.value.Id == null) {
+        if (this.service.formModel.value.Id == '0') {
             this.postRole();
-            console.log('post');
         }
         else {
-            console.log('put');
             this.putRole();
         }
     };
@@ -4204,6 +4228,16 @@ var RoleComponent = /** @class */ (function () {
         var _this = this;
         this.service.postRoles().subscribe(function (res) {
             if (res.Succeeded) {
+                _this.service.roleList.data.push({
+                    Id: res.Id,
+                    Name: _this.service.formModel.value.RoleName,
+                    Access: _this.service.formModel.value.SelectedControllers
+                });
+                _this.service.roleList._updateChangeSubscription();
+                _this.service.formModel.reset();
+                _this.service.formModel.patchValue({
+                    Id: '0'
+                });
                 _this.toastr.success("New role created", "Register Role");
             }
         }, function (err) {
@@ -4214,21 +4248,20 @@ var RoleComponent = /** @class */ (function () {
         var _this = this;
         this.service.putRoles().subscribe(function (res) {
             if (res.Succeeded) {
+                var index = _this.service.roleList.data.findIndex(function (x) { return x.Id == _this.service.formModel.value.Id; });
+                _this.service.roleList.data[index].Id = _this.service.formModel.value.Id;
+                _this.service.roleList.data[index].Name = _this.service.formModel.value.RoleName;
+                _this.service.roleList.data[index].Access = _this.service.formModel.value.SelectedControllers;
+                _this.service.roleList._updateChangeSubscription();
+                _this.service.formModel.reset();
+                _this.service.formModel.patchValue({
+                    Id: '0'
+                });
                 _this.toastr.success("New role updated", "Register Role");
             }
         }, function (err) {
             console.log(err);
         });
-    };
-    RoleComponent.prototype.getCtl = function () {
-        var _this = this;
-        this.serviceCtl.getTreeList().then(function (res) { return _this.ctlList = res; });
-    };
-    RoleComponent.prototype.onDelete = function (item) {
-        this.service.onDelete(item);
-    };
-    RoleComponent.prototype.onAdd = function (item) {
-        this.service.onAdd(item);
     };
     RoleComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -4237,8 +4270,7 @@ var RoleComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./role.component.css */ "./src/app/roles/role/role.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_role_service__WEBPACK_IMPORTED_MODULE_2__["RoleService"],
-            src_app_shared_role_ctl_service__WEBPACK_IMPORTED_MODULE_4__["RoleCtlService"],
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])
     ], RoleComponent);
     return RoleComponent;
 }());
@@ -4265,7 +4297,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-menus></app-menus>\r\n<div class=\"jumbotron\">\r\n  <h1 class=\"display-4 text-center\">Roles Register</h1>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n      <table class=\"table table-hover\">\r\n        <thead class=\"thead-light\">\r\n          <th>Name</th>\r\n          <th>Access</th>\r\n          <th>\r\n            <a class=\"btn btn-outline-success\" routerLink=\"/role\"><i class=\"fa fa-plus-square\"></i> Create New</a>\r\n          </th>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let item of roleList\">\r\n            <td (click)=\"openForEdit(item.Id)\">{{item.Name}}</td>\r\n            <td (click)=\"openForEdit(item.Id)\">{{item.Access}}</td>\r\n            <td>\r\n                <a class=\"btn text-danger\" (click)=\"onRoleDelete(item.Id)\"><i class=\"fa fa-trash fa-lg\"></i></a>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<app-menus></app-menus>\r\n<div class=\"jumbotron\">\r\n  <h1 class=\"display-4 text-center\">Role Register</h1>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\">\r\n      <app-role></app-role>\r\n    </div>\r\n    <div class=\"col-md-8\">\r\n      <app-role-ctl></app-role-ctl>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -4281,38 +4313,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RolesComponent", function() { return RolesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/role.service */ "./src/app/shared/role.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
-
-
-
 
 
 var RolesComponent = /** @class */ (function () {
-    function RolesComponent(service, router, toastr) {
-        this.service = service;
-        this.router = router;
-        this.toastr = toastr;
+    function RolesComponent() {
     }
     RolesComponent.prototype.ngOnInit = function () {
-        this.refreshList();
-    };
-    RolesComponent.prototype.refreshList = function () {
-        var _this = this;
-        this.service.getRolesList().then(function (res) { return _this.roleList = res; });
-    };
-    RolesComponent.prototype.openForEdit = function (id) {
-        this.router.navigate(['/role/edit/' + id]);
-    };
-    RolesComponent.prototype.onRoleDelete = function (id) {
-        var _this = this;
-        if (confirm('Are you sure to delete this record?')) {
-            this.service.deleteRole(id).then(function (res) {
-                _this.refreshList();
-                _this.toastr.warning("Deleted Successfully", "Restaurent App.");
-            });
-        }
     };
     RolesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -4320,11 +4326,185 @@ var RolesComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./roles.component.html */ "./src/app/roles/roles.component.html"),
             styles: [__webpack_require__(/*! ./roles.component.css */ "./src/app/roles/roles.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_role_service__WEBPACK_IMPORTED_MODULE_2__["RoleService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], RolesComponent);
     return RolesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/rolesaccess/rolesaccess.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/rolesaccess/rolesaccess.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JvbGVzYWNjZXNzL3JvbGVzYWNjZXNzLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/rolesaccess/rolesaccess.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/rolesaccess/rolesaccess.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-menus></app-menus>\r\n<div class=\"jumbotron\">\r\n  <h1 class=\"display-4 text-center\">Roles Access Register</h1>\r\n  <hr>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-12\">\r\n      <form [formGroup]=\"service.formModel\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n        <div class=\"form-group required\">\r\n          <label>Roles</label>\r\n          <select class=\"form-control\" formControlName=\"Id\" (change)=\"onChange($event)\" >\r\n            <option value=\"0\">-Select Role-</option>\r\n            <option *ngFor=\"let item of roleList\" value=\"{{item.Id}}\">{{item.Name}}</option>\r\n          </select>\r\n          <label class=\"text-danger\" *ngIf=\"service.formModel.get('Id').touched && service.formModel.get('Id').errors?.required\">This field is mandatory.</label>\r\n        </div>\r\n      </form>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-6\">\r\n      <div class=\"form-group\">\r\n        <label>Access List</label>                     \r\n          <table class=\"table table-hover\">\r\n            <tr *ngFor=\"let item of actionInfo\">\r\n              <td>{{item.Id}}</td>\r\n              <td width=\"5%\"><i class=\"fas fa-plus\" (click)=\"onAdd(item)\"></i></td>\r\n            </tr>\r\n          </table>\r\n        </div> \r\n    </div>\r\n    <div class=\"col-md-6\">\r\n      <table class=\"table table-hover\">\r\n        <tr *ngFor=\"let itm of actionInfoAdded\">\r\n          <td>{{itm.Id}}</td>\r\n          <td width=\"5%\"><i class=\"fas fa-minus\" (click)=\"onDelete(itm)\"></i></td>\r\n        </tr>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/rolesaccess/rolesaccess.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/rolesaccess/rolesaccess.component.ts ***!
+  \******************************************************/
+/*! exports provided: RolesaccessComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RolesaccessComponent", function() { return RolesaccessComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_role_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/role.service */ "./src/app/shared/role.service.ts");
+/* harmony import */ var _shared_role_ctl_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/role-ctl.service */ "./src/app/shared/role-ctl.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var RolesaccessComponent = /** @class */ (function () {
+    function RolesaccessComponent(service, serviceCtl, toastr) {
+        this.service = service;
+        this.serviceCtl = serviceCtl;
+        this.toastr = toastr;
+    }
+    RolesaccessComponent.prototype.ngOnInit = function () {
+        this.roleList = [];
+        this.controllerInfo = [];
+        this.actionInfo = [];
+        this.actionInfoAdded = [];
+        this.actionInfoAsign = [];
+        this.controllerInfoAdded = [];
+        this.getCtl();
+        this.refreshList();
+    };
+    RolesaccessComponent.prototype.getCtl = function () {
+        var _this = this;
+        this.serviceCtl.getTreeList().then(function (res) {
+            _this.controllerInfo = res;
+            _this.controllerInfo.forEach(function (element) {
+                element.Actions.forEach(function (element1) {
+                    _this.actionInfo.push(element1);
+                });
+            });
+        });
+    };
+    RolesaccessComponent.prototype.refreshList = function () {
+        var _this = this;
+        this.service.getRolesList().then(function (res) {
+            _this.roleList = res;
+        });
+    };
+    RolesaccessComponent.prototype.onChange = function (item) {
+        var _this = this;
+        var text = item.target.options[item.target.options.selectedIndex].text;
+        console.log(text);
+        this.service.formModel.patchValue({
+            Id: item.target.value,
+            RoleName: text
+        });
+        this.actionInfoAdded = [];
+        this.service.getRoleByID(item.target.value).then(function (res) {
+            _this.role = res;
+            if (_this.role.Access != null) {
+                var access = JSON.parse(_this.role.Access);
+                _this.controllerInfoAdded = access;
+                console.log(_this.controllerInfoAdded);
+                for (var i = 0; i < access.length; i++) {
+                    var action = access[i].Actions;
+                    for (var j = 0; j < action.length; j++) {
+                        var actionval = action[j];
+                        _this.actionInfoAdded.push(actionval);
+                    }
+                }
+            }
+        });
+    };
+    RolesaccessComponent.prototype.onAdd = function (item) {
+        var _this = this;
+        var actionIndex = this.actionInfoAdded.findIndex(function (x) { return x.Id == item.Id; });
+        var index = this.controllerInfoAdded.findIndex(function (x) { return x.Id == item.ControllerId; });
+        if (index <= -1) {
+            var indexController = this.controllerInfo.findIndex(function (x) { return x.Id == item.ControllerId; });
+            this.actionInfoAsign.push(item);
+            this.actionInfoAdded.push(item);
+            this.controllerInfoAdded.push({
+                Id: this.controllerInfo[indexController].Id,
+                Name: this.controllerInfo[indexController].Name,
+                DisplayName: this.controllerInfo[indexController].DisplayName,
+                AreaName: this.controllerInfo[indexController].AreaName,
+                Actions: this.actionInfoAsign
+            });
+        }
+        else {
+            if (actionIndex <= -1) {
+                var arraytoJson = JSON.stringify(this.controllerInfoAdded[index].Actions);
+                var jsonValue = JSON.parse(arraytoJson);
+                if (jsonValue.Id != null) {
+                    this.actionInfoAsign.push(jsonValue);
+                }
+                else {
+                    for (var i = 0; i < jsonValue.length; i++) {
+                        this.actionInfoAsign.push(jsonValue[i]);
+                    }
+                }
+                //this.actionInfoAsign.push(JSON.parse(arraytoJson));
+                this.actionInfoAsign.push(item);
+                this.actionInfoAdded.push(item);
+                this.controllerInfoAdded[index].Actions = this.actionInfoAsign;
+            }
+        }
+        this.actionInfoAsign = [];
+        this.service.onPutRoles(this.controllerInfoAdded).subscribe(function (res) {
+            if (res.Succeeded) {
+                _this.toastr.success("New role created", "Register Role");
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    RolesaccessComponent.prototype.onDelete = function (item) {
+        var _this = this;
+        var index = this.controllerInfoAdded.findIndex(function (x) { return x.Id == item.ControllerId; });
+        if (index > -1) {
+            var actionIndex = this.controllerInfoAdded[index].Actions.findIndex(function (x) { return x.Id == item.Id; });
+            this.controllerInfoAdded[index].Actions.splice(actionIndex, 1);
+            var actionAddedIndex = this.actionInfoAdded.findIndex(function (x) { return x.Id == item.Id; });
+            this.actionInfoAdded.splice(actionAddedIndex, 1);
+            this.service.onPutRoles(this.controllerInfoAdded).subscribe(function (res) {
+                if (res.Succeeded) {
+                    _this.toastr.success("New role created", "Register Role");
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    };
+    RolesaccessComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-rolesaccess',
+            template: __webpack_require__(/*! ./rolesaccess.component.html */ "./src/app/rolesaccess/rolesaccess.component.html"),
+            styles: [__webpack_require__(/*! ./rolesaccess.component.css */ "./src/app/rolesaccess/rolesaccess.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_role_service__WEBPACK_IMPORTED_MODULE_2__["RoleService"], _shared_role_ctl_service__WEBPACK_IMPORTED_MODULE_3__["RoleCtlService"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
+    ], RolesaccessComponent);
+    return RolesaccessComponent;
 }());
 
 
@@ -4372,6 +4552,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/project.service */ "./src/app/shared/project.service.ts");
 /* harmony import */ var _saleinvoice_line_saleinvoice_line_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../saleinvoice-line/saleinvoice-line.component */ "./src/app/saleinvoice/saleinvoice-line/saleinvoice-line.component.ts");
 /* harmony import */ var src_app_shared_customer_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/shared/customer.service */ "./src/app/shared/customer.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
 
 
 
@@ -4507,8 +4691,9 @@ var SaleinvoiceHeaderComponent = /** @class */ (function () {
     };
     SaleinvoiceHeaderComponent.prototype.insertRecord = function () {
         var _this = this;
+        var date = Object(_angular_common__WEBPACK_IMPORTED_MODULE_9__["formatDate"])(this.service.formInvoice.value.DocDate, src_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].locale);
         this.service.formInvoice.patchValue({
-            DocDate: this.getLocalDate(this.service.formInvoice.value.DocDate.toLocaleDateString())
+            DocDate: date
         });
         this.service.postInvoice().subscribe(function (res) {
             _this.service.formInvoice.reset();
@@ -4519,12 +4704,9 @@ var SaleinvoiceHeaderComponent = /** @class */ (function () {
     };
     SaleinvoiceHeaderComponent.prototype.updateRecord = function () {
         var _this = this;
-        if (this.service.formInvoice.value.DocDate.toLocaleString().indexOf('/') !== -1) {
-            this.service.formInvoice.patchValue({
-                DocDate: this.getLocalDate(this.service.formInvoice.value.DocDate.toLocaleDateString())
-            });
-        }
+        var date = Object(_angular_common__WEBPACK_IMPORTED_MODULE_9__["formatDate"])(this.service.formInvoice.value.DocDate, src_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].locale);
         this.service.formInvoice.patchValue({
+            DocDate: date,
             DeletedInvoiceLineIDs: this.deleteInvoiceLine
         });
         this.service.putInvoice().subscribe(function (res) {
@@ -4534,11 +4716,6 @@ var SaleinvoiceHeaderComponent = /** @class */ (function () {
             _this.toastr.success('Submitted Successfully', 'Invoice Register');
             _this.router.navigate(['/invoice']);
         });
-    };
-    SaleinvoiceHeaderComponent.prototype.getLocalDate = function (item) {
-        var ldate = item.split('/');
-        var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-        return new Date(date);
     };
     SaleinvoiceHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -4717,6 +4894,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
 
 
 
@@ -4769,18 +4950,13 @@ var SaleinvoiceComponent = /** @class */ (function () {
         this.router.navigate(['/invoiceheader/edit/' + invoiceId]);
     };
     SaleinvoiceComponent.prototype.onSubmit = function () {
-        this.getReceiptByDate(this.getLocalDate(this.fromDate.toLocaleDateString()), this.getLocalDate(this.toDate.toLocaleDateString()));
+        this.getReceiptByDate(Object(_angular_common__WEBPACK_IMPORTED_MODULE_6__["formatDate"])(this.fromDate, src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].locale), Object(_angular_common__WEBPACK_IMPORTED_MODULE_6__["formatDate"])(this.toDate, src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].format, src_environments_environment__WEBPACK_IMPORTED_MODULE_7__["environment"].locale));
     };
     SaleinvoiceComponent.prototype.applyFilter = function (filterValue) {
         this.invoiceList.filter = filterValue.trim().toLowerCase();
         if (this.invoiceList.paginator) {
             this.invoiceList.paginator.firstPage();
         }
-    };
-    SaleinvoiceComponent.prototype.getLocalDate = function (item) {
-        var ldate = item.split('/');
-        var date = ldate[2] + '-' + ldate[0] + '-' + ldate[1];
-        return date;
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_5__["MatPaginator"]),
@@ -5114,6 +5290,60 @@ var ItemService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], ItemService);
     return ItemService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/jspdf.service.ts":
+/*!*****************************************!*\
+  !*** ./src/app/shared/jspdf.service.ts ***!
+  \*****************************************/
+/*! exports provided: JspdfService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JspdfService", function() { return JspdfService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
+/* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! html2canvas */ "./node_modules/html2canvas/dist/html2canvas.js");
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+var JspdfService = /** @class */ (function () {
+    function JspdfService() {
+    }
+    JspdfService.prototype.captureScreen = function () {
+        var data = document.getElementById('contentToConvert');
+        html2canvas__WEBPACK_IMPORTED_MODULE_3___default()(data).then(function (canvas) {
+            // Few necessary setting options  
+            var imgWidth = 208;
+            var pageHeight = 295;
+            var imgHeight = canvas.height * imgWidth / canvas.width;
+            var heightLeft = imgHeight;
+            var contentDataURL = canvas.toDataURL('image/png');
+            var pdf = new jspdf__WEBPACK_IMPORTED_MODULE_2__('p', 'mm', 'a4', true); // A4 size page of PDF  
+            var position = 0;
+            // pdf.page = 1;
+            // pdf.text(150,285,'page: ' + pdf.page);  
+            // pdf.page ++;
+            pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
+            pdf.save('MYPdf.pdf'); // Generated PDF   
+        });
+    };
+    JspdfService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], JspdfService);
+    return JspdfService;
 }());
 
 
@@ -5498,8 +5728,6 @@ var RoleService = /** @class */ (function () {
     function RoleService(fb, http) {
         this.fb = fb;
         this.http = http;
-        this.rolesAdded = [];
-        this.selectedCtl = [];
         this.formModel = this.fb.group({
             Id: [''],
             RoleName: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
@@ -5509,16 +5737,15 @@ var RoleService = /** @class */ (function () {
     RoleService.prototype.postRoles = function () {
         var body = {
             RoleName: this.formModel.value.RoleName,
-            SelectedControllers: this.selectedCtl
+            SelectedControllers: ''
         };
-        console.log(this.selectedCtl);
         return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL + '/ApplicationRole', body);
     };
     RoleService.prototype.putRoles = function () {
         var body = {
             Id: this.formModel.value.Id,
             RoleName: this.formModel.value.RoleName,
-            SelectedControllers: this.selectedCtl
+            SelectedControllers: ''
         };
         return this.http.put(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL + '/ApplicationRole/' + this.formModel.value.Id, body);
     };
@@ -5531,20 +5758,13 @@ var RoleService = /** @class */ (function () {
     RoleService.prototype.deleteRole = function (id) {
         return this.http.delete(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL + '/ApplicationRole/' + id).toPromise();
     };
-    RoleService.prototype.onDelete = function (item) {
-        var index = this.rolesAdded.indexOf(item.Id);
-        if (index > -1) {
-            this.rolesAdded.splice(index, 1);
-            var indexctl = this.selectedCtl.indexOf(item);
-            this.selectedCtl.splice(indexctl, 1);
-        }
-    };
-    RoleService.prototype.onAdd = function (item) {
-        var index = this.rolesAdded.indexOf(item.Id);
-        if (index <= -1) {
-            this.rolesAdded.push(item.Id);
-            this.selectedCtl.push(item);
-        }
+    RoleService.prototype.onPutRoles = function (controllerAdded) {
+        var body = {
+            Id: this.formModel.value.Id,
+            RoleName: this.formModel.value.RoleName,
+            SelectedControllers: controllerAdded
+        };
+        return this.http.put(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL + '/ApplicationRole/' + this.formModel.value.Id, body);
     };
     RoleService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -5906,13 +6126,17 @@ var UserService = /** @class */ (function () {
         }
     };
     UserService.prototype.onDelete = function (item) {
+        console.log(item);
+        console.log(this.rolesAdded);
         var index = this.rolesAdded.indexOf(item.Name);
+        console.log(index);
         if (index > -1) {
             this.rolesAdded.splice(index, 1);
         }
     };
     UserService.prototype.onAdd = function (item) {
         var index = this.rolesAdded.indexOf(item.Name);
+        console.log(index);
         if (index <= -1) {
             this.rolesAdded.push(item.Name);
         }
@@ -5939,6 +6163,18 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.getUserProfile = function () {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL + '/UserProfile');
+    };
+    UserService.prototype.getUserById = function (id) {
+        return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL + "/ApplicationUser/" + id).toPromise();
+    };
+    UserService.prototype.putUserandResetpassword = function (id, token) {
+        var body = {
+            UserName: this.formModel.value.UserName,
+            Email: this.formModel.value.Email,
+            FullName: this.formModel.value.FullName,
+            Password: this.formModel.value.Passwords.Password
+        };
+        return this.http.put(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL + '/ApplicationUser/' + id + "/" + token, body);
     };
     UserService.prototype.getUserRoles = function () {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiURL + '/Access').toPromise();
@@ -7301,6 +7537,91 @@ var UserComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/user/useredit/useredit.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/user/useredit/useredit.component.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXIvdXNlcmVkaXQvdXNlcmVkaXQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/user/useredit/useredit.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/user/useredit/useredit.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n  <div class=\"col-md-8 offset-md-2\">\r\n      <div class=\"jumbotron\">\r\n          <h1 class=\"display-4 text-center\">Edit User</h1>\r\n        <hr>\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n              <form [formGroup]=\"service.formModel\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                  <div class=\"form-group required\">\r\n                    <label>Username</label>\r\n                    <input class=\"form-control\" formControlName=\"UserName\">\r\n                    <label class=\"text-danger\" *ngIf=\"service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required\">This field is mandatory.</label>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                    <label>Email</label>\r\n                    <input class=\"form-control\" formControlName=\"Email\">\r\n                    <label class=\"text-danger\" *ngIf=\"service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email\">Invalid email address.</label>\r\n                  </div>\r\n                  <div class=\"form-group\">\r\n                    <label>Full Name</label>\r\n                    <input class=\"form-control\" formControlName=\"FullName\">\r\n                  </div>\r\n                  <div formGroupName=\"Passwords\">\r\n                    <div class=\"form-group required\">\r\n                      <label>Password</label>\r\n                      <input type=\"password\" class=\"form-control\" formControlName=\"Password\">\r\n                      <label class=\"text-danger\" *ngIf=\"service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required\">This field is mandatory.</label>\r\n                      <label class=\"text-danger\" *ngIf=\"service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength\">Minimum 4 characters required.</label>\r\n                    </div>\r\n                    <div class=\"form-group required\">\r\n                      <label>Confirm Password</label>\r\n                      <input type=\"password\" class=\"form-control\" formControlName=\"ConfirmPassword\">\r\n                      <label class=\"text-danger\" *ngIf=\"service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required\">This field is mandatory.</label>\r\n                      <label class=\"text-danger\" *ngIf=\"service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch\">Confirm Password does not match.</label>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"form-row\">\r\n                    <div class=\"form-group col-md-8 offset-md-2\">\r\n                      <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formModel.valid\">Submit</button>\r\n                      <button type=\"button\" class=\"btn btn-lg btn-block\" [mat-dialog-close]> Close</button>\r\n                    </div>\r\n                  </div>\r\n                </form>\r\n          </div>\r\n        </div>\r\n      </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/user/useredit/useredit.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/user/useredit/useredit.component.ts ***!
+  \*****************************************************/
+/*! exports provided: UsereditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsereditComponent", function() { return UsereditComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/user.service */ "./src/app/shared/user.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+
+
+
+
+
+var UsereditComponent = /** @class */ (function () {
+    function UsereditComponent(service, toastr, data, dialogRef) {
+        this.service = service;
+        this.toastr = toastr;
+        this.data = data;
+        this.dialogRef = dialogRef;
+    }
+    UsereditComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.service.formModel.reset();
+        this.service.getUserById(this.data.id).then(function (res) {
+            _this.service.formModel.patchValue({
+                UserName: res[0].UserName,
+                Email: res[0].Email,
+                FullName: res[0].FullName
+            });
+        });
+    };
+    UsereditComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.service.putUserandResetpassword(this.data.id, localStorage.getItem('token')).subscribe(function (res) {
+            _this.toastr.success("Submitted Successfully", "User edit");
+        }, function (err) {
+            console.log(err);
+        });
+        this.dialogRef.close();
+    };
+    UsereditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-useredit',
+            template: __webpack_require__(/*! ./useredit.component.html */ "./src/app/user/useredit/useredit.component.html"),
+            styles: [__webpack_require__(/*! ./useredit.component.css */ "./src/app/user/useredit/useredit.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], Object, _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"]])
+    ], UsereditComponent);
+    return UsereditComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/userroles/userrole/userrole.component.css":
 /*!***********************************************************!*\
   !*** ./src/app/userroles/userrole/userrole.component.css ***!
@@ -7319,7 +7640,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"service.userroleModel\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n  <input hidden class=\"form-control\" formControlName=\"UserId\">\r\n  <div class=\"form-group required\">\r\n    <label>UserName</label>\r\n    <input class=\"form-control\" formControlName=\"UserName\">\r\n    <label class=\"text-danger\" *ngIf=\"service.userroleModel.get('UserName').touched && service.userroleModel.get('UserName').errors?.required\">This field is mandatory.</label>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Roles</label>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-5\">\r\n        <table class=\"table table-hover\">\r\n          <tr *ngFor=\"let item of rolesList\">\r\n            <td>{{item.Name}}</td>\r\n            <td><i class=\"fas fa-minus\" (click)=\"onDelete(item)\"></i></td>\r\n            <td><i class=\"fas fa-plus\" (click)=\"onAdd(item)\"></i></td>\r\n          </tr>\r\n        </table>     \r\n      </div>\r\n      <div class=\"col-md-5\">\r\n        <table class=\"table table-hover\">\r\n          <tr *ngFor=\"let item of service.rolesAdded\">\r\n            <td>{{item}}</td>\r\n          </tr>\r\n        </table>\r\n        <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.userroleModel.valid\">Submit</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</form>\r\n"
+module.exports = "<form [formGroup]=\"service.userroleModel\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n  <input hidden class=\"form-control\" formControlName=\"UserId\">\r\n  <div class=\"form-group required\">\r\n    <label>UserName</label>\r\n    <input class=\"form-control\" formControlName=\"UserName\">\r\n    <label class=\"text-danger\" *ngIf=\"service.userroleModel.get('UserName').touched && service.userroleModel.get('UserName').errors?.required\">This field is mandatory.</label>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label>Roles</label>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-5\">\r\n        <table class=\"table table-hover\">\r\n          <tr *ngFor=\"let item of rolesList\">\r\n            <td>{{item.Name}}</td>\r\n            <td><i class=\"fas fa-plus\" (click)=\"onAdd(item)\"></i></td>\r\n            <td><i class=\"fas fa-minus\" (click)=\"onDelete(item)\"></i></td>\r\n          </tr>\r\n        </table>     \r\n      </div>\r\n      <div class=\"col-md-5\">\r\n        <table class=\"table table-hover\">\r\n          <tr *ngFor=\"let item of service.rolesAdded\">\r\n            <td>{{item}}</td>\r\n          </tr>\r\n        </table>\r\n        <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.userroleModel.valid\">Submit</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -7408,7 +7729,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"table table-hover\">\r\n    <tr *ngFor=\"let item of userroleList\">\r\n      <td (click)=\"populateForm(item)\">{{item.UserName}}</td>\r\n      <td>\r\n        <i class=\"fa fa-trash-alt fa-lg text-danger\" (click)=\"onUserDelete(item.UserId)\"></i>\r\n      </td>\r\n    </tr>\r\n  </table>"
+module.exports = "<table class=\"table table-hover\">\r\n    <tr *ngFor=\"let item of userroleList\">\r\n      <td (click)=\"populateForm(item)\">{{item.UserName}}</td>\r\n      <td>\r\n        <i class=\"fas fa-user-slash\" (click)=\"onUserDelete(item.UserId)\"></i>\r\n      </td>\r\n      <td>\r\n          <i class=\"fas fa-edit\" (click)=\"onUserEdit(item.UserId)\"></i>\r\n      </td>\r\n    </tr>\r\n  </table>"
 
 /***/ }),
 
@@ -7427,16 +7748,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/user.service */ "./src/app/shared/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var src_app_user_useredit_useredit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/user/useredit/useredit.component */ "./src/app/user/useredit/useredit.component.ts");
+
+
 
 
 
 
 
 var UserrolelistComponent = /** @class */ (function () {
-    function UserrolelistComponent(service, router, toastr) {
+    function UserrolelistComponent(service, router, toastr, dialog) {
         this.service = service;
         this.router = router;
         this.toastr = toastr;
+        this.dialog = dialog;
     }
     UserrolelistComponent.prototype.ngOnInit = function () {
         this.refressList();
@@ -7448,6 +7774,19 @@ var UserrolelistComponent = /** @class */ (function () {
             Roles: item.Roles
         });
         this.service.rolesAdded = item.Roles;
+        this.service.userroleModel.get('UserName').disable();
+    };
+    UserrolelistComponent.prototype.onUserEdit = function (id) {
+        var _this = this;
+        var dialogConfig = new _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = "50%";
+        dialogConfig.data = { id: id };
+        this.dialog.open(src_app_user_useredit_useredit_component__WEBPACK_IMPORTED_MODULE_6__["UsereditComponent"], dialogConfig).afterClosed().subscribe(function (res) {
+            var index = _this.userroleList.findIndex(function (x) { return x.UserId == id; });
+            _this.userroleList[index].UserName = _this.service.formModel.value.UserName;
+        });
     };
     UserrolelistComponent.prototype.refressList = function () {
         var _this = this;
@@ -7469,7 +7808,7 @@ var UserrolelistComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./userrolelist.component.css */ "./src/app/userroles/userrolelist/userrolelist.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]])
     ], UserrolelistComponent);
     return UserrolelistComponent;
 }());
@@ -7552,7 +7891,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isLoaded\">\r\n  <app-menus></app-menus>\r\n  <div class=\"container\">\r\n    <div class=\"col-md-8 offset-md-2\">\r\n        <div class=\"jumbotron\">\r\n            <h1 class=\"display-6 text-center\">Inventory Register</h1>\r\n            <hr>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                  <form [formGroup]=\"formFilter\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                    <div class=\"form-group\">\r\n                      <label>Project</label>\r\n                      <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                        <option value=\"0\">-Select-</option>\r\n                        <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                      </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                      <label>Tran.Type</label>\r\n                      <select class=\"form-control\" formControlName=\"TranType\">\r\n                        <option value=\"0\">-Select-</option>\r\n                        <option value=\"Receipt\" >Receipt</option>\r\n                        <option value=\"Issue\" >Issue</option>\r\n                        <option value=\"Adjust\" >Adjust</option>\r\n                      </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Warehouse</label>\r\n                        <select class=\"form-control\" formControlName=\"WarehouseId\">\r\n                          <option value=\"0\">-Select Warehouse-</option>\r\n                          <option *ngFor=\"let item of warehouseList\" value=\"{{item.WarehouseId}}\">{{item.WarehouseName}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Inventory</label>\r\n                        <select class=\"form-control\" formControlName=\"InventoryId\">\r\n                          <option value=\"0\">\r\n                            -Select Inventory-\r\n                          </option>\r\n                          <option *ngFor=\"let item of inventoryList\" value=\"{{item.InventoryId}}\">{{item.InventoryDesr}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"form-row\">\r\n                      <div class=\"form-group col-md-8 offset-md-2\">\r\n                        <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!formFilter.valid\">Load</button>\r\n                      </div>\r\n                    </div>\r\n                  </form>\r\n                </div>\r\n              </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div *ngIf=\"!isLoaded\">\r\n  <h2 class=\"display-6 text-center\" (click)=\"LoadAgain()\" >Inventory Register Of {{projectheader}}</h2>\r\n\r\n  <table class=\"table table-hover\">\r\n      <thead class=\"thead-dark\">\r\n          <tr>\r\n            <th>ReceiptNbr</th>\r\n            <th>ReceiptDate</th>\r\n            <th>ProjectName</th>\r\n            <th>WarehouseName</th>\r\n            <th>InventoryDesr</th>\r\n            <th>Qty</th>\r\n            <th>UnitCost</th>\r\n            <th>ExtCost</th>\r\n          </tr>\r\n      </thead>\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"isLoaded\">\r\n  <app-menus></app-menus>\r\n  <div class=\"container\">\r\n    <div class=\"col-md-8 offset-md-2\">\r\n        <div class=\"jumbotron\">\r\n            <h1 class=\"display-6 text-center\">Inventory Register</h1>\r\n            <hr>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                  <form [formGroup]=\"formFilter\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                    <div class=\"form-group\">\r\n                      <label>Project</label>\r\n                      <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                        <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                      </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                      <label>Tran.Type</label>\r\n                      <select class=\"form-control\" formControlName=\"TranType\">\r\n                        <option value=\"0\">-Select-</option>\r\n                        <option value=\"Receipt\" >Receipt</option>\r\n                        <option value=\"Issue\" >Issue</option>\r\n                        <option value=\"Adjust\" >Adjust</option>\r\n                      </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Warehouse</label>\r\n                        <select class=\"form-control\" formControlName=\"WarehouseId\">\r\n                          <option value=\"0\">-Select Warehouse-</option>\r\n                          <option *ngFor=\"let item of warehouseList\" value=\"{{item.WarehouseId}}\">{{item.WarehouseName}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Inventory</label>\r\n                        <select class=\"form-control\" formControlName=\"InventoryId\">\r\n                          <option value=\"0\">\r\n                            -Select Inventory-\r\n                          </option>\r\n                          <option *ngFor=\"let item of inventoryList\" value=\"{{item.InventoryId}}\">{{item.InventoryDesr}}</option>\r\n                        </select>\r\n                    </div>\r\n                    <div class=\"form-row\">\r\n                      <div class=\"form-group col-md-8 offset-md-2\">\r\n                        <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!formFilter.valid\">Load</button>\r\n                      </div>\r\n                    </div>\r\n                  </form>\r\n                </div>\r\n              </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div *ngIf=\"!isLoaded\">\r\n  <input type=\"button\" value=\"Print\" class=\"btn float-left\" (click)=\"captureScreen()\"/> \r\n  <input type=\"button\" value=\"Back\" class=\"btn float-left\" (click)=\"LoadAgain()\"/> \r\n</div> \r\n<div id=\"contentToConvert\" *ngIf=\"!isLoaded\">\r\n  <h2 class=\"display-6 text-center\">Inventory Register Of {{projectheader}}</h2>\r\n\r\n  <table class=\"table table-hover\">\r\n      <thead class=\"thead-dark\">\r\n          <tr>\r\n            <th>RefNbr</th>\r\n            <th>Tran.Type</th>\r\n            <th>ReceiptDate</th>\r\n            <th>ProjectName</th>\r\n            <th>WarehouseName</th>\r\n            <th>InventoryDesr</th>\r\n            <th>Reason</th>\r\n            <th>Qty</th>\r\n            <th>UnitCost</th>\r\n            <th>ExtCost</th>\r\n          </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let item of inRegisterList\">\r\n        <td>{{item.ReceiptNbr}}</td>\r\n        <td>{{item.TranType}}</td>\r\n        <td>{{item.ReceiptDate | date}}</td>\r\n        <td>{{item.ProjectName}}</td>\r\n        <td>{{item.WarehouseName}}</td>\r\n        <td>{{item.InventoryDesr}}</td>\r\n        <td>{{item.Reason}}</td>\r\n        <td>{{item.Qty}}</td>\r\n        <td>{{item.UnitCost}}</td>\r\n        <td>{{item.ExtCost}}</td>\r\n      </tr>\r\n      <tr class=\"bg-success\">\r\n        <td></td>\r\n        <td></td>\r\n        <td></td>\r\n        <td></td>\r\n        <td></td>\r\n        <td></td>\r\n        <td>Total:</td>\r\n        <td>{{getTotalQty()}}</td>\r\n        <td>{{getTotalUnitCost()}}</td>\r\n        <td>{{getTotalExtCost()}}</td>\r\n      </tr>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -7573,6 +7912,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/inventory.service */ "./src/app/shared/inventory.service.ts");
 /* harmony import */ var src_app_shared_warehouse_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/warehouse.service */ "./src/app/shared/warehouse.service.ts");
 /* harmony import */ var src_app_shared_receipt_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/receipt.service */ "./src/app/shared/receipt.service.ts");
+/* harmony import */ var src_app_shared_jspdf_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/shared/jspdf.service */ "./src/app/shared/jspdf.service.ts");
+
 
 
 
@@ -7581,9 +7922,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var InregisterComponent = /** @class */ (function () {
-    function InregisterComponent(service, inventoryService, warehouseService, receiptService, fb) {
+    function InregisterComponent(service, inventoryService, jspdfService, warehouseService, receiptService, fb) {
         this.service = service;
         this.inventoryService = inventoryService;
+        this.jspdfService = jspdfService;
         this.warehouseService = warehouseService;
         this.receiptService = receiptService;
         this.fb = fb;
@@ -7599,6 +7941,7 @@ var InregisterComponent = /** @class */ (function () {
         var _this = this;
         this.service.getActiveProject().then(function (res) { return _this.projectList = res; });
         this.inventoryService.getInventory().then(function (res) { return _this.inventoryList = res; });
+        this.inRegisterList = [];
     };
     InregisterComponent.prototype.onChangeProject = function (item) {
         var _this = this;
@@ -7606,10 +7949,22 @@ var InregisterComponent = /** @class */ (function () {
         this.projectheader = text;
         this.warehouseService.getWarehouseByProjectId(item.target.value).then(function (res) { return _this.warehouseList = res; });
     };
+    InregisterComponent.prototype.getTotalQty = function () {
+        return this.inRegisterList.map(function (t) { return t.Qty; }).reduce(function (acc, value) { return acc + value; }, 0);
+    };
+    InregisterComponent.prototype.getTotalUnitCost = function () {
+        return this.inRegisterList.map(function (t) { return t.UnitCost; }).reduce(function (acc, value) { return acc + value; }, 0);
+    };
+    InregisterComponent.prototype.getTotalExtCost = function () {
+        return this.inRegisterList.map(function (t) { return t.ExtCost; }).reduce(function (acc, value) { return acc + value; }, 0);
+    };
     InregisterComponent.prototype.onSubmit = function () {
         var _this = this;
         this.isLoaded = false;
         this.receiptService.getReceiptByProjectdetail(this.formFilter.value.ProjectId, this.formFilter.value.TranType, this.formFilter.value.WarehouseId, this.formFilter.value.InventoryId).then(function (res) { return _this.inRegisterList = res; });
+    };
+    InregisterComponent.prototype.captureScreen = function () {
+        this.jspdfService.captureScreen();
     };
     InregisterComponent.prototype.LoadAgain = function () {
         this.isLoaded = true;
@@ -7620,7 +7975,7 @@ var InregisterComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./inregister.component.html */ "./src/app/visual-data/inregister/inregister.component.html"),
             styles: [__webpack_require__(/*! ./inregister.component.css */ "./src/app/visual-data/inregister/inregister.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_2__["ProjectService"], src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_4__["InventoryService"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_2__["ProjectService"], src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_4__["InventoryService"], src_app_shared_jspdf_service__WEBPACK_IMPORTED_MODULE_7__["JspdfService"],
             src_app_shared_warehouse_service__WEBPACK_IMPORTED_MODULE_5__["WarehouseService"], src_app_shared_receipt_service__WEBPACK_IMPORTED_MODULE_6__["ReceiptService"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]])
     ], InregisterComponent);
     return InregisterComponent;
@@ -7648,7 +8003,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isLoaded\">\r\n  <app-menus></app-menus>\r\n  <div class=\"container\">\r\n    <div class=\"col-md-8 offset-md-2\">\r\n        <div class=\"jumbotron\">\r\n            <h1 class=\"display-6 text-center\">Daily Project Performance</h1>\r\n            <hr>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <form [formGroup]=\"service.formDaily\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                      <div class=\"form-group\">\r\n                        <label>Project</label>\r\n                        <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                          <option value=\"0\">-Select-</option>\r\n                          <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                        <label>Standard Animal</label>\r\n                        <select class=\"form-control\" formControlName=\"StdAnimalId\" required>\r\n                          <option value=\"0\">-Select-</option>\r\n                          <option *ngFor=\"let item of filterItemsOfType('ANIMAL')\" value=\"{{item.StandardNameId}}\">{{item.Standard}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                        <label>Standard Feed</label>\r\n                        <select class=\"form-control\" formControlName=\"StdFeedId\" required>\r\n                          <option value=\"0\">-Select-</option>\r\n                          <option *ngFor=\"let item of filterItemsOfType('FEED')\" value=\"{{item.StandardNameId}}\">{{item.Standard}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"form-row\">\r\n                        <div class=\"form-group col-md-8 offset-md-2\">\r\n                          <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formDaily.valid\">Load</button>\r\n                        </div>\r\n                      </div>\r\n                    </form>\r\n                </div>\r\n              </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div *ngIf=\"!isLoaded\">\r\n  <h2 class=\"display-6 text-center\" (click)=\"LoadAgain()\" >Daily Performance Of {{projectheader}}</h2>\r\n  <mat-list>\r\n    <mat-list-item>Total Dead:{{getTotalDead()}} | Total Feed: {{getTotalFeed()}} | Total Qty Sold:{{getTotalQtySold()}} | Total Weight Sold: {{getTotalWeightSold()}} | Total Amount: {{getTotalAmount()}} | FCR: {{getFCR()}}</mat-list-item>\r\n    <mat-divider></mat-divider>\r\n  </mat-list>\r\n  <table class=\"table table-hover\">\r\n    <thead class=\"thead-dark\">\r\n        <tr>\r\n          <th>Daily Date</th>\r\n          <th>#Day</th>\r\n          <th>#Dead</th>\r\n          <th>Acual Feed</th>\r\n          <th>Standard Feed</th>\r\n          <th>Acual Weight</th>\r\n          <th>Standard Animal</th>\r\n          <th>Qty Sold</th>\r\n          <th>Amount</th>\r\n        </tr>\r\n    </thead>\r\n    <tr *ngFor=\"let pd of dailyList\">\r\n      <td >{{pd.DailyDate | date}}</td>\r\n      <td >{{pd.NumberOfDay}}</td>\r\n      <td >{{pd.AnimalDead}}</td>\r\n      <td >{{pd.AcualFeed}}</td>\r\n      <td >{{pd.ResultOfDayFeed}}</td>\r\n      <td>{{pd.AcualAnimalWeight}}</td>\r\n      <td >{{pd.ResultOfDayAnimal}}</td>\r\n      <td>{{pd.QtySale}}</td>\r\n      <td>{{pd.ExtAmount}}</td>\r\n    </tr>\r\n  </table>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"isLoaded\">\r\n  <app-menus></app-menus>\r\n  <div class=\"container\">\r\n    <div class=\"col-md-8 offset-md-2\">\r\n        <div class=\"jumbotron\">\r\n            <h1 class=\"display-6 text-center\">Daily Project Performance</h1>\r\n            <hr>\r\n            <div class=\"row\">\r\n                <div class=\"col-md-12\">\r\n                    <form [formGroup]=\"service.formDaily\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                      <div class=\"form-group\">\r\n                        <label>Project</label>\r\n                        <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                          <option value=\"0\">-Select-</option>\r\n                          <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                        <label>Standard Animal</label>\r\n                        <select class=\"form-control\" formControlName=\"StdAnimalId\" required>\r\n                          <option value=\"0\">-Select-</option>\r\n                          <option *ngFor=\"let item of filterItemsOfType('ANIMAL')\" value=\"{{item.StandardNameId}}\">{{item.Standard}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"form-group\">\r\n                        <label>Standard Feed</label>\r\n                        <select class=\"form-control\" formControlName=\"StdFeedId\" required>\r\n                          <option value=\"0\">-Select-</option>\r\n                          <option *ngFor=\"let item of filterItemsOfType('FEED')\" value=\"{{item.StandardNameId}}\">{{item.Standard}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"form-row\">\r\n                        <div class=\"form-group col-md-8 offset-md-2\">\r\n                          <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formDaily.valid\">Load</button>\r\n                        </div>\r\n                      </div>\r\n                    </form>\r\n                </div>\r\n              </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div *ngIf=\"!isLoaded\">\r\n  <input type=\"button\" value=\"Print\" class=\"btn float-left\" (click)=\"captureScreen()\"/> \r\n  <input type=\"button\" value=\"Back\" class=\"btn float-left\" (click)=\"LoadAgain()\"/> \r\n</div> \r\n<div id=\"contentToConvert\" *ngIf=\"!isLoaded\">\r\n  <h2 class=\"display-6 text-center\">Daily Performance Of {{projectheader}}</h2>\r\n  <mat-list>\r\n    <mat-list-item>Total Dead:{{getTotalDead()}} | Total Feed: {{getTotalFeed()}} | Total Qty Sold:{{getTotalQtySold()}} | Total Weight Sold: {{getTotalWeightSold()}} | Total Amount: {{getTotalAmount()}} | FCR: {{getFCR()}}</mat-list-item>\r\n    <mat-divider></mat-divider>\r\n  </mat-list>\r\n  <table class=\"table table-hover\">\r\n    <thead class=\"thead-dark\">\r\n        <tr>\r\n          <th>Daily Date</th>\r\n          <th>#Day</th>\r\n          <th>#Dead</th>\r\n          <th>Acual Feed</th>\r\n          <th>Standard Feed</th>\r\n          <th>Acual Weight</th>\r\n          <th>Standard Animal</th>\r\n          <th>Qty Sold</th>\r\n          <th>Amount</th>\r\n        </tr>\r\n    </thead>\r\n    <tr *ngFor=\"let pd of dailyList\">\r\n      <td >{{pd.DailyDate | date}}</td>\r\n      <td >{{pd.NumberOfDay}}</td>\r\n      <td >{{pd.AnimalDead}}</td>\r\n      <td >{{pd.AcualFeed}}</td>\r\n      <td >{{pd.ResultOfDayFeed}}</td>\r\n      <td>{{pd.AcualAnimalWeight}}</td>\r\n      <td >{{pd.ResultOfDayAnimal}}</td>\r\n      <td>{{pd.QtySale}}</td>\r\n      <td>{{pd.ExtAmount}}</td>\r\n    </tr>\r\n  </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -7666,15 +8021,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/project.service */ "./src/app/shared/project.service.ts");
 /* harmony import */ var src_app_shared_standardname_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/standardname.service */ "./src/app/shared/standardname.service.ts");
+/* harmony import */ var src_app_shared_jspdf_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/jspdf.service */ "./src/app/shared/jspdf.service.ts");
+
 
 
 
 
 var ProjectdailyComponent = /** @class */ (function () {
     //displayedColumns: string[] = ['DailyDate', 'NumberOfDay','AnimalDead','AcualFeed','ResultOfDayFeed','AcualAnimalWeight','ResultOfDayAnimal','QtySale','ExtAmount'];
-    function ProjectdailyComponent(service, stdService) {
+    function ProjectdailyComponent(service, stdService, jspdfService) {
         this.service = service;
         this.stdService = stdService;
+        this.jspdfService = jspdfService;
         this.isLoaded = true;
     }
     ProjectdailyComponent.prototype.ngOnInit = function () {
@@ -7720,6 +8078,9 @@ var ProjectdailyComponent = /** @class */ (function () {
         this.isLoaded = false;
         this.service.getDailyProject(this.service.formDaily.value.ProjectId, this.service.formDaily.value.StdFeedId, this.service.formDaily.value.StdAnimalId).then(function (res) { return _this.dailyList = res; });
     };
+    ProjectdailyComponent.prototype.captureScreen = function () {
+        this.jspdfService.captureScreen();
+    };
     ProjectdailyComponent.prototype.LoadAgain = function () {
         this.isLoaded = true;
     };
@@ -7729,7 +8090,7 @@ var ProjectdailyComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./projectdaily.component.html */ "./src/app/visual-data/projectdaily/projectdaily.component.html"),
             styles: [__webpack_require__(/*! ./projectdaily.component.css */ "./src/app/visual-data/projectdaily/projectdaily.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_2__["ProjectService"], src_app_shared_standardname_service__WEBPACK_IMPORTED_MODULE_3__["StandardnameService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_2__["ProjectService"], src_app_shared_standardname_service__WEBPACK_IMPORTED_MODULE_3__["StandardnameService"], src_app_shared_jspdf_service__WEBPACK_IMPORTED_MODULE_4__["JspdfService"]])
     ], ProjectdailyComponent);
     return ProjectdailyComponent;
 }());
@@ -7756,7 +8117,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"isLoaded\">\r\n    <app-menus></app-menus>\r\n    <div class=\"container\">\r\n      <div class=\"col-md-8 offset-md-2\">\r\n          <div class=\"jumbotron\">\r\n              <h1 class=\"display-6 text-center\">Project Inventory Status</h1>\r\n              <hr>\r\n              <div class=\"row\">\r\n                  <div class=\"col-md-12\">\r\n                      <form [formGroup]=\"service.formInsiteFilter\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                        <div class=\"form-group\">\r\n                          <label>Project</label>\r\n                          <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                            <option value=\"0\">-Select-</option>\r\n                            <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                          <label>Inventory</label>\r\n                          <select class=\"form-control\" formControlName=\"InventoryId\" required>\r\n                            <option value=\"0\">-Select-</option>\r\n                            <option *ngFor=\"let item of inventoryList\" value=\"{{item.InventoryId}}\">{{item.InventoryDesr}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                          <div class=\"form-group col-md-8 offset-md-2\">\r\n                            <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formInsiteFilter.valid\">Load</button>\r\n                          </div>\r\n                        </div>\r\n                      </form>\r\n                  </div>\r\n                </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"!isLoaded\">\r\n    <h2 class=\"display-6 text-center\" (click)=\"LoadAgain()\" >Status Of {{projectheader}}</h2>\r\n    <table class=\"table table-hover\">\r\n      <thead class=\"thead-dark\">\r\n          <tr>\r\n            <th>Warehouse</th>\r\n            <th>Inventory</th>\r\n            <th>On Hand</th>\r\n            <th>Issue</th>\r\n            <th>Receipt</th>\r\n            <th>Adjust</th>\r\n            <th>S.Unit</th>\r\n            <th>S.Kg</th>\r\n            <th>I.Cost</th>\r\n            <th>R.Cost</th>\r\n            <th>A.Cost</th>\r\n            <th>A.USD</th>\r\n            <th>A.KHR</th>\r\n          </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let pd of insiteList\">\r\n        <td >{{pd.WarehouseName}}</td>\r\n        <td >{{pd.InventoryDesc}}</td>\r\n        <td >{{pd.QtyOnHand}}</td>\r\n        <td >{{pd.QtyIssue}}</td>\r\n        <td >{{pd.QtyReceipt}}</td>\r\n        <td>{{pd.QtyAdjust}}</td>\r\n        <td >{{pd.QtySaleByUnit}}</td>\r\n        <td>{{pd.QtySaleByKg}}</td>\r\n        <td>{{pd.IssueCost}}</td>\r\n        <td>{{pd.ReceiptCost}}</td>\r\n        <td>{{pd.AdjustCost}}</td>\r\n        <td>{{pd.SaleAmount}}</td>\r\n        <td>{{pd.SaleAmountKhr}}</td>\r\n      </tr>\r\n      <tr class=\"bg-success\">\r\n          <td >------</td>\r\n          <td >Total:</td>\r\n          <td >{{getTotalQtyOnHand()}}</td>\r\n          <td >{{getTotalQtyIssue()}}</td>\r\n          <td >{{getTotalQtyReceipt()}}</td>\r\n          <td>{{getTotalQtyAdjust()}}</td>\r\n          <td>{{getTotalQtySaleByUnit()}}</td>\r\n          <td>{{getTotalQtySaleByKg()}}</td>\r\n          <td>{{getTotalIssueCost()}}</td>\r\n          <td>{{getTotalReceiptCost()}}</td>\r\n          <td>{{getTotalAdjustCost()}}</td>\r\n          <td>{{getTotalSaleAmount()}}</td>\r\n          <td>{{getTotalSaleAmountKhr()}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  "
+module.exports = "<div *ngIf=\"isLoaded\">\r\n    <app-menus></app-menus>\r\n    <div class=\"container\">\r\n      <div class=\"col-md-8 offset-md-2\">\r\n          <div class=\"jumbotron\">\r\n              <h1 class=\"display-6 text-center\">Project Inventory Status</h1>\r\n              <hr>\r\n              <div class=\"row\">\r\n                  <div class=\"col-md-12\">\r\n                      <form [formGroup]=\"service.formInsiteFilter\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n                        <div class=\"form-group\">\r\n                          <label>Project</label>\r\n                          <select class=\"form-control\" formControlName=\"ProjectId\" required (change)=\"onChangeProject($event)\">\r\n                            <option value=\"0\">-Select-</option>\r\n                            <option *ngFor=\"let item of projectList\" value=\"{{item.ProjectId}}\">{{item.ProjectName}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                          <label>Inventory</label>\r\n                          <select class=\"form-control\" formControlName=\"InventoryId\" required>\r\n                            <option value=\"0\">-Select-</option>\r\n                            <option *ngFor=\"let item of inventoryList\" value=\"{{item.InventoryId}}\">{{item.InventoryDesr}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"form-row\">\r\n                          <div class=\"form-group col-md-8 offset-md-2\">\r\n                            <button type=\"submit\" class=\"btn btn-lg btn-block\" [disabled]=\"!service.formInsiteFilter.valid\">Load</button>\r\n                          </div>\r\n                        </div>\r\n                      </form>\r\n                  </div>\r\n                </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"!isLoaded\">\r\n    <input type=\"button\" value=\"Print\" class=\"btn float-left\" (click)=\"captureScreen()\"/> \r\n    <input type=\"button\" value=\"Back\" class=\"btn float-left\" (click)=\"LoadAgain()\"/> \r\n  </div>\r\n  <div id=\"contentToConvert\" *ngIf=\"!isLoaded\">\r\n    <h2 class=\"display-6 text-center\">Status Of {{projectheader}}</h2>\r\n    <table class=\"table table-hover\">\r\n      <thead class=\"thead-dark\">\r\n          <tr>\r\n            <th>Warehouse</th>\r\n            <th>Inventory</th>\r\n            <th>On Hand</th>\r\n            <th>Issue</th>\r\n            <th>Receipt</th>\r\n            <th>Adjust</th>\r\n            <th>S.Unit</th>\r\n            <th>S.Kg</th>\r\n            <th>I.Cost</th>\r\n            <th>R.Cost</th>\r\n            <th>A.Cost</th>\r\n            <th>A.USD</th>\r\n            <th>A.KHR</th>\r\n          </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let pd of insiteList\">\r\n        <td >{{pd.WarehouseName}}</td>\r\n        <td >{{pd.InventoryDesc}}</td>\r\n        <td >{{pd.QtyOnHand}}</td>\r\n        <td >{{pd.QtyIssue}}</td>\r\n        <td >{{pd.QtyReceipt}}</td>\r\n        <td>{{pd.QtyAdjust}}</td>\r\n        <td >{{pd.QtySaleByUnit}}</td>\r\n        <td>{{pd.QtySaleByKg}}</td>\r\n        <td>{{pd.IssueCost}}</td>\r\n        <td>{{pd.ReceiptCost}}</td>\r\n        <td>{{pd.AdjustCost}}</td>\r\n        <td>{{pd.SaleAmount}}</td>\r\n        <td>{{pd.SaleAmountKhr}}</td>\r\n      </tr>\r\n      <tr class=\"bg-success\">\r\n          <td >------</td>\r\n          <td >Total:</td>\r\n          <td >{{getTotalQtyOnHand()}}</td>\r\n          <td >{{getTotalQtyIssue()}}</td>\r\n          <td >{{getTotalQtyReceipt()}}</td>\r\n          <td>{{getTotalQtyAdjust()}}</td>\r\n          <td>{{getTotalQtySaleByUnit()}}</td>\r\n          <td>{{getTotalQtySaleByKg()}}</td>\r\n          <td>{{getTotalIssueCost()}}</td>\r\n          <td>{{getTotalReceiptCost()}}</td>\r\n          <td>{{getTotalAdjustCost()}}</td>\r\n          <td>{{getTotalSaleAmount()}}</td>\r\n          <td>{{getTotalSaleAmountKhr()}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -7775,16 +8136,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_insitestatus_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/insitestatus.service */ "./src/app/shared/insitestatus.service.ts");
 /* harmony import */ var src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/project.service */ "./src/app/shared/project.service.ts");
 /* harmony import */ var src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/inventory.service */ "./src/app/shared/inventory.service.ts");
+/* harmony import */ var src_app_shared_jspdf_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/jspdf.service */ "./src/app/shared/jspdf.service.ts");
+
 
 
 
 
 
 var ProjectstatusComponent = /** @class */ (function () {
-    function ProjectstatusComponent(service, projectService, inventoryService) {
+    function ProjectstatusComponent(service, projectService, inventoryService, jspdfService) {
         this.service = service;
         this.projectService = projectService;
         this.inventoryService = inventoryService;
+        this.jspdfService = jspdfService;
         this.isLoaded = true;
     }
     ProjectstatusComponent.prototype.ngOnInit = function () {
@@ -7802,6 +8166,9 @@ var ProjectstatusComponent = /** @class */ (function () {
         var _this = this;
         this.isLoaded = false;
         this.service.getInsiteStatusByProjectInventory(this.service.formInsiteFilter.value.ProjectId, this.service.formInsiteFilter.value.InventoryId).then(function (res) { return _this.insiteList = res; });
+    };
+    ProjectstatusComponent.prototype.captureScreen = function () {
+        this.jspdfService.captureScreen();
     };
     ProjectstatusComponent.prototype.getTotalQtyOnHand = function () {
         return this.insiteList.map(function (t) { return t.QtyOnHand; }).reduce(function (acc, value) { return acc + value; }, 0);
@@ -7845,7 +8212,8 @@ var ProjectstatusComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./projectstatus.component.html */ "./src/app/visual-data/projectstatus/projectstatus.component.html"),
             styles: [__webpack_require__(/*! ./projectstatus.component.css */ "./src/app/visual-data/projectstatus/projectstatus.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_insitestatus_service__WEBPACK_IMPORTED_MODULE_2__["InsitestatusService"], src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_3__["ProjectService"], src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_4__["InventoryService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_insitestatus_service__WEBPACK_IMPORTED_MODULE_2__["InsitestatusService"], src_app_shared_project_service__WEBPACK_IMPORTED_MODULE_3__["ProjectService"],
+            src_app_shared_inventory_service__WEBPACK_IMPORTED_MODULE_4__["InventoryService"], src_app_shared_jspdf_service__WEBPACK_IMPORTED_MODULE_5__["JspdfService"]])
     ], ProjectstatusComponent);
     return ProjectstatusComponent;
 }());
@@ -8411,7 +8779,9 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    apiURL: 'http://localhost:2394/api'
+    apiURL: 'http://localhost:2394/api',
+    format: 'yyyy-MM-dd',
+    locale: 'en-US'
 };
 /*
  * For easier debugging in development mode, you can import the following file

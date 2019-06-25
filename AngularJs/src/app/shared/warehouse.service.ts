@@ -28,6 +28,11 @@ export class WarehouseService {
     
   }
 
+  getWarehouseById(id:number){
+    return this.http.get(environment.apiURL + "/Warehouses/" + id).toPromise();
+    
+  }
+
   getAllWarehouse(){
     return this.http.get(environment.apiURL + "/Warehouses/All").toPromise();
     

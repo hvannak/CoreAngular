@@ -17,6 +17,18 @@ export class CustomerService {
     return this.http.get(environment.apiURL+'/Customers').toPromise();
    }
 
+  getCustomerByName(name:string){
+    return this.http.get(environment.apiURL+'/Customers/Name/' + name).toPromise();
+  }
+
+  getCustomerById(id:number){
+    return this.http.get(environment.apiURL+'/Customers/' + id).toPromise();
+  }
+
+  getCustomerByLast(last:number){
+    return this.http.get(environment.apiURL+'/Customers/Last/' + last).toPromise();
+  }
+
    postCustomersDetail(){
     return this.http.post(environment.apiURL + "/Customers", this.formData)
   }

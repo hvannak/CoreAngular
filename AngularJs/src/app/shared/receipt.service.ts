@@ -49,8 +49,8 @@ export class ReceiptService {
     return this.http.get(environment.apiURL + '/Receipts/'+id).toPromise();
   }
 
-  getReceiptByProjectdetail(projectId:number,tran:string,warehouseId:number,inventoryId:number){
-    return this.http.get(environment.apiURL + '/Receipts/ReceiptByProjectdetail/'+projectId+"/" + tran + "/" + warehouseId + "/" + inventoryId).toPromise();
+  getReceiptByProjectdetail(projectId:number,tran:string,warehouseId:number,inventoryId:number,categoryId:number){
+    return this.http.get(environment.apiURL + '/Receipts/ReceiptByProjectdetail/'+projectId+"/" + tran + "/" + warehouseId + "/" + inventoryId + "/" + categoryId).toPromise();
   }
 
   getReceiptByDate(from:Date,to:Date){

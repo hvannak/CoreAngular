@@ -31,8 +31,23 @@ export class InventoryService {
     return this.http.get(environment.apiURL + "/Inventorys").toPromise();
   }
 
+  getInventoryById(id:number){
+    return this.http.get(environment.apiURL + "/Inventorys/" + id).toPromise();
+  }
+
+  getInventoryByName(name:string){
+    return this.http.get(environment.apiURL + "/Inventorys/Name/" + name).toPromise();
+  }
+
+  getInventoryByLast(last:number){
+    return this.http.get(environment.apiURL + "/Inventorys/Last/" + last).toPromise();
+  }
+
   getInventoryAnimal(){
     return this.http.get(environment.apiURL + "/Inventorys/Category/ANIMAL").toPromise();
   }
 
+  getInventoryByCategory(category:string){
+    return this.http.get(environment.apiURL + "/Inventorys/Category/" + category).toPromise();
+  }
 }

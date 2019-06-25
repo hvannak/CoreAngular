@@ -27,7 +27,7 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<Inventorys> GetInventorys()
         {
-            return _context.Inventorys;
+            return _context.Inventorys.Take(300);
         }
 
         // GET: api/Inventorys/5
@@ -46,6 +46,22 @@ namespace AngularJsCore.Controllers
                 return NotFound();
             }
 
+            return Ok(inventorys);
+        }
+
+        // GET: api/Inventorys/5
+        [HttpGet("Last/{last}")]
+        public async Task<IActionResult> GetInventorysByLast(int last)
+        {
+            var inventorys = await _context.Inventorys.Where(x => x.InventoryId > last && x.InventoryId <= last + 100).ToListAsync();
+            return Ok(inventorys);
+        }
+
+        // GET: api/Inventorys/5
+        [HttpGet("Name/{name}")]
+        public async Task<IActionResult> GetInventorysByName(string name)
+        {
+            var inventorys = await _context.Inventorys.Where(x => x.InventoryDesr.ToLower().Contains(name.ToLower())).ToListAsync();
             return Ok(inventorys);
         }
 
