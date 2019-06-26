@@ -4,6 +4,7 @@ import { Saleinvoice } from 'src/app/shared/saleinvoice.model';
 import { SaleinvoiceService } from 'src/app/shared/saleinvoice.service';
 import { formatDate } from '@angular/common';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-saleinvoice-syn',
@@ -18,7 +19,7 @@ export class SaleinvoiceSynComponent implements OnInit {
   invoiceList: MatTableDataSource<Saleinvoice>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private service: SaleinvoiceService) { }
+  constructor(private service: SaleinvoiceService,private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getInvoiceList();
@@ -45,8 +46,28 @@ export class SaleinvoiceSynComponent implements OnInit {
   }
 
   onInvoiceSync(item){
-    this.service.syncInvoice(item);
+    if(item.Release == 1){
+      if(item.IsSyn != 1){
+      this.service.syncInvoice(item).then((res:any) =>{
+        if(res == "500"){
+          this.toastr.error("Internal Server Error");
+        }
+        else{
+          let index = this.invoiceList.data.findIndex(x=>x.SaleInvoiceId == item.SaleInvoiceId);
+          this.invoiceList.data[index].IsSyn = 1;
+          this.invoiceList._updateChangeSubscription();
+          this.toastr.info(item.InvoiceNbr + " Sync Successfully", "Invoice Sync.");
+        }
+      });
+    }
+    else{
+      this.toastr.warning(item.InvoiceNbr + " Cannot Sync", "Invoice Sync.");
+    }
   }
+  else{
+    this.toastr.warning(item.InvoiceNbr + " Please Complete First", "Invoice Sync.");
+  }
+}
 
   applyFilter(filterValue: string) {
     this.invoiceList.filter = filterValue.trim().toLowerCase();
@@ -55,4 +76,5 @@ export class SaleinvoiceSynComponent implements OnInit {
       this.invoiceList.paginator.firstPage();
     }
   }
+
 }

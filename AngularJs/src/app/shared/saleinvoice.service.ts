@@ -29,6 +29,7 @@ export class SaleinvoiceService {
     TotalWeight:['',Validators.required],
     TotalAmount:['',Validators.required],
     Release:[''],
+    IsSyn:[''],
     DeletedInvoiceLineIDs:['']
   });
 
@@ -74,7 +75,7 @@ export class SaleinvoiceService {
   }
 
   syncInvoice(item){
-    return this.http.post(environment.apiURL + '/SaleInvoice', item);
+    return this.http.post(environment.apiURL + '/SaleInvoice/Sync', item).toPromise();
   }
 
   deleteInvoice(id:number) {

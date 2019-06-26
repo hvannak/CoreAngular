@@ -28,7 +28,7 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<Customers> Getcustomers()
         {
-            return _context.customers.Take(1);
+            return _context.customers.Take(300);
         }
 
         // GET: api/Customers/5
@@ -51,7 +51,7 @@ namespace AngularJsCore.Controllers
         [HttpGet("Last/{last}")]
         public async Task<IActionResult> GetCustomersByLast(int last)
         {
-            var customers = await _context.customers.Where(x => x.CustomerId > last && x.CustomerId <= last + 1).ToListAsync();
+            var customers = await _context.customers.Where(x => x.CustomerId > last && x.CustomerId <= last + 100).ToListAsync();
             return Ok(customers);
         }
 

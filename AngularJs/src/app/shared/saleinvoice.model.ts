@@ -13,5 +13,6 @@ export class Saleinvoice {
     TotalWeight:number;
     TotalAmount:number;
     Release:number;
+    IsSyn:number;
     DeletedInvoiceLineIDs:string;
 }

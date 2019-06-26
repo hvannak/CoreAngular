@@ -34,6 +34,7 @@ export class SaleinvoiceHeaderComponent implements OnInit {
       this.service.formInvoice.patchValue({
         SaleInvoiceId:0,
         Release:0,
+        IsSyn:0,
         InvoiceNbr:'NEW'
       });
       this.service.invoiceLine = [];
@@ -62,6 +63,7 @@ export class SaleinvoiceHeaderComponent implements OnInit {
           TotalWeight:res.invoice['TotalWeight'],
           TotalAmount:res.invoice['TotalAmount'],
           Release:res.invoice['Release'],
+          IsSyn:res.invoice['IsSyn'],
           DeletedInvoiceLineIDs:''
         });
         if(this.service.formInvoice.value.Release == 1){

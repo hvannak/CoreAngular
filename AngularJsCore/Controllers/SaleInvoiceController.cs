@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AngularJsCore.Models;
 using Microsoft.AspNetCore.Authorization;
+using MEDIVETGROUP.Services;
+using System.Text;
+using Microsoft.Extensions.Options;
 
 namespace AngularJsCore.Controllers
 {
@@ -17,9 +20,11 @@ namespace AngularJsCore.Controllers
     public class SaleInvoiceController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public SaleInvoiceController(ApplicationDbContext context)
+        private readonly ApplicationSettings _appSettings;
+        public SaleInvoiceController(ApplicationDbContext context, IOptions<ApplicationSettings> appSettings)
         {
             _context = context;
+            _appSettings = appSettings.Value;
         }
 
         // GET: api/SaleInvoice
@@ -43,26 +48,11 @@ namespace AngularJsCore.Controllers
                                   x.ProjectId,
                                   x.ProjectName,
                                   x.Release,
+                                  x.IsSyn,
                                   x.TotalQty,
                                   x.TotalWeight,
                                   x.TotalAmount
                               }).OrderByDescending(x => x.SaleInvoiceId).Take(300);
-            //var result = _context.saleInvoices.Select(x => new
-            //{
-            //    x.SaleInvoiceId,
-            //    x.CustomerId,
-            //    x.CustomerName,
-            //    x.Description,
-            //    x.DocDate,
-            //    x.Currency,
-            //    x.InvoiceNbr,
-            //    x.ProjectId,
-            //    x.ProjectName,
-            //    x.Release,
-            //    x.TotalQty,
-            //    x.TotalWeight,
-            //    x.TotalAmount
-            //}).Take(300).ToList();
             return result;
         }
 
@@ -83,6 +73,7 @@ namespace AngularJsCore.Controllers
                 x.ProjectId,
                 x.ProjectName,
                 x.Release,
+                x.IsSyn,
                 x.TotalQty,
                 x.TotalWeight,
                 x.TotalAmount
@@ -123,6 +114,7 @@ namespace AngularJsCore.Controllers
                                ProjectId = x.ProjectId,
                                ProjectName = x.ProjectName,
                                Release = x.Release,
+                               IsSyn = x.IsSyn,
                                TotalQty = x.TotalQty,
                                TotalWeight = x.TotalWeight,
                                TotalAmount = x.TotalAmount
@@ -208,8 +200,35 @@ namespace AngularJsCore.Controllers
         //POST: api/SaleInvoice/Sync
         public async Task<Object> SyncInvoices(SaleInvoice saleInvoice)
         {
+            try
+            {
+                var customer = _context.customers.Find(saleInvoice.CustomerId);
+                AcumaticaRestService acumaticaRestService = new AcumaticaRestService(_appSettings.AcumaticaBaseUrl, _appSettings.UserName, _appSettings.Password, _appSettings.Company, _appSettings.Branch);
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.Append("{");
+                stringBuilder.Append("\"Customer\"").Append(":").Append("{value :").Append("\"").Append(customer.CustomerCD).Append("\"").Append("},");
+                stringBuilder.Append("\"Description\"").Append(":").Append("{value :").Append("\"").Append(saleInvoice.InvoiceNbr).Append("-Qty")
+                    .Append(saleInvoice.TotalQty).Append("-Weight").Append(saleInvoice.TotalWeight).Append("\"").Append("},");
+                stringBuilder.Append("\"Amount\"").Append(":").Append("{value :").Append(saleInvoice.TotalAmount).Append("},");
+                stringBuilder.Append("\"Hold\"").Append(":").Append("{value :").Append("\"false\"").Append("},");
+                stringBuilder.Append("\"Details\":[{");
+                stringBuilder.Append("\"TransactionDescription\"").Append(":").Append("{value :").Append("\"").Append(saleInvoice.InvoiceNbr).Append("-Qty")
+                    .Append(saleInvoice.TotalQty).Append("-Weight").Append(saleInvoice.TotalWeight).Append("\"").Append("},");
+                stringBuilder.Append("\"ExtendedPrice\"").Append(":").Append("{value :").Append(saleInvoice.TotalAmount).Append("},");
+                stringBuilder.Append("}]");
+                stringBuilder.Append("}");
+                string entitySource = stringBuilder.ToString();
+                string invoice = acumaticaRestService.Put("Invoice", null, entitySource);
+                saleInvoice.IsSyn = 1;
+                _context.Entry(saleInvoice).Property("IsSyn").IsModified = true;
+                await _context.SaveChangesAsync();
+                return Ok(invoice);
+            }
+            catch(Exception ex)
+            {
+                return Ok("500");
+            }
 
-            return null;
         }
 
         private void HandleInSiteStatus(SaleInvoice saleInvoice, SaleInvoiceLine item)
