@@ -74,8 +74,8 @@ export class SaleinvoiceService {
     return this.http.put(environment.apiURL + '/SaleInvoice/' + this.formInvoice.value.SaleInvoiceId, body);
   }
 
-  syncInvoice(item){
-    return this.http.post(environment.apiURL + '/SaleInvoice/Sync', item).toPromise();
+  syncInvoice(item,branch){
+    return this.http.put(environment.apiURL + '/SaleInvoice/Sync/' + branch, item).toPromise();
   }
 
   deleteInvoice(id:number) {

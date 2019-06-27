@@ -22,7 +22,7 @@ export class UploadComponent implements OnInit {
       this.service.formModel.reset();
       this.service.formModel.patchValue({
         FileId:0,
-        ModuleId:'IN',
+        ModuleId: this.data.module,
         OperationId:this.data.ReceiptId
       });
     }
@@ -30,7 +30,6 @@ export class UploadComponent implements OnInit {
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
-    console.log(this.fileToUpload)
     //Show image preview
     var reader = new FileReader();
     reader.onload = (event:any) => {

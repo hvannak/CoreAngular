@@ -2,10 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SaleinvoiceService } from '../shared/saleinvoice.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort, MatDialog, MatDialogConfig } from '@angular/material';
 import { Saleinvoice } from '../shared/saleinvoice.model';
 import { formatDate } from '@angular/common';
 import { environment } from 'src/environments/environment';
+import { UploadComponent } from '../upload/upload.component';
+import { ViewuploadComponent } from '../upload/viewupload/viewupload.component';
 
 @Component({
   selector: 'app-saleinvoice',
@@ -16,16 +18,41 @@ export class SaleinvoiceComponent implements OnInit {
 
   fromDate:Date;
   toDate:Date;
-  displayedColumns: string[] = ['InvoiceNbr','CustomerName','ProjectName', 'Description','Currency','DocDate','TotalQty','TotalAmount','Delete'];
+  displayedColumns: string[] = ['InvoiceNbr','CustomerName','ProjectName', 'Description','Currency','DocDate','TotalQty','TotalAmount','Delete','Upload','ViewUpload'];
   invoiceList: MatTableDataSource<Saleinvoice>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   constructor(private service: SaleinvoiceService,
-    private router: Router,
+    private router: Router,private dialog: MatDialog,
     private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getInvoiceList();
+  }
+
+  AddUploadFile(ReceiptId){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = "50%";
+    const module = "AR";
+    dialogConfig.data = { ReceiptId, module};
+    this.dialog.open(UploadComponent, dialogConfig).afterClosed().subscribe(res => {
+      console.log('done');
+    });
+  }
+
+  viewUploadFile(ReceiptId){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = "50%";
+    dialogConfig.height = "100%";
+    const module = "AR";
+    dialogConfig.data = { ReceiptId,module };
+    this.dialog.open(ViewuploadComponent, dialogConfig).afterClosed().subscribe(res => {
+      console.log('done');
+    });
   }
 
   getInvoiceList(){

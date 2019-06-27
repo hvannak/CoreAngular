@@ -48,17 +48,20 @@ export class SaleinvoiceSynComponent implements OnInit {
   onInvoiceSync(item){
     if(item.Release == 1){
       if(item.IsSyn != 1){
-      this.service.syncInvoice(item).then((res:any) =>{
-        if(res == "500"){
-          this.toastr.error("Internal Server Error");
-        }
-        else{
-          let index = this.invoiceList.data.findIndex(x=>x.SaleInvoiceId == item.SaleInvoiceId);
-          this.invoiceList.data[index].IsSyn = 1;
-          this.invoiceList._updateChangeSubscription();
-          this.toastr.info(item.InvoiceNbr + " Sync Successfully", "Invoice Sync.");
-        }
-      });
+      var branch = document.getElementById('branchId') as HTMLInputElement;
+      if(branch.value != ''){
+        this.service.syncInvoice(item,branch.value).then((res:any) =>{
+          if(res == "500"){
+            this.toastr.error("Internal Server Error");
+          }
+          else{
+            let index = this.invoiceList.data.findIndex(x=>x.SaleInvoiceId == item.SaleInvoiceId);
+            this.invoiceList.data[index].IsSyn = 1;
+            this.invoiceList._updateChangeSubscription();
+            this.toastr.info(item.InvoiceNbr + " Sync Successfully", "Invoice Sync.");
+          }
+        });
+      }
     }
     else{
       this.toastr.warning(item.InvoiceNbr + " Cannot Sync", "Invoice Sync.");

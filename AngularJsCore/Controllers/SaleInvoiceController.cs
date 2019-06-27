@@ -195,15 +195,15 @@ namespace AngularJsCore.Controllers
             return Ok(invoice);
         }
 
-        [HttpPost]
-        [Route("Sync")]
+        [HttpPut]
+        [Route("Sync/{branch}")]
         //POST: api/SaleInvoice/Sync
-        public async Task<Object> SyncInvoices(SaleInvoice saleInvoice)
+        public async Task<Object> SyncInvoices(string branch , SaleInvoice saleInvoice)
         {
             try
             {
                 var customer = _context.customers.Find(saleInvoice.CustomerId);
-                AcumaticaRestService acumaticaRestService = new AcumaticaRestService(_appSettings.AcumaticaBaseUrl, _appSettings.UserName, _appSettings.Password, _appSettings.Company, _appSettings.Branch);
+                AcumaticaRestService acumaticaRestService = new AcumaticaRestService(_appSettings.AcumaticaBaseUrl, _appSettings.UserName, _appSettings.Password, _appSettings.Company, branch);
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.Append("{");
                 stringBuilder.Append("\"Customer\"").Append(":").Append("{value :").Append("\"").Append(customer.CustomerCD).Append("\"").Append("},");

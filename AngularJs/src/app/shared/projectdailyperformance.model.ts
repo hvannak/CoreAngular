@@ -7,6 +7,7 @@ export class Projectdailyperformance {
     AcualAnimalWeight:number;
     ResultOfDayAnimal:number;
     QtySale:number;
+    WeightSale:number;
     ExtAmount:number;
 }
 

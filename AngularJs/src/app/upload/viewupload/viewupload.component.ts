@@ -18,7 +18,7 @@ export class ViewuploadComponent implements OnInit {
 
   ngOnInit() {
     if(this.data.ReceiptId != null){
-      this.service.getFile(this.data.ReceiptId,"IN").then(res => {
+      this.service.getFile(this.data.ReceiptId,this.data.module).then(res => {
         this.fileList = res as Fileupload[];
       });
     }

@@ -37,7 +37,8 @@ export class ReceiptComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = "50%";
-    dialogConfig.data = { ReceiptId };
+    const module = "IN";
+    dialogConfig.data = { ReceiptId,module };
     this.dialog.open(UploadComponent, dialogConfig).afterClosed().subscribe(res => {
       console.log('done');
     });
@@ -49,7 +50,8 @@ export class ReceiptComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = "50%";
     dialogConfig.height = "100%";
-    dialogConfig.data = { ReceiptId };
+    const module = "IN";
+    dialogConfig.data = { ReceiptId,module };
     this.dialog.open(ViewuploadComponent, dialogConfig).afterClosed().subscribe(res => {
       console.log('done');
     });

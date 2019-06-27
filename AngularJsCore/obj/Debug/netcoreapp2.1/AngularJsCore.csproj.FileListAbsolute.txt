@@ -69,4 +69,3 @@ C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcor
 C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\MEDIVETGROUP.pdb
 C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\MEDIVETGROUP.Properties.Resources.resources
 C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csproj.GenerateResource.cache
-C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache

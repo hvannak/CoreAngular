@@ -50,7 +50,7 @@ export class ProjectdailyComponent implements OnInit {
   }
 
   getTotalWeightSold() {
-    return this.dailyList.map(t => t.AcualAnimalWeight).reduce((acc, value) => acc + value, 0);
+    return this.dailyList.map(t => t.WeightSale).reduce((acc, value) => acc + value, 0);
   }
 
   getTotalAmount() {

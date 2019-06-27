@@ -26,6 +26,18 @@
             <mat-form-field>
               <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
             </mat-form-field>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Sync Branch:</span>
+              </div>
+              <select id="branchId" class="form-control">
+                <option value="MF001">PIG FARM</option>
+                <option value="MF002">BROILER FARM</option>
+                <option value="MF003">LAYER FARM</option>
+                <option value="MF004">BREEDER FARM</option>
+                <option value="MF005">TNM FARM</option>
+              </select>
+            </div>
         </div>         
       </div>  
       <table class="table table-hover" mat-table [dataSource]="invoiceList" matSort>

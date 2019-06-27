@@ -102,12 +102,14 @@ namespace AngularJsCore.Controllers
                     x.DocDate,
                     x.ProjectId,
                     y.Qty,
+                    y.Weight,
                     y.ExtAmount
                 }).Where(z => z.ProjectId == projectId).GroupBy(k=>k.DocDate).Select( kz => new
                 {
                     kz.FirstOrDefault().DocDate,
                     Qty = kz.Sum(x=>x.Qty),
-                    ExtAmount = kz.Sum(x=>x.ExtAmount)
+                    ExtAmount = kz.Sum(x=>x.ExtAmount),
+                    Weight = kz.Sum(x=>x.Weight)
                 });
 
                 var projectstandard = (from x in projectDailies
@@ -133,6 +135,7 @@ namespace AngularJsCore.Controllers
                                                  AcualFeed = tf != null ? tf.Qty : null,
                                                  AnimalDead = ta != null ? ta.Qty : null,
                                                  QtySale = ts != null ? ts.Qty : null,
+                                                 WeightSale = ts != null ? ts.Weight : null,
                                                  ExtAmount = ts != null ? ts.ExtAmount : null,
                                                  x.DailyDate
                                              }).ToList();
