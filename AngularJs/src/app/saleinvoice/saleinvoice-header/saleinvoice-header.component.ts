@@ -20,9 +20,9 @@ export class SaleinvoiceHeaderComponent implements OnInit {
   deleteInvoiceLine:string;
   customerList: Customer[];
   projectList;
-  constructor(private service:SaleinvoiceService,private router: Router,private currentRoute: ActivatedRoute,
+  constructor(public service:SaleinvoiceService,private router: Router,private currentRoute: ActivatedRoute,
     private toastr: ToastrService,private dialog: MatDialog,
-    private projectService:ProjectService,private customerService:CustomerService) { }
+    public projectService:ProjectService,public customerService:CustomerService) { }
 
   ngOnInit() {
     let invoiceId = this.currentRoute.snapshot.paramMap.get('id');

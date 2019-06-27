@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon></ApplicationIcon>
     <AssemblyName>MEDIVETGROUP</AssemblyName>
     <RootNamespace>MEDIVETGROUP</RootNamespace>
   </PropertyGroup>

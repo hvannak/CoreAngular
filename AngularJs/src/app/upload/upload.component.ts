@@ -13,7 +13,7 @@ export class UploadComponent implements OnInit {
 
   imageUrl: string = "/assets/img/default-image.png";
   fileToUpload: File = null;
-  constructor(private service:UploadService,private toastr: ToastrService,@Inject(MAT_DIALOG_DATA) public data,
+  constructor(public service:UploadService,private toastr: ToastrService,@Inject(MAT_DIALOG_DATA) public data,
   public dialogRef: MatDialogRef<UploadComponent>) { }
 
   ngOnInit() {

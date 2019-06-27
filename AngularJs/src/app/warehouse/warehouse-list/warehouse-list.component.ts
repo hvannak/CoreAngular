@@ -28,6 +28,14 @@ export class WarehouseListComponent implements OnInit {
     this.service.formData = Object.assign({},pd);
  }
 
+ applyFilter(filterValue: string) {
+  this.service.list.filter = filterValue.trim().toLowerCase();
+
+  if (this.service.list.paginator) {
+    this.service.list.paginator.firstPage();
+  }
+}
+
  onDelete(PMId){
    if(confirm('Are you sure to delete this record?')){
      this.service.DeleteWarehousesDetail(PMId).subscribe(

@@ -18,7 +18,7 @@ import { environment } from 'src/environments/environment';
 export class ReceiptHeaderComponent implements OnInit {
 
   deleteReceiptLine:string;
-  constructor(private service:ReceiptService,private router: Router,private currentRoute: ActivatedRoute,
+  constructor(public service:ReceiptService,private router: Router,private currentRoute: ActivatedRoute,
     private toastr: ToastrService,private dialog: MatDialog,private inventoryService:InventoryService,
     private projectService:ProjectService) { }
 

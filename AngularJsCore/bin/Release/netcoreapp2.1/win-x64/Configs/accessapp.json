@@ -1,0 +1,166 @@
+[
+  {
+    "Id": ":Access",
+    "Name": "Access",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Access:Get",
+        "Name": "Get",
+        "DisplayName": null,
+        "ControllerId": ":Access"
+      },
+      {
+        "Id": ":Access:Post",
+        "Name": "Post",
+        "DisplayName": null,
+        "ControllerId": ":Access"
+      },
+      {
+        "Id": ":Access:Put",
+        "Name": "Put",
+        "DisplayName": null,
+        "ControllerId": ":Access"
+      },
+      {
+        "Id": ":Access:Delete",
+        "Name": "Delete",
+        "DisplayName": null,
+        "ControllerId": ":Access"
+      }
+    ]
+  },
+  {
+    "Id": ":ApplicationRole",
+    "Name": "ApplicationRole",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":ApplicationRole:Get",
+        "Name": "Get",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationRole"
+      },
+      {
+        "Id": ":ApplicationRole:Post",
+        "Name": "Post",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationRole"
+      },
+      {
+        "Id": ":ApplicationRole:Put",
+        "Name": "Put",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationRole"
+      },
+      {
+        "Id": ":ApplicationRole:Delete",
+        "Name": "Delete",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationRole"
+      }
+    ]
+  },
+  {
+    "Id": ":ApplicationUser",
+    "Name": "ApplicationUser",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":ApplicationUser:PostApplicationUser",
+        "Name": "PostApplicationUser",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationUser"
+      },
+      {
+        "Id": ":ApplicationUser:Login",
+        "Name": "Login",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationUser"
+      }
+    ]
+  },
+  {
+    "Id": ":CtlDiscovery",
+    "Name": "CtlDiscovery",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":CtlDiscovery:GetCtlvalue",
+        "Name": "GetCtlvalue",
+        "DisplayName": null,
+        "ControllerId": ":CtlDiscovery"
+      }
+    ]
+  },
+  {
+    "Id": ":CtlTreeview",
+    "Name": "CtlTreeview",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":CtlTreeview:GetCtlTreeview",
+        "Name": "GetCtlTreeview",
+        "DisplayName": null,
+        "ControllerId": ":CtlTreeview"
+      }
+    ]
+  },
+  {
+    "Id": ":UserProfile",
+    "Name": "UserProfile",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":UserProfile:GetUserProfile",
+        "Name": "GetUserProfile",
+        "DisplayName": null,
+        "ControllerId": ":UserProfile"
+      }
+    ]
+  },
+  {
+    "Id": ":Customers",
+    "Name": "Customers",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Customers:Getcustomers",
+        "Name": "Getcustomers",
+        "DisplayName": null,
+        "ControllerId": ":Customers"
+      },
+      {
+        "Id": ":Customers:GetCustomers",
+        "Name": "GetCustomers",
+        "DisplayName": null,
+        "ControllerId": ":Customers"
+      },
+      {
+        "Id": ":Customers:PutCustomers",
+        "Name": "PutCustomers",
+        "DisplayName": null,
+        "ControllerId": ":Customers"
+      },
+      {
+        "Id": ":Customers:PostCustomers",
+        "Name": "PostCustomers",
+        "DisplayName": null,
+        "ControllerId": ":Customers"
+      },
+      {
+        "Id": ":Customers:DeleteCustomers",
+        "Name": "DeleteCustomers",
+        "DisplayName": null,
+        "ControllerId": ":Customers"
+      }
+    ]
+  }
+]

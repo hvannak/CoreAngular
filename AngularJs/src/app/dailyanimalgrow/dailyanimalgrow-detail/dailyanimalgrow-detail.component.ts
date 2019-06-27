@@ -19,8 +19,8 @@ export class DailyanimalgrowDetailComponent implements OnInit {
   projectList;
   warehouseList;
   inventoryList;
-  constructor(private service:DailyanimalgrowService,private toastr: ToastrService,private projectService:ProjectService,
-    private warehouseService:WarehouseService,private inventoryService:InventoryService) { }
+  constructor(public service:DailyanimalgrowService,private toastr: ToastrService,public projectService:ProjectService,
+    public warehouseService:WarehouseService,public inventoryService:InventoryService) { }
 
   ngOnInit() {
     this.getActiveProject();

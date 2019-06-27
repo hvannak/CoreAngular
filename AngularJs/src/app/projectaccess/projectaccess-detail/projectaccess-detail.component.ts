@@ -15,8 +15,8 @@ export class ProjectaccessDetailComponent implements OnInit {
   projectList;
   userprojectChange=[];
   projectId;
-  constructor(private service:ProjectaccessService,private userService:UserService,
-    private toastr:ToastrService,private projectService:ProjectService) { }
+  constructor(public service:ProjectaccessService,public userService:UserService,
+    private toastr:ToastrService,public projectService:ProjectService) { }
 
   ngOnInit() {
     this.getUsers();

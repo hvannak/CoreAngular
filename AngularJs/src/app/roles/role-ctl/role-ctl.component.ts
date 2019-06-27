@@ -15,7 +15,7 @@ export class RoleCtlComponent implements OnInit {
   displayedColumns: string[] = ['Name','Delete'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private service: RoleService,
+  constructor(public service: RoleService,
     private router: Router,
     private toastr: ToastrService) { }
 

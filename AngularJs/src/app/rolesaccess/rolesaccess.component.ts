@@ -22,7 +22,7 @@ export class RolesaccessComponent implements OnInit {
   actionInfo:Actioninfo[];
   actionInfoAdded:Actioninfo[];
   actionInfoAsign:Actioninfo[];
-  constructor(public service:RoleService,private serviceCtl:RoleCtlService,
+  constructor(public service:RoleService,public serviceCtl:RoleCtlService,
     private toastr:ToastrService) { }
 
   ngOnInit() {

@@ -20,9 +20,9 @@ export class ReceiptLineComponent implements OnInit {
   inventoryList;
   categoryList;
   constructor(@Inject(MAT_DIALOG_DATA) public data,
-  public dialogRef: MatDialogRef<ReceiptLineComponent>,private service:ReceiptService,
-  private projectService:ProjectService,private warehouseService:WarehouseService,private categoryService:CategoryService,
-  private inventoryService:InventoryService,private insiteStatusService:InsitestatusService) { }
+  public dialogRef: MatDialogRef<ReceiptLineComponent>,public service:ReceiptService,
+  public projectService:ProjectService,public warehouseService:WarehouseService,public categoryService:CategoryService,
+  public inventoryService:InventoryService,public insiteStatusService:InsitestatusService) { }
 
   ngOnInit() {
     this.getActiveProject();
@@ -37,7 +37,6 @@ export class ReceiptLineComponent implements OnInit {
       });
     }
     else{
-      console.log(this.service.receiptLine[this.data.receiptLineIndex].WarehouseId);
       this.warehouseService.getWarehouseById(this.service.receiptLine[this.data.receiptLineIndex].WarehouseId).then(res => {
         this.warehouseList.push(res);
       });

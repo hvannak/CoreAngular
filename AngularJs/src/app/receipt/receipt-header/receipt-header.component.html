@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-12">
       <form [formGroup]="service.formReceipt" autocomplete="off" (submit)="onSubmit()">
-        <input type="hidden" name="ReceiptId" [value]="service.formReceipt.ReceiptId">
+        <input type="hidden" formControlName="ReceiptId">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -58,7 +58,7 @@
               <th>UnitCost</th>
               <th>ExtCost</th>
               <th>
-                <a class="btn btn-sm btn-success text-white" (click)="AddOrEditReceiptLine(null,service.formReceipt.ReceiptId)"><i class="fa fa-plus"></i> Add Item</a>
+                <a class="btn btn-sm btn-success text-white" (click)="AddOrEditReceiptLine(null,service.formReceipt.get('ReceiptId').value)"><i class="fa fa-plus"></i> Add Item</a>
               </th>
             </thead>
             <tbody>
@@ -76,7 +76,7 @@
                 <td>{{item.UnitCost}}</td>
                 <td>{{item.ExtCost}}</td>
                 <td>
-                  <a class="btn btn-sm btn-info text-white" (click)="AddOrEditReceiptLine(i,service.formReceipt.ReceiptId)"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-sm btn-info text-white" (click)="AddOrEditReceiptLine(i,service.formReceipt.get('ReceiptId').value)"><i class="fas fa-pencil-alt"></i></a>
                   <a class="btn btn-sm btn-danger text-white ml-1" (click)="onDeleteReceiptLine(item.ReceiptLineId,i)"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>

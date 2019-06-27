@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-12">
       <form [formGroup]="service.formInvoice" autocomplete="off" (submit)="onSubmit()">
-        <input type="hidden" name="SaleInvoiceId" [value]="service.formInvoice.SaleInvoiceId">
+        <input type="hidden" formControlName="SaleInvoiceId">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group required">
@@ -40,13 +40,6 @@
                     </select>
                   </div>
               </div>
-              <!-- <div class="form-group">
-                <label>Customer</label>
-                <select class="form-control" formControlName="CustomerId" required (change)="onChangeCustomer($event)" >
-                  <option value="0">-Select-</option>
-                  <option *ngFor="let item of customerList" value="{{item.CustomerId}}">{{item.CustomerName}}</option>
-                </select>
-              </div> -->
               <div class="form-group">
                 <label>Project</label>
                 <select class="form-control" formControlName="ProjectId" required (change)="onChangeProject($event)">
@@ -103,7 +96,7 @@
               <th>Unitprice</th>
               <th>ExtAmount</th>
               <th>
-                <a class="btn btn-sm btn-success text-white" (click)="AddOrEditInvoiceLine(null,service.formInvoice.SaleInvoiceId)"><i class="fa fa-plus"></i> Add Item</a>
+                <a class="btn btn-sm btn-success text-white" (click)="AddOrEditInvoiceLine(null,service.formInvoice.get('SaleInvoiceId').value)"><i class="fa fa-plus"></i> Add Item</a>
               </th>
             </thead>
             <tbody>
@@ -121,7 +114,7 @@
                 <td>{{item.Unitprice}}</td>
                 <td>{{item.ExtAmount}}</td>
                 <td>
-                  <a class="btn btn-sm btn-info text-white" (click)="AddOrEditInvoiceLine(i,service.formInvoice.SaleInvoiceId)"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-sm btn-info text-white" (click)="AddOrEditInvoiceLine(i,service.formInvoice.get('SaleInvoiceId').value)"><i class="fas fa-pencil-alt"></i></a>
                   <a class="btn btn-sm btn-danger text-white ml-1" (click)="onDeleteInvoiceLine(item.SaleInvoiceLineId,i)"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>

@@ -15,3 +15,23 @@ D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\Angul
 D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.pdb
 D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\wwwroot\favicon.ico
 D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\wwwroot\index.html
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.exe
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\wwwroot\favicon.ico
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\wwwroot\index.html
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\Configs\accessapp.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.deps.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.runtimeconfig.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.runtimeconfig.dev.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.dll
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.pdb
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.csprojAssemblyReference.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.Properties.Resources.resources
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.csproj.GenerateResource.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.csproj.CoreCompileInputs.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.RazorAssemblyInfo.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.RazorAssemblyInfo.cs
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.AssemblyInfoInputs.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.AssemblyInfo.cs
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\AngularJsCore.RazorTargetAssemblyInfo.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.dll
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Release\netcoreapp2.1\win-x64\MEDIVETGROUP.pdb

@@ -15,8 +15,8 @@ export class WarehouseacessDetailComponent implements OnInit {
   warehouseList;
   userwarehouseChange=[];
   warehouseId;
-  constructor(private service:WarehouseaccessService,private userService:UserService,
-    private toastr:ToastrService,private warehouseService:WarehouseService) { }
+  constructor(public service:WarehouseaccessService,public userService:UserService,
+    private toastr:ToastrService,public warehouseService:WarehouseService) { }
 
   ngOnInit() {
     this.getUsers();

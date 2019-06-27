@@ -14,8 +14,8 @@ export class SaleinvoiceLineComponent implements OnInit {
   warehouseList;
   inventoryList;
   constructor(@Inject(MAT_DIALOG_DATA) public data,
-  public dialogRef: MatDialogRef<SaleinvoiceLineComponent>,private service:SaleinvoiceService,
-  private warehouseService:WarehouseService,private inventoryService:InventoryService) { }
+  public dialogRef: MatDialogRef<SaleinvoiceLineComponent>,public service:SaleinvoiceService,
+  public warehouseService:WarehouseService,public inventoryService:InventoryService) { }
 
   ngOnInit() {
     this.inventoryService.getInventoryAnimal().then(res => this.inventoryList = res);
@@ -64,13 +64,13 @@ export class SaleinvoiceLineComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.data.receiptLineIndex == null){
+    if(this.data.invoiceLineIndex == null){
       //add
       this.service.invoiceLine.push(this.service.formInvoiceLine.value);
     }
     else{
       //edit
-      this.service.invoiceLine[this.data.receiptLineIndex] = this.service.formInvoiceLine.value;
+      this.service.invoiceLine[this.data.invoiceLineIndex] = this.service.formInvoiceLine.value;
     }
     this.dialogRef.close();
   }

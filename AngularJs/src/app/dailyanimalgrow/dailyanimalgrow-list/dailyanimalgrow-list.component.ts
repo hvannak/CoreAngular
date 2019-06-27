@@ -15,7 +15,7 @@ export class DailyanimalgrowListComponent implements OnInit {
   displayedColumns: string[] = ['ProjectName','WarehouseName', 'InventoryDesc','DateGrow','Weight','Delete'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor(private service:DailyanimalgrowService,private toastr: ToastrService) { }
+  constructor(public service:DailyanimalgrowService,private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getDailyGrow();
