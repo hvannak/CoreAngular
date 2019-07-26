@@ -58,6 +58,7 @@ export class SaleinvoiceHeaderComponent implements OnInit {
           ProjectName:res.invoice['ProjectName'],
           DocDate:res.invoice['DocDate'],
           Currency:res.invoice['Currency'],
+          Types:res.invoice['Types'],
           Description:res.invoice['Description'],
           TotalQty:res.invoice['TotalQty'],
           TotalWeight:res.invoice['TotalWeight'],

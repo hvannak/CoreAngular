@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AngularJsCore.Data;
 using AngularJsCore.Models;
+using MEDIVETGROUP.Models;
 
 namespace AngularJsCore.Controllers
 {
@@ -59,6 +60,10 @@ namespace AngularJsCore.Controllers
         {
             //string userId = User.Claims.First(c => c.Type == "UserID").Value;
             var project = _context.projects.Where(x => x.ProjectId == projectId).FirstOrDefault();
+            var beginProject = _context.iNSiteStatuses.Where(x => x.ProjectId == projectId && x.Reason == "ANIMAL").GroupBy(x => x.ProjectId).Select(z => new
+            {
+                QtyBegin = z.Sum(k => k.QtyBegin)
+            }).FirstOrDefault();
             List<ProjectDaily> projectDailies = new List<ProjectDaily>();
             if (project != null)
             {
@@ -78,12 +83,14 @@ namespace AngularJsCore.Controllers
                 var standardFeeds = _context.standards.Where(x => x.StandardNameId == standardFeed);
                 var standardAnimals = _context.standards.Where(x => x.StandardNameId == standardAnimal);
                 var dailyAnimalGrow = _context.dailyAnimalGrow.Where(x => x.ProjectId == projectId);
+                var inSite = _context.iNSiteStatuses.Where(x => x.ProjectId == projectId);
                 var dailyIssue = _context.receipts.Join(_context.receiptLines, x => x.ReceiptId,
                                             y => y.ReceiptId, (x, y) => new
                                             {
                                                 x.ReceiptDate,
                                                 x.TranType,
                                                 y.ProjectId,
+                                                y.QtyInWeight,
                                                 y.Qty,
                                                 y.Reason
                                             }).Where(z => (z.TranType == "Issue" || z.TranType == "Adjust") && z.ProjectId == projectId && (z.Reason == "FEED" || z.Reason == "ANIMAL"));
@@ -95,22 +102,27 @@ namespace AngularJsCore.Controllers
                 var dailyIssue_Animal = dailyIssue.Where(x => x.Reason == "ANIMAL").GroupBy(zt => zt.ReceiptDate).Select(zr => new
                                                                             {
                                                                                 zr.FirstOrDefault().ReceiptDate,
-                                                                                Qty = zr.Sum(k => k.Qty)
+                                                                                Qty = zr.Sum(k => k.Qty),
+                                                                                QtyInWeight = zr.Sum(k=>k.QtyInWeight)
                                                                             });
-                var dailySale = _context.saleInvoices.Join(_context.saleInvoiceLines, x => x.SaleInvoiceId, y => y.SaleInvoiceId, (x, y) => new
+                var dailySaleGeneral = _context.saleInvoices.Join(_context.saleInvoiceLines, x => x.SaleInvoiceId, y => y.SaleInvoiceId, (x, y) => new
                 {
                     x.DocDate,
                     x.ProjectId,
+                    x.Types,
                     y.Qty,
                     y.Weight,
                     y.ExtAmount
-                }).Where(z => z.ProjectId == projectId).GroupBy(k=>k.DocDate).Select( kz => new
+                }).Where(z => z.ProjectId == projectId);
+
+                var dailySale = dailySaleGeneral.GroupBy(k=>k.DocDate ).Select( kz => new
                 {
                     kz.FirstOrDefault().DocDate,
                     Qty = kz.Sum(x=>x.Qty),
                     ExtAmount = kz.Sum(x=>x.ExtAmount),
                     Weight = kz.Sum(x=>x.Weight)
                 });
+
 
                 var projectstandard = (from x in projectDailies
                                              join y in standardAnimals on x.NumberOfDay equals y.NumberOfDay into yt
@@ -139,7 +151,28 @@ namespace AngularJsCore.Controllers
                                                  ExtAmount = ts != null ? ts.ExtAmount : null,
                                                  x.DailyDate
                                              }).ToList();
-                return Ok(projectstandard);
+                //Total Header
+                var totalsales = dailySaleGeneral.GroupBy(x => new { x.DocDate, x.Types }).Select(kz => new
+                {
+                    Types = kz.Select(z => z.Types).FirstOrDefault(),
+                    Qty = kz.Sum(x => x.Qty),
+                    Weight = kz.Sum(x => x.Weight),
+                    ExtAmount = kz.Sum(x => x.ExtAmount)
+                }).ToList();
+                ProjectPerformanceHeader projectPerformanceHeader = new ProjectPerformanceHeader();
+                projectPerformanceHeader.NormalSale = totalsales.Where(x => x.Types == "Normal").Select(x => x.Qty).FirstOrDefault();
+                projectPerformanceHeader.NormalSaleWeight = totalsales.Where(x => x.Types == "Normal").Select(x => x.Weight).FirstOrDefault();
+                projectPerformanceHeader.DeadSale = totalsales.Where(x => x.Types == "Dead").Select(x => x.Qty).FirstOrDefault();
+                projectPerformanceHeader.DeadSaleWeight = totalsales.Where(x => x.Types == "Dead").Select(x => x.Weight).FirstOrDefault();
+                projectPerformanceHeader.DisablitySale = totalsales.Where(x => x.Types == "Disability").Select(x => x.Qty).FirstOrDefault();
+                projectPerformanceHeader.DisablitySaleWeight = totalsales.Where(x => x.Types == "Disability").Select(x => x.Weight).FirstOrDefault();
+                projectPerformanceHeader.BeginProject = (beginProject == null) ? 0 : beginProject.QtyBegin;
+                projectPerformanceHeader.DeadIssue = dailyIssue_Animal.Sum(x => x.Qty);
+                projectPerformanceHeader.DeadIssueWeight = dailyIssue_Animal.Sum(x => x.QtyInWeight);
+                projectPerformanceHeader.Feeds = dailyIssue_Feed.Sum(x => x.Qty);
+                projectPerformanceHeader.Amount = totalsales.Sum(x => x.ExtAmount);
+                projectPerformanceHeader.FCR = dailyIssue_Feed.Sum(x => x.Qty) / totalsales.Sum(x => x.Weight);
+                return Ok(new { projectstandard, projectPerformanceHeader });
             }
 
             return Ok();

@@ -20,7 +20,9 @@ export class RolesaccessComponent implements OnInit {
   controllerInfo:Controllerinfo[];
   controllerInfoAdded:Controllerinfo[];
   actionInfo:Actioninfo[];
+  actionInfoFilter:Actioninfo[];
   actionInfoAdded:Actioninfo[];
+  actionInfoAddedFilter:Actioninfo[];
   actionInfoAsign:Actioninfo[];
   constructor(public service:RoleService,public serviceCtl:RoleCtlService,
     private toastr:ToastrService) { }
@@ -32,8 +34,12 @@ export class RolesaccessComponent implements OnInit {
     this.actionInfoAdded=[];
     this.actionInfoAsign=[];
     this.controllerInfoAdded=[];
+    this.actionInfoFilter=[];
+    this.actionInfoAddedFilter=[];
     this.getCtl();
     this.refreshList();
+    //Filter
+    this.actionInfoFilter = this.actionInfo;
   }
 
   getCtl(){
@@ -45,6 +51,24 @@ export class RolesaccessComponent implements OnInit {
         });
       });
     });
+  }
+
+  applyFunctionFilter(filterValue: string) {
+    if(filterValue != ''){
+      this.actionInfo = this.actionInfo.filter(x=>x.Id.toLowerCase().match(filterValue.toLowerCase()));
+    }
+    else{
+      this.actionInfo = this.actionInfoFilter;
+    }  
+  }
+
+  applyAccessFilter(filterValue: string) {
+    if(filterValue != ''){
+      this.actionInfoAdded = this.actionInfoAdded.filter(x=>x.Id.toLowerCase().match(filterValue.toLowerCase()));
+    }
+    else{
+      this.actionInfoAdded = this.actionInfoAddedFilter;
+    }  
   }
 
   refreshList() {
@@ -74,6 +98,8 @@ export class RolesaccessComponent implements OnInit {
             this.actionInfoAdded.push(actionval);
           }       
         }
+        this.actionInfoAddedFilter = this.actionInfoAdded;
+
       }
     })
   }

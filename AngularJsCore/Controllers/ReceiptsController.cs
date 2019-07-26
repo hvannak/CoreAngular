@@ -122,7 +122,7 @@ namespace AngularJsCore.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetReceipt([FromRoute] int id)
         {
-            var receipt = await _context.receipts.Where(x=>x.ReceiptId == id).Select(x=>new
+            var receipt = await _context.receipts.Where(x => x.ReceiptId == id).Select(x => new
             {
                 x.TranType,
                 x.ReceiptId,
@@ -137,6 +137,7 @@ namespace AngularJsCore.Controllers
             {
                 x.ReceiptId,
                 x.ReceiptLineId,
+                x.QtyInWeight,
                 x.Qty,
                 x.UnitCost,
                 x.ExtCost,
@@ -303,6 +304,7 @@ namespace AngularJsCore.Controllers
                         inSiteStatus.QtyOnHand = item.Qty;
                         inSiteStatus.LastCost = item.UnitCost;
                         inSiteStatus.QtyBegin = item.Qty;
+                        inSiteStatus.Reason = item.Reason;
                         if (receipt.TranType == "Receipt")
                         {
                             inSiteStatus.QtyReceipt = item.Qty;

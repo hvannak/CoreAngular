@@ -19,6 +19,7 @@ namespace AngularJsCore.Models
         public DateTime DocDate { get; set; }
         public string Currency { get; set; }
         public string Description { get; set; }
+        public string Types { get; set; }
         public decimal TotalQty { get; set; }
         public decimal TotalWeight { get; set; }
         public decimal TotalAmount { get; set; }

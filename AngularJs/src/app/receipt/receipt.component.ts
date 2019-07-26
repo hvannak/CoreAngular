@@ -99,7 +99,7 @@ export class ReceiptComponent implements OnInit {
         this.service.deleteReceipt(id).then(res => {
           let index = this.receiptList.data.findIndex(x=>x.ReceiptId == id);
           this.receiptList.data.splice(index,1);
-          //this.refreshList();
+          this.receiptList._updateChangeSubscription();
           this.toastr.warning("Deleted Successfully", "Receipt Register.");
         });
       }

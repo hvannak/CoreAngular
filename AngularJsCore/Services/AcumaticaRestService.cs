@@ -28,7 +28,7 @@ namespace MEDIVETGROUP.Services
                 })
             {
                 BaseAddress = new Uri(acumaticaBaseUrl +
-                  "/entity/Default/6.00.001/"),
+                  "/entity/DefaultExt/17.200.001/"),
                 DefaultRequestHeaders =
             {
                 Accept = {MediaTypeWithQualityHeaderValue.Parse("text/json")}
@@ -51,7 +51,7 @@ namespace MEDIVETGROUP.Services
         public string Put(string entityName, string parameters, string entity)
         {
             var res = _httpClient
-                .PutAsync(_acumaticaBaseUrl + "/entity/Default/17.200.001/" +
+                .PutAsync(_acumaticaBaseUrl + "/entity/DefaultExt/17.200.001/" +
                     entityName + "?" + parameters,
                     new StringContent(entity, Encoding.UTF8, "application/json"))
                 .Result
@@ -62,7 +62,9 @@ namespace MEDIVETGROUP.Services
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _httpClient.PostAsync(_acumaticaBaseUrl + "/entity/auth/logout",
+            new ByteArrayContent(new byte[0])).Wait();
+            _httpClient.Dispose();
         }
     }
 }

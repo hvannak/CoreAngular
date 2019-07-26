@@ -25,6 +25,7 @@ export class SaleinvoiceService {
     DocDate:['',Validators.required],
     Currency:['',Validators.required],
     Description:[''],
+    Types:[''],
     TotalQty:['',Validators.required],
     TotalWeight:['',Validators.required],
     TotalAmount:['',Validators.required],

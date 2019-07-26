@@ -15,6 +15,7 @@ export class ProjectdailyComponent implements OnInit {
   projectList;
   stdList:Standardname[];
   dailyList:Projectdailyperformance[];
+  projectPerformanceHeader;
   public isLoaded = true;
   projectheader;
   //displayedColumns: string[] = ['DailyDate', 'NumberOfDay','AnimalDead','AcualFeed','ResultOfDayFeed','AcualAnimalWeight','ResultOfDayAnimal','QtySale','ExtAmount'];
@@ -24,6 +25,7 @@ export class ProjectdailyComponent implements OnInit {
     this.service.formDaily.reset();
     this.stdList=[];
     this.dailyList=[];
+    this.projectPerformanceHeader=[];
     this.service.getActiveProject().then(res => this.projectList = res);
     this.stdService.getStandard().then(res => this.stdList = res as Standardname[]);
   }
@@ -37,38 +39,16 @@ export class ProjectdailyComponent implements OnInit {
     this.projectheader = text;
   }
 
-  getTotalDead() {
-    return this.dailyList.map(t => t.AnimalDead).reduce((acc, value) => acc + value, 0);
-  }
-
-  getTotalFeed() {
-    return this.dailyList.map(t => t.AcualFeed).reduce((acc, value) => acc + value, 0);
-  }
-
-  getTotalQtySold() {
-    return this.dailyList.map(t => t.QtySale).reduce((acc, value) => acc + value, 0);
-  }
-
-  getTotalWeightSold() {
-    return this.dailyList.map(t => t.WeightSale).reduce((acc, value) => acc + value, 0);
-  }
-
-  getTotalAmount() {
-    return this.dailyList.map(t => t.ExtAmount).reduce((acc, value) => acc + value, 0);
-  }
-
-  getFCR(){
-    let fcr = this.getTotalFeed() / this.getTotalWeightSold();
-    return fcr.toFixed(2);
-  }
-
   getDailyProject(projectId:number,standardFeed:number,standardAnimal:number){
     this.service.getDailyProject(projectId,standardFeed,standardAnimal).then(res => this.dailyList = res as Projectdailyperformance[] );
   }
 
   onSubmit(){
     this.isLoaded = false;
-    this.service.getDailyProject(this.service.formDaily.value.ProjectId,this.service.formDaily.value.StdFeedId,this.service.formDaily.value.StdAnimalId).then(res => this.dailyList = res as Projectdailyperformance[]);
+    this.service.getDailyProject(this.service.formDaily.value.ProjectId,this.service.formDaily.value.StdFeedId,this.service.formDaily.value.StdAnimalId).then((res:any) => {
+      this.dailyList = res.projectstandard as Projectdailyperformance[];
+      this.projectPerformanceHeader = res.projectPerformanceHeader;
+    });
   }
 
   captureScreen(){

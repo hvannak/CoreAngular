@@ -48,7 +48,7 @@
 <div id="contentToConvert" *ngIf="!isLoaded">
   <h2 class="display-6 text-center">Daily Performance Of {{projectheader}}</h2>
   <mat-list>
-    <mat-list-item>Total Dead:{{getTotalDead()}} | Total Feed: {{getTotalFeed()}} | Total Qty Sold:{{getTotalQtySold()}} | Total Weight Sold: {{getTotalWeightSold()}} | Total Amount: {{getTotalAmount()}} | FCR: {{getFCR()}}</mat-list-item>
+    <mat-list-item>Begin Project: {{projectPerformanceHeader.BeginProject}} |Qty Dead:{{projectPerformanceHeader.DeadIssue}} | Weight Dead:{{projectPerformanceHeader.DeadIssueWeight}} | Total Feed: {{projectPerformanceHeader.Feeds}} | Normal Sold:{{projectPerformanceHeader.NormalSale}} | Normal Weight Sold: {{projectPerformanceHeader.NormalSaleWeight}} | Dead Sold: {{projectPerformanceHeader.DeadSale}} | Dead Weight Sold: {{projectPerformanceHeader.DeadSaleWeight}} | Disability Sold: {{projectPerformanceHeader.DisablitySale}} | Disability Weight Sold: {{projectPerformanceHeader.DisablitySaleWeight}} | FCR: {{projectPerformanceHeader.FCR}}</mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
   <table class="table table-hover">

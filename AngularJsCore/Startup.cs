@@ -99,6 +99,7 @@ namespace AngularJsCore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider services)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -129,16 +130,16 @@ namespace AngularJsCore
             app.UseStaticFiles();
 
             app.UseMvc();
-
             CreateUserRoles(services).Wait();
         }
 
         private async Task CreateUserRoles(IServiceProvider serviceProvider)
         {
+            var AppContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
+            AppContext.Database.Migrate();
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-            var AppContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
-
+            
             IdentityResult roleResult;
             string path = AppDomain.CurrentDomain.BaseDirectory + "Configs\\accessapp.json";
             string acessfromfile = null;

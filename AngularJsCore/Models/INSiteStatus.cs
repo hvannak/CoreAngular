@@ -15,6 +15,7 @@ namespace AngularJsCore.Models
         public int WarehouseId { get; set; }
         public string WarehouseName { get; set; }
         public int InventoryId { get; set; }
+        public string Reason { get; set; }
         public string InventoryDesc { get; set; }
         public decimal? QtyOnHand { get; set; }
         public decimal? QtyBegin { get; set; }

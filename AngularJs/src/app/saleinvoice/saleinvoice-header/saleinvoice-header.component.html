@@ -24,7 +24,7 @@
                   <label>Currency</label>
                   <select class="form-control" formControlName="Currency" required>
                     <option value="KHR" >KHR</option>
-                    <option value="USD" >USD</option>
+                    <!-- <option value="USD" >USD</option> -->
                   </select>
               </div>
               <div class="form-group">
@@ -76,6 +76,14 @@
                       </mat-form-field>
                   </div>
               </div>
+            </div>
+            <div class="form-group required">
+              <label>Type</label>
+              <select class="form-control" formControlName="Types" required>
+                <option value="Normal">Normal</option>
+                <option value="Dead">Dead</option>
+                <option value="Disablity">Disablity</option>
+              </select>
             </div>
             <div class="form-group required">
               <label>Description</label>

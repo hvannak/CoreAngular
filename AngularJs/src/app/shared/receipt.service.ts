@@ -32,6 +32,7 @@ export class ReceiptService {
     ProjectId:['',Validators.required],
     ProjectName:[''],
     Qty:['',Validators.required],
+    QtyInWeight:['',Validators.required],
     UnitCost:['',Validators.required],
     ExtCost:['',Validators.required],
     WarehouseId:['',Validators.required],

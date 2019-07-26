@@ -3,6 +3,7 @@ export class ReceiptLine {
     ReceiptId:number;
     ProjectId:number;
     ProjectName:string;
+    QtyInWeight:number;
     Qty:number;
     ReceiptLineDate:Date;
     UnitCost:number;

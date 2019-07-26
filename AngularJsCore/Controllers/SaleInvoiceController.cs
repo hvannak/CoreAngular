@@ -21,6 +21,7 @@ namespace AngularJsCore.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly ApplicationSettings _appSettings;
+        private AcumaticaRestService _acumaticaRestService;
         public SaleInvoiceController(ApplicationDbContext context, IOptions<ApplicationSettings> appSettings)
         {
             _context = context;
@@ -69,6 +70,7 @@ namespace AngularJsCore.Controllers
                 x.TranType,
                 x.DocDate,
                 x.Currency,
+                x.Types,
                 x.InvoiceNbr,
                 x.ProjectId,
                 x.ProjectName,
@@ -203,7 +205,7 @@ namespace AngularJsCore.Controllers
             try
             {
                 var customer = _context.customers.Find(saleInvoice.CustomerId);
-                AcumaticaRestService acumaticaRestService = new AcumaticaRestService(_appSettings.AcumaticaBaseUrl, _appSettings.UserName, _appSettings.Password, _appSettings.Company, branch);
+                _acumaticaRestService = new AcumaticaRestService(_appSettings.AcumaticaBaseUrl, _appSettings.UserName, _appSettings.Password, _appSettings.Company, branch);
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.Append("{");
                 stringBuilder.Append("\"Customer\"").Append(":").Append("{value :").Append("\"").Append(customer.CustomerCD).Append("\"").Append("},");
@@ -211,14 +213,15 @@ namespace AngularJsCore.Controllers
                     .Append(saleInvoice.TotalQty).Append("-Weight").Append(saleInvoice.TotalWeight).Append("\"").Append("},");
                 stringBuilder.Append("\"Amount\"").Append(":").Append("{value :").Append(saleInvoice.TotalAmount).Append("},");
                 stringBuilder.Append("\"Hold\"").Append(":").Append("{value :").Append("\"false\"").Append("},");
+                //stringBuilder.Append("\"Currency\"").Append(":").Append("{value :").Append("\"").Append(saleInvoice.Currency).Append("\"").Append("},");
                 stringBuilder.Append("\"Details\":[{");
                 stringBuilder.Append("\"TransactionDescription\"").Append(":").Append("{value :").Append("\"").Append(saleInvoice.InvoiceNbr).Append("-Qty")
                     .Append(saleInvoice.TotalQty).Append("-Weight").Append(saleInvoice.TotalWeight).Append("\"").Append("},");
-                stringBuilder.Append("\"ExtendedPrice\"").Append(":").Append("{value :").Append(saleInvoice.TotalAmount).Append("},");
+                stringBuilder.Append("\"ExtendedPrice\"").Append(":").Append("{value :").Append(saleInvoice.TotalAmount).Append("}");
                 stringBuilder.Append("}]");
                 stringBuilder.Append("}");
                 string entitySource = stringBuilder.ToString();
-                string invoice = acumaticaRestService.Put("Invoice", null, entitySource);
+                string invoice = _acumaticaRestService.Put("Invoice", null, entitySource);
                 saleInvoice.IsSyn = 1;
                 _context.Entry(saleInvoice).Property("IsSyn").IsModified = true;
                 await _context.SaveChangesAsync();
@@ -227,6 +230,10 @@ namespace AngularJsCore.Controllers
             catch(Exception ex)
             {
                 return Ok("500");
+            }
+            finally
+            {
+                _acumaticaRestService.Dispose();
             }
 
         }

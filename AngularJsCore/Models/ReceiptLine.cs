@@ -14,6 +14,7 @@ namespace AngularJsCore.Models
         public string ProjectName { get; set; }
         public int InventoryId { get; set; }
         public string InventoryDesr { get; set; }
+        public decimal? QtyInWeight { get; set; }
         public decimal? Qty { get; set; }
         public DateTime ReceiptLineDate { get; set; }
         public decimal UnitCost { get; set; }

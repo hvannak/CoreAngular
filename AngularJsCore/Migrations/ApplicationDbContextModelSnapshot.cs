@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace AngularJsCore.Migrations
+namespace MEDIVETGROUP.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -15,7 +15,7 @@ namespace AngularJsCore.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -97,6 +97,10 @@ namespace AngularJsCore.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new { Id = "e14817f4-a0db-4d39-b260-bf889eed5c11", AccessFailedCount = 0, ConcurrencyStamp = "044819c0-35d1-4c1b-b932-c92ff86c2229", Email = "vannak2010@gmail.com", EmailConfirmed = false, FullName = "Vannak Heng", LockoutEnabled = false, NormalizedEmail = "vannak2010@gmail.com", NormalizedUserName = "vannak2010@gmail.com", PasswordHash = "AQAAAAEAACcQAAAAELJBSgZcx0bvVej9qoJz3FH7uR5pFMJ1fzv4cQEDNXaAfoRisrcGf/JOh2nwiTtO0w==", PhoneNumberConfirmed = false, SecurityStamp = "YABAAQWF7PIGT7E4PUKC7H7EI774FZCO", TwoFactorEnabled = false, UserName = "vannak2010@gmail.com" }
+                    );
                 });
 
             modelBuilder.Entity("AngularJsCore.Models.Category", b =>
@@ -218,6 +222,8 @@ namespace AngularJsCore.Migrations
                     b.Property<decimal?>("QtySaleByKg");
 
                     b.Property<decimal?>("QtySaleByUnit");
+
+                    b.Property<string>("Reason");
 
                     b.Property<decimal?>("ReceiptCost");
 
@@ -425,6 +431,8 @@ namespace AngularJsCore.Migrations
 
                     b.Property<decimal?>("Qty");
 
+                    b.Property<decimal?>("QtyInWeight");
+
                     b.Property<string>("Reason");
 
                     b.Property<int>("ReceiptId");
@@ -479,6 +487,8 @@ namespace AngularJsCore.Migrations
                     b.Property<decimal>("TotalWeight");
 
                     b.Property<string>("TranType");
+
+                    b.Property<string>("Types");
 
                     b.HasKey("SaleInvoiceId");
 

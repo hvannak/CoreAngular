@@ -1,48 +1,19 @@
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.deps.json
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.runtimeconfig.json
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.runtimeconfig.dev.json
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.dll
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.pdb
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csproj.CoreCompileInputs.cache
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cache
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cs
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfoInputs.cache
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfo.cs
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorTargetAssemblyInfo.cache
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.dll
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.pdb
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Debug\netcoreapp2.1\wwwroot\favicon.ico
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\bin\Debug\netcoreapp2.1\wwwroot\index.html
-D:\Mr.Vannak\AngularJsCore\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\wwwroot\favicon.ico
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\wwwroot\index.html
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.deps.json
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.runtimeconfig.json
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.runtimeconfig.dev.json
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.dll
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.pdb
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csproj.CoreCompileInputs.cache
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cache
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cs
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfoInputs.cache
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfo.cs
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorTargetAssemblyInfo.cache
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.dll
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.pdb
-D:\Mr.Vannak\CoreAngular\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.dll
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\wwwroot\favicon.ico
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\wwwroot\index.html
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.deps.json
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.runtimeconfig.json
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.runtimeconfig.dev.json
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csproj.CoreCompileInputs.cache
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cache
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cs
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfoInputs.cache
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfo.cs
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorTargetAssemblyInfo.cache
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.dll
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.pdb
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\AngularJsCore.pdb
-E:\Mr. VANNAK\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\wwwroot\favicon.ico
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\wwwroot\index.html
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\Configs\accessapp.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\MEDIVETGROUP.deps.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\MEDIVETGROUP.runtimeconfig.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\MEDIVETGROUP.runtimeconfig.dev.json
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\MEDIVETGROUP.dll
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\bin\Debug\netcoreapp2.1\MEDIVETGROUP.pdb
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\MEDIVETGROUP.Properties.Resources.resources
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csproj.GenerateResource.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csproj.CoreCompileInputs.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorAssemblyInfo.cs
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfoInputs.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.AssemblyInfo.cs
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.RazorTargetAssemblyInfo.cache
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\MEDIVETGROUP.dll
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\MEDIVETGROUP.pdb
+C:\Users\Vannak Heng\Documents\GitHub\CoreAngular\AngularJsCore\obj\Debug\netcoreapp2.1\AngularJsCore.csprojAssemblyReference.cache

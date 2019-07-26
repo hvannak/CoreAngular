@@ -80,6 +80,24 @@
         "Name": "Login",
         "DisplayName": null,
         "ControllerId": ":ApplicationUser"
+      },
+      {
+        "Id": ":ApplicationUser:GetAllUser",
+        "Name": "GetAllUser",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationUser"
+      },
+      {
+        "Id": ":ApplicationUser:GetAllUserById",
+        "Name": "GetAllUserById",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationUser"
+      },
+      {
+        "Id": ":ApplicationUser:PutUser",
+        "Name": "PutUser",
+        "DisplayName": null,
+        "ControllerId": ":ApplicationUser"
       }
     ]
   },
@@ -160,6 +178,694 @@
         "Name": "DeleteCustomers",
         "DisplayName": null,
         "ControllerId": ":Customers"
+      },
+      {
+        "Id": ":Customers:GetCustomersByName",
+        "Name": "GetCustomersByName",
+        "DisplayName": null,
+        "ControllerId": ":Customers"
+      },
+      {
+        "Id": ":Customers:GetCustomersByLast",
+        "Name": "GetCustomersByLast",
+        "DisplayName": null,
+        "ControllerId": ":Customers"
+      }
+    ]
+  },
+  {
+    "Id": ":Categories",
+    "Name": "Categories",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Categories:Getcategories",
+        "Name": "Getcategories",
+        "DisplayName": null,
+        "ControllerId": ":Categories"
+      },
+      {
+        "Id": ":Categories:GetCategory",
+        "Name": "GetCategory",
+        "DisplayName": null,
+        "ControllerId": ":Categories"
+      },
+      {
+        "Id": ":Categories:PutCategory",
+        "Name": "PutCategory",
+        "DisplayName": null,
+        "ControllerId": ":Categories"
+      },
+      {
+        "Id": ":Categories:PostCategory",
+        "Name": "PostCategory",
+        "DisplayName": null,
+        "ControllerId": ":Categories"
+      },
+      {
+        "Id": ":Categories:DeleteCategory",
+        "Name": "DeleteCategory",
+        "DisplayName": null,
+        "ControllerId": ":Categories"
+      }
+    ]
+  },
+  {
+    "Id": ":DailyAnimalGrows",
+    "Name": "DailyAnimalGrows",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":DailyAnimalGrows:GetDailyGrowWithStandard",
+        "Name": "GetDailyGrowWithStandard",
+        "DisplayName": null,
+        "ControllerId": ":DailyAnimalGrows"
+      },
+      {
+        "Id": ":DailyAnimalGrows:PutDailyAnimalGrow",
+        "Name": "PutDailyAnimalGrow",
+        "DisplayName": null,
+        "ControllerId": ":DailyAnimalGrows"
+      },
+      {
+        "Id": ":DailyAnimalGrows:PostDailyAnimalGrow",
+        "Name": "PostDailyAnimalGrow",
+        "DisplayName": null,
+        "ControllerId": ":DailyAnimalGrows"
+      },
+      {
+        "Id": ":DailyAnimalGrows:DeleteDailyAnimalGrow",
+        "Name": "DeleteDailyAnimalGrow",
+        "DisplayName": null,
+        "ControllerId": ":DailyAnimalGrows"
+      },
+      {
+        "Id": ":DailyAnimalGrows:GetDailyAnimalGrow",
+        "Name": "GetDailyAnimalGrow",
+        "DisplayName": null,
+        "ControllerId": ":DailyAnimalGrows"
+      }
+    ]
+  },
+  {
+    "Id": ":ImagesFiles",
+    "Name": "ImagesFiles",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":ImagesFiles:GetimagesFiles",
+        "Name": "GetimagesFiles",
+        "DisplayName": null,
+        "ControllerId": ":ImagesFiles"
+      },
+      {
+        "Id": ":ImagesFiles:GetImagesFile",
+        "Name": "GetImagesFile",
+        "DisplayName": null,
+        "ControllerId": ":ImagesFiles"
+      },
+      {
+        "Id": ":ImagesFiles:GetImagesFileByModule",
+        "Name": "GetImagesFileByModule",
+        "DisplayName": null,
+        "ControllerId": ":ImagesFiles"
+      },
+      {
+        "Id": ":ImagesFiles:PostImagesFile",
+        "Name": "PostImagesFile",
+        "DisplayName": null,
+        "ControllerId": ":ImagesFiles"
+      },
+      {
+        "Id": ":ImagesFiles:DeleteImagesFile",
+        "Name": "DeleteImagesFile",
+        "DisplayName": null,
+        "ControllerId": ":ImagesFiles"
+      }
+    ]
+  },
+  {
+    "Id": ":INSiteStatus",
+    "Name": "INSiteStatus",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":INSiteStatus:GetiNSiteStatuses",
+        "Name": "GetiNSiteStatuses",
+        "DisplayName": null,
+        "ControllerId": ":INSiteStatus"
+      },
+      {
+        "Id": ":INSiteStatus:GetINSiteStatus",
+        "Name": "GetINSiteStatus",
+        "DisplayName": null,
+        "ControllerId": ":INSiteStatus"
+      },
+      {
+        "Id": ":INSiteStatus:GetReceiptByDate",
+        "Name": "GetReceiptByDate",
+        "DisplayName": null,
+        "ControllerId": ":INSiteStatus"
+      },
+      {
+        "Id": ":INSiteStatus:GetProjectStatusByInventory",
+        "Name": "GetProjectStatusByInventory",
+        "DisplayName": null,
+        "ControllerId": ":INSiteStatus"
+      },
+      {
+        "Id": ":INSiteStatus:PutINSiteStatus",
+        "Name": "PutINSiteStatus",
+        "DisplayName": null,
+        "ControllerId": ":INSiteStatus"
+      },
+      {
+        "Id": ":INSiteStatus:PostINSiteStatus",
+        "Name": "PostINSiteStatus",
+        "DisplayName": null,
+        "ControllerId": ":INSiteStatus"
+      },
+      {
+        "Id": ":INSiteStatus:DeleteINSiteStatus",
+        "Name": "DeleteINSiteStatus",
+        "DisplayName": null,
+        "ControllerId": ":INSiteStatus"
+      }
+    ]
+  },
+  {
+    "Id": ":Inventorys",
+    "Name": "Inventorys",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Inventorys:GetInventorys",
+        "Name": "GetInventorys",
+        "DisplayName": null,
+        "ControllerId": ":Inventorys"
+      },
+      {
+        "Id": ":Inventorys:GetInventorysByLast",
+        "Name": "GetInventorysByLast",
+        "DisplayName": null,
+        "ControllerId": ":Inventorys"
+      },
+      {
+        "Id": ":Inventorys:GetInventorysByName",
+        "Name": "GetInventorysByName",
+        "DisplayName": null,
+        "ControllerId": ":Inventorys"
+      },
+      {
+        "Id": ":Inventorys:GetInventoryByCategory",
+        "Name": "GetInventoryByCategory",
+        "DisplayName": null,
+        "ControllerId": ":Inventorys"
+      },
+      {
+        "Id": ":Inventorys:PutInventorys",
+        "Name": "PutInventorys",
+        "DisplayName": null,
+        "ControllerId": ":Inventorys"
+      },
+      {
+        "Id": ":Inventorys:PostInventorys",
+        "Name": "PostInventorys",
+        "DisplayName": null,
+        "ControllerId": ":Inventorys"
+      },
+      {
+        "Id": ":Inventorys:DeleteInventorys",
+        "Name": "DeleteInventorys",
+        "DisplayName": null,
+        "ControllerId": ":Inventorys"
+      }
+    ]
+  },
+  {
+    "Id": ":Orders",
+    "Name": "Orders",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Orders:GetOrders",
+        "Name": "GetOrders",
+        "DisplayName": null,
+        "ControllerId": ":Orders"
+      },
+      {
+        "Id": ":Orders:PutOrders",
+        "Name": "PutOrders",
+        "DisplayName": null,
+        "ControllerId": ":Orders"
+      },
+      {
+        "Id": ":Orders:PostOrders",
+        "Name": "PostOrders",
+        "DisplayName": null,
+        "ControllerId": ":Orders"
+      },
+      {
+        "Id": ":Orders:DeleteOrders",
+        "Name": "DeleteOrders",
+        "DisplayName": null,
+        "ControllerId": ":Orders"
+      }
+    ]
+  },
+  {
+    "Id": ":PaymentDetail",
+    "Name": "PaymentDetail",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":PaymentDetail:GetpaymentDetails",
+        "Name": "GetpaymentDetails",
+        "DisplayName": null,
+        "ControllerId": ":PaymentDetail"
+      },
+      {
+        "Id": ":PaymentDetail:GetPaymentDetail",
+        "Name": "GetPaymentDetail",
+        "DisplayName": null,
+        "ControllerId": ":PaymentDetail"
+      },
+      {
+        "Id": ":PaymentDetail:PutPaymentDetail",
+        "Name": "PutPaymentDetail",
+        "DisplayName": null,
+        "ControllerId": ":PaymentDetail"
+      },
+      {
+        "Id": ":PaymentDetail:PostPaymentDetail",
+        "Name": "PostPaymentDetail",
+        "DisplayName": null,
+        "ControllerId": ":PaymentDetail"
+      },
+      {
+        "Id": ":PaymentDetail:DeletePaymentDetail",
+        "Name": "DeletePaymentDetail",
+        "DisplayName": null,
+        "ControllerId": ":PaymentDetail"
+      }
+    ]
+  },
+  {
+    "Id": ":ProjectAccesses",
+    "Name": "ProjectAccesses",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":ProjectAccesses:GetprojectAccesses",
+        "Name": "GetprojectAccesses",
+        "DisplayName": null,
+        "ControllerId": ":ProjectAccesses"
+      },
+      {
+        "Id": ":ProjectAccesses:GetProjectAccess",
+        "Name": "GetProjectAccess",
+        "DisplayName": null,
+        "ControllerId": ":ProjectAccesses"
+      },
+      {
+        "Id": ":ProjectAccesses:PostProjectAccess",
+        "Name": "PostProjectAccess",
+        "DisplayName": null,
+        "ControllerId": ":ProjectAccesses"
+      },
+      {
+        "Id": ":ProjectAccesses:DeleteProjectAccess",
+        "Name": "DeleteProjectAccess",
+        "DisplayName": null,
+        "ControllerId": ":ProjectAccesses"
+      }
+    ]
+  },
+  {
+    "Id": ":Projects",
+    "Name": "Projects",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Projects:Getprojects",
+        "Name": "Getprojects",
+        "DisplayName": null,
+        "ControllerId": ":Projects"
+      },
+      {
+        "Id": ":Projects:GetAllprojects",
+        "Name": "GetAllprojects",
+        "DisplayName": null,
+        "ControllerId": ":Projects"
+      },
+      {
+        "Id": ":Projects:GetProject",
+        "Name": "GetProject",
+        "DisplayName": null,
+        "ControllerId": ":Projects"
+      },
+      {
+        "Id": ":Projects:GetProjectDaily",
+        "Name": "GetProjectDaily",
+        "DisplayName": null,
+        "ControllerId": ":Projects"
+      },
+      {
+        "Id": ":Projects:PutProject",
+        "Name": "PutProject",
+        "DisplayName": null,
+        "ControllerId": ":Projects"
+      },
+      {
+        "Id": ":Projects:PostProject",
+        "Name": "PostProject",
+        "DisplayName": null,
+        "ControllerId": ":Projects"
+      },
+      {
+        "Id": ":Projects:DeleteProject",
+        "Name": "DeleteProject",
+        "DisplayName": null,
+        "ControllerId": ":Projects"
+      }
+    ]
+  },
+  {
+    "Id": ":Receipts",
+    "Name": "Receipts",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Receipts:Getreceipts",
+        "Name": "Getreceipts",
+        "DisplayName": null,
+        "ControllerId": ":Receipts"
+      },
+      {
+        "Id": ":Receipts:GetReceiptByDate",
+        "Name": "GetReceiptByDate",
+        "DisplayName": null,
+        "ControllerId": ":Receipts"
+      },
+      {
+        "Id": ":Receipts:GetReceipt",
+        "Name": "GetReceipt",
+        "DisplayName": null,
+        "ControllerId": ":Receipts"
+      },
+      {
+        "Id": ":Receipts:PutReceipt",
+        "Name": "PutReceipt",
+        "DisplayName": null,
+        "ControllerId": ":Receipts"
+      },
+      {
+        "Id": ":Receipts:PostReceipt",
+        "Name": "PostReceipt",
+        "DisplayName": null,
+        "ControllerId": ":Receipts"
+      },
+      {
+        "Id": ":Receipts:DeleteReceipt",
+        "Name": "DeleteReceipt",
+        "DisplayName": null,
+        "ControllerId": ":Receipts"
+      },
+      {
+        "Id": ":Receipts:GetReceiptByProjectdetail",
+        "Name": "GetReceiptByProjectdetail",
+        "DisplayName": null,
+        "ControllerId": ":Receipts"
+      }
+    ]
+  },
+  {
+    "Id": ":SaleInvoice",
+    "Name": "SaleInvoice",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":SaleInvoice:GetSaleInvoice",
+        "Name": "GetSaleInvoice",
+        "DisplayName": null,
+        "ControllerId": ":SaleInvoice"
+      },
+      {
+        "Id": ":SaleInvoice:GetSaleInvoiceByDate",
+        "Name": "GetSaleInvoiceByDate",
+        "DisplayName": null,
+        "ControllerId": ":SaleInvoice"
+      },
+      {
+        "Id": ":SaleInvoice:PutSaleInvoice",
+        "Name": "PutSaleInvoice",
+        "DisplayName": null,
+        "ControllerId": ":SaleInvoice"
+      },
+      {
+        "Id": ":SaleInvoice:PostSaleInvoice",
+        "Name": "PostSaleInvoice",
+        "DisplayName": null,
+        "ControllerId": ":SaleInvoice"
+      },
+      {
+        "Id": ":SaleInvoice:DeleteSaleInvoice",
+        "Name": "DeleteSaleInvoice",
+        "DisplayName": null,
+        "ControllerId": ":SaleInvoice"
+      },
+      {
+        "Id": ":SaleInvoice:SyncInvoices",
+        "Name": "SyncInvoices",
+        "DisplayName": null,
+        "ControllerId": ":SaleInvoice"
+      }
+    ]
+  },
+  {
+    "Id": ":StandardNames",
+    "Name": "StandardNames",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":StandardNames:GetStandardName",
+        "Name": "GetStandardName",
+        "DisplayName": null,
+        "ControllerId": ":StandardNames"
+      },
+      {
+        "Id": ":StandardNames:PutStandardName",
+        "Name": "PutStandardName",
+        "DisplayName": null,
+        "ControllerId": ":StandardNames"
+      },
+      {
+        "Id": ":StandardNames:PostStandardName",
+        "Name": "PostStandardName",
+        "DisplayName": null,
+        "ControllerId": ":StandardNames"
+      },
+      {
+        "Id": ":StandardNames:DeleteStandardName",
+        "Name": "DeleteStandardName",
+        "DisplayName": null,
+        "ControllerId": ":StandardNames"
+      }
+    ]
+  },
+  {
+    "Id": ":Standards",
+    "Name": "Standards",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Standards:Getstandards",
+        "Name": "Getstandards",
+        "DisplayName": null,
+        "ControllerId": ":Standards"
+      },
+      {
+        "Id": ":Standards:GetStandard",
+        "Name": "GetStandard",
+        "DisplayName": null,
+        "ControllerId": ":Standards"
+      },
+      {
+        "Id": ":Standards:PutStandard",
+        "Name": "PutStandard",
+        "DisplayName": null,
+        "ControllerId": ":Standards"
+      },
+      {
+        "Id": ":Standards:PostStandard",
+        "Name": "PostStandard",
+        "DisplayName": null,
+        "ControllerId": ":Standards"
+      },
+      {
+        "Id": ":Standards:DeleteStandard",
+        "Name": "DeleteStandard",
+        "DisplayName": null,
+        "ControllerId": ":Standards"
+      }
+    ]
+  },
+  {
+    "Id": ":UnitOfMeasures",
+    "Name": "UnitOfMeasures",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":UnitOfMeasures:GetunitOfMeasures",
+        "Name": "GetunitOfMeasures",
+        "DisplayName": null,
+        "ControllerId": ":UnitOfMeasures"
+      },
+      {
+        "Id": ":UnitOfMeasures:GetUnitOfMeasure",
+        "Name": "GetUnitOfMeasure",
+        "DisplayName": null,
+        "ControllerId": ":UnitOfMeasures"
+      },
+      {
+        "Id": ":UnitOfMeasures:PutUnitOfMeasure",
+        "Name": "PutUnitOfMeasure",
+        "DisplayName": null,
+        "ControllerId": ":UnitOfMeasures"
+      },
+      {
+        "Id": ":UnitOfMeasures:PostUnitOfMeasure",
+        "Name": "PostUnitOfMeasure",
+        "DisplayName": null,
+        "ControllerId": ":UnitOfMeasures"
+      },
+      {
+        "Id": ":UnitOfMeasures:DeleteUnitOfMeasure",
+        "Name": "DeleteUnitOfMeasure",
+        "DisplayName": null,
+        "ControllerId": ":UnitOfMeasures"
+      }
+    ]
+  },
+  {
+    "Id": ":Values",
+    "Name": "Values",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Values:Get",
+        "Name": "Get",
+        "DisplayName": null,
+        "ControllerId": ":Values"
+      },
+      {
+        "Id": ":Values:Put",
+        "Name": "Put",
+        "DisplayName": null,
+        "ControllerId": ":Values"
+      },
+      {
+        "Id": ":Values:Delete",
+        "Name": "Delete",
+        "DisplayName": null,
+        "ControllerId": ":Values"
+      },
+      {
+        "Id": ":Values:Post",
+        "Name": "Post",
+        "DisplayName": null,
+        "ControllerId": ":Values"
+      }
+    ]
+  },
+  {
+    "Id": ":WarehouseAccesses",
+    "Name": "WarehouseAccesses",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":WarehouseAccesses:GetWarehouseAccess",
+        "Name": "GetWarehouseAccess",
+        "DisplayName": null,
+        "ControllerId": ":WarehouseAccesses"
+      },
+      {
+        "Id": ":WarehouseAccesses:PostWarehouseAccess",
+        "Name": "PostWarehouseAccess",
+        "DisplayName": null,
+        "ControllerId": ":WarehouseAccesses"
+      },
+      {
+        "Id": ":WarehouseAccesses:DeleteWarehouseAccess",
+        "Name": "DeleteWarehouseAccess",
+        "DisplayName": null,
+        "ControllerId": ":WarehouseAccesses"
+      }
+    ]
+  },
+  {
+    "Id": ":Warehouses",
+    "Name": "Warehouses",
+    "DisplayName": null,
+    "AreaName": null,
+    "Actions": [
+      {
+        "Id": ":Warehouses:Getwarehouses",
+        "Name": "Getwarehouses",
+        "DisplayName": null,
+        "ControllerId": ":Warehouses"
+      },
+      {
+        "Id": ":Warehouses:GetAllwarehouses",
+        "Name": "GetAllwarehouses",
+        "DisplayName": null,
+        "ControllerId": ":Warehouses"
+      },
+      {
+        "Id": ":Warehouses:GetWarehouse",
+        "Name": "GetWarehouse",
+        "DisplayName": null,
+        "ControllerId": ":Warehouses"
+      },
+      {
+        "Id": ":Warehouses:GetWarehouseByProjectId",
+        "Name": "GetWarehouseByProjectId",
+        "DisplayName": null,
+        "ControllerId": ":Warehouses"
+      },
+      {
+        "Id": ":Warehouses:PutWarehouse",
+        "Name": "PutWarehouse",
+        "DisplayName": null,
+        "ControllerId": ":Warehouses"
+      },
+      {
+        "Id": ":Warehouses:PostWarehouse",
+        "Name": "PostWarehouse",
+        "DisplayName": null,
+        "ControllerId": ":Warehouses"
+      },
+      {
+        "Id": ":Warehouses:DeleteWarehouse",
+        "Name": "DeleteWarehouse",
+        "DisplayName": null,
+        "ControllerId": ":Warehouses"
       }
     ]
   }

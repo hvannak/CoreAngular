@@ -52,6 +52,11 @@
                   <label class="text-danger" *ngIf="service.formReceiptLine.get('Qty').touched && service.formReceiptLine.get('Qty').errors?.required">This field is mandatory.</label>
                 </div>
                 <div class="form-group required">
+                  <label>Weight</label>
+                  <input class="form-control" formControlName="QtyInWeight">
+                  <label class="text-danger" *ngIf="service.formReceiptLine.get('QtyInWeight').touched && service.formReceiptLine.get('QtyInWeight').errors?.required">This field is mandatory.</label>
+                </div>
+                <div class="form-group required">
                   <label>Unit Cost</label>
                   <input class="form-control" formControlName="UnitCost" (change)="updatePrice($event.target.value,2)">
                   <label class="text-danger" *ngIf="service.formReceiptLine.get('UnitCost').touched && service.formReceiptLine.get('UnitCost').errors?.required">This field is mandatory.</label>
