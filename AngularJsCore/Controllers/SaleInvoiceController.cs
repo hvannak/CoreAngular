@@ -183,7 +183,18 @@ namespace AngularJsCore.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok();
+            SaleInvoice sale = new SaleInvoice();
+            sale.SaleInvoiceId = saleInvoice.SaleInvoiceId;
+            sale.InvoiceNbr = saleInvoice.InvoiceNbr;
+            sale.ProjectId = saleInvoice.ProjectId;
+            sale.ProjectName = saleInvoice.ProjectName;
+            sale.TotalQty = saleInvoice.TotalQty;
+            sale.TotalAmount = saleInvoice.TotalAmount;
+            sale.TotalWeight = saleInvoice.TotalWeight;
+            sale.TranType = saleInvoice.TranType;
+            sale.Types = saleInvoice.Types;
+            sale.Release = saleInvoice.Release;
+            return Ok(sale);
         }
 
         // DELETE: api/SaleInvoice/5
@@ -229,6 +240,7 @@ namespace AngularJsCore.Controllers
             }
             catch(Exception ex)
             {
+                //financial period is inactive or customerId not exist
                 return Ok("500");
             }
             finally

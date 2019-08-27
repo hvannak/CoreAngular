@@ -7,7 +7,12 @@ import { environment } from 'src/environments/environment';
 })
 export class ItemService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+   }
 
   getItemList(){
     return this.http.get(environment.apiURL+'/Inventorys').toPromise();

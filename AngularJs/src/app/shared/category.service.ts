@@ -11,7 +11,12 @@ export class CategoryService {
 
   formData:Category;
   list:MatTableDataSource<Category>;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+  }
 
   postCategoryDetail(){
     return this.http.post(environment.apiURL + "/Categories", this.formData)

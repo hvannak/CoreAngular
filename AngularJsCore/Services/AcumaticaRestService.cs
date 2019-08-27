@@ -60,6 +60,28 @@ namespace MEDIVETGROUP.Services
             return res.Content.ReadAsStringAsync().Result;
         }
 
+        //Retrieval of a record by key fields
+        public string GetByKeys(string entityName, string keys, string parameters)
+        {
+            var res = _httpClient.GetAsync(
+              _acumaticaBaseUrl + "/entity/DefaultExt/17.200.001/" +
+              entityName + "/" + keys + "?" + parameters)
+                .Result
+                .EnsureSuccessStatusCode();
+
+            return res.Content.ReadAsStringAsync().Result;
+        }
+
+        public string Get(string entityName, string parameters)
+        {
+            var res = _httpClient.GetAsync(
+              _acumaticaBaseUrl + "/entity/DefaultExt/17.200.001/"
+              + entityName + "?" + parameters).Result
+                .EnsureSuccessStatusCode();
+
+            return res.Content.ReadAsStringAsync().Result;
+        }
+
         public void Dispose()
         {
             _httpClient.PostAsync(_acumaticaBaseUrl + "/entity/auth/logout",

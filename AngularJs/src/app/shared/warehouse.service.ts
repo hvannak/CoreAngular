@@ -10,7 +10,12 @@ import { MatTableDataSource } from '@angular/material';
 export class WarehouseService {
   formData:Warehouse;
   list:MatTableDataSource<Warehouse>;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+  }
 
   postWarehousesDetail(){
     return this.http.post(environment.apiURL + "/Warehouses", this.formData)

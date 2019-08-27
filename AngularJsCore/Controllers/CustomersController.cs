@@ -9,26 +9,32 @@ using AngularJsCore.Data;
 using AngularJsCore.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.Data.SqlClient;
+using MEDIVETGROUP.Services;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Linq;
 
 namespace AngularJsCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class CustomersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly ApplicationSettings _appSettings;
+        private AcumaticaRestService _acumaticaRestService;
 
-        public CustomersController(ApplicationDbContext context)
+        public CustomersController(ApplicationDbContext context, IOptions<ApplicationSettings> appSettings)
         {
             _context = context;
+            _appSettings = appSettings.Value;
         }
 
         // GET: api/Customers
         [HttpGet]
         public IEnumerable<Customers> Getcustomers()
         {
-            return _context.customers.Take(300);
+            return _context.customers.OrderBy(x=>x.CustomerId).Take(300);
         }
 
         // GET: api/Customers/5
@@ -37,6 +43,74 @@ namespace AngularJsCore.Controllers
         {
             var customers = await _context.customers.FindAsync(id);
             return Ok(customers);
+        }
+
+        [HttpGet("Sync")]
+        public async Task<IActionResult> GetCustomersync()
+        {
+            List<Customers> list = new List<Customers>();
+            try
+            {
+                _acumaticaRestService = new AcumaticaRestService(_appSettings.AcumaticaBaseUrl, _appSettings.UserName, _appSettings.Password, _appSettings.Company, null);
+                //Specify the parameter to obtain the details of a sales order
+                string parameters = "$filter=Status eq 'Active'";
+
+                //Retrieve a sales order by keys
+                string stockItems = _acumaticaRestService.Get("Customer", parameters);
+                JArray json = JArray.Parse(stockItems);
+
+                foreach (JObject content in json.Children<JObject>())
+                {
+                    string valId = "";
+                    string valName = "";
+                    foreach (JProperty prop in content.Properties())
+                    {                      
+                        if (prop.Name == "CustomerID")
+                        {
+                            valId = JObject.Parse(prop.Value.ToString())["value"].Value<string>();
+                        }
+                        if(prop.Name == "CustomerName")
+                        {
+                            valName = JObject.Parse(prop.Value.ToString())["value"].Value<string>();
+                        }
+                        if(!String.IsNullOrEmpty(valId) && !String.IsNullOrEmpty(valName))
+                        {
+                            Customers customers = new Customers();
+                            customers.CustomerCD = valId;
+                            customers.CustomerName = valName;
+                            list.Add(customers);
+                            valId = "";
+                            valName = "";
+                        }
+                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return Ok(ex.Message);
+            }
+            finally
+            {
+                _acumaticaRestService.Dispose();
+            }
+            foreach (Customers customers in list)
+            {
+                var custvalue = _context.customers.Where(x => x.CustomerCD == customers.CustomerCD).FirstOrDefault();
+                if(custvalue != null)
+                {
+                    custvalue.CustomerName = customers.CustomerName;
+                    _context.Entry(custvalue).State = EntityState.Modified;
+                    _context.Entry(custvalue).Property(x => x.CustomerName).IsModified = true;
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    _context.customers.Add(customers);
+                    await _context.SaveChangesAsync();
+                }
+            }
+            return Ok(list);
         }
 
         // GET: api/Customers/5
@@ -51,7 +125,12 @@ namespace AngularJsCore.Controllers
         [HttpGet("Last/{last}")]
         public async Task<IActionResult> GetCustomersByLast(int last)
         {
-            var customers = await _context.customers.Where(x => x.CustomerId > last && x.CustomerId <= last + 100).ToListAsync();
+            var customers = await _context.customers.OrderBy(x => x.CustomerId)
+                  .Skip(last)
+                  .Take(300)
+                  .ToListAsync();
+
+            //var customers = await _context.customers.Where(x => x.CustomerId > last && x.CustomerId <= last + 100).ToListAsync();
             return Ok(customers);
         }
 
@@ -80,6 +159,24 @@ namespace AngularJsCore.Controllers
                 if (!CustomersExists(id))
                 {
                     return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            catch (DbUpdateException ex)
+            {
+                var sqlException = ex.GetBaseException() as SqlException;
+                if(sqlException != null)
+                {
+                    switch (sqlException.Number)
+                    {
+                        case 2601:
+                            return Ok(new Customers() { ErrorCode = 2601 });
+                        default:
+                            throw;
+                    }
                 }
                 else
                 {

@@ -8,7 +8,12 @@ import { environment } from 'src/environments/environment';
 })
 export class ProjectaccessService {
   userAdded=[];
-  constructor(private fb:FormBuilder,private http:HttpClient) { }
+  constructor(private fb:FormBuilder,private http:HttpClient) { 
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+  }
 
   formModel = this.fb.group({
     ProjectAccessId:[''],

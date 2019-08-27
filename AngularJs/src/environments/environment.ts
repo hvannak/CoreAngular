@@ -5,6 +5,9 @@
 export const environment = {
   production: false,
   apiURL: 'http://localhost:2394/api',
+  apiURLocal: 'http://localhost:2394/api',
+  myPublicIp1:'203.189.132.18',
+  myPublicIp2:'203.189.132.22',
   format: 'yyyy-MM-dd',
   locale: 'en-US'
 };

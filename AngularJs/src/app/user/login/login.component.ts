@@ -3,6 +3,8 @@ import { UserService } from 'src/app/shared/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +16,17 @@ export class LoginComponent implements OnInit {
     UserName: '',
     Password: ''
   }
-  constructor(private service: UserService, private router: Router, private toastr: ToastrService) { }
+  constructor(private service: UserService, private router: Router, private toastr: ToastrService,private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get<{ip:string}>('https://jsonip.com')
+    .subscribe( (data:any) => {
+      console.log(data);
+        if(data.ip == environment.myPublicIp1 || data.ip == environment.myPublicIp2){         
+          environment.apiURL = environment.apiURLocal;
+          localStorage.setItem('apiURL', environment.apiURLocal);
+        }
+    });
     if (localStorage.getItem('token') != null)
       this.router.navigateByUrl('/home');
   }

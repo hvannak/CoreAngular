@@ -16,6 +16,7 @@ export class MenusComponent implements OnInit {
   
   onLogout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('apiURL');
     this.router.navigate(['/user/login']);
   }
 

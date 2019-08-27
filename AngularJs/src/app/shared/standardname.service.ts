@@ -11,7 +11,12 @@ export class StandardnameService {
 
   formData:Standardname;
   list:MatTableDataSource<Standardname>;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+   }
 
   postStandardDetail(){
     return this.http.post(environment.apiURL + "/StandardNames", this.formData)

@@ -14,7 +14,12 @@ export class ProjectService {
 
 
 
-  constructor(private http:HttpClient,private fb:FormBuilder) { }
+  constructor(private http:HttpClient,private fb:FormBuilder) {
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+   }
 
   formDaily = this.fb.group({
     ProjectId:['',Validators.required],

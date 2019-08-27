@@ -10,7 +10,12 @@ import { environment } from 'src/environments/environment';
 export class OrderService {
   formData:Order;
   orderItems: OrderItem[];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+  }
 
   saveOrUpdateOrder() {
     var body = {

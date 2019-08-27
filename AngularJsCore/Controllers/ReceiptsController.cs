@@ -115,6 +115,7 @@ namespace AngularJsCore.Controllers
             {
                 result = result.Where(x => x.InventoryId == inventoryId).ToList();
             }
+
             return result;
         }
 
@@ -212,9 +213,18 @@ namespace AngularJsCore.Controllers
                 _context.receiptLines.Add(item);
             }
 
-            await _context.SaveChangesAsync();
-
-            return Ok();
+           await _context.SaveChangesAsync();
+            //Intial obj for return
+            Receipt result = new Receipt();
+            result.ReceiptId = receipt.ReceiptId;
+            result.ReceiptNbr = receipt.ReceiptNbr;
+            result.ReceiptDate = receipt.ReceiptDate;
+            result.Description = receipt.Description;
+            result.TranType = receipt.TranType;
+            result.TotalQty = receipt.TotalQty;
+            result.TotalCost = receipt.TotalCost;
+            result.Release = receipt.Release;
+            return Ok(result);
         }
 
         // DELETE: api/Receipts/5

@@ -11,7 +11,12 @@ import { Role } from './role.model';
 export class RoleService {
 
   roleList:MatTableDataSource<Role>;
-  constructor(private fb:FormBuilder,private http:HttpClient) { }
+  constructor(private fb:FormBuilder,private http:HttpClient) { 
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+  }
 
   formModel = this.fb.group({
     Id:[''],

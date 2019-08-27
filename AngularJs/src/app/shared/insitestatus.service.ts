@@ -8,7 +8,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class InsitestatusService {
 
-  constructor(private http: HttpClient,private fb:FormBuilder) { }
+  constructor(private http: HttpClient,private fb:FormBuilder) { 
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+  }
 
   formInsiteFilter = this.fb.group({
     ProjectId:['',Validators.required],

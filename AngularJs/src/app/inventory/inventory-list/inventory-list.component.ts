@@ -26,13 +26,19 @@ export class InventoryListComponent implements OnInit {
   }
 
   getInventoryByLastRecord(){
-    let inventoryId = this.service.list.data.map(x=>x.InventoryId);
-    let last = Math.max.apply(Math, inventoryId);
-    this.service.getInventoryByLast(last).then((res:any) => {
+    // let inventoryId = this.service.list.data.map(x=>x.InventoryId);
+    // let last = Math.max.apply(Math, inventoryId);
+    let row = this.service.list.data.length;
+    this.service.getInventoryByLast(row).then((res:any) => {
+      if(res.length > 0){
         res.forEach(element => {
           this.service.list.data.push(element);
         });
         this.service.list._updateChangeSubscription();
+      }
+      else{
+        this.toastr.info("There are not records load.","Inventory Detail Register");
+      }
     });
   }
 

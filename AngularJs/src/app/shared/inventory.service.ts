@@ -12,7 +12,12 @@ export class InventoryService {
   formData:Inventory
   list:MatTableDataSource<Inventory>;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+   }
 
   postInventoryDetail(){
     

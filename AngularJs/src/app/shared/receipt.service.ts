@@ -12,7 +12,12 @@ export class ReceiptService {
 
   receipt:Receipt;
   receiptLine:ReceiptLine[];
-  constructor(private http: HttpClient,private fb:FormBuilder) { }
+  constructor(private http: HttpClient,private fb:FormBuilder) {
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+   }
   
   formReceipt = this.fb.group({
     TranType:['',Validators.required],

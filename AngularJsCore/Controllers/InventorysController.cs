@@ -27,7 +27,7 @@ namespace AngularJsCore.Controllers
         [HttpGet]
         public IEnumerable<Inventorys> GetInventorys()
         {
-            return _context.Inventorys.Take(300);
+            return _context.Inventorys.OrderBy(x=>x.InventoryId).Take(300);
         }
 
         // GET: api/Inventorys/5
@@ -53,7 +53,11 @@ namespace AngularJsCore.Controllers
         [HttpGet("Last/{last}")]
         public async Task<IActionResult> GetInventorysByLast(int last)
         {
-            var inventorys = await _context.Inventorys.Where(x => x.InventoryId > last && x.InventoryId <= last + 100).ToListAsync();
+            var inventorys = await _context.Inventorys.OrderBy(x => x.InventoryId)
+                  .Skip(last)
+                  .Take(300)
+                  .ToListAsync();
+            //var inventorys = await _context.Inventorys.Where(x => x.InventoryId > last && x.InventoryId <= last + 100).ToListAsync();
             return Ok(inventorys);
         }
 

@@ -13,7 +13,12 @@ export class DailyanimalgrowService {
 
   warehouseList;
   list:MatTableDataSource<Dailyanimalgrow>;
-  constructor(private fb:FormBuilder,private http: HttpClient,private warehouseService:WarehouseService) { }
+  constructor(private fb:FormBuilder,private http: HttpClient,private warehouseService:WarehouseService) {
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+   }
 
   formModel = this.fb.group({
     DailyGrowId:[''],

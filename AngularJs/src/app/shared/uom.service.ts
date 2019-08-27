@@ -11,7 +11,12 @@ export class UomService {
 
   formData:Uom
   list:MatTableDataSource<Uom>;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    let apiUrl = localStorage.getItem('apiURL');
+    if(apiUrl != environment.apiURL && apiUrl != null){
+      environment.apiURL = environment.apiURLocal;
+    }
+   }
   postUomDetail(){
     
     return this.http.post(environment.apiURL + "/UnitOfMeasures", this.formData)

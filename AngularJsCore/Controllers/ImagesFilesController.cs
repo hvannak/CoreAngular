@@ -64,7 +64,13 @@ namespace AngularJsCore.Controllers
 
             _context.imagesFiles.Add(imagesFile);
             await _context.SaveChangesAsync();
-            return Ok();
+            ImagesFile images = new ImagesFile();
+            images.FileId = imagesFile.FileId;
+            images.Caption = imagesFile.Caption;
+            images.ModuleId = imagesFile.ModuleId;
+            images.OperationId = imagesFile.OperationId;
+            images.StoreFile = imagesFile.StoreFile;
+            return Ok(images);
             //return CreatedAtAction("GetImagesFile", new { id = imagesFile.FileId }, imagesFile);
         }
 

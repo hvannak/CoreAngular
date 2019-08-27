@@ -9,6 +9,7 @@ namespace AngularJsCore.Models
     {
         public string JWT_Secret { get; set; }
         public string Client_URL { get; set; }
+        public string PClient_URL { get; set; }
         public string AcumaticaBaseUrl { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }

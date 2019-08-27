@@ -108,7 +108,7 @@ namespace AngularJsCore
 
             
             app.UseCors(options =>
-                options.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString())
+                options.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString(), Configuration["ApplicationSettings:PClient_URL"].ToString())              
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowAnyOrigin()
