@@ -50,15 +50,24 @@ export class InregisterComponent implements OnInit {
   }
 
   getTotalQty(){
-    return this.inRegisterList.map(t => t.Qty).reduce((acc ,value) => acc + value,0);
+    let r = this.inRegisterList.filter(x=>x.TranType == "Receipt").map(t => t.Qty).reduce((acc ,value) => acc + value,0);
+    let i = this.inRegisterList.filter(x=>x.TranType == "Issue").map(t => t.Qty).reduce((acc ,value) => acc + value,0);
+    let a = this.inRegisterList.filter(x=>x.TranType == "Adjust").map(t => t.Qty).reduce((acc ,value) => acc + value,0);
+    return (r - i + a)
   }
 
   getTotalUnitCost(){
-    return this.inRegisterList.map(t => t.UnitCost).reduce((acc ,value) => acc + value,0);
+    let r = this.inRegisterList.filter(x=>x.TranType == "Receipt").map(t => t.UnitCost).reduce((acc ,value) => acc + value,0);
+    let i = this.inRegisterList.filter(x=>x.TranType == "Issue").map(t => t.UnitCost).reduce((acc ,value) => acc + value,0);
+    let a = this.inRegisterList.filter(x=>x.TranType == "Adjust").map(t => t.UnitCost).reduce((acc ,value) => acc + value,0);
+    return (r - i + a)
   }
 
   getTotalExtCost(){
-    return this.inRegisterList.map(t => t.ExtCost).reduce((acc ,value) => acc + value,0);
+    let r = this.inRegisterList.filter(x=>x.TranType == "Receipt").map(t => t.ExtCost).reduce((acc ,value) => acc + value,0);
+    let i = this.inRegisterList.filter(x=>x.TranType == "Issue").map(t => t.ExtCost).reduce((acc ,value) => acc + value,0);
+    let a = this.inRegisterList.filter(x=>x.TranType == "Adjust").map(t => t.ExtCost).reduce((acc ,value) => acc + value,0);
+    return (r - i + a)
   }
 
   onSubmit(){

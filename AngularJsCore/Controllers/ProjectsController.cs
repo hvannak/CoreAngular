@@ -171,7 +171,18 @@ namespace AngularJsCore.Controllers
                 projectPerformanceHeader.DeadIssueWeight = dailyIssue_Animal.Sum(x => x.QtyInWeight);
                 projectPerformanceHeader.Feeds = dailyIssue_Feed.Sum(x => x.Qty);
                 projectPerformanceHeader.Amount = totalsales.Sum(x => x.ExtAmount);
-                projectPerformanceHeader.FCR = dailyIssue_Feed.Sum(x => x.Qty) / totalsales.Sum(x => x.Weight);
+                var qtyfcr = dailyIssue_Feed.Sum(x => x.Qty);
+                var weightfcr = totalsales.Sum(x => x.Weight);
+                if(qtyfcr != 0 && weightfcr != 0)
+                {
+                    decimal? amount = qtyfcr / weightfcr;
+                    string amount1 = string.Format("{0:F2}", Decimal.Parse(amount.ToString()));
+                    projectPerformanceHeader.FCR = Convert.ToDecimal(amount1);
+                }
+                else
+                {
+                    projectPerformanceHeader.FCR = 0;
+                }
                 return Ok(new { projectstandard, projectPerformanceHeader });
             }
 

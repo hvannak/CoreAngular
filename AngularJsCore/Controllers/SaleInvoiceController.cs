@@ -50,6 +50,7 @@ namespace AngularJsCore.Controllers
                                   x.ProjectName,
                                   x.Release,
                                   x.IsSyn,
+                                  x.Types,
                                   x.TotalQty,
                                   x.TotalWeight,
                                   x.TotalAmount
@@ -204,7 +205,6 @@ namespace AngularJsCore.Controllers
             var invoice = await _context.saleInvoices.FindAsync(id);
             _context.saleInvoices.Remove(invoice);
             await _context.SaveChangesAsync();
-
             return Ok(invoice);
         }
 
